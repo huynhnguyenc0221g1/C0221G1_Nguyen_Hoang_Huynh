@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" style="font-size:20px">
+    <title>Tạo form cơ bản</title>
+</head>
+<div>
+<body style="background-color:powderblue;font-family:Tahoma">
+<style>
+    .lilorange {
+        font-size:14px  ; color:orangered;
+    }
+</style>
+    <form>
+        <table style="align:center;align:middle;width: 650px; margin-left: auto; margin-right: auto;background-color: white">
+
+            <tr>
+                <th style="background-color:orangered;font-size:30px;color:white;font-weight:900">SỞ THÍCH CỦA BẠN</th>
+            </tr>
+            <tr>
+                <td>
+                <lable style="color:dodgerblue;margin-left: 100px">Họ và tên:</lable>
+                <input type="text" name="yourname">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <lable style="color:dodgerblue;margin-left: 100px">Email:</lable>
+                <input style="margin-left: 24px" type="email" name="email">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <lable style="color:dodgerblue;margin-left: 100px">Sở thích:</lable>
+                    <input style="margin-left: 9px" type="checkbox" name="hobby" value="sport"/> <span class="lilorange">Thể thao</span>
+                    <input style="margin-left: 20px" type="checkbox" name="hobby" value="music"/><span class="lilorange"> Âm nhạc </span>
+                    <input style="margin-left: 28px" type="checkbox" name="hobby" value="reading"/><span class="lilorange"> Đọc sách </span>
+                    <br>
+                    <input style="margin-left: 172px" type="checkbox" name="hobby" value="websurfing"/><span class="lilorange"> Lướt web </span>
+                    <input style="margin-left: 15px" type="checkbox" name="hobby" value="game"/><span class="lilorange"> Chơi game </span>
+                    <input style="margin-left: 12px" type="checkbox" name="hobby" value="movie"/><span class="lilorange"> Điện ảnh </span>
+                    <br>
+                    <input style="margin-left: 172px" type="checkbox" name="hobby" value="travel"/><span class="lilorange"> Du lịch </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input style="margin-left: 172px;font-size:16px" type="submit" name="guithongtin" value="Gửi thông tin"/>
+                    <input style="font-size:16px" type="reset" name="nhaplai" value="Nhập lại"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</div>
+<br>
+<br>
+<br>
+<div>
+    <body style="font-family:Tahoma">
+    <form>
+        <table style="align:center;align:middle;margin-left:auto;margin-right:auto;background-color:yellow;width:600px">
+            <tr>
+                <td style="background-color: aquamarine;font-size:30px;align:left;color:royalblue" colspan="2">ĐĂNG KÝ HỌC VIÊN
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label style="color:blue">Họ và tên</label>
+                    <input style="margin-left: 25px" type="text" name="fullname">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label style="color:blue">Ngày sinh</label>
+                    <input style="margin-left: 20px" type="date" name="birthday">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label style="color:blue">Giới tính</label>
+                    <input style="margin-left:26px" type="radio" name="gender" value="male">Nam
+                    <input type="radio" name="gender" value="female">Nữ
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label style="color:blue;margin-bottom:20px ">Địa chỉ</label>
+                    <textarea style="margin-left: 39px" name="address" cols="25" rows="3"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label style="color:blue">Lớp</label>
+                    <select name="class" style="margin-left:59px">
+                        <option>-- Chọn lớp --</option>
+                        <option value="class1" name="class">Lớp 1</option>
+                        <option value="class2" name="class">Lớp 2</option>
+                        <option value="class3" name="class">Lớp 3</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label style="color:blue">Email</label>
+                    <input style="margin-left:48px" type="email" name="email">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label style="color:blue">Điện thoại</label>
+                    <input style="margin-left:19px" type="number" name="phonenumber">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input style="margin-left:95px;font-size:15px" type="submit" name="submit" value="Đăng ký">
+                    <input style="font-size:15px" type="reset" name="reset" value="Nhập lại">
+                </td>
+            </tr>
+        </table>
+    </form>
+    </body>
+</div>
+</html>
