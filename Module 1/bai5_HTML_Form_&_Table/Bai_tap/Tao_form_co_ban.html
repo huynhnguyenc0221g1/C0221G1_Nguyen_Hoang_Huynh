@@ -12,6 +12,43 @@
     }
 </style>
     <form>
+        <table style="align:center;align:middle;width: 500px; margin-left: auto; margin-right: auto;background-color: white">
+            <tr>
+                <th style="background-color:orangered;font-size:30px;color:white;font-weight:900" colspan="2">SỞ THÍCH CỦA BẠN</th>
+            </tr>
+            <tr>
+                <td style="color:blue;text-align:right">Họ và tên</td>
+                <td><input style="width:250px" type="text" name="fullname"></td>
+            </tr>
+            <tr>
+                <td style="color:blue;text-align:right">Email</td>
+                <td><input type="email" name="email"></td>
+            </tr>
+            <tr>
+                <td style="color:blue;text-align:right">Sở thích</td>
+                <td>
+                    <input type="checkbox" name="hobby" value="sport"><span class="lilorange">Thể thao</span>
+                    <input style="margin-left:7px" type="checkbox" name="hobby" value="music"><span class="lilorange">Âm nhạc</span>
+                    <input style="margin-left:16px" type="checkbox" name="hobby" value="reading"><span class="lilorange">Đọc sách</span>
+                    <br>
+                    <input type="checkbox" name="hobby" value="websurfing"><span class="lilorange">Lướt web</span>
+                    <input type="checkbox" name="hobby" value="game"><span class="lilorange">Chơi game</span>
+                    <input type="checkbox" name="hobby" value="movie"><span class="lilorange">Điện ảnh</span>
+                    <br>
+                    <input type="checkbox" name="hobby" value="travel"><span class="lilorange">Du lịch</span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" name="submit" value="Gửi thông tin">
+                    <input type="reset" name="reset" value="Nhập lại">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <!--
+    <form>
         <table style="align:center;align:middle;width: 650px; margin-left: auto; margin-right: auto;background-color: white">
 
             <tr>
@@ -26,7 +63,7 @@
             <tr>
                 <td>
                 <lable style="color:dodgerblue;margin-left: 100px">Email:</lable>
-                <input style="margin-left: 31px" type="email" name="email">
+                <input style="margin-left: 29px" type="email" name="email">
                 </td>
             </tr>
             <tr>
@@ -51,6 +88,7 @@
             </tr>
         </table>
     </form>
+    -->
 </body>
 </div>
 <br>
@@ -61,61 +99,55 @@
     <form>
         <table style="align:center;align:middle;margin-left:auto;margin-right:auto;background-color:yellow;width:600px">
             <tr>
-                <td style="background-color: aquamarine;font-size:30px;align:left;color:royalblue" colspan="2">ĐĂNG KÝ HỌC VIÊN
+                <th width="100px"></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td style="background-color: aquamarine;font-size:30px;color:royalblue" colspan="2">ĐĂNG KÝ HỌC VIÊN
                 </td>
             </tr>
             <tr>
-                <td>
-                    <label style="color:blue">Họ và tên</label>
-                    <input style="margin-left: 25px" type="text" name="fullname">
-                </td>
+                <td style="color:blue">Họ và tên</td>
+                <td><input style="width:200px" type="text" name="name"></td>
             </tr>
             <tr>
-                <td>
-                    <label style="color:blue">Ngày sinh</label>
-                    <input style="margin-left: 24px" type="date" name="birthday">
-                </td>
+                <td style="color:blue">Ngày sinh</td>
+                <td><input style="width:100px" type="text" name="name"></td>
             </tr>
             <tr>
+                <td style="color:blue">Giới tính</td>
                 <td>
-                    <label style="color:blue">Giới tính</label>
-                    <input style="margin-left:35px" type="radio" name="gender" value="male">Nam
+                    <input type="radio" name="gender" value="male">Nam
                     <input type="radio" name="gender" value="female">Nữ
                 </td>
             </tr>
             <tr>
+                <td style="color:blue">Địa chỉ</td>
                 <td>
-                    <label style="color:blue;margin-bottom:20px ">Địa chỉ</label>
-                    <textarea style="margin-left: 46px" name="address" cols="25" rows="3"></textarea>
+                    <input type="text" name="address" style="width:200px;height:50px">
                 </td>
             </tr>
             <tr>
-                <td>
-                    <label style="color:blue">Lớp</label>
-                    <select name="class" style="margin-left:68px">
-                        <option>-- Chọn lớp --</option>
-                        <option value="class1" name="class">Lớp 1</option>
-                        <option value="class2" name="class">Lớp 2</option>
-                        <option value="class3" name="class">Lớp 3</option>
-                    </select>
-                </td>
+                <td style="color:blue">Lớp</td>
+                <td><select id="class">
+                    <option>-- Chọn lớp --</option>
+                    <option name="class" value="class a">Lớp A</option>
+                    <option name="class" value="class b">Lớp B</option>
+                </select></td>
             </tr>
             <tr>
-                <td>
-                    <label style="color:blue">Email</label>
-                    <input style="margin-left:56px" type="email" name="email">
-                </td>
+                <td style="color:blue">Email</td>
+                <td><input type="email" name="email"></td>
             </tr>
             <tr>
-                <td>
-                    <label style="color:blue">Điện thoại</label>
-                    <input style="margin-left:22px" type="number" name="phonenumber">
-                </td>
+                <td style="color:blue">Điện thoại</td>
+                <td><input type="text" name="phone"></td>
             </tr>
             <tr>
+                <td></td>
                 <td>
-                    <input style="margin-left:99px;font-size:15px" type="submit" name="submit" value="Đăng ký">
-                    <input style="font-size:15px" type="reset" name="reset" value="Nhập lại">
+                    <input type="submit" name="submit" value="Đăng ký">
+                    <input type="reset" name="reset" value="Nhập lại">
                 </td>
             </tr>
         </table>
