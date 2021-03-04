@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ung dung chuyen doi tien te</title>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <th>Amount</th>
+                <th>From Currency</th>
+                <th>To Currency</th>
+                <th></th>
+            </tr>
+            <tr>
+                <th>
+                    <input type="text" id="amount">
+                </th>
+                <th>
+                    <select name="from" id="from">
+                        <option name="from" value="vnd">VND</option>
+                        <option name="from" value="dollar">Dollar</option>
+                    </select>
+                </th>
+                <th>
+                    <select name="to" id="to">
+                        <option name="to" value="vnd">VND</option>
+                        <option name="to" value="dollar">Dollar</option>
+                    </select>
+                </th>
+                <th>
+                    <button onclick="convert()" style="background:mediumpurple;color:white">Convert</button>
+                </th>
+            </tr>
+        </table>
+        <p style="color:dodgerblue">Result <span id="result"></span></p>
+    </form>
+</body>
+</html>

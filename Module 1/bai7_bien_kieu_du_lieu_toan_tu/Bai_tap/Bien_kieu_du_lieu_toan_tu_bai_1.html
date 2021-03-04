@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bien, kieu du lieu va toan tu - Bai 1</title>
+</head>
+<body>
+<!--Nhập điểm vật lý, hóa học và sinh học, tính điểm trung bình và tổng điểm -->
+    <script>
+        physics = prompt("Nhập điểm vật lý: ");
+        chemistry = prompt("Nhập điểm hóa học: ");
+        biology = prompt("Nhập điểm sinh học: ");
+            let avg = (parseFloat(physics) + parseFloat(chemistry) + parseFloat(biology)) / 3 ;
+            let total = parseFloat(physics) + parseFloat(chemistry) + parseFloat(biology) ;
+                document.write('Điểm trung bình là: ' + avg);
+                document.write("<br>");
+                document.write('Tổng điểm là: ' + total);
+    </script>
+</body>
+</html>
