@@ -5,6 +5,7 @@
     <title>Ung dung chuyen doi tien te</title>
 </head>
 <body>
+    <script src="Ung_dung_chuyen_doi_tien_te.js"></script>
     <form>
         <table>
             <tr>
@@ -18,23 +19,23 @@
                     <input type="text" id="amount">
                 </th>
                 <th>
-                    <select name="from" id="from">
-                        <option name="from" value="vnd">VND</option>
-                        <option name="from" value="dollar">Dollar</option>
+                    <select id="from">
+                        <option value="vnd">VND</option>
+                        <option value="usd">Dollar</option>
                     </select>
                 </th>
                 <th>
                     <select name="to" id="to">
-                        <option name="to" value="vnd">VND</option>
-                        <option name="to" value="dollar">Dollar</option>
+                        <option value="vnd">VND</option>
+                        <option value="usd">Dollar</option>
                     </select>
                 </th>
                 <th>
-                    <button onclick="convert()" style="background:mediumpurple;color:white">Convert</button>
+                    <button type="button" onclick="convert()" style="background:mediumpurple;color:white">Convert</button>
                 </th>
             </tr>
         </table>
-        <p style="color:dodgerblue">Result <span id="result"></span></p>
+        <p style="color:dodgerblue">Result: <span id="result"></span></p>
     </form>
 </body>
 </html>
