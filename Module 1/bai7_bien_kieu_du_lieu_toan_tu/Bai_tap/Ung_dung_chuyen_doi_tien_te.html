@@ -5,7 +5,6 @@
     <title>Ung dung chuyen doi tien te</title>
 </head>
 <body>
-    <script src="Ung_dung_chuyen_doi_tien_te.js"></script>
     <form>
         <table>
             <tr>
@@ -25,7 +24,7 @@
                     </select>
                 </th>
                 <th>
-                    <select name="to" id="to">
+                    <select id="to">
                         <option value="vnd">VND</option>
                         <option value="usd">Dollar</option>
                     </select>
@@ -37,5 +36,28 @@
         </table>
         <p style="color:dodgerblue">Result: <span id="result"></span></p>
     </form>
+    <script>
+        function convert() {
+            let a = parseFloat(document.getElementById("amount").value);
+            let fr = document.getElementById("from").value;
+            let to = document.getElementById("to").value;
+
+            if (fr === "vnd") {
+                if (to === "vnd") {
+                    document.getElementById("result").innerHTML = "₫ " + a;
+                }
+                if (to === "usd") {
+                    document.getElementById("result").innerHTML = "$ " + (a / 23200);
+                }
+            }
+            if (fr === "usd") {
+                if (to === "vnd") {
+                    document.getElementById("result").innerHTML = "₫ " + (a * 23200);
+                }
+                if (to === "usd") {
+                    document.getElementById("result").innerHTML = "$ " + a ;}
+            }
+        }
+    </script>
 </body>
 </html>
