@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ung dung vui Do you love me?</title>
+    <script>
+        function yesAlert() {
+            alert("<3");
+        }
+        function jump() {
+            let width = Math.random() * window.innerWidth;
+            let height = Math.random() * window.innerHeight;
+            document.getElementById('nobutton').style.left = width + 'px';
+            document.getElementById('nobutton').style.top = height + 'px';
+        }
+    </script>
+</head>
+<body>
+    <h1 style="position:absolute; left:220px; top:175px">Do you love me?</h1>
+                <input type="button" style="position:absolute; left:285px; top:235px;" id="yesbutton" value="Yes" onclick="yesAlert()">
+                <input type="button" style="position:absolute; left:360px; top:235px;" id="nobutton" value="No" onmouseover="jump()">
+</body>
+</html>
