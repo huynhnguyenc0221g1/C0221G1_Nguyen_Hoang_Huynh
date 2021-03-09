@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 7 - Tinh cuoc dien thoai</title>
+</head>
+<body>
+<h1>BÀI 7: Tính cước điện thoại</h1>
+<p>Phí thuê bao bắt buộc là 25 nghìn.</p>
+<p>600 đồng cho mỗi gọi của 50 phút đầu tiên.</p>
+<p>400 đồng cho mỗi phút gọi của 150 phút tiếp theo.</p>
+<p>200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên.</p>
+<form>
+    <table>
+        <tr>
+            <th>Nhập số phút gọi:</th>
+            <th><input type="text" id="minutes"></th>
+        </tr>
+        <tr>
+            <th>
+                <button type="button" onclick="bai7()">Cước điện thoại</button>
+            </th>
+            <th><p><span id="phonebill"></span></p></th>
+        </tr>
+    </table>
+</form>
+<script>
+    function bai7() {
+        let min = parseInt(document.getElementById("minutes").value);
+        let fee = 25000;
+        let first = 50;
+        let second = 200;
+        let bill;
+        if (min < first) {
+            bill = fee + (min * 600);
+        } else if (min >= first && min < second) {
+            bill = fee + (first * 600) + ((min - first) * 400);
+        } else {
+            bill = fee + (first * 600) + ((second - first) * 400) + ((min - second) * 200);
+        }
+        document.getElementById("phonebill").innerHTML = "Tổng cước điện thoại là: ₫ " + bill;
+    }
+</script>
+</body>
+</html>

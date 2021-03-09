@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3 - Dien tich hinh vuong</title>
+</head>
+<body>
+<h1>BÀI 3: Tính diện tích hình vuông</h1>
+<form>
+    <table>
+        <tr>
+            <th>Nhập độ dài cạnh hình vuông:</th>
+            <th><input type="text" id="a3"></th>
+        </tr>
+        <tr>
+            <th>
+                <button type="button" onclick="bai3()">Diện tích</button>
+            </th>
+            <th>
+                <p><span id="square"></span></p>
+            </th>
+        </tr>
+    </table>
+</form>
+<script>
+    function bai3() {
+        let a = parseFloat(document.getElementById("a3").value);
+        let aSq = a ** 2;
+        document.getElementById("square").innerHTML = "Diện tích hình vuông là: " + aSq;
+    }
+</script>
+</body>
+</html>

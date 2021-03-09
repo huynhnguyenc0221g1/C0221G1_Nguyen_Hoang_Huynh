@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 10 - Tien dien</title>
+</head>
+<body>
+<h1>BÀI 10: Tính giá điện</h1>
+<!-- 100 kWh đầu giá 1000, từ kWh 101 – 150 giá 1200, từ kWh 151 – 200 giá 2000, từ 201 trở lên giá 2500 -->
+<p>- 100 kWh đầu giá 1000</p>
+<p>- Từ kWh 101 - 150 giá 1200</p>
+<p>- Từ kWh 151 - 200 giá 2000</p>
+<p>- Từ kWh 201 trở lên giá 2500</p>
+<form>
+    <table>
+        <tr>
+            <th>Nhập số điện kWh:</th>
+            <th><input type="text" id="kWh"></th>
+        </tr>
+        <tr>
+            <th>
+                <button type="button" onclick="bai10()">Giá điện</button>
+            </th>
+            <th><p><span id="electricbill"></span></p></th>
+        </tr>
+    </table>
+</form>
+<script>
+    function bai10() {
+        let k = parseInt(document.getElementById("kWh").value);
+        let first = 100;
+        let second = 150;
+        let third = 200;
+        let bill;
+        if (k < first) {
+            bill = k * 1000;
+        } else if (k >= first && k < second) {
+            bill = (first * 1000) + ((k - first) * 1200);
+        } else if (k >= second && k < third) {
+            bill = (first * 1000) + ((second - first) * 1200) + ((k - second) * 2000);
+        } else {
+            bill = (first * 1000) + ((second - first) * 1200) + ((third - second) * 2000) + ((k - third) * 2500);
+        }
+        document.getElementById("electricbill").innerHTML = "Tiền điện là: ₫ " + bill;
+    }
+</script>
+</body>
+</html>

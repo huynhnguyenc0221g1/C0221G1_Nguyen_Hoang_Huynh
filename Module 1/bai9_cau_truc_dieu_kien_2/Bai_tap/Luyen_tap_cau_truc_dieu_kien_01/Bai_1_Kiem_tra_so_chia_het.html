@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1 - Kiem tra so chia het</title>
+</head>
+<body>
+<h1>BÀI 1: Kiểm tra số chia hết</h1>
+<form>
+    <table>
+        <tr>
+            <th>Nhập số a:</th>
+            <th><input type="text" id="a1"></th>
+        </tr>
+        <tr>
+            <th>Nhập số b:</th>
+            <th><input type="text" id="b1"></th>
+        </tr>
+        <tr>
+            <th>
+                <button type="button" onclick="bai1()">Kiểm tra chia hết</button>
+            </th>
+            <th><p><span id="modulo"></span></p></th>
+        </tr>
+    </table>
+</form>
+<script>
+    function bai1() {
+        let a = parseInt(document.getElementById("a1").value);
+        let b = parseInt(document.getElementById("b1").value);
+        if (a % b === 0) {
+            document.getElementById("modulo").innerHTML = "Số a chia hết cho số b";
+        } else {
+            document.getElementById("modulo").innerHTML = "Số a không chia hết cho số b";
+        }
+    }
+</script>
+</body>
+</html>

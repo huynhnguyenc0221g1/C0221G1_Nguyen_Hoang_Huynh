@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 12 - Tinh lai ngan hang</title>
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <th>Nhập tiền vay ban đầu:</th>
+            <th><input type="text" id="loan"></th>
+        </tr>
+        <tr>
+            <th>Nhập số tháng cho vay:</th>
+            <th><input type="text" id="month"></th>
+        </tr>
+        <tr>
+            <th>Nhập lãi xuất hằng tháng (đơn vị: %):</th>
+            <th><input type="text" id="rate"></th>
+        </tr>
+        <tr>
+            <th>
+                <button type="button" onclick="bai12()">Tính lãi ngân hàng</button>
+            </th>
+            <th><p><span id="bankinterest"></span></p></th>
+        </tr>
+    </table>
+</form>
+<script>
+    function bai12() {
+        let l = parseFloat(document.getElementById("loan").value);
+        let m = parseInt(document.getElementById("month").value);
+        let r = parseFloat(document.getElementById("rate").value);
+        let debt = l * ((1 + r / 100) ** m);
+        let i = debt - l;
+        document.getElementById("bankinterest").innerHTML = "Tiền lãi ngân hàng là: " + i + "đồng";
+    }
+</script>
+</body>
+</html>

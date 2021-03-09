@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 7 - Phuong trinh bac 2</title>
+</head>
+<body>
+<h1>BÀI 7: Giải phương trình bậc hai</h1>
+<form>
+    <table>
+        <tr>
+            <th>Nhập số a:</th>
+            <th><input type="text" id="a7"></th>
+        </tr>
+        <tr>
+            <th>Nhập số b:</th>
+            <th><input type="text" id="b7"></th>
+        </tr>
+        <tr>
+            <th>Nhập số c:</th>
+            <th><input type="text" id="c7"></th>
+        </tr>
+        <tr>
+            <th>
+                <button type="button" onclick="bai7()">Giải phương trình</button>
+            </th>
+            <th>
+                <p><span id="equation2"></span></p>
+            </th>
+        </tr>
+    </table>
+</form>
+<script>
+    function bai7() {
+        let a7 = parseFloat(document.getElementById("a7").value);
+        let b7 = parseFloat(document.getElementById("b7").value);
+        let c7 = parseFloat(document.getElementById("c7").value);
+        let delta = (b7 ** 2) - (4 * a7 * c7);
+        if (delta > 0) {
+            let x1 = (-b7 + Math.sqrt(delta)) / (2 * a7);
+            let x2 = (-b7 - Math.sqrt(delta)) / (2 * a7);
+            document.getElementById("equation2").innerHTML = "Phương trình có hai nghiệm là " + x1 + " và " + x2;
+        } else if (delta == 0) {
+            let x = (-b) / (2 * a);
+            document.getElementById("equation2").innerHTML = "Phương trình có nghiệm kép là " + x;
+        } else {
+            document.getElementById("equation2").innerHTML = "Phương trình vô nghiệm";
+        }
+    }
+</script>
+</body>
+</html>

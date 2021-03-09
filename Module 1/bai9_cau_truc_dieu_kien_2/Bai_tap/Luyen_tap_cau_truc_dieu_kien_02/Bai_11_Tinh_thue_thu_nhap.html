@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 11 - Tinh thue thu nhap</title>
+</head>
+<body>
+<h1>BÀI 11: Tính thuế thu nhập</h1>
+<p>- Bậc 1: Thu nhập tính thuế / tháng (TNTT) đến 5 triệu đồng: thuế suất 5%</p>
+<p>- Bậc 2: TNTT trên 5 đến 10 triệu đồng: thuế suất 10%</p>
+<p>- Bậc 3: TNTT trên 10 đến 18 triệu đồng: thuế suất 15%</p>
+<p>- Bậc 4: TNTT trên 18 đến 32 triệu đồng: thuế suất 20%</p>
+<p>- Bậc 5: TNTT trên 32 đến 52 triệu đồng: thuế suất 25%</p>
+<p>- Bậc 6: TNTT trên 52 đến 80 triệu đồng: thuế suất 30%</p>
+<p>- Bậc 7: TNTT trên 80 triệu đồng: thuế suất 35%</p>
+<form>
+    <table>
+        <tr>
+            <th>Nhập thu nhập tính thuế:</th>
+            <th><input type="text" id="income"></th>
+        </tr>
+        <tr>
+            <th>
+                <button type="button" onclick="bai11()">Tính thuế</button>
+            </th>
+            <th><p><span id="tax"></span></p></th>
+        </tr>
+    </table>
+</form>
+<script>
+    function bai11() {
+        let i = parseFloat(document.getElementById("income").value);
+        let t;
+        if (i <= 5) {
+            t = i * 0.05;
+        } else if (i > 5 && i < 10) {
+            t = i * 0.1 - 0.25;
+        } else if (i >= 10 && i < 18) {
+            t = (i * 0.15) - 0.75;
+        } else if (i >= 18 && i < 32) {
+            t = (i * 0.2) - 1.65;
+        } else if (i >= 32 && i < 52) {
+            t = (i * 0.25) - 3.25;
+        } else if (i >= 52 && i < 80) {
+            t = (i * 0.3) - 5.85;
+        } else {
+            t = (i * 0.35) - 9.85;
+        }
+        document.getElementById("tax").innerHTML = "Thuế thu nhập cá nhân là: " + t + " đồng";
+    }
+</script>
+</body>
+</html>

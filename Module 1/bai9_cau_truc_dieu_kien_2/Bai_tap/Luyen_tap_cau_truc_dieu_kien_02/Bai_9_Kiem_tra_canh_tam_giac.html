@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 9 - Kiem tra canh tam giac</title>
+</head>
+<body>
+<h1>BÀI 9: Kiểm tra cạnh tam giác</h1>
+<form>
+    <table>
+        <tr>
+            <th>Nhập số nguyên a:</th>
+            <th><input type="text" id="a9"></th>
+        </tr>
+        <tr>
+            <th>Nhập số nguyên b:</th>
+            <th><input type="text" id="b9"></th>
+        </tr>
+        <tr>
+            <th>Nhập số nguyên c:</th>
+            <th><input type="text" id="c9"></th>
+        </tr>
+        <tr>
+            <th>
+                <button type="button" onclick="bai9()">Kiểm tra</button>
+            </th>
+            <th>
+                <p><span id="checktriangle"></span></p>
+            </th>
+        </tr>
+    </table>
+</form>
+<script>
+    function bai9() {
+        let a9 = parseInt(document.getElementById("a9").value);
+        let b9 = parseInt(document.getElementById("b9").value);
+        let c9 = parseInt(document.getElementById("c9").value);
+        let ab = (a9 + b9) > c9;
+        let bc = (b9 + c9) > a9;
+        let ac = (a9 + c9) > b9;
+        if (a9 > 0 && b9 > 0 && c9 > 0 && ab == true && bc == true && ac == true) {
+            document.getElementById("checktriangle").innerHTML = "Ba số nguyên đã nhập là ba cạnh của 1 hình tam giác";
+        } else {
+            document.getElementById("checktriangle").innerHTML = "Ba số nguyên đã nhập không là ba cạnh của 1 hình tam giác";
+        }
+    }
+</script>
+</body>
+</html>

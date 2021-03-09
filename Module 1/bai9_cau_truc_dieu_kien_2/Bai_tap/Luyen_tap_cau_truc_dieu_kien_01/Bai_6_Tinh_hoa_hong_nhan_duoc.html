@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 6 - Tinh hoa hong nhan duoc</title>
+</head>
+<body>
+<h1>BÀI 6: Tính hoa hồng nhận được</h1>
+<p>Phần trăm hoa hồng:</p>
+<p>Doanh thu từ 0-200000: 3% hoa hồng</p>
+<p>Doanh thu từ 200000-500000: 5% hoa hồng</p>
+<p>Doanh thu từ 500000 trở lên: 10% hoa hồng</p>
+<form>
+    <table>
+        <tr>
+            <th>Nhập doanh thu:</th>
+            <th><input type="text" id="revenue"></th>
+        </tr>
+        <tr>
+            <th>
+                <button type="button" onclick="bai6()">% Hoa hồng</button>
+            </th>
+            <th><p><span id="commission"></span></p></th>
+        </tr>
+    </table>
+</form>
+<script>
+    function bai6() {
+        let r = parseInt(document.getElementById("revenue").value);
+        let twoh = 200000;
+        let fiveh = 500000;
+        let com;
+        if (r <= twoh) {
+            com = (r * 3) / 100;
+        } else if (r > twoh && r <= fiveh) {
+            com = ((twoh * 3) / 100) + (((r - twoh) * 5) / 100);
+        } else {
+            com = ((twoh * 3) / 100) + (((fiveh - twoh) * 5) / 100) + (((r - fiveh) * 10) / 100);
+        }
+        document.getElementById("commission").innerHTML = "Mức hoa hồng là: ₫ " + com;
+    }
+</script>
+</body>
+</html>

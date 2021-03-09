@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2 - Dieu kien hoc lop 10</title>
+</head>
+<body>
+<h1>BÀI 2: Kiểm tra đủ điều kiện học lớp 10</h1>
+<p>Tuổi lớn hơn 15</p>
+<form>
+    <table>
+        <tr>
+            <th>Nhập tuổi học sinh:</th>
+            <th><input type="text" id="age"></th>
+        </tr>
+        <tr>
+            <th>
+                <button type="button" onclick="bai2()">Kiểm tra</button>
+            </th>
+            <th><p><span id="checkage"></span></p></th>
+        </tr>
+    </table>
+</form>
+<script>
+    function bai2() {
+        let age = parseInt(document.getElementById("age").value);
+        let agetypo = document.getElementById("age").value;
+        if (age == agetypo) {
+        if (age >= 15) {
+            document.getElementById("checkage").innerHTML = "Đủ điều kiện vào lớp 10";
+        } else {
+            document.getElementById("checkage").innerHTML = "Không đủ điều kiện vào lớp 10";
+        }
+    } else {
+            document.getElementById("checkage").innerHTML = "Mời nhập số tuổi!"
+        }
+    }
+</script>
+</body>
+</html>

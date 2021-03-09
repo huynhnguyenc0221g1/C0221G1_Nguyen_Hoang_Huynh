@@ -8,37 +8,37 @@
 <form>
     <table>
         <tr>
-            <td style="color:dodgerblue;font-weight:900">Input your weight (kg): </td>
+            <td style="color:dodgerblue;font-weight:900">Input your weight (kg):</td>
             <td>
                 <input type="text" id="weight">
             </td>
         </tr>
         <tr>
-            <td style="color:dodgerblue;font-weight:900">Input your height (m): </td>
+            <td style="color:dodgerblue;font-weight:900">Input your height (m):</td>
             <td>
                 <input type="text" id="height">
             </td>
         </tr>
     </table>
 </form>
-    <hr>
-    <button type="button" onclick="bmi()">Get Result</button>
-    <p><span id="result"></span></p>
-    <script>
-        function bmi() {
-            let w = parseFloat(document.getElementById("weight").value);
-            let h = parseFloat(document.getElementById("height").value);
-            let bmi = w / (h ** 2);
-            if (bmi < 18) {
-                document.getElementById("result").innerHTML = "Underweight";
-            } else if (bmi < 25.0) {
-                document.getElementById("result").innerHTML = "Normal";
-            } else if (bmi < 30.0) {
-                document.getElementById("result").innerHTML = "Overweight";
-            } else {
-                document.getElementById("result").innerHTML = "Obese";
-            }
+<hr>
+<button type="button" onclick="bmi()">Get Result</button>
+<p><span id="result"></span></p>
+<script>
+    function bmi() {
+        let w = parseFloat(document.getElementById("weight").value);
+        let h = parseFloat(document.getElementById("height").value);
+        let bmi = w / (h ** 2);
+        if (bmi < 18) {
+            document.getElementById("result").innerHTML = "Underweight";
+        } else if (bmi < 25.0) {
+            document.getElementById("result").innerHTML = "Normal";
+        } else if (bmi < 30.0) {
+            document.getElementById("result").innerHTML = "Overweight";
+        } else {
+            document.getElementById("result").innerHTML = "Obese";
         }
-    </script>
+    }
+</script>
 </body>
 </html>

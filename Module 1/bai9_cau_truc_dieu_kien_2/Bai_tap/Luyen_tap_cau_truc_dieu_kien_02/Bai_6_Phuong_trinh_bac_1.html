@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 6 - Phuong trinh bac 1</title>
+</head>
+<body>
+<h1>BÀI 6: Giải phương trình bậc nhất ax + b = 0</h1>
+<form>
+    <table>
+        <tr>
+            <th>Nhập số a:</th>
+            <th><input type="text" id="a6"></th>
+        </tr>
+        <tr>
+            <th>Nhập số b:</th>
+            <th><input type="text" id="b6"></th>
+        </tr>
+        <tr>
+            <th>
+                <button type="button" onclick="bai6()">Giải phương trình</button>
+            </th>
+            <th>
+                <p><span id="equation1"></span></p>
+            </th>
+        </tr>
+    </table>
+</form>
+<script>
+    function bai6() {
+        let a6 = parseFloat(document.getElementById("a6").value);
+        let b6 = parseFloat(document.getElementById("b6").value);
+        let x1 = -b6 / a6;
+        if (a6 == 0) {
+            if (b6 == 0) {
+                document.getElementById('equation1').innerHTML = "Phương trình có vô số nghiệm";
+            } else {
+                document.getElementById('equation1').innerHTML = "Phương trình vô nghiệm";
+            }
+        } else {
+            document.getElementById('equation1').innerHTML = "Nghiệm của phương trình là: " + x1;
+        }
+    }
+</script>
+</body>
+</html>

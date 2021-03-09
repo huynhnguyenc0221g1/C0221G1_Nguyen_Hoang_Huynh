@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 4 - Tim so lon nhat trong 3 so</title>
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <th>Nhập số a:</th>
+            <th><input type="text" id="a4"></th>
+        </tr>
+        <tr>
+            <th>Nhập số b:</th>
+            <th><input type="text" id="b4"></th>
+        </tr>
+        <tr>
+            <th>Nhập số c:</th>
+            <th><input type="text" id="c4"></th>
+        </tr>
+        <tr>
+            <th>
+                <button type="button" onclick="bai4()">Kiểm tra số lớn nhất</button>
+            </th>
+            <th><p><span id="maximum"></span></p></th>
+        </tr>
+    </table>
+</form>
+<script>
+    function bai4() {
+        let a = parseInt(document.getElementById("a4").value);
+        let b = parseInt(document.getElementById("b4").value);
+        let c = parseInt(document.getElementById("c4").value);
+        if (a > b) {
+            if (a > c) {
+                document.getElementById("maximum").innerHTML = "Số a là số lớn nhất!";
+            } else {
+                document.getElementById("maximum").innerHTML = "Số c là số lớn nhất!";
+            }
+        } else if (b > c) {
+            document.getElementById("maximum").innerHTML = "Số b là số lớn nhất!"
+        } else {
+            document.getElementById("maximum").innerHTML = "Số c là số lớn nhất!"
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 8 - Kiem tra so tuoi</title>
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <th>Nhập số tuổi:</th>
+            <th><input type="text" id="age"></th>
+        </tr>
+        <tr>
+            <th>
+                <button type="button" onclick="bai8()">Kiểm tra</button>
+            </th>
+            <th>
+                <p><span id="agecheck"></span></p>
+            </th>
+        </tr>
+    </table>
+</form>
+<script>
+    function bai8() {
+        let age = parseInt(document.getElementById("age").value);
+        let agetypo = document.getElementById("age").value;
+        if (age == agetypo) {
+            if (age > 0 && age < 120) {
+                document.getElementById("agecheck").innerHTML = "Số được nhập là tuổi người";
+            } else {
+                document.getElementById("agecheck").innerHTML = "Số được nhập không phải là tuổi người";
+            }
+        } else {
+            document.getElementById("agecheck").innerHTML = "Số được nhập không phải là tuổi người";
+
+        }
+    }
+</script>
+</body>
+</html>

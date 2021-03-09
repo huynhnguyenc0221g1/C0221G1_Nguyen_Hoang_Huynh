@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 5 - Xep hang hoc luc</title>
+</head>
+<body>
+<h1>BÀI 5: Xếp hạng học lực</h1>
+<p>Bài kiểm tra hệ số 1, giữa kì hệ số 2 và cuối kì hệ số 3</p>
+<form>
+    <table>
+        <tr>
+        <tr>
+            <th>Nhập điểm bài kiểm tra:</th>
+            <th><input type="text" id="a5"></th>
+        </tr>
+        <tr>
+            <th>Nhập điểm giữa kì:</th>
+            <th><input type="text" id="b5"></th>
+        </tr>
+        <tr>
+            <th>Nhập điểm cuối kì:</th>
+            <th><input type="text" id="c5"></th>
+        </tr>
+        <tr>
+            <th>
+                <button type="button" onclick="bai5()">Xếp loại học lực</button>
+            </th>
+            <th><p><span id="grade"></span></p></th>
+        </tr>
+        </tr>
+    </table>
+</form>
+<script>
+    function bai5() {
+        let a = parseFloat(document.getElementById("a5").value);
+        let b = parseFloat(document.getElementById("b5").value);
+        let c = parseFloat(document.getElementById("c5").value);
+        let mark = (a + (b * 2) + (c * 3)) / 5;
+        if (mark < 3.5) {
+            document.getElementById("grade").innerHTML = "Điểm trung bình: " + mark + " / Xếp loại học lực kém!";
+        } else if (mark >= 3.5 && mark < 5) {
+            document.getElementById("grade").innerHTML = "Điểm trung bình: " + mark + " / Xếp loại học lực yếu!";
+        } else if (mark >= 5 && mark < 6.5) {
+            document.getElementById("grade").innerHTML = "Điểm trung bình: " + mark + " / Xếp loại học lực trung bình!";
+        } else if (mark >= 6 / 5 && mark < 8) {
+            document.getElementById("grade").innerHTML = "Điểm trung bình: " + mark + " / Xếp loại học lực khá!";
+        } else {
+            document.getElementById("grade").innerHTML = "Điểm trung bình: " + mark + " / Xếp loại học lực giỏi!";
+        }
+    }
+</script>
+</body>
+</html>

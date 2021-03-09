@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2 - Chuyen tu m sang ft</title>
+</head>
+<body>
+<h1>BÀI 2: Chuyển từ m sang ft</h1>
+<form>
+    <table>
+        <tr>
+            <th>Nhập độ dài (m):</th>
+            <th><input type="text" id="metre"></th>
+        </tr>
+        <tr>
+            <th>
+                <button type="button" onclick="bai2()">Chuyển đổi</button>
+            </th>
+            <th>
+                <p><span id="feet"></span></p>
+            </th>
+        </tr>
+    </table>
+</form>
+<script>
+    function bai2() {
+        let m = parseFloat(document.getElementById("metre").value);
+        let ft = m * 3.2808;
+        document.getElementById("feet").innerHTML = ft + " feet";
+    }
+</script>
+</body>
+</html>

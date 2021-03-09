@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Good</label>
+<input type="range" min="0" max="1" value="0" onclick="check('good')" id="good"
+       style="margin-left: 20px"><br>
+<label>Cheap</label>
+<input type="range" min="0" max="1" value="1" onclick="check('cheap')" id="cheap"
+       style="margin-left: 15px"><br>
+<label>Fast</label>
+<input type="range" min="0" max="1" value="1" onclick="check('fast')" id="fast"
+       style="margin-left: 29px">
+<script>
+    function check(choose) {
+        let goodObj = document.getElementById("good");
+        let cheapObj = document.getElementById("cheap");
+        let fastObj = document.getElementById("fast");
+        switch (choose) {
+            case "good":
+                if (cheapObj.value == 1) {
+                    fastObj.value = 0;
+                }
+                break;
+            case "cheap":
+                if (fastObj.value == 1) {
+                    goodObj.value = 0;
+                }
+                break;
+            case "fast":
+                if (goodObj.value == 1) {
+                    cheapObj.value = 0;
+                }
+                break;
+        }
+    }
+</script>
+</body>
+</html>
