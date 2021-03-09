@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tap cau truc dieu kien 01</title>
+</head>
+<body>
+<div>
+        <h1>BÀI 1: Kiểm tra số chia hết</h1>
+    <form>
+        <table>
+            <tr>
+                <th>Nhập số a: </th>
+                <th><input type="text" id="a1"></th>
+            </tr>
+            <tr>
+                <th>Nhập số b: </th>
+                <th><input type="text" id="b1"></th>
+            </tr>
+            <tr>
+                <th><button type="button" onclick="bai1()">Kiểm tra chia hết</button></th>
+                <th><p><span id="modulo"></span></p></th>
+            </tr>
+        </table>
+    </form>
+</div>
+<br>
+<br>
+<div>
+        <h1>BÀI 2: Kiểm tra đủ điều kiện học lớp 10</h1>
+    <form>
+        <table>
+            <tr>
+                <th>Nhập tuổi học sinh: </th>
+                <th><input type="text" id="age"></th>
+            </tr>
+            <tr>
+                <th><button type="button" onclick="bai2()">Kiểm tra</button></th>
+                <th><p><span id="checkage"></span></p></th>
+            </tr>
+        </table>
+    </form>
+</div>
+<br>
+<br>
+<div>
+    <h1>BÀI 3: Kiểm tra số nguyên lớn hay nhỏ hơn 0</h1>
+    <form>
+        <table>
+            <tr>
+                <th>Nhập số nguyên: </th>
+                <th><input type="text" id="integer"></th>
+            </tr>
+            <tr>
+                <th><button type="button" onclick="bai3()">Kiểm tra</button></th>
+                <th><p><span id="checkinteger"></span></p></th>
+            </tr>
+        </table>
+    </form>
+</div>
+<br>
+<br>
+<div>
+    <h1>BÀI 4: Tìm số lớn nhất trong 3 số nguyên</h1>
+    <form>
+        <table>
+            <tr>
+                <th>Nhập số a: </th>
+                <th><input type="text" id="a4"></th>
+            </tr>
+            <tr>
+                <th>Nhập số b: </th>
+                <th><input type="text" id="b4"></th>
+            </tr>
+            <tr>
+                <th>Nhập số c: </th>
+                <th><input type="text" id="c4"></th>
+            </tr>
+            <tr>
+                <th><button type="button" onclick="bai4()">Kiểm tra số lớn nhất</button></th>
+                <th><p><span id="maximum"></span></p></th>
+            </tr>
+        </table>
+    </form>
+</div>
+<br>
+<br>
+<div>
+    <h1>BÀI 5: Xếp hạng học lực</h1>
+    <p>Bài kiểm tra hệ số 1, giữa kì hệ số 2 và cuối kì hệ số 3</p>
+    <form>
+        <table>
+            <tr>
+            <tr>
+                <th>Nhập điểm bài kiểm tra: </th>
+                <th><input type="text" id="a5"></th>
+            </tr>
+            <tr>
+                <th>Nhập điểm giữa kì: </th>
+                <th><input type="text" id="b5"></th>
+            </tr>
+            <tr>
+                <th>Nhập điểm cuối kì: </th>
+                <th><input type="text" id="c5"></th>
+            </tr>
+            <tr>
+                <th><button type="button" onclick="bai5()">Xếp loại học lực</button></th>
+                <th><p><span id="grade"></span></p></th>
+            </tr>
+            </tr>
+        </table>
+    </form>
+</div>
+<br>
+<br>
+<div>
+    <h1>BÀI 6: Tính hoa hồng nhận được</h1>
+    <p>Phần trăm hoa hồng:</p>
+    <p>Doanh thu từ 0-200000: 3% hoa hồng</p>
+    <p>Doanh thu từ 200000-500000: 5% hoa hồng</p>
+    <p>Doanh thu từ 500000 trở lên: 10% hoa hồng</p>
+    <form>
+        <table>
+            <tr>
+                <th>Nhập doanh thu: </th>
+                <th><input type="text" id="revenue"></th>
+            </tr>
+            <tr>
+                <th><button type="button" onclick="bai6()">% Hoa hồng</button></th>
+                <th><p><span id="commission"></span></p></th>
+            </tr>
+        </table>
+    </form>
+</div>
+<br>
+<br>
+<div>
+    <h1>BÀI 7: Tính cước điện thoại</h1>
+    <p>Phí thuê bao bắt buộc là 25 nghìn.</p>
+    <p>600 đồng cho mỗi gọi của 50 phút đầu tiên.</p>
+    <p>400 đồng cho mỗi phút gọi của 150 phút tiếp theo.</p>
+    <p>200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên.</p>
+    <form>
+        <table>
+            <tr>
+                <th>Nhập số phút gọi: </th>
+                <th><input type="text" id="minutes"></th>
+            </tr>
+            <tr>
+                <th><button type="button" onclick="bai7()">Cước điện thoại</button></th>
+                <th><p><span id="phonebill"></span></p></th>
+            </tr>
+        </table>
+    </form>
+</div>
+<br>
+<br>
+
+    <script>
+        function bai1() {
+            let a = parseInt(document.getElementById("a1").value);
+            let b = parseInt(document.getElementById("b1").value);
+            if (a % b === 0) {
+                document.getElementById("modulo").innerHTML = "Số a chia hết cho số b";
+            } else {
+                document.getElementById("modulo").innerHTML = "Số a không chia hết cho số b";
+            }
+        }
+        function bai2() {
+            let age = parseInt(document.getElementById("age").value);
+            if (age >= 15) {
+                document.getElementById("checkage").innerHTML = "Đủ điều kiện vào lớp 10";
+            } else {
+                document.getElementById("checkage").innerHTML = "Không đủ điều kiện vào lớp 10";
+            }
+        }
+        function bai3() {
+            let i = parseInt(document.getElementById("integer").value);
+            if (i > 0) {
+                document.getElementById("checkinteger").innerHTML = "Số đã nhập lớn hơn 0";
+            } else if (i < 0) {
+                document.getElementById("checkinteger").innerHTML = "Số đã nhập bé hơn 0";
+            } else {
+                document.getElementById("checkinteger").innerHTML = "Số đã nhập bằng 0";
+            }
+        }
+        function bai4() {
+            let a = parseInt(document.getElementById("a4").value);
+            let b = parseInt(document.getElementById("b4").value);
+            let c = parseInt(document.getElementById("c4").value);
+            if (a > b) {
+                if (a > c) {
+                    document.getElementById("maximum").innerHTML = "Số a là số lớn nhất!";
+                } else {
+                    document.getElementById("maximum").innerHTML = "Số c là số lớn nhất!";
+                }
+            } else if (b > c) {
+                document.getElementById("maximum").innerHTML = "Số b là số lớn nhất!"
+            } else {
+                document.getElementById("maximum").innerHTML = "Số c là số lớn nhất!"
+            }
+        }
+        function bai5() {
+            let a = parseFloat(document.getElementById("a5").value);
+            let b = parseFloat(document.getElementById("b5").value);
+            let c = parseFloat(document.getElementById("c5").value);
+            let mark = (a + (b * 2) + (c * 3)) / 5;
+            if (mark < 3.5) {
+                document.getElementById("grade").innerHTML = "Điểm trung bình: " + mark + " / Xếp loại học lực kém!";
+            } else if (mark >= 3.5 && mark < 5) {
+                document.getElementById("grade").innerHTML = "Điểm trung bình: " + mark + " / Xếp loại học lực yếu!";
+            } else if (mark >= 5 && mark < 6.5) {
+                document.getElementById("grade").innerHTML = "Điểm trung bình: " + mark + " / Xếp loại học lực trung bình!";
+            } else if (mark >= 6/5 && mark < 8) {
+                document.getElementById("grade").innerHTML = "Điểm trung bình: " + mark + " / Xếp loại học lực khá!";
+            } else {
+                document.getElementById("grade").innerHTML = "Điểm trung bình: " + mark + " / Xếp loại học lực giỏi!";
+            }
+        }
+        function bai6() {
+            let r = parseInt(document.getElementById("revenue").value);
+            let twoh = 200000;
+            let fiveh = 500000;
+            let com;
+            if (r <= twoh) {
+                com = (r * 3) / 100;
+                    } else if (r>twoh && r<=fiveh) {
+                        com = ((twoh * 3) / 100) + (((r - twoh) * 5) / 100);
+                            } else {
+                                com = ((twoh * 3) / 100) + (((fiveh-twoh) * 5) / 100) + (((r-fiveh) * 10) / 100);
+            }
+            document.getElementById("commission").innerHTML = "Mức hoa hồng là: ₫ " + com;
+        }
+        function bai7() {
+            let min = parseInt(document.getElementById("minutes").value);
+            let fee = 25000;
+            let first = 50;
+            let second = 200;
+            let bill;
+            if (min < first) {
+                bill = fee + (min * 600);
+                    } else if (min >= first && min < second) {
+                        bill = fee + (first * 600) + ((min - first) * 400);
+                            } else {
+                                bill = fee + (first * 600) + ((second - first) * 400) + ((min - second) * 200);
+            }
+            document.getElementById("phonebill").innerHTML = "Tổng cước điện thoại là: ₫ " + bill;
+        }
+    </script>
+</body>
+</html>

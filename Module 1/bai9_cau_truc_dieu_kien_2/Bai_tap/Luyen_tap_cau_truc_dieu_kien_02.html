@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tap cau truc dieu kien 02</title>
+</head>
+<body>
+<div>
+    <h1>BÀI 1: Chuyển ºC sang ºF</h1>
+    <form>
+     <table>
+        <tr>
+            <th>Nhập ºC: </th>
+            <th><input type="text" id="celcius"></th>
+        </tr>
+        <tr>
+            <th>
+                <button type="button" onclick="bai1()">Chuyển đổi</button>
+            </th>
+            <th>
+                <p><span id="fahrenheit"></span></p>
+            </th>
+        </tr>
+     </table>
+    </form>
+</div>
+<br>
+<br>
+<div>
+    <h1>BÀI 2: Chuyển từ m sang ft</h1>
+    <form>
+        <table>
+            <tr>
+                <th>Nhập độ dài (m): </th>
+                <th><input type="text" id="metre"></th>
+            </tr>
+            <tr>
+                <th>
+                    <button type="button" onclick="bai2()">Chuyển đổi</button>
+                </th>
+                <th>
+                    <p><span id="feet"></span></p>
+                </th>
+            </tr>
+        </table>
+    </form>
+</div>
+<br>
+<br>
+<div>
+    <h1>BÀI 3: Tính diện tích hình vuông</h1>
+    <form>
+        <table>
+            <tr>
+                <th>Nhập độ dài cạnh hình vuông: </th>
+                <th><input type="text" id="a3"></th>
+            </tr>
+            <tr>
+                <th>
+                    <button type="button" onclick="bai3()">Diện tích</button>
+                </th>
+                <th>
+                    <p><span id="square"></span></p>
+                </th>
+            </tr>
+        </table>
+    </form>
+</div>
+<br>
+<br>
+<div>
+    <h1>BÀI 4: Tính diện tích hình chữ nhật</h1>
+    <form>
+        <table>
+            <tr>
+                <th>Nhập chiều dài: </th>
+                <th><input type="text" id="rWidth"></th>
+            </tr>
+            <tr>
+                <th>Nhập chiều rộng: </th>
+                <th><input type="text" id="rHeight"></th>
+            </tr>
+            <tr>
+                <th>
+                    <button type="button" onclick="bai4()">Diện tích</button>
+                </th>
+                <th>
+                    <p><span id="rectangle"></span></p>
+                </th>
+            </tr>
+        </table>
+    </form>
+</div>
+<br>
+<br>
+<div>
+    <h1>BÀI 5: Tính diện tích tam giác vuông</h1>
+    <form>
+        <table>
+            <tr>
+                <th>Nhập cạnh góc vuông a: </th>
+                <th><input type="text" id="tWidth"></th>
+            </tr>
+            <tr>
+                <th>Nhập cạnh góc vuông b: </th>
+                <th><input type="text" id="tHeight"></th>
+            </tr>
+            <tr>
+                <th>
+                    <button type="button" onclick="bai5()">Diện tích</button>
+                </th>
+                <th>
+                    <p><span id="triangle"></span></p>
+                </th>
+            </tr>
+        </table>
+    </form>
+</div>
+<br>
+<br>
+<div>
+    <h1>BÀI 6: Giải phương trình bậc nhất ax + b = 0</h1>
+    <form>
+        <table>
+            <tr>
+                <th>Nhập số a: </th>
+                <th><input type="text" id="a6"></th>
+            </tr>
+            <tr>
+                <th>Nhập số b: </th>
+                <th><input type="text" id="b6"></th>
+            </tr>
+            <tr>
+                <th>
+                    <button type="button" onclick="bai6()">Giải phương trình</button>
+                </th>
+                <th>
+                    <p><span id="equation1"></span></p>
+                </th>
+            </tr>
+        </table>
+    </form>
+</div>
+<br>
+<br>
+<div>
+    <h1>BÀI 7: Giải phương trình bậc hai</h1>
+    <form>
+        <table>
+            <tr>
+                <th>Nhập số a: </th>
+                <th><input type="text" id="a7"></th>
+            </tr>
+            <tr>
+                <th>Nhập số b: </th>
+                <th><input type="text" id="b7"></th>
+            </tr>
+            <tr>
+                <th>Nhập số c: </th>
+                <th><input type="text" id="c7"></th>
+            </tr>
+            <tr>
+                <th>
+                    <button type="button" onclick="bai7()">Giải phương trình</button>
+                </th>
+                <th>
+                    <p><span id="equation2"></span></p>
+                </th>
+            </tr>
+        </table>
+    </form>
+</div>
+<br>
+<br>
+<div>
+    <h1>BÀI 8: Kiểm tra số tuổi</h1>
+    <form>
+        <table>
+            <tr>
+                <th>Nhập số tuổi: </th>
+                <th><input type="text" id="age"></th>
+            </tr>
+            <tr>
+                <th>
+                    <button type="button" onclick="bai8()">Kiểm tra</button>
+                </th>
+                <th>
+                    <p><span id="agecheck"></span></p>
+                </th>
+            </tr>
+        </table>
+    </form>
+</div>
+<br>
+<br>
+<div>
+    <h1>BÀI 9: Kiểm tra cạnh tam giác</h1>
+    <form>
+        <table>
+            <tr>
+                <th>Nhập số nguyên a: </th>
+                <th><input type="text" id="a9"></th>
+            </tr>
+            <tr>
+                <th>Nhập số nguyên b: </th>
+                <th><input type="text" id="b9"></th>
+            </tr>
+            <tr>
+                <th>Nhập số nguyên c: </th>
+                <th><input type="text" id="c9"></th>
+            </tr>
+            <tr>
+                <th>
+                    <button type="button" onclick="bai9()">Kiểm tra</button>
+                </th>
+                <th>
+                    <p><span id="checktriangle"></span></p>
+                </th>
+            </tr>
+        </table>
+    </form>
+</div>
+<br>
+<br>
+<div>
+    <h1>BÀI 10: Tính giá điện</h1>
+    <!-- 100 kWh đầu giá 1000, từ kWh 101 – 150 giá 1200, từ kWh 151 – 200 giá 2000, từ 201 trở lên giá 2500 -->
+    <p>- 100 kWh đầu giá 1000</p>
+    <p>- Từ kWh 101 - 150 giá 1200</p>
+    <p>- Từ kWh 151 - 200 giá 2000</p>
+    <p>- Từ kWh 201 trở lên giá 2500</p>
+    <form>
+        <table>
+            <tr>
+                <th>Nhập số điện kWh: </th>
+                <th><input type="text" id="kWh"></th>
+            </tr>
+            <tr>
+                <th><button type="button" onclick="bai10()">Giá điện</button></th>
+                <th><p><span id="electricbill"></span></p></th>
+            </tr>
+        </table>
+    </form>
+</div>
+<br>
+<br>
+<div>
+    <h1>BÀI 11: Tính thuế thu nhập</h1>
+    <p>- Bậc 1: Thu nhập tính thuế / tháng (TNTT) đến 5 triệu đồng: thuế suất 5%</p>
+    <p>- Bậc 2: TNTT trên 5 đến 10 triệu đồng: thuế suất 10%</p>
+    <p>- Bậc 3: TNTT trên 10 đến 18 triệu đồng: thuế suất 15%</p>
+    <p>- Bậc 4: TNTT trên 18 đến 32 triệu đồng: thuế suất 20%</p>
+    <p>- Bậc 5: TNTT trên 32 đến 52 triệu đồng: thuế suất 25%</p>
+    <p>- Bậc 6: TNTT trên 52 đến 80 triệu đồng: thuế suất 30%</p>
+    <p>- Bậc 7: TNTT trên 80 triệu đồng: thuế suất 35%</p>
+    <form>
+        <table>
+            <tr>
+                <th>Nhập thu nhập tính thuế: </th>
+                <th><input type="text" id="income"></th>
+            </tr>
+            <tr>
+                <th><button type="button" onclick="bai11()">Tính thuế</button></th>
+                <th><p><span id="tax"></span></p></th>
+            </tr>
+        </table>
+    </form>
+</div>
+<br>
+<br>
+<div>
+    <h1>BÀI 12: Tính lãi ngân hàng</h1>
+    <form>
+        <table>
+            <tr>
+                <th>Nhập tiền vay ban đầu: </th>
+                <th><input type="text" id="loan"></th>
+            </tr>
+            <tr>
+                <th>Nhập số tháng cho vay: </th>
+                <th><input type="text" id="month"></th>
+            </tr>
+            <tr>
+                <th>Nhập lãi xuất hằng tháng (đơn vị: %): </th>
+                <th><input type="text" id="rate"></th>
+            </tr>
+            <tr>
+                <th><button type="button" onclick="bai12()">Tính lãi ngân hàng</button></th>
+                <th><p><span id="bankinterest"></span></p></th>
+            </tr>
+        </table>
+    </form>
+</div>
+<script>
+    function bai1() {
+        let c = parseFloat(document.getElementById("celcius").value);
+        let f = c * 9 / 5 + 32;
+        document.getElementById("fahrenheit").innerHTML = f + " ºF";
+    }
+    function bai2() {
+        let m = parseFloat(document.getElementById("metre").value);
+        let ft = m * 3.2808 ;
+        document.getElementById("feet").innerHTML = ft + " feet";
+    }
+    function bai3() {
+        let a = parseFloat(document.getElementById("a3").value);
+        let aSq = a ** 2 ;
+        document.getElementById("square").innerHTML = "Diện tích hình vuông là: " + aSq;
+    }
+    function bai4() {
+        let wr = parseFloat(document.getElementById("rWidth").value);
+        let hr = parseFloat(document.getElementById("rHeight").value);
+        let aRec = wr * hr ;
+        document.getElementById("rectangle").innerHTML = "Diện tích hình vuông là: " + aRec;
+    }
+    function bai5() {
+        let wt = parseFloat(document.getElementById("tWidth").value);
+        let ht = parseFloat(document.getElementById("tHeight").value);
+        let aTri = (wt * ht) / 2 ;
+        document.getElementById("rectangle").innerHTML = "Diện tích hình tam giác vuông là: " + aTri;
+    }
+    function bai6() {
+        let a6 = parseFloat(document.getElementById("a6").value);
+        let b6 = parseFloat(document.getElementById("b6").value);
+        let x1 = - b6 / a6 ;
+        if (a6 == 0) {
+            if (b6 == 0) {
+                document.getElementById('equation1').innerHTML = "Phương trình có vô số nghiệm";
+            } else {
+                document.getElementById('equation1').innerHTML = "Phương trình vô nghiệm";
+            }
+        } else {
+            document.getElementById('equation1').innerHTML = "Nghiệm của phương trình là: " + x1;
+        }
+    }
+    function bai7() {
+        let a7 = parseFloat(document.getElementById("a7").value);
+        let b7 = parseFloat(document.getElementById("b7").value);
+        let c7 = parseFloat(document.getElementById("c7").value);
+        let delta = (b7 ** 2) - (4 * a7 * c7);
+        if (delta > 0) {
+            let x1 = ( - b7 + Math.sqrt(delta)) / (2 * a7);
+            let x2 = ( - b7 - Math.sqrt(delta)) / (2 * a7);
+            document.getElementById("equation2").innerHTML = "Phương trình có hai nghiệm là " + x1 + " và " + x2;
+        } else if (delta == 0) {
+            let x = ( - b) / (2 * a);
+            document.getElementById("equation2").innerHTML = "Phương trình có nghiệm kép là " + x;
+        } else {
+            document.getElementById("equation2").innerHTML = "Phương trình vô nghiệm";
+        }
+    }
+    function bai8() {
+        let age = parseInt(document.getElementById("age").value);
+        let agetypo = document.getElementById("age").value;
+        if (age == agetypo) {
+        if (age > 0 && age < 120) {
+            document.getElementById("agecheck").innerHTML = "Số được nhập là tuổi người";
+        } else {
+            document.getElementById("agecheck").innerHTML = "Số được nhập không phải là tuổi người";
+        }
+    }
+        else {
+            document.getElementById("agecheck").innerHTML = "Số được nhập không phải là tuổi người";
+
+        }
+    }
+    function bai9() {
+        let a9 = parseInt(document.getElementById("a9").value);
+        let b9 = parseInt(document.getElementById("b9").value);
+        let c9 = parseInt(document.getElementById("c9").value);
+        let ab = (a9+b9) > c9;
+        let bc = (b9+c9) > a9;
+        let ac = (a9+c9) > b9;
+        if (a9>0 && b9>0 && c9>0 && ab==true && bc==true && ac==true) {
+            document.getElementById("checktriangle").innerHTML = "Ba số nguyên đã nhập là ba cạnh của 1 hình tam giác";
+        } else {
+            document.getElementById("checktriangle").innerHTML = "Ba số nguyên đã nhập không là ba cạnh của 1 hình tam giác";
+        }
+    }
+    function bai10() {
+        let k = parseInt(document.getElementById("kWh").value);
+        let first = 100;
+        let second = 150;
+        let third = 200;
+        let bill;
+        if (k < first) {
+            bill = k * 1000;
+                } else if (k >= first && k < second) {
+                    bill = (first * 1000) + ((k - first) * 1200);
+                     } else if (k >= second && k < third) {
+                        bill = (first * 1000) + ((second - first) * 1200) + ((k - second) * 2000);
+                            } else {
+                                bill = (first * 1000) + ((second - first) * 1200) + ((third - second) * 2000) + ((k - third) * 2500);
+        }
+        document.getElementById("electricbill").innerHTML = "Tiền điện là: ₫ " + bill;
+    }
+    function bai11() {
+        let i = parseFloat(document.getElementById("income").value);
+        let t;
+        if (i <= 5) {
+             t = i * 0.05;
+        } else if (i > 5 && i < 10) {
+                 t = i * 0.1 - 0.25;
+            } else if (i >= 10 && i < 18) {
+                    t = (i * 0.15) - 0.75;
+                } else if (i >= 18 && i < 32) {
+                        t = (i * 0.2) - 1.65;
+                    } else if (i >= 32 && i < 52) {
+                        t = (i * 0.25) - 3.25;
+                        } else if (i >= 52 && i < 80) {
+                            t = (i * 0.3) - 5.85;
+                            } else {
+                                t = (i * 0.35) - 9.85;
+        }
+        document.getElementById("tax").innerHTML = "Thuế thu nhập cá nhân là: " + t + " đồng";
+    }
+    function bai12() {
+        let l = parseFloat(document.getElementById("loan").value);
+        let m = parseInt(document.getElementById("month").value);
+        let r = parseFloat(document.getElementById("rate").value);
+        let debt = l * ((1 + r / 100) ** m);
+        let i = debt - l;
+        document.getElementById("bankinterest").innerHTML = "Tiền lãi ngân hàng là: " + i + "đồng";
+    }
+</script>
+</body>
+</html>

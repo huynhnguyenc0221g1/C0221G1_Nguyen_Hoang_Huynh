@@ -5,50 +5,129 @@
     <title>May tinh don gian</title>
 </head>
 <body>
-<div class="calculator">
     <form>
         <table border="1">
             <tr>
                 <th colspan = 4>
-    <input type="text" class="display" disabled>
+    <input type="text" id="display" value="0" disabled>
                 </th>
             </tr>
-    <div class="keys">
         <tr>
-        <div class="row">
-            <th> <button type="button" value="7">7</button> </th>
-            <th> <button type="button" value="8">8</button> </th>
-            <th> <button type="button" value="9">9</button> </th>
-            <th> <button type="button" value="+" class="operator">+</button> </th>
-        </div>
+            <th> <button type="button" id="7" value="7" onclick="valstr(this.value)">7</button> </th>
+            <th> <button type="button" id="8" value="8" onclick="valstr(this.value)">8</button> </th>
+            <th> <button type="button" id="9" value="9" onclick="valstr(this.value)">9</button> </th>
+            <th> <button type="button" id="add" value="+" onclick="calculator(this.value)">+</button> </th>
+        </tr>
+            <tr>
+            <th> <button type="button" id="4" value="4" onclick="valstr(this.value)">4</button> </th>
+            <th> <button type="button" id="5" value="5" onclick="valstr(this.value)">5</button> </th>
+            <th> <button type="button" id="6" value="6" onclick="valstr(this.value)">6</button> </th>
+            <th> <button type="button" id="subtract" value="-" onclick="calculator(this.value)">-</button> </th>
+        </tr>
+            <tr>
+                <th> <button type="button" id="1" value="1" onclick="valstr(this.value)">1</button> </th>
+                <th> <button type="button" id="2" value="2" onclick="valstr(this.value)">2</button> </th>
+                <th> <button type="button" id="3" value="3" onclick="valstr(this.value)">3</button> </th>
+                <th> <button type="button" id="multiply" value="*" onclick="calculator(this.value)">*</button> </th>
             </tr>
             <tr>
-        <div class="row">
-            <th> <button type="button" value="4">4</button> </th>
-            <th> <button type="button" value="5">5</button> </th>
-            <th> <button type="button" value="6">6</button> </th>
-            <th> <button type="button" value="-" class="operator">-</button> </th>
-        </div>
+                <th> <input type="reset" id="clear" value="AC"></th>
+                <th> <button type="button" id="0" value="0" onclick="valstr(this.value)">0</button> </th>
+                <th> <button type="button" id="equal" value="=" onclick="result()">=</button> </th>
+                <th> <button type="button" id="divide" value="/" onclick="calculator(this.value)">/</button> </th>
             </tr>
-            <tr>
-        <div class="row">
-            <th> <button type="button" value="1">1</button> </th>
-            <th> <button type="button" value="2">2</button> </th>
-            <th> <button type="button" value="3">3</button> </th>
-            <th> <button type="button" value="*" class="operator">*</button> </th>
-        </div>
-            </tr>
-            <tr>
-        <div class="row">
-            <th> <button type="button" value="C" class="operator">C</button> </th>
-            <th> <button type="button" value="0">0</button> </th>
-            <th> <button type="button" value="=" class="operator">=</button> </th>
-            <th> <button type="button" value="/" class="operator">/</button> </th>
-        </div>
-            </tr>
-    </div>
         </table>
     </form>
-</div>
+<script>
+    let num1 = null;
+    let num2 = null;
+    let cal = null;
+    function valstr(input) {
+        let numb = input;
+        let see = document.getElementById("display").value;
+        switch (see) {
+            case "+":
+            case "-":
+            case "*":
+            case "/": {
+                document.getElementById("display").value = "";
+                break;
+            }
+        }
+        switch (numb) {
+            case "0":
+            case "1":
+            case "2":
+            case "3":
+            case "4":
+            case "5":
+            case "6":
+            case "7":
+            case "8":
+            case "9": {
+                let output = parseInt(document.getElementById("display").value + numb);
+                document.getElementById("display").value = output;
+                break;
+            }
+        }
+    }
+    function calculator(operation) {
+        let sym = operation;
+        let see = document.getElementById("display").value;
+        if (see > 0) {
+            num1 = see;
+            document.getElementById("display").value = 0;
+        }
+        switch (sym) {
+            case "+": {
+                cal = "+";
+                document.getElementById("display").value = "+";
+                break;
+            }
+            case "-": {
+                cal = "-";
+                document.getElementById("display").value = "-";
+                break;
+            }
+            case "*": {
+                cal = "*";
+                document.getElementById("display").value = "*";
+                break;
+            }
+            case "/": {
+                cal = "/";
+                document.getElementById("display").value = "/";
+                break;
+            }
+        }
+    }
+    function result() {
+            num2 = parseInt(document.getElementById("display").value);
+            let result;
+            if (num1 > 0) {
+                result = num1;
+                num1 = 0;
+            }
+            switch (cal) {
+                case "+": {
+                    result = parseInt(result) + num2;
+                    break;
+                }
+                case "-": {
+                    result = parseInt(result) - num2;
+                    break;
+                }
+                case "*": {
+                    result = parseInt(result) * num2;
+                    break;
+                }
+                case "/": {
+                    result = parseInt(result) / num2;
+                    break;
+                }
+            }
+        document.getElementById("display").value = result;
+    }
+</script>
 </body>
 </html>
