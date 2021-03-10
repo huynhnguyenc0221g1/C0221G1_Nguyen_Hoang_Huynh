@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 7 - Fizz Buzz</title>
+</head>
+<body>
+<script>
+    for (let i = 1; i < 101; i++) {
+        let a = i;
+        if (i % 3 == 0) {
+            a = "Fizz";
+        }
+        if (i % 5 == 0) {
+            a = "Buzz";
+        }
+        if (i % 3 == 0 && i % 5 == 0) {
+            a = "FizzBuzz";
+        }
+        document.write(a);
+        document.write("<br>");
+    }
+</script>
+</body>
+</html>

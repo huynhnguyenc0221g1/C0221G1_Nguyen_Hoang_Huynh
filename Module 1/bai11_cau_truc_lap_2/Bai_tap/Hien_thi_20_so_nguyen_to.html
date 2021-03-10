@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hien thi 20 so nguyen to dau tien</title>
+</head>
+<body>
+<script>
+    let i, n, p, count, check;
+    p = 2;
+    i = 1;
+    while (i <= 20) {
+        check = 1;
+        for (count = 2; count <= (p - 1); count++) {
+            if (p % count == 0) {
+                check = 0;
+                break;
+            }
+        }
+        if (check == 1) {
+            document.write(p);
+            document.write("<br>");
+            i++;
+        }
+        p++;
+    }
+</script>
+</body>
+</html>

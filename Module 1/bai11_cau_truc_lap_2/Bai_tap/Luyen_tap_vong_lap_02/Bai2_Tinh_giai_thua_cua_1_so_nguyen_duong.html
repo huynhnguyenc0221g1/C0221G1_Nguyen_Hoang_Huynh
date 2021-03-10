@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2 - Tinh giai thua cua mot so nguyen duong</title>
+</head>
+<body>
+<script>
+    let integer = parseInt(prompt("Nhập số nguyên dương: "));
+    let factorial = 1;
+    let num = 1;
+    for (let i = 0; i <= integer; i++) {
+        if (i == 0) {
+            factorial = 1;
+        } else {
+            num = i;
+            factorial *= num;
+        }
+    }
+    document.write(integer + "! = " + factorial);
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sinh bang cuu chuong</title>
+</head>
+<body>
+<script>
+    let t, i, j;
+    t = "<table border='1' width='1200'>";
+    i = 1;
+    j = 2;
+    while (i <= 10) {
+        t = t + "<tr>";
+        while (j < 10) {
+            t = t + "<td>" + j + " x " + i + " = " + i * j + "</td>";
+            j++;
+        }
+        t = t + "</tr>";
+        j = 2;
+        i++;
+    }
+    t = t + "</table>";
+    document.write(t);
+</script>
+</body>
+</html>
