@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2 - Thong tin nhiet do</title>
+</head>
+<body>
+<script>
+    let temp = parseInt(prompt("Nhập nhiệt độ: "));
+    let min = 20;
+    let max = 100;
+    while  (temp < min) {
+        alert("Vui lòng tăng nhiệt độ!");
+        temp = parseInt(prompt("Nhập nhiệt độ: "));
+    }
+    while (temp > max) {
+        alert("Vui lòng giảm nhiệt độ!");
+        temp = parseInt(prompt("Nhập nhiệt độ: "));
+    }
+    document.write("Bạn đã nhập được nhiệt độ phù hợp");
+</script>
+</body>
+</html>

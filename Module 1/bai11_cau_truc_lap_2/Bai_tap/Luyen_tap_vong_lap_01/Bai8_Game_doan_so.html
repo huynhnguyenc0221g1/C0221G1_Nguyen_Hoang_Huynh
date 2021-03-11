@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 8 - Game doan so</title>
+</head>
+<body>
+<form>
+    <h2>HÃY DỰ ĐOÁN SỐ</h2>
+    <button type="button" onclick="guess()">PLAY!</button>
+</form>
+<script>
+    function guess() {
+        let length = parseInt(prompt("Nhập khoảng muốn đoán: "));
+        let r = Math.floor(Math.random() * length) + 1;
+        let i = 1;
+        console.log(r);
+        let g = parseInt(prompt("Số bạn dự đoán là: "));
+        while (i <= 3) {
+            if (i == 3) {
+                alert("Chúc bạn may mắn lần sau!");
+            } else {
+                if (g == r) {
+                    alert("Bạn dự đoán đúng rồi!");
+                    break;
+                } else {
+                    alert("Sai rồi! Mời nhập lại!");
+                    let h = parseInt(prompt("Số bạn dự đoán là: "));
+                    h = g;
+                }
+            }
+            i++;
+        }
+    }
+</script>
+</body>
+</html>

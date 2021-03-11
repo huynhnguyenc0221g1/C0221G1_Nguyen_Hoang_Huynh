@@ -6,7 +6,43 @@
 </head>
 <body>
 <script>
-
+    let h = parseInt(prompt("Nhập chiều cao các hình tam giác: "));
+    for (i = 0; i <= h; i++) {
+        for (j = 0; j < i; j++) {
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+    document.write("<br> <br>");
+    for (i = 0; i <= h; i++) {
+        for (j = h; j > i; j--) {
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+    document.write("<br>");
+    for (i = 0; i < h; i++) {
+        for (j = 0; j <= h; j++) {
+            let space = h - i;
+            if (j < space) {
+                document.write("&nbsp;&nbsp;");
+            } else {
+                document.write("*");
+            }
+        }
+        document.write("<br>");
+    }
+    document.write("<br> <bR>");
+    for (i = 0; i < h; i++) {
+        for (j = 0; j < h; j++) {
+            if (j < i) {
+                document.write("&nbsp;&nbsp;");
+            } else {
+                document.write("*");
+            }
+        }
+        document.write("<br>");
+    }
 </script>
 </body>
 </html>

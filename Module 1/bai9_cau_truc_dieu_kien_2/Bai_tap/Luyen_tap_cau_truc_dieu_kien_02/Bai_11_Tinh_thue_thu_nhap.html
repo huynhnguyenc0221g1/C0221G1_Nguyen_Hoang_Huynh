@@ -33,15 +33,15 @@
         let t;
         if (i <= 5) {
             t = i * 0.05;
-        } else if (i > 5 && i < 10) {
+        } else if (i < 10) {
             t = i * 0.1 - 0.25;
-        } else if (i >= 10 && i < 18) {
+        } else if (i < 18) {
             t = (i * 0.15) - 0.75;
-        } else if (i >= 18 && i < 32) {
+        } else if (i < 32) {
             t = (i * 0.2) - 1.65;
-        } else if (i >= 32 && i < 52) {
+        } else if (i < 52) {
             t = (i * 0.25) - 3.25;
-        } else if (i >= 52 && i < 80) {
+        } else if (i < 80) {
             t = (i * 0.3) - 5.85;
         } else {
             t = (i * 0.35) - 9.85;

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 5 - Lai me lai con</title>
+</head>
+<body>
+<script>
+    let loan = parseInt(prompt("Nhập tiền vay gốc:"));
+    let rate = parseInt(prompt("Nhập lãi suất hằng tháng (đơn vị %): "));
+    let month = parseInt(prompt("Nhập số tháng đã vay tiền: "));
+    let result;
+    let next = loan;
+    let bankinterest;
+    for (let i = 0; i < month; i++) {
+        bankinterest = next * rate / 100;
+        next += bankinterest;
+        result = next - loan;
+    }
+    document.write("Tiền lãi là: " + result);
+</script>
+</body>
+</html>
