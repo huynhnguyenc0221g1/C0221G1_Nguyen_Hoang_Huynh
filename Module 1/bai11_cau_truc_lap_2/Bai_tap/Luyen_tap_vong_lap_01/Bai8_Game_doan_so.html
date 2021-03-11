@@ -11,25 +11,37 @@
 </form>
 <script>
     function guess() {
-        let length = parseInt(prompt("Nhập khoảng muốn đoán: "));
-        let r = Math.floor(Math.random() * length) + 1;
-        let i = 1;
+        let min = parseInt(prompt("Nhập giá trị nhỏ nhất của khoảng đoán: "));
+        let max = parseInt(prompt("Nhập giá trị lớn nhất của khoảng đoán: "));
+        let r = Math.floor(Math.random() * (max - min + 1)) + min;
+        // let r = Math.floor(Math.random() * length) + 1;
+        let i = 0;
         console.log(r);
         let g = parseInt(prompt("Số bạn dự đoán là: "));
         while (i <= 3) {
-            if (i == 3) {
-                alert("Chúc bạn may mắn lần sau!");
+            if (i < 2) {
+                if (g == r) {
+                    alert("Bạn dự đoán đúng rồi!");
+                    break;
+                } else {
+                    if (g < r) {
+                        alert("Số cần đoán lớn hơn! Mời nhập lại!");
+                        g = parseInt(prompt("Số bạn dự đoán là: "));
+                    } else {
+                        alert("Số cần đoán nhỏ hơn! Mời nhập lại!");
+                        g = parseInt(prompt("Số bạn dự đoán là: "));
+                    }
+                    i++;
+                }
             } else {
                 if (g == r) {
                     alert("Bạn dự đoán đúng rồi!");
                     break;
                 } else {
-                    alert("Sai rồi! Mời nhập lại!");
-                    let h = parseInt(prompt("Số bạn dự đoán là: "));
-                    h = g;
+                    alert("Chúc bạn may mắn lần sau!");
+                    break;
                 }
             }
-            i++;
         }
     }
 </script>
