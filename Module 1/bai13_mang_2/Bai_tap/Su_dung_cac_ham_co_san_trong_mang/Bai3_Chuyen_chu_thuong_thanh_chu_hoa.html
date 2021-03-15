@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3 - Chuyen chu thuong trong chuoi thanh chu hoa</title>
+</head>
+<body>
+<script>
+    let string = prompt("Mời bạn nhập chuỗi: ");
+    let up = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let low = 'abcdefghijklmnopqrstuvwxyz';
+    let result = [];
+    let x=0;
+    document.write("Chuỗi bạn nhập là: " + string + "<br>");
+    while (x<string.length) {
+         if ( up.indexOf(string[x]) !== -1) {
+             result.push(string[x].toLowerCase());
+         } else if (low.indexOf(string[x]) !== -1) {
+             result.push(string[x].toUpperCase());
+         } else {
+             result.push(string[x]);
+         } x++;
+    }
+    document.write("Chuỗi đã được hoán đổi viết hoa và viết thường là: " + result.join(''));
+</script>
+</body>
+</html>

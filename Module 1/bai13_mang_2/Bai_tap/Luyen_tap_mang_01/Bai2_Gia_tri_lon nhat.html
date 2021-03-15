@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2 - Phan tu co gia tri lon nhat</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    for (let i = 0; i < 10; i++) {
+        arr.push(parseInt(prompt("Mời nhập phần tử thứ " + (parseInt(i) + 1) + " của mảng:")));
+    }
+    let max = arr[0];
+    let id;
+    for (let j in arr) {
+        if (arr[j] > max) {
+           max = arr[j];
+           id = parseInt(j) + 1;
+        }
+    }
+    document.write("Mảng vừa nhập là:  " + arr.join() + "<br>");
+    document.write("Phần tử có giá trị lớn nhất trong mảng là " + max + " ở vị trí số " + id);
+</script>
+</body>
+</html>

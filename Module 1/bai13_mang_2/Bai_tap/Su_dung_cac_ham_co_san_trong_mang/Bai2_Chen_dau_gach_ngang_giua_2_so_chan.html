@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2 - Chen dau gach ngang giua 2 so chan trong mot chuoi</title>
+</head>
+<body>
+<script>
+    let array = prompt("Mời bạn nhập chuỗi: ");
+    let string = array.toString();
+    document.write("Chuỗi bạn nhập là: " + string + "<br>");
+    let dash = [string[0]];
+    for (let x = 1; x < string.length; x++) {
+        if (string[x - 1] % 2 === 0 && string[x] % 2 === 0) {
+            dash.push("-", string[x]);
+        } else {
+            dash.push(string[x]);
+        }
+    }
+    document.write("Chuỗi đã được thêm dấu ngạch ngang giữa 2 ký tự số chẵn là: " + dash.join(''));
+</script>
+</body>
+</html>

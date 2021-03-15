@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 7 - Xoa phan tu mang gia tri V trong mang</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    for (let i = 0; i < 10; i++) {
+        arr.push(parseInt(prompt("Mời nhập phần tử thứ " + (parseInt(i) + 1) + " của mảng:")));
+    }
+    document.write("Mảng đã nhập là: " + arr.join() + "<br>");
+    let v = parseInt(prompt("Mời nhập phần tử số nguyên V: "));
+    for (let j in arr) {
+        if (arr[j] == v) {
+           let fix = arr.splice(j,1);
+        }
+    }
+  document.write("Phần tử V đã được nhập là: " + v + "<br>");
+    document.write("Mảng mới đã được loại các giá trị " + v + " là: " + arr.join());
+</script>
+</body>
+</html>

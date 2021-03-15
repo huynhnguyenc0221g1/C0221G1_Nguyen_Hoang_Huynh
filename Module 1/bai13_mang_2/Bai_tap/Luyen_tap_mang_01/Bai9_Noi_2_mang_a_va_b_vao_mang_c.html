@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 9 - Noi 2 mang a va b vao mang c</title>
+</head>
+<body>
+<script>
+    let a = [];
+    for (let i = 0; i < 10; i++) {
+        a.push(parseInt(prompt("Mời nhập phần tử thứ " + (parseInt(i) + 1) + " của mảng A (a[" + i + "]):")));
+    }
+    let b = [];
+    for (let j in arr) {
+        b.push(parseInt(prompt("Mời nhập phần tử thứ " + (parseInt(j) + 1) + " của mảng B (b[" + j + "]):")));
+    }
+    let c = a.concat(b);
+        document.write("Mảng A là: " + a.join() + "<br>");
+        document.write("Mảng B là: " + b.join() + "<br>");
+        document.write("Mảng C từ việc nối mảng A và mảng B là: " + c.join() + "<br>");
+</script>
+</body>
+</html>

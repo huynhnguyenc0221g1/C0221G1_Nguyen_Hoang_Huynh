@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 5 - Dem so nguyen am</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt("Mời nhập số phần tử của mảng:"));
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr.push(parseInt(prompt("Mời nhập phần tử thứ " + (parseInt(i) + 1) + " của mảng:")));
+    }
+    let count = 0;
+    for (let j in arr) {
+        if (arr[j] < 0) {
+            count++;
+          }
+    }
+    document.write("Mảng vừa nhập là:  " + arr.join() + "<br>");
+    document.write("Số phần tử nguyên âm của mảng là: " + count);
+</script>
+</body>
+</html>

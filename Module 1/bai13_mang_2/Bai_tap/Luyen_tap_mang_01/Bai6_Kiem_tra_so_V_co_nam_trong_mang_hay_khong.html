@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 6 - Kiem tra so V co nam trong mang hay khong</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    for (let i = 0; i < 10; i++) {
+        arr.push(parseInt(prompt("Mời nhập phần tử thứ " + (parseInt(i) + 1) + " của mảng:")));
+    }
+    let v = parseInt(prompt("Mời nhập phần tử số nguyên V: "));
+    let count = 0;
+    for (let j in arr) {
+        if (arr[j] == v) {
+            count++;
+        }
+    }
+    document.write("Mảng vừa nhập là:  " + arr.join() + "<br>");
+    document.write("Số V mà bạn đã nhập là:  " + v + "<br>");
+    if (count !== 0) {
+        document.write("Số V nằm trong mảng!");
+    } else {
+        document.write("Số V không nằm trong mảng!");
+    }
+</script>
+</body>
+</html>

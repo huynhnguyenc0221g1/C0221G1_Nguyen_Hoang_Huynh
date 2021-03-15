@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1 - Bao nhhieu phan tu trong mang lon hon 10</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    for (let i = 0; i < 10; i++) {
+        arr.push(parseInt(prompt("Mời nhập phần tử thứ " + (parseInt(i) + 1) + " của mảng:")));
+    }
+    let count = 0;
+    for (let j in arr) {
+        if (arr[j] >= 10) {
+            count++
+        }
+    }
+    document.write("Mảng vừa nhập là:  " + arr.join() + "<br>");
+    document.write("Trong mảng có tổng cộng " + count + " số lớn hơn hoặc bằng 10");
+</script>
+</body>
+</html>

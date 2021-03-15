@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 8 - Sap xep phan tu trong mang theo thu tu giam dan</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    for (let i = 0; i < 10; i++) {
+        arr.push(parseInt(prompt("Mời nhập phần tử thứ " + (parseInt(i) + 1) + " của mảng:")));
+    }
+    let descending = arr.sort(function (a, b){return b-a});
+    document.write("Sắp xếp mảng theo thứ tự giảm dần: " + descending);
+</script>
+</body>
+</html>
