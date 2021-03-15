@@ -6,14 +6,13 @@
 </head>
 <body>
 <script>
-    let n = parseInt(prompt("Mời nhập số phần tử của mảng:"));
-    let arr = [];
-    for (let i = 0; i < n; i++) {
-        arr.push(prompt("Mời nhập phần tử thứ " + (parseInt(i) + 1) + " của mảng:"));
+    let string = prompt('Mời nhập chuỗi: ');
+    document.write("Chuỗi vừa nhập là:  " + string + "<br>");
+    let reverse = "";
+    for (let i = string.length - 1; i >= 0; i--) {
+        reverse += string[i];
     }
-    document.write("Mảng vừa nhập là:  " + arr.join() + "<br>");
-    document.write("Mảng đảo ngược là: " + arr.reverse());
-    console.log(arr);
+    document.write("Chuỗi đảo ngược là: " + reverse);
 </script>
 </body>
 </html>

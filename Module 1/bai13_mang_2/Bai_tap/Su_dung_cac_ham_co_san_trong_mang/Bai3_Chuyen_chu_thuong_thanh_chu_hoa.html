@@ -10,16 +10,17 @@
     let up = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     let low = 'abcdefghijklmnopqrstuvwxyz';
     let result = [];
-    let x=0;
+    let x = 0;
     document.write("Chuỗi bạn nhập là: " + string + "<br>");
-    while (x<string.length) {
-         if ( up.indexOf(string[x]) !== -1) {
-             result.push(string[x].toLowerCase());
-         } else if (low.indexOf(string[x]) !== -1) {
-             result.push(string[x].toUpperCase());
-         } else {
-             result.push(string[x]);
-         } x++;
+    while (x < string.length) {
+        if (up.indexOf(string[x]) !== -1) {
+            result.push(string[x].toLowerCase());
+        } else if (low.indexOf(string[x]) !== -1) {
+            result.push(string[x].toUpperCase());
+        } else {
+            result.push(string[x]);
+        }
+        x++;
     }
     document.write("Chuỗi đã được hoán đổi viết hoa và viết thường là: " + result.join(''));
 </script>

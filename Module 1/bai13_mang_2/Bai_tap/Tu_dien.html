@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tu dien</title>
+</head>
+<body>
+<form>
+        <h3>Nhập từ tiếng Anh vào ô bên dưới:</h3>
+        <input type="text" id="w">
+        <button type="button" onclick="dictionary()">Dịch</button>
+        <br>
+        <hr>
+        <span id="result"></span>
+</form>
+<script>
+
+    let eng = ['walk', 'eat', 'sleep', 'study', 'program', 'function', 'language', 'browser', 'date', 'phone'];
+    let vi = ['đi', 'ăn', 'ngủ', 'học', 'chương trình', 'hàm', 'ngôn ngữ', 'trình duyệt', 'ngày tháng', 'điện thoại'];
+
+    function dictionary() {
+        let word = document.getElementById("w").value;
+        let out;
+        let i = 0;
+        while (i < eng.length) {
+            if (eng[i] == word) {
+                out = "Dịch ra tiếng Việt: " + vi[i];
+
+                break;
+            }
+            if (i == eng.length - 1) {
+                if (eng[i] == word) {
+                    out = "Dịch ra tiếng Việt: " + vi[i];
+                    break;
+                } else {
+                    out = "Không tìm thấy!";
+                }
+            }
+            i++;
+        } document.getElementById('result').innerHTML = out;
+    }
+</script>
+</body>
+</html>
