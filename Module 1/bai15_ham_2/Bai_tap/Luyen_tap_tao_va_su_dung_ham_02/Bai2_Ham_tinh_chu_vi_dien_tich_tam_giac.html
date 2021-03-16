@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ıai 2 - Ham tinh chu vi va dien tich hinh tron</title>
+</head>
+<body>
+<script>
+    function perimeter(radius) {
+        let p = radius * 2 * 3.14;
+        return p;
+    }
+
+    function area(radius) {
+        let ar = radius * radius * 3.14;
+        return ar;
+    }
+
+    let r = parseFloat(prompt('Nhập bán kính hình tròn:'));
+        document.write('Bán kính hình tròn vừa nhập là: ' + r + '<br>');
+        document.write('Chu vi hình tròn là ' + perimeter(r) +  '<br>');
+        document.write('Diện tích hình tròn là ' + area(r));
+</script>
+</body>
+</html>

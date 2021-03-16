@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 4 - Kiem tra ki tu co phai la so hay khong</title>
+</head>
+<body>
+<script>
+    function checkNumber(element) {
+        let check = isNaN(element);
+        if (!check) {
+            alert('Kí tự ' + element + ' bạn vừa nhập là chữ số');
+        } else {
+            alert('Kí tự ' + element + ' bạn vừa nhập không phải là chữ số');
+        }
+    }
+    let e = prompt('Mời nhập kí tự:');
+    checkNumber(e);
+</script>
+</body>
+</html>

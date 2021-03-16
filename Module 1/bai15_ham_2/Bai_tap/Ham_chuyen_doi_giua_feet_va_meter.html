@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ham chuyen doi giua feet va meter</title>
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <th>Nhập độ dài</th>
+            <th>Chọn đơn vị</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="number" id="inputLength" oninput="result()" onchange="result()" placeholder="Nhập độ dài">
+            </td>
+            <td>
+                <select id="unit">
+                    <option value="ft">Feet</option>
+                    <option value="m">Meter</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <span id="result"></span>
+</form>
+<script>
+    function toMeter(feet) {
+        let meter = feet * 0.305;
+        return meter;
+    }
+
+    function toFeet(meter) {
+        let feet = meter * 3.279;
+        return feet;
+    }
+
+    function result() {
+        let length = document.getElementById('inputLength').value;
+        let u = document.getElementById('unit').value;
+        if (u == 'ft') {
+            document.getElementById('result').innerHTML = 'Độ dài chuyển ra meter là: ' + toMeter(length) + ' m';
+        } else {
+            document.getElementById('result').innerHTML = 'Độ dài chuyển ra feet là: ' + toFeet(length) + ' ft';
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 5 - Tim so nguyen nho nhat trong ba so</title>
+</head>
+<body>
+<script>
+    function minimum(n1, n2, n3) {
+        let min = n1;
+        if (n2 < min) {
+            if (n2 < n3) {
+                min = n2;
+            } else {
+                min = n3;
+            }
+        } else {
+            min = n1;
+        }
+        return min;
+    }
+
+    let a = parseInt(prompt('Mời nhập số thứ nhất: '));
+    let b = parseInt(prompt('Mời nhập số thứ hai: '));
+    let c = parseInt(prompt('Mời nhập số thứ ba: '));
+    document.write('3 số vừa nhập là ' + a + ', ' + b + ', ' + c + '<br>');
+    document.write('Số nhỏ nhất là ' + minimum(a,b,c));
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3 - Ham tinh giai thua</title>
+</head>
+<body>
+<script>
+    function factorial(number) {
+        let f = 1;
+        if (number == 0) {
+            f = 1;
+        } else {
+            for (let i = 1; i <= number; i++) {
+                f *= i;
+            }
+        }
+        return f;
+    }
+
+    let n = parseInt(prompt('Mời nhập số: '));
+    document.write(n + '! = ' + factorial(n));
+</script>
+</body>
+</html>

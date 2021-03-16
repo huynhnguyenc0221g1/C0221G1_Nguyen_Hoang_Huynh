@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 9 - Kiem tra ky tu co nam trong mang hay khong</title>
+</head>
+<body>
+<script>
+    function check(string,element) {
+        let i = 0;
+        let count = 0;
+        while (i < string.length) {
+            if (element == string[i]) {
+                count++;
+            }
+            i++;
+        }
+        if (count == 0) {
+            return alert(-1);
+        } else {
+            return alert('Só lần ký tự ' + element + ' xuất hiện trong mảng ' + string + ' là ' + count);
+        }
+    }
+    let str = prompt('Mời nhập mảng: ');
+    let e = prompt('Mời nhập kí tự');
+    check(str,e);
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 7 - Doi cho 2 so nguyen</title>
+</head>
+<body>
+<script>
+    function swap(arr) {
+        let arrswap = arr.reverse();
+        return arrswap.join();
+    }
+
+    let a = parseInt(prompt('Mời nhập số thứ nhất: '));
+    let b = parseInt(prompt('Mời nhập số thứ hai: '));
+    let arr = [a,b];
+    document.write('Bạn vừa nhập 2 số là ' + arr.join() + '<br>');
+    document.write('Đảo ngược: ' + swap(arr));
+</script>
+</body>
+</html>

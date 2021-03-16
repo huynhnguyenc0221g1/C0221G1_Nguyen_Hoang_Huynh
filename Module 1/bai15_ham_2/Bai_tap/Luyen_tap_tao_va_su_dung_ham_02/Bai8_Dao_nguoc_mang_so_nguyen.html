@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 8 - Dao nguoc mang so nguyen</title>
+</head>
+<body>
+<script>
+    function swap(array) {
+        let arrayswap = array.reverse();
+        return arrayswap.join();
+    }
+
+    let n = parseInt(prompt('Mời nhập độ dài của mảng: '));
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr.push(parseInt(prompt('Mời nhập phần tử thứ ' + (parseInt(i) + 1) + ' của mảng:')));
+    }
+    document.write('Mảng bạn vừa nhập là: ' + arr.join() + '<br>');
+    document.write('Mảng đảo ngược là: ' + swap(arr));
+</script>
+</body>
+</html>

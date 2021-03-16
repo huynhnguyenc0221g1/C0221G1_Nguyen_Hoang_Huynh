@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ham kiem tra so nguyen to</title>
+</head>
+<body>
+<script>
+    // let num = parseInt(prompt("Mời nhập số nguyên: "));
+    // function isPrime(n) {
+    //     let check = 0;
+    //     if (n < 2) {
+    //         document.write('Số vừa nhập ' + n + ' không phải là số nguyên tố');
+    //     } else {
+    //         for (let i=2; i<=n-1; i++) {
+    //             if (n % i == 0) {
+    //                 check = 1;
+    //                 document.write('Số vừa nhập ' + n + " không phải là số nguyên tố");
+    //                 break;
+    //             }
+    //         }
+    //         } if (check == 0) {
+    //         document.write('Số vừa nhập ' + n + ' là số nguyên tố');
+    //     }
+    // }
+    // isPrime(num);
+    function isPrime(n) {
+            let check = 0;
+            if (n < 2) {
+                check = 1;
+            } else {
+                for (let i=2; i<=n-1; i++) {
+                    if (n % i == 0) {
+                        check = 1;
+                        return '';
+                        break;
+                    }
+                }
+                } if (check == 0) {
+                return n;
+            }
+        }
+    for (let num=2; num <=10000; num++) {
+        document.write(isPrime(num) + '<br>');
+    }
+</script>
+</body>
+</html>
