@@ -18,36 +18,57 @@
 </form>
 <hr>
 <h2>Show all products</h2>
-<p id="count"></p>
-<p id="table"></p>
+<span id="count"></span>
+<br><br><br>
+<span id="table"></span>
 <script>
-    let productList = new Array(iPhone, Samsung, Oppo);
-    function display(productList) {
-        let table = '<table>\n' +
+    let list = ["Samsung", "iPhone", "Oppo"];
+
+    function display() {
+        let table = '<table border="1">\n' +
             '    <tr>\n' +
-            '        <th>No</th>;\n' +
-            '        <th>Product Name</th>\n' +
+            '        <th>No</th>\n' +
+            '        <th>Name</th>\n' +
             '        <th>Edit</th>\n' +
             '        <th>Delete</th>\n' +
-            '    </tr>\n';
-        for (let i = 0; i < productList.length; i++) {
+            '    </tr>'
+        for (let i = 0; i < list.length; i++) {
             table += '<tr>\n' +
-                '        <th>' + i + '</th>;\n' +
-                '        <td>' + productList[i] + '</td>\n' +
-                '        <th><input type="button" value="Edit" onclick="edit()"></th>\n' +
-                '        <th><input type="button" value="Delete" onclick="del()"></th>\n' +
-                '    </tr>';
+                '        <th>' + (i + 1) + '</th>\n' +
+                '        <th>' + list[i] + '</th>\n' +
+                '        <th><input type="button" value="Edit" onclick="edit(' + i + ')"></th>\n' +
+                '        <th><input type="button" value="Delete" onclick="del(' + i + ')"></th>\n' +
+                '    </tr>'
         }
-        table += '</table>';
+        table += '</table>'
+        document.getElementById('count').innerHTML = list.length + ' products';
         document.getElementById('table').innerHTML = table;
-        document.getElementById('count').innerText = productList.length;
     }
+
+    display();
+
     function add() {
         let p = document.getElementById('product').value;
-
-
+        if (p !== '') {
+            list.push(p);
+            document.getElementById('product').value = "";
+        }
+        display();
     }
-    display();
+
+    function edit(i) {
+        let e = prompt("Input replacement: ");
+        list[i] = e;
+        display();
+    }
+
+    function del(i) {
+        let c = confirm('Are you sure?');
+        if (c) {
+            list.splice(i, 1);
+        }
+        display();
+    }
 </script>
 </body>
 </html>
