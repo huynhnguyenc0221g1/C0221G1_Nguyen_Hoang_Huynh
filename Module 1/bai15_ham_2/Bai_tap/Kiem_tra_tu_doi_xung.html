@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem tra tu doi xung</title>
+</head>
+<body>
+<script>
+    function isPalindrome(string) {
+        let count = 0;
+        let reverse = "";
+        for (let i = string.length - 1; i >= 0; i--) {
+            reverse += string[i];
+        }
+        for (let j = 0; j < string.length; j++) {
+            if (string[j] == reverse[j]) {
+                count++;
+            } else {
+                return false;
+            }
+        }
+        if (count == string.length) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    let str = prompt('Mời nhập chuỗi: ');
+    alert(isPalindrome(str));
+</script>
+</body>
+</html>

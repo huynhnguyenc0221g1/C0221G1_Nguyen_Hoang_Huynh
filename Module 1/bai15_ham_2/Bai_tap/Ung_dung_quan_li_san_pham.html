@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ung dung quan ly san pham su dung ham</title>
+</head>
+<body>
+<h2>Add new product</h2>
+<form>
+    <table>
+        <tr>
+            <th><input type="text" id='product'></th>
+            <th>
+                <button type="button" onclick="add()">Add</button>
+            </th>
+        </tr>
+    </table>
+</form>
+<hr>
+<h2>Show all products</h2>
+<p id="count"></p>
+<p id="table"></p>
+<script>
+    let productList = new Array(iPhone, Samsung, Oppo);
+    function display(productList) {
+        let table = '<table>\n' +
+            '    <tr>\n' +
+            '        <th>No</th>;\n' +
+            '        <th>Product Name</th>\n' +
+            '        <th>Edit</th>\n' +
+            '        <th>Delete</th>\n' +
+            '    </tr>\n';
+        for (let i = 0; i < productList.length; i++) {
+            table += '<tr>\n' +
+                '        <th>' + i + '</th>;\n' +
+                '        <td>' + productList[i] + '</td>\n' +
+                '        <th><input type="button" value="Edit" onclick="edit()"></th>\n' +
+                '        <th><input type="button" value="Delete" onclick="del()"></th>\n' +
+                '    </tr>';
+        }
+        table += '</table>';
+        document.getElementById('table').innerHTML = table;
+        document.getElementById('count').innerText = productList.length;
+    }
+    function add() {
+        let p = document.getElementById('product').value;
+
+
+    }
+    display();
+</script>
+</body>
+</html>
