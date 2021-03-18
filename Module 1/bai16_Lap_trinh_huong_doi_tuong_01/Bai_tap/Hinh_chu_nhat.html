@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xay dung lop mo ta hinh chu nhat</title>
+</head>
+<body>
+<form>
+    <input type="text" placeholder="Nhập chiều dài hình chữ nhật" id="width" style="width: 400px">
+    <br>
+    <input type="text" placeholder="Nhập chiều rộng hình chữ nhật" id="height" style="width: 400px">
+    <br>
+    <input type="button" value="Hiển thị" onclick="result()">
+    <input type="button" value="Xóa bảng vẽ" onclick="clearCanvas()">
+    <input type="reset" value="Nhập lại"><br>
+</form>
+<span id="perimeter"></span>
+<br>
+<span id="area"></span>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+    class Rectangle {
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+
+        getPerimeter() {
+            return (parseInt(this.width) + parseInt(this.height)) * 2;
+        }
+
+        getArea() {
+            return parseInt(this.width) * parseInt(this.height);
+        }
+    }
+
+    function result() {
+        let w = parseInt(document.getElementById('width').value);
+        let h = parseInt(document.getElementById('height').value);
+        let rec = new Rectangle(w, h);
+        let p = rec.getPerimeter();
+        let a = rec.getArea();
+        document.getElementById('perimeter').innerHTML = 'Chu vi hình chữ nhật là: ' + p;
+        document.getElementById('area').innerHTML = 'Diện tích hình chữ nhật là: ' + a;
+
+        //Vẽ hình chữ nhật - Drawing the Rectangle
+
+        let c = document.getElementById("myCanvas");
+        let ctx = c.getContext("2d");
+        ctx.beginPath();
+        ctx.rect(20, 20, w, h);
+        ctx.stroke();
+    }
+
+    //Xóa trang vẽ - Clearing the Drawing canvas
+    function clearCanvas() {
+        let c = document.getElementById('myCanvas');
+        let ctx = c.getContext('2d');
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        ctx.beginPath();
+    }
+</script>
+</body>
+</html>

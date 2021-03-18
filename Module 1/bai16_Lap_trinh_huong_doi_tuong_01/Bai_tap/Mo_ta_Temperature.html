@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mo ta Temperature</title>
+</head>
+<body>
+<input type="number" id="celcius" placeholder="Nhập nhiệt độ Celcius" onchange="convert()" oninput="convert()">
+<br>
+<hr>
+<p>Tương đương với:</p>
+<p id="fahrenheit"></p>
+<p id="kelvin"></p>
+<script>
+    class Temperature {
+        constructor(celcius) {
+            this.celcius = celcius;
+        }
+        getFarenheit() {
+            return parseInt(this.celcius) * 1.8 + 32;
+        }
+
+        getKelvin() {
+
+            return parseInt(this.celcius) + 273.15;
+        }
+    }
+
+    function convert() {
+        let c = document.getElementById('celcius').value;
+        let temp = new Temperature(c);
+        let f = temp.getFarenheit();
+        let k = temp.getKelvin();
+        console.log(f + ' , ' + k);
+        document.getElementById('fahrenheit').innerHTML = f + ' ºF';
+        document.getElementById('kelvin').innerHTML = k + ' K';
+    }
+</script>
+</body>
+</html>
