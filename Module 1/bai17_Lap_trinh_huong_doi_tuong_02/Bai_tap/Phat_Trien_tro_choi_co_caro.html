@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>caro</title>
+    <title>Phat trien tro choi co Caro</title>
 </head>
 <body>
 <p id="hienThi"></p>
 <script>
-    let array = new Array(12);
-    for (let i = 0; i < 12; i++) {
-        array[i] = new Array(12)
-        for (let j = 0; j < 12; j++) {
-            array[i][j] = ""
+    let array = new Array(22);
+    for (let i = 0; i < 22; i++) {
+        array[i] = new Array(22)
+        for (let j = 0; j < 22; j++) {
+            array[i][j] = "";
         }
     }
     display();
@@ -19,9 +19,9 @@
 
     function display() {
         let tableString = '<table border="1">';
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 20; i++) {
             tableString += '<tr>';
-            for (let j = 0; j < 10; j++) {
+            for (let j = 0; j < 20; j++) {
                 tableString += '<td style="width: 20px;height: 20px" onclick="playing(' + i + ',' + j + ')">' + array[i][j] + '</td>';
             }
             tableString += ' </tr>';
@@ -35,13 +35,13 @@
             array[i][j] = "X";
             checkPlayer1 = false;
             if (checkedWin()) {
-                alert("người số 1 chiến thắng")
+                alert("Người số 1 chiến thắng")
             }
         } else if (!checkPlayer1 && !checkPlayed(i, j)) {
             array[i][j] = "O";
             checkPlayer1 = true;
             if (checkedWin()) {
-                alert("người số 2 chiến thắng")
+                alert("Người số 2 chiến thắng")
             }
         }
         display();
@@ -49,7 +49,7 @@
 
     function checkPlayed(i, j) {
         if (array[i][j] == "X" || array[i][j] == "O") {
-            alert("Ô này chơi rồi bạn ơi!!!!!!")
+            alert("Chơi rồi!!!")
             return true
         } else {
             return false;
@@ -60,29 +60,29 @@
         for (let i = 0; i < 10; i++) {
             for (let j = 0; j < 10; j++) {
                 if (array[i][j] == "X") {
-                    if (array[i][j + 1] == "X" && array[i][j + 2] == "X") {
+                    if (array[i][j + 1] == "X" && array[i][j + 2] == "X" && array[i][j + 3] == "X" && array[i][j + 4] == "X") {
                         return true;
                     }
-                    if (array[i + 1][j] == "X" && array[i + 2][j] == "X") {
+                    if (array[i + 1][j] == "X" && array[i + 2][j] == "X" && array[i + 3][j] == "X" && array[i + 4][j] == "X") {
                         return true;
                     }
-                    if (array[i + 1][j + 1] == "X" && array[i + 2][j + 2] == "X") {
+                    if (array[i + 1][j + 1] == "X" && array[i + 2][j + 2] == "X" && array[i + 3][j + 3] == "X" && array[i + 4][j + 4] == "X") {
                         return true;
                     }
-                    if (array[i - 1][j + 1] == "X" && array[i - 2][j + 2] == "X") {
+                    if (array[i - 1][j + 1] == "X" && array[i - 2][j + 2] == "X" && array[i - 3][j + 3] == "X" && array[i - 4][j + 4] == "X") {
                         return true;
                     }
                 } else if (array[i][j] == "O") {
-                    if (array[i][j + 1] == "O" && array[i][j + 2] == "O") {
+                    if (array[i][j + 1] == "O" && array[i][j + 2] == "O" && array[i][j + 3] == "O" && array[i][j + 4] == "O") {
                         return true;
                     }
-                    if (array[i + 1][j] == "O" && array[i + 2][j] == "O") {
+                    if (array[i + 1][j] == "O" && array[i + 2][j] == "O" && array[i + 3][j] == "O" && array[i + 4][j] == "O") {
                         return true;
                     }
-                    if (array[i + 1][j + 1] == "O" && array[i + 2][j + 2] == "O") {
+                    if (array[i + 1][j + 1] == "O" && array[i + 2][j + 2] == "O" && array[i + 3][j + 3] == "O" && array[i + 4][j + 4] == "O") {
                         return true;
                     }
-                    if (array[i - 1][j + 1] == "O" && array[i - 2][j + 2] == "O") {
+                    if (array[i - 1][j + 1] == "O" && array[i - 2][j + 2] == "O" && array[i - 3][j + 3] == "O" && array[i - 4][j + 4] == "O") {
                         return true;
                     }
                 }

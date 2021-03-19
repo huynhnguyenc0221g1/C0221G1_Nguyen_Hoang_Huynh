@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meo von chuot</title>
+</head>
+<body>
+<script>
+    class Animal {
+        constructor(name, weight, speed) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        getSpeed() {
+            return this.speed;
+        }
+    }
+
+    class Cat extends Animal {
+        constructor(name, weight, speed) {
+            super(name, weight, speed);
+        }
+
+        say() {
+            return console.log('meow');
+        }
+
+        eatMouse(mouse) {
+            if (mouse.status == 'Alive') {
+                this.weight += mouse.getWeight();
+            }
+        }
+
+        catchMouse(mouse) {
+            if (this.speed > mouse.speed) {
+                this.eatMouse(mouse);
+
+            }
+        }
+    }
+
+    class Mouse extends Animal {
+        constructor(name, weight, speed, status) {
+            super(name, weight, speed);
+            this.status = status;
+        }
+
+        say() {
+            return console.log('squeak');
+        }
+
+        getStatus() {
+            return this.status;
+        }
+    }
+
+    let tom = new Cat("Tom", 10, 10);
+    let jerry = new Mouse("Jerry", 2, 5, 'Alive');
+    tom.catchMouse(jerry);
+    alert(tom.getWeight());
+</script>
+</body>
+</html>

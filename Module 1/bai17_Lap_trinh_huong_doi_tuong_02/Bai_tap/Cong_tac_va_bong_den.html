@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cong tac va bong den</title>
+</head>
+<body>
+<img id="bulb" src="light-bulb-off.png" style="width:300px;height:400px">
+<br>
+<input type="button" onclick="change()" value="Công tắc">
+<h4 id="result">Bóng đèn đang tắt</h4>
+<script>
+    class Button {
+        constructor(status) {
+            this.status = status;
+        }
+
+        offOn() {
+            this.status = !this.status;
+        }
+    }
+
+    class Light {
+        constructor(button, status) {
+            this.button = button;
+            this.status = status;
+        }
+
+        switch() {
+            if (this.button.status) {
+                document.getElementById('bulb').src = "light-bulb-on.png";
+                document.getElementById('result').innerText = "Bóng đèn đang bật";
+            } else {
+                document.getElementById('bulb').src = "light-bulb-off.png";
+                document.getElementById('result').innerText = "Bóng đèn đang tắt";
+            }
+        }
+    }
+
+    let button = new Button(false);
+    let bulb = new Light(button, false);
+
+    function change() {
+        button.offOn();
+        bulb.switch();
+    }
+</script>
+</body>
+</html>

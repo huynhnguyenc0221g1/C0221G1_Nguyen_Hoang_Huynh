@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adam va Eva</title>
+</head>
+<body>
+<h4>Adam</h4>
+<input type="button" value="Ăn táo" onclick="adamEat()">
+<br>
+<span id="resultAdam"></span>
+<br>
+<h4>Eva</h4>
+<input type="button" value="Ăn táo" onclick="evaEat()">
+<br>
+<span id="resultEva"></span>
+<br>
+<h4>Táo</h4>
+<span id="appleWeight"></span>
+<script>
+    class Apple {
+        constructor(weight) {
+            this.weight = weight;
+        }
+
+        getWeight() {
+            return this.weight = 10;
+        }
+
+    }
+
+    class Human {
+        constructor(name, gender, weight, sentence, apple) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+            this.sentence = sentence;
+            this.apple = apple;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getGender() {
+            return this.gender;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        getSentence() {
+            return this.sentence;
+        }
+
+        eatApple() {
+            if (this.apple.weight !== 0) {
+                this.apple.weight--;
+                console.log(this.weight++);
+            } else {
+                alert('Ăn hết táo mất rồi!');
+            }
+        }
+
+        checkApple() {
+            return this.apple.weight;
+        }
+    }
+
+    let apple = new Apple(10);
+    let adam = new Human('Adam', 'Nam', 80, 'Tôi là Adam', apple);
+    let eva = new Human('Eva', 'Nữ', 50, 'Tôi là Eva', apple);
+
+    function adamEat() {
+        adam.eatApple();
+        document.getElementById('resultAdam').innerHTML = 'Tên: ' + adam.getName() + '<br>'
+            + 'Cân nặng: ' + adam.getWeight() + '<br>'
+            + 'Giới tính: ' + adam.getGender() + '<br>'
+            + 'Câu nói: ' + adam.getSentence();
+
+        document.getElementById('appleWeight').innerHTML = 'Cân nặng của táo là: ' + adam.checkApple();
+    }
+
+    function evaEat() {
+        eva.eatApple();
+        document.getElementById('resultEva').innerHTML = 'Tên: ' + eva.getName() + '<br>'
+            + 'Cân nặng: ' + eva.getWeight() + '<br>'
+            + 'Giới tính: ' + eva.getGender() + '<br>'
+            + 'Câu nói: ' + eva.getSentence();
+        document.getElementById('appleWeight').innerHTML = 'Cân nặng của táo là: ' + eva.checkApple();
+    }
+
+</script>
+</body>
+</html>
