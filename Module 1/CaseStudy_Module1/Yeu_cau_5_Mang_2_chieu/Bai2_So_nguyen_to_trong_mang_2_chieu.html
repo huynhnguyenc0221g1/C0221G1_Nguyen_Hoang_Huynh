@@ -18,7 +18,32 @@
         }
         document.write('<br>');
     }
-    
+    document.write('Các số nguyên tố trong mảng là: ');
+    let count = 0;
+    for (let k = 0; k < m; k++) {
+        for (let l = 0; l < n; l++) {
+            document.write(isPrime(array[k][l]) + '   ');
+            count += isPrime(array[k][l]).length;
+        }
+    }
+    document.write('<br>' + 'Số lượng các số nguyên tố trong mảng là: ' + count);
+    function isPrime(n) {
+        let check = 0;
+        let primeArray = [];
+        if (n < 2) {
+            check = 1;
+        } else {
+            for (let i = 2; i <= n - 1; i++) {
+                if (n % i == 0) {
+                    check = 1;
+                }
+            }
+        }
+        if (check == 0) {
+            primeArray.push(n);
+        }
+        return primeArray;
+    }
 </script>
 </body>
 </html>
