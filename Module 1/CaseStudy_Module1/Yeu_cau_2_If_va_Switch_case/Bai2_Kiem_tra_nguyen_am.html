@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2 - Kiem tra nguyen am</title>
+</head>
+<body>
+<script>
+    let a = prompt('Mời nhập một kí tự chữ:');
+    if (a.length > 1) {
+        alert('Bạn phải nhập một kí tự chữ, không phải 1 chuỗi')
+    } else {
+        if (Number.isNaN(a) == true) {
+            alert('Kí tự ' + a + ' bạn vừa nhập là chữ số!');
+        } else if (a == 'a' || a == 'o' || a == 'u' || a == 'i' || a == 'e' || a == 'h' || a == 'A' || a == 'O' || a == 'U' || a == 'I' || a == 'E' || a == 'H') {
+            alert('Kí tự ' + a + ' bạn vừa nhập là nguyên âm!');
+        } else {
+            alert('Kí tự ' + a + ' bạn vừa nhập là phụ âm!');
+        }
+    }
+</script>
+</body>
+</html>

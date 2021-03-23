@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 4 - Chuyen so thanh chuoi</title>
+</head>
+<body>
+<script>
+    let str = prompt('Mời nhập số: ');
+    console.log(typeof str)
+    let strfix = '';
+    for (let i in str) {
+        switch (str[i]) {
+            case '1' :
+                strfix += ' Một ';
+                break;
+            case '2' :
+                strfix += ' Hai ';
+                break;
+            case '3' :
+                strfix += ' Ba ';
+                break;
+            case '4' :
+                strfix += ' Bốn ';
+                break;
+            case '5' :
+                strfix += ' Năm ';
+                break;
+            case '6' :
+                strfix += ' Sáu ';
+                break;
+            case '7' :
+                strfix += ' Bảy ';
+                break;
+            case '8' :
+                strfix += ' Tám ';
+                break;
+            case '9' :
+                strfix += ' Chín ';
+                break;
+            case '0' :
+                strfix += ' Không ';
+                break;
+        }
+    }
+    document.write('Chuỗi số bạn vừa nhập là: ' + str + '<br>');
+    document.write('Chuỗi qua chuyển đổi là: ' + strfix);
+</script>
+</body>
+</html>

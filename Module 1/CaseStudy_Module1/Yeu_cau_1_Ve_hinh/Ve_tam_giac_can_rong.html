@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ve tam giac can rong</title>
+</head>
+<body>
+<script>
+    let h = parseInt(prompt("Nhập chiều cao hình tam giác cân rỗng: "));
+    let last = (h * 2) - 1;
+    for (let i = 1 ; i <= h; i++) {
+        for (let j = 1 ; j <= 2*h ; j++) {
+            if (i < h) {
+                let col = Math.abs(h - j);
+                let check = i - 1;
+                if (col == check) {
+                    document.write(" * ");
+                } else {
+                    document.write("&nbsp;&nbsp;&nbsp;");
+                }
+            } else {
+                document.write(" * ");
+            }
+        } document.write("<br>");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1 - Tong cac so chan trong mang hai chieu</title>
+</head>
+<body>
+<script>
+    let m = parseInt(prompt('Mời nhập số mảng con của mảng 2 chiều:'));
+    let n = parseInt(prompt('Mời nhập sô phần tử trong mỗi mảng con: '));
+    let array = [];
+    document.write('Mảng đã khởi tạo là:' + '<br>');
+    for (let i = 0; i < m; i++) {
+        array.push([]);
+        for (let j = array[i].length; j < n; j++) {
+            array[i].push(parseInt(prompt('Mời nhập phần tử array[' + i + '].[' + j + ']: ')));
+            document.write(array[i][j] + ' ')
+        }
+        document.write('<br>');
+    }
+    let sum = 0;
+    for (let k = 0; k < m; k++) {
+        for (let l = 0; l < n; l++) {
+            if (array[k][l] % 2 == 0) {
+                sum += array[k][l];
+            }
+        }
+    }
+    document.write('Tổng các số chẵn của mảng là: ' + sum);
+</script>
+</body>
+</html>

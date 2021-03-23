@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2 - Kiem tra so luong ki tu trong mang</title>
+</head>
+<body>
+<script>
+    let str = prompt('Mời nhập chuỗi: ');
+    document.write('Chuỗi vừa nhập là: ' + str + '<br>');
+    let array = [];
+    array = str.split('');
+    console.log(array);
+    let count = 0;
+    let output = [];
+    for (let i = 0 ; i< array.length; i++) {
+        if (!output.includes(array[i])) {
+                output.push(array[i]);
+                count++;
+        }
+    }
+    document.write('Số lượng kí tự khác nhau trong mảng là: ' + count);
+</script>
+</body>
+</html>

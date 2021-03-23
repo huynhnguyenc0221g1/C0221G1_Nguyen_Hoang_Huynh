@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3 - Tim Max, Min trong mang hai chieu</title>
+</head>
+<body>
+<script>
+    let m = parseInt(prompt('Mời nhập số mảng con của mảng 2 chiều:'));
+    let n = parseInt(prompt('Mời nhập sô phần tử trong mỗi mảng con: '));
+    let array = [];
+    document.write('Mảng đã khởi tạo là:' + '<br>');
+    for (let i = 0; i < m; i++) {
+        array.push([]);
+        for (let j = array[i].length; j < n; j++) {
+            array[i].push(parseInt(prompt('Mời nhập phần tử array[' + i + '].[' + j + ']: ')));
+            document.write(array[i][j] + ' ')
+        }
+        document.write('<br>');
+    }
+    let min = array[0][0];
+    let max = array[0][0];
+    for (let k = 0; k < m; k++) {
+        for (let l = 0; l < n; l++) {
+            if (array[k][l] > max) {
+                max = array[k][l];
+            }
+            if (array[k][l] < min) {
+                min = array[k][l];
+            }
+        }
+    }
+    document.write('Phần tử lớn nhất trong mảng là: ' + max + '<br>');
+    document.write('Phần tử nhỏ nhất trong mảng là: ' + min);
+</script>
+</body>
+</html>

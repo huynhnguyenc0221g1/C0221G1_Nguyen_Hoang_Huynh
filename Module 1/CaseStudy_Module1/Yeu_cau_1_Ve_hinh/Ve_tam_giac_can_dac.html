@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ve tam giac vuong can dac</title>
+</head>
+<body>
+<script>
+    let h = parseInt(prompt("Nhập chiều cao hình tam giác cân đặc: "));
+    for (let i = 0 ; i < h; i++) {
+        for (let j = 0; j < 2 * h; j++) {
+            let col = Math.abs(h - j);
+            if (col <= i-1) {
+                document.write(" * ");
+            }  else {
+                document.write("&nbsp;&nbsp;&nbsp;");
+            }
+        } document.write("<br>");
+    }
+</script>
+</body>
+</html>

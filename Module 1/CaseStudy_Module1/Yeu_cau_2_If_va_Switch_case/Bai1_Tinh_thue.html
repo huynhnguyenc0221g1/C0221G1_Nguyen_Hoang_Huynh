@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yeu cau 2 - Bai 1 - Tinh thue thu nhap va luong rong</title>
+</head>
+<body>
+<form>
+    <table border="1">
+        <tr>
+            <td>Nhập tiền lương:</td>
+            <td>
+    <input type="text" id="salary">
+            </td>
+        </tr>
+        <tr>
+            <th rowspan="2">
+                <button type="button" onclick="taxincome()">Tính thuế và lương ròng</button>
+            </th>
+            <td>
+                <p id="tax"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p id="income"></p>
+            </td>
+        </tr>
+    </table>
+</form>
+<script>
+    function taxincome() {
+        let s = parseInt(document.getElementById('salary').value);
+        let t;
+        let i;
+        if (s<7000000) {
+            t = s * 0.05;
+            i = s - t;
+        } else if (s<15000000) {
+            t = s * 0.1;
+            i = s - t;
+        } else {
+            t = s * 0.2;
+            i = s - t;
+        }
+        document.getElementById('tax').innerHTML = "Thuế: " + t;
+        document.getElementById('income').innerHTML = "Lương ròng: " + i;
+    }
+</script>
+</body>
+</html>

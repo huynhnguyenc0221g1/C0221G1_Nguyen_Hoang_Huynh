@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1 - Prefix Sum</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt('Input the length of the array: '));
+    let a = [];
+    for (let i = 0; i < n; i++) {
+        a.push(parseInt(prompt('Please input element number ' + i + ' of the array: ')));
+    }
+    document.write('The original array is: ' + a.join('---') + "<br>");
+    let b = [];
+    let sum = 0;
+    for (let j = 0; j < n; j++) {
+        sum += parseInt(a[j]);
+        b.push(sum);
+    }
+    document.write('The Prefix-sum array is: ' + b.join('---'));
+</script>
+</body>
+</html>

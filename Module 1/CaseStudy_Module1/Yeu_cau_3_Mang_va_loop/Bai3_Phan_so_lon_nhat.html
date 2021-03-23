@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3 - Phan so lon nhat</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt('Bạn muốn nhập bao nhiêu phân số?'));
+    let num = []; //numerators: tử số
+    let den = [] //denominators: mẫu số
+    document.write('Các phân số đã nhập lần lượt là: ');
+    for (let i = 0; i < n; i++) {
+        num.push(parseInt(prompt('Nhập tử số thứ ' + (i + 1) + ':')));
+        den.push(parseInt(prompt('Nhập mẫu số thứ ' + (i + 1) + ':')));
+        document.write(num[i] + '/' + den[i] + ' ');
+    }
+    document.write('<br>');
+    let max = num[0] / den[0];
+    let maxnum = num[0];
+    let maxden = den[0];
+    let index = 0;
+    for (let j = 0; j < n; j++) {
+        if ((num[j] / den[j]) > max) {
+            max = num[j] / den[j];
+            maxnum = num[j];
+            maxden = den[j];
+            index = j + 1;
+        }
+    }
+    document.write('Phân số lớn nhất là ' + maxnum + '/' + maxden + ' ở vị trí số ' + index);
+</script>
+</body>
+</html>

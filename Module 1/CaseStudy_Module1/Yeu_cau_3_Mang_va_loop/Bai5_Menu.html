@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 5 - Menu</title>
+</head>
+<body>
+<script>
+    do {
+        let n = parseInt(prompt('Mời nhập số để chọn: \n' +
+            '1. Cafe \n' +
+            '2. Cam vắt \n' +
+            '3. Nước ép cà rốt \n' +
+            '4. Nước ép cà chua \n' +
+            '5. Nước lọc \n' +
+            '6. Nước dừa \n' +
+            '7. Thoát gọi món'));
+        switch (n) {
+            case 1:
+                let cafe = parseInt(prompt('Bạn muốn mua bao nhiêu ly cà phê: '));
+                alert('Giá cho ' + cafe + ' ly cà phê là: ' + (cafe * 10000) + ' đồng');
+                break;
+            case 2:
+                let orange = parseInt(prompt('Bạn muốn mua bao nhiêu ly cam vắt: '));
+                alert('Giá cho ' + orange + ' ly cam vắt là: ' + (orange * 12000) + ' đồng');
+                break;
+            case 3:
+                let carrot = parseInt(prompt('Bạn muốn mua bao nhiêu ly cà rốt: '));
+                alert('Giá cho ' + orange + ' ly cà rốt là: ' + (orange * 15000) + ' đồng');
+                break;
+            case 4:
+                let tomato = parseInt(prompt('Bạn muốn mua bao nhiêu ly cà chua: '));
+                alert('Giá cho ' + tomato + ' ly cà chua là: ' + (tomato * 15000) + ' đồng');
+                break;
+            case 5:
+                let water = parseInt(prompt('Bạn muốn mua bao nhiêu ly nước lọc: '));
+                alert('Giá cho ' + water + ' ly nước lọc là: ' + (water * 10000) + ' đồng');
+                break;
+            case 6:
+                let coconut = parseInt(prompt('Bạn muốn mua bao nhiêu ly nước dừa: '));
+                alert('Giá cho ' + coconut + ' ly cà phê là: ' + (coconut * 15000) + ' đồng');
+                break;
+        }
+        if (n==7) {
+            break;
+        }
+    } while (true);
+</script>
+</body>
+</html>

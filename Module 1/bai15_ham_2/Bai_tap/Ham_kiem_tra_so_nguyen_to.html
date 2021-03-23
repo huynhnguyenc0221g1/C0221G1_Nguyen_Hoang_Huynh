@@ -9,21 +9,22 @@
 
     function isPrime(n) {
             let check = 0;
+            let primeArray = [];
             if (n < 2) {
                 check = 1;
             } else {
                 for (let i=2; i<=n-1; i++) {
                     if (n % i == 0) {
                         check = 1;
-                        return '';
                     }
                 }
                 } if (check == 0) {
-                return n;
+                primeArray.push(n);
             }
+            return primeArray.join();
         }
     for (let num=2; num <=10000; num++) {
-        document.write(isPrime(num) + '<br>');
+        document.write(isPrime(num)+ '    ');
     }
 </script>
 </body>

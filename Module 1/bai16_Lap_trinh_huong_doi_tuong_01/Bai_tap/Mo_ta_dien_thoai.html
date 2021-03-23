@@ -15,10 +15,59 @@
     <input type="button" value="View Message" onclick="viewMessage('iphone')">
 </form>
 <script>
-    class Phone{
+    class Phone {
         constructor() {
             this.status = 'On';
-            
+            this.battery = 10;
+            this.sms = "";
+            this.sent = "";
+            this.inbox = "";
+        }
+
+        onOff() {
+            if (this.status == "On") {
+                this.status = "Off";
+            } else {
+                this.status = "Om";
+            }
+        }
+
+        charge() {
+            this.battery++;
+        } getStatus() {
+            return this.status;
+        } texting(sms) {
+            this.sms = sms;
+        } getMessage(inbox){
+            this.inbox = inbox;
+        } send(phone,sms){
+            this.texting(sms);
+            this.sent = this.sms;
+            phone.getMessage(this.sent);
+        } showInbox() {
+            return this.inbox;
+        } showSent() {
+            return this.sent;
+        }
+    }
+    let samsung = new Phone();
+    let iphone = new Phone();
+    function send(name) {
+        if (name=="samsung") {
+            let sms = document.getElementById("samsung").value;
+            samsung.send(iphone,sms);
+            document.getElementById('iphone').value="You got a message!";
+        } else if (name=="iphone"){
+            let sms = document.getElementById("iphone").value;
+            samsung.send(samsung,sms);
+            document.getElementById('samsung').value="You got a message!";
+        }
+    }
+    function viewMessage(name) {
+        if (name=="samsung"){
+            document.getElementById("samsung").value=samsung.showInbox();
+        } else if (name=="iphone"){
+            document.getElementById("iphone").value=iphone.showInbox();
         }
     }
 </script>

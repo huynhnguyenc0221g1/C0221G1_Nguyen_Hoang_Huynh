@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ve hinh chu nhat</title>
+</head>
+<body>
+<script>
+    let x = parseInt(prompt("Nhập chiều dài hình chữ nhật: "));
+    let y = parseInt(prompt("Nhập chiều rộng hình chữ nhật: "));
+     for (let i = 0; i < y; i++) {
+         for (let j = 0; j < x ; j ++) {
+             if (i==0 || i==y-1 || j==0 || j==x-1) {
+                 document.write("*");
+             } else {
+                 document.write("&nbsp;&nbsp;")
+             }
+         } document.write("<br>");
+     }
+</script>
+</body>
+</html>

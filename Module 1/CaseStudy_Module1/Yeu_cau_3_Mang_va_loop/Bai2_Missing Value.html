@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2 - Missing Value</title>
+</head>
+<body>
+<script>
+    let n1 = parseInt(prompt('Input the length of array 1: '));
+    let a = [];
+    for (let i = 0; i < n1; i++) {
+        a.push(parseInt(prompt('Please input element number ' + (i + 1) + ' of array 1: ')));
+    }
+    document.write('Array 1 is: ' + a.join('---') + "<br>");
+    let n2 = parseInt(prompt('Input the length of array 2: '));
+    let b = [];
+    for (let j = 0; j < n2; j++) {
+        b.push(parseInt(prompt('Please input element number ' + (j + 1) + ' of array 2: ')));
+    }
+    document.write('Array 2 is: ' + b.join('---') + "<br>");
+    let result = b.filter(
+            function (value) {
+            return !a.includes(value);
+        }
+    )
+    document.write('Missing values: ' + result.sort().join('---'));
+</script>
+</body>
+</html>
