@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vietlott</title>
+</head>
+<body>
+<h3>Xổ số CODEGYM</h3>
+<p id="output"></p>
+<input type="button" value="Mua vé" onclick="buyTicket()">
+<input type="button" value="Kiểm tra" onclick="check()">
+<hr>
+<p id="result"></p>
+<script>
+    let lottoTicket = [];
+    let prizeTicket = [];
+    for (let prizeNum = 0; prizeNum < 6; prizeNum++) {
+        prizeTicket.push(Math.floor(Math.random() * 100));
+    }
+    console.log(prizeTicket);
+
+    class SingleTicket {
+        constructor(num1, num2, num3, num4, num5, num6) {
+            this.num1 = num1;
+            this.num2 = num2;
+            this.num3 = num3;
+            this.num4 = num4;
+            this.num5 = num5;
+            this.num6 = num6;
+        }
+
+        getNum1() {
+            return this.num1;
+        }
+
+        getNum2() {
+            return this.num2;
+        }
+
+        getNum3() {
+            return this.num3;
+        }
+
+        getNum4() {
+            return this.num4;
+        }
+
+        getNum5() {
+            return this.num5;
+        }
+
+        getNum6() {
+            return this.num6;
+        }
+    }
+
+    function buyTicket() {
+        let option = prompt('Bạn muốn:\n' +
+            '1. Mua vé thủ công bằng tay\n' +
+            '2. Để máy tính tự động chọn');
+        switch (option) {
+            case '1':
+                let num1 = [];
+                for (let i = 0; i < 6; i++) {
+                    num1.push(parseInt(prompt('Nhập số thứ ' + (i + 1) + ' của vé:')));
+                }
+                let ticket1 = new SingleTicket(num1[0], num1[1], num1[2], num1[3], num1[4], num1[5]);
+                lottoTicket.push(ticket1);
+                if (lottoTicket.length == 5) {
+                    lottoTicket.pop();
+                }
+                display();
+                break;
+            case '2':
+                let num2 = [];
+                for (let i = 0; i < 6; i++) {
+                    num2.push(Math.floor(Math.random() * 100));
+                }
+                let ticket2 = new SingleTicket(num2[0], num2[1], num2[2], num2[3], num2[4], num2[5]);
+                lottoTicket.push(ticket2);
+                if (lottoTicket.length == 5) {
+                    lottoTicket.pop();
+                }
+                display();
+                break;
+        }
+    }
+
+    function display() {
+        let tableString = '<table border="1">';
+        let i = 0;
+        while (i < lottoTicket.length) {
+            tableString += ' <tr border="1">\n' +
+                '        <th width="200px">' + lottoTicket[i].getNum1() + '</th>\n' +
+                '        <th width="200px">' + lottoTicket[i].getNum2() + '</th>\n' +
+                '        <th width="200px">' + lottoTicket[i].getNum3() + '</th>\n' +
+                '        <th width="200px">' + lottoTicket[i].getNum4() + '</th>\n' +
+                '        <th width="200px">' + lottoTicket[i].getNum5() + '</th>\n' +
+                '        <th width="200px">' + lottoTicket[i].getNum6() + '</th>\n' +
+                '    </tr>'
+            i++;
+        }
+        tableString += '</table>';
+        document.getElementById("output").innerHTML = tableString;
+    }
+
+    function check() {
+        if (lottoTicket.length !== 0) {
+            let count1 = 0;
+            let count2 = 0;
+            let count3 = 0;
+            let count4 = 0;
+            for (let i = 0; i < lottoTicket.length; i++) {
+                if ((lottoTicket[i].getNum1() == prizeTicket[0]) &&
+                    (lottoTicket[i].getNum2() == prizeTicket[1]) &&
+                    (lottoTicket[i].getNum3() == prizeTicket[2]) &&
+                    (lottoTicket[i].getNum4() == prizeTicket[3]) &&
+                    (lottoTicket[i].getNum5() == prizeTicket[4]) &&
+                    (lottoTicket[i].getNum6() == prizeTicket[5])) {
+                    count1++;
+                } else if ((lottoTicket[i].getNum1() !== prizeTicket[0]) &&
+                    (lottoTicket[i].getNum2() == prizeTicket[1]) &&
+                    (lottoTicket[i].getNum3() == prizeTicket[2]) &&
+                    (lottoTicket[i].getNum4() == prizeTicket[3]) &&
+                    (lottoTicket[i].getNum5() == prizeTicket[4]) &&
+                    (lottoTicket[i].getNum6() == prizeTicket[5])) {
+                    count2++;
+                } else if ((lottoTicket[i].getNum1() !== prizeTicket[0]) &&
+                    (lottoTicket[i].getNum2() !== prizeTicket[1]) &&
+                    (lottoTicket[i].getNum3() !== prizeTicket[2]) &&
+                    (lottoTicket[i].getNum4() == prizeTicket[3]) &&
+                    (lottoTicket[i].getNum5() == prizeTicket[4]) &&
+                    (lottoTicket[i].getNum6() == prizeTicket[5])) {
+                    count3++;
+                } else {
+                    count4++;
+                }
+            }
+            if (count1 !== 0) {
+                alert('Trúng giải nhất rồi!');
+            }
+            if (count2 !== 0) {
+                alert('Trúng giải nhì rồi!');
+            }
+            if (count3 !== 0) {
+                alert('Trúng giải ba rồi!');
+            }
+            if (count4 !== 0 && count1 == 0 && count2 == 0 && count3 == 0) {
+                alert('Chúc bạn may mắn lần sau!');
+            }
+            let prizeTable = '<table border="1">';
+            prizeTable += '<tr>';
+            for (let j = 0; j < prizeTicket.length; j++) {
+                prizeTable += '        <th width="200px">' + prizeTicket[j] + '</th>\n'
+            }
+            prizeTable += '</tr>';
+            prizeTable += '</table>';
+            document.getElementById('result').innerHTML = 'Kết quả của kì quay số lần này là: ' + prizeTable;
+        }
+    }
+
+</script>
+<table>
+    <tr>
+        <th width="200px"></th>
+    </tr>
+</table>
+</body>
+</html>
