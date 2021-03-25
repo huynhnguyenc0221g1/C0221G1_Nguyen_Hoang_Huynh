@@ -5,7 +5,34 @@
     <title>Bai 5 - Menu</title>
 </head>
 <body>
+<p id="output"></p>
 <script>
+    class Drink {
+        constructor(name, single, amount, price) {
+            this.name = name;
+            this.single = single;
+            this.amount = amount;
+            this.price = price;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getSingle() {
+            return this.single;
+        }
+
+        getAmount() {
+            return this.amount;
+        }
+
+        getPrice() {
+            return this.price;
+        }
+    }
+
+    let listDrink = [];
     do {
         let n = parseInt(prompt('Mời nhập số để chọn: \n' +
             '1. Cafe \n' +
@@ -17,34 +44,88 @@
             '7. Thoát gọi món'));
         switch (n) {
             case 1:
-                let cafe = parseInt(prompt('Bạn muốn mua bao nhiêu ly cà phê: '));
-                alert('Giá cho ' + cafe + ' ly cà phê là: ' + (cafe * 10000) + ' đồng');
+                let cafeAmount = parseInt(prompt('Bạn muốn mua bao nhiêu ly cà phê: '));
+                let cafePrice = cafeAmount * 10000;
+                alert('Giá cho ' + cafeAmount + ' ly cà phê là: ' + (cafePrice) + ' đồng');
+                let cafe = new Drink('Cà phê', 10000, cafeAmount, cafePrice);
+                listDrink.push(cafe);
+                display();
                 break;
             case 2:
-                let orange = parseInt(prompt('Bạn muốn mua bao nhiêu ly cam vắt: '));
-                alert('Giá cho ' + orange + ' ly cam vắt là: ' + (orange * 12000) + ' đồng');
+                let orangeAmount = parseInt(prompt('Bạn muốn mua bao nhiêu ly cam vắt: '));
+                let orangePrice = orangeAmount * 15000;
+                alert('Giá cho ' + orangeAmount + ' ly cam vắt là: ' + (orangePrice) + ' đồng');
+                let orange = new Drink('Cam vắt', 15000, orangeAmount, orangePrice);
+                listDrink.push(orange);
+                display();
                 break;
             case 3:
-                let carrot = parseInt(prompt('Bạn muốn mua bao nhiêu ly cà rốt: '));
-                alert('Giá cho ' + orange + ' ly cà rốt là: ' + (orange * 15000) + ' đồng');
+                let carrotAmount = parseInt(prompt('Bạn muốn mua bao nhiêu ly cà rốt: '));
+                let carrotPrice = carrotAmount * 20000;
+                alert('Giá cho ' + carrotAmount + ' ly cà rốt là: ' + (carrotPrice) + ' đồng');
+                let carrot = new Drink('Cà rốt', 20000, carrotAmount, carrotPrice);
+                listDrink.push(carrot);
+                display();
                 break;
             case 4:
-                let tomato = parseInt(prompt('Bạn muốn mua bao nhiêu ly cà chua: '));
-                alert('Giá cho ' + tomato + ' ly cà chua là: ' + (tomato * 15000) + ' đồng');
+                let tomatoAmount = parseInt(prompt('Bạn muốn mua bao nhiêu ly cà chua ép: '));
+                let tomatoPrice = tomatoAmount * 20000;
+                alert('Giá cho ' + tomatoAmount + ' ly cà chua ép là: ' + (tomatoPrice) + ' đồng');
+                let tomato = new Drink('Cà chua ép', 20000, tomatoAmount, tomatoPrice);
+                listDrink.push(tomato);
+                display();
                 break;
             case 5:
-                let water = parseInt(prompt('Bạn muốn mua bao nhiêu ly nước lọc: '));
-                alert('Giá cho ' + water + ' ly nước lọc là: ' + (water * 10000) + ' đồng');
+                let waterAmount = parseInt(prompt('Bạn muốn mua bao nhiêu chai nước lọc: '));
+                let waterPrice = waterAmount * 5000;
+                alert('Giá cho ' + waterAmount + ' ly cà chua ép là: ' + (waterPrice) + ' đồng');
+                let water = new Drink('Nước lọc', 5000, waterAmount, waterPrice);
+                listDrink.push(water);
+                display();
                 break;
             case 6:
-                let coconut = parseInt(prompt('Bạn muốn mua bao nhiêu ly nước dừa: '));
-                alert('Giá cho ' + coconut + ' ly cà phê là: ' + (coconut * 15000) + ' đồng');
+                let coconutAmount = parseInt(prompt('Bạn muốn mua bao nhiêu ly nước dừa: '));
+                let coconutPrice = coconutAmount * 20000;
+                alert('Giá cho ' + coconutAmount + ' ly cà chua ép là: ' + (coconutPrice) + ' đồng');
+                let coconut = new Drink('Nước dừa', 20000, coconutAmount, coconutPrice);
+                listDrink.push(coconut);
+                display();
                 break;
         }
-        if (n==7) {
+        if (n == 7) {
+            display();
             break;
         }
     } while (true);
+
+    function display() {
+        let sum = 0;
+        let tableString = '<table border="1">';
+        tableString += '  <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th width="100px">Tên nước</th>\n' +
+            '        <th>Đơn giá</th>\n' +
+            '        <th>Số lượng</th>\n' +
+            '        <th width="100px">Giá</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < listDrink.length; i++) {
+            sum += listDrink[i].getPrice();
+            tableString += '<tr>\n' +
+                '        <th>' + (i + 1) + '</th>\n' +
+                '        <th>' + listDrink[i].getName() + '</th>\n' +
+                '        <th>đ ' + listDrink[i].getSingle() + '</th>\n' +
+                '        <th>' + listDrink[i].getAmount() + '</th>\n' +
+                '        <th>đ ' + listDrink[i].getPrice() + '</th>\n' +
+                '    </tr>';
+        }
+        tableString += '<tr>\n' +
+            '        <th>Tổng tiền</th>\n' +
+            '        <th colspan="4">đ ' + sum + '</th>\n' +
+            '    </tr>';
+        tableString += '</table>';
+        console.log(tableString);
+        document.getElementById('output').innerHTML = tableString;
+    }
 </script>
 </body>
 </html>
