@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Bai 5 - Menu</title>
 </head>
-<body>
+<body style="font-family: Monaco">
 <p id="output"></p>
 <script>
     class Drink {
@@ -78,7 +78,7 @@
             case 5:
                 let waterAmount = parseInt(prompt('Bạn muốn mua bao nhiêu chai nước lọc: '));
                 let waterPrice = waterAmount * 5000;
-                alert('Giá cho ' + waterAmount + ' ly cà chua ép là: ' + (waterPrice) + ' đồng');
+                alert('Giá cho ' + waterAmount + ' chai nước lọc là: ' + (waterPrice) + ' đồng');
                 let water = new Drink('Nước lọc', 5000, waterAmount, waterPrice);
                 listDrink.push(water);
                 display();
@@ -86,7 +86,7 @@
             case 6:
                 let coconutAmount = parseInt(prompt('Bạn muốn mua bao nhiêu ly nước dừa: '));
                 let coconutPrice = coconutAmount * 20000;
-                alert('Giá cho ' + coconutAmount + ' ly cà chua ép là: ' + (coconutPrice) + ' đồng');
+                alert('Giá cho ' + coconutAmount + ' ly dừa là: ' + (coconutPrice) + ' đồng');
                 let coconut = new Drink('Nước dừa', 20000, coconutAmount, coconutPrice);
                 listDrink.push(coconut);
                 display();
