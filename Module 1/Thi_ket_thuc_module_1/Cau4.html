@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cau 4</title>
+</head>
+<body>
+<script>
+    class Phone {
+        constructor(id, name, manufacturer, price) {
+            this.name = name;
+            this.id = id;
+            this.manufacturer = manufacturer;
+            this.price = price;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+
+        getManufacturer() {
+            return this.manufacturer;
+        }
+
+        setManufacturer(manufacturer) {
+            this.manufacturer = manufacturer;
+        }
+
+        getPrice() {
+            return this.price;
+        }
+
+        setPrice(price) {
+            this.price = price;
+        }
+
+        toString() {
+            return (this.id + '. ' + this.name + ' / ' + this.manufacturer + ' / ' + this.price);
+        }
+    }
+
+    let phoneList = [];
+    phoneSort = [];
+    phoneSort.sort();
+    do {
+        let n = parseInt(prompt('Please insert your choice: \n' +
+            '1. Add a new phone\n' +
+            '2. Show your phone list\n' +
+            '3. Show sorted phone list by phone name: \n' +
+            '4. Exit'
+            ))
+        ;
+        switch (n) {
+            case 1:
+                let phoneAdd = new Phone();
+                let id = prompt('Please input ID: ');
+                phoneAdd.setId(id);
+                let name = prompt('Please input the phone name: ');
+                phoneAdd.setName(name);
+                let manufacturer = prompt('Please input the manufacturer: ');
+                phoneAdd.setManufacturer(manufacturer);
+                let price = prompt('Please input the price of this phone: ');
+                phoneAdd.setPrice(price)
+                phoneList.push(phoneAdd);
+                phoneSort.push([name, id, manufacturer, price]);
+                phoneSort.sort();
+                break;
+            case 2:
+                let output = '';
+                for (let i = 0; i < phoneList.length; i++) {
+                    output += phoneList[i].toString();
+                    output += '\n';
+                }
+                alert(output);
+                break;
+            case 3:
+                let outputSort = '';
+                for (let m = 0; m < phoneSort.length; m++) {
+                    for (let n = 0; n < 4; n++) {
+                        outputSort += (phoneSort[m][n] + ' / ')
+                    }
+                    outputSort += '\n';
+                }
+                alert(outputSort);
+        }
+        if (n == 4) {
+            alert('Goodbye');
+            break;
+        }
+    } while (true)
+</script>
+</body>
+</html>

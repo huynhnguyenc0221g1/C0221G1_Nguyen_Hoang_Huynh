@@ -10,7 +10,7 @@
         <tr>
             <td>Nhập tiền lương:</td>
             <td>
-    <input type="text" id="salary">
+                <input type="text" id="salary">
             </td>
         </tr>
         <tr>
@@ -33,10 +33,10 @@
         let s = parseInt(document.getElementById('salary').value);
         let t;
         let i;
-        if (s<7000000) {
+        if (s < 7000000) {
             t = s * 0.05;
             i = s - t;
-        } else if (s<15000000) {
+        } else if (s < 15000000) {
             t = s * 0.1;
             i = s - t;
         } else {

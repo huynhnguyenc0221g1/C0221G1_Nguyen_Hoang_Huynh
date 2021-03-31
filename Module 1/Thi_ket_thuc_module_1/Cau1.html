@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cau 1</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt('Please input the number of elements: '));
+    let array = [];
+    if (n > 20) {
+        alert('(Error) The maximum number of elements is 20!')
+    } else {
+        for (let i = 0; i < n; i++) {
+            array.push(parseInt(prompt('Please input element [' + i + '] of the array: ')));
+        }
+        alert('Your array is: [' + array.join() + ']');
+        let sumEven = 0;
+        let sumOdd = 0;
+        for (let j = 0; j < array.length; j++) {
+            if (array[j] % 2 == 0) {
+                sumEven += array[j];
+            } else {
+                sumOdd += array[j];
+            }
+        }
+        alert('Final Result: ' + (sumEven - sumOdd));
+    }
+</script>
+</body>
+</html>

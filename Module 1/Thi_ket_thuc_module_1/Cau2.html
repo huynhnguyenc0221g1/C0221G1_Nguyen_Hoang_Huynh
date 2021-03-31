@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cau 2</title>
+</head>
+<body>
+<script>
+
+    function countUpper(str) {
+        let strLow = str.toLowerCase();
+        let count = 0;
+        for (let i = 0; i < str.length; i++) {
+            if (str.charAt(i) !== strLow.charAt(i)) {
+                count++;
+            }
+        }
+        if (count == 0) {
+            return alert('The Strings is not contain upper char');
+        } else {
+            return alert(count);
+        }
+    }
+
+    let string = prompt('Please input a string: ');
+    countUpper(string);
+
+</script>
+</body>
+</html>

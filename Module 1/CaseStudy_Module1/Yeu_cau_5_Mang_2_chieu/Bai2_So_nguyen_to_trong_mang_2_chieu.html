@@ -23,6 +23,7 @@
     for (let k = 0; k < m; k++) {
         for (let l = 0; l < n; l++) {
             document.write(isPrime(array[k][l]) + '   ');
+            console.log(isPrime(array[k][l]).length);
             count += isPrime(array[k][l]).length;
         }
     }
