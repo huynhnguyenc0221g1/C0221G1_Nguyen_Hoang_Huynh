@@ -4,17 +4,28 @@ import java.util.Scanner;
 
 public class Xoa_phan_tu_khoi_mang {
     public static void main(String[] args) {
-        int[] array = {2, 3, 6, 21, 6, 88, 2, 9, 1917, 2021};
-        System.out.println("Original Array: ");
-        for (int ogIndex = 0; ogIndex < array.length; ogIndex++) {
-            System.out.print(array[ogIndex] + " ");
+        Scanner scanner = new Scanner(System.in);
+
+        //Creating original Array
+        int length;
+        System.out.println("Input the length of your array:");
+        length = scanner.nextInt();
+        int[] array = new int[length];
+        for (int index = 0; index < array.length; index++) {
+            System.out.println("Input element [" + index + "] of your array:");
+            array[index] = scanner.nextInt();
         }
         System.out.println();
-        Scanner input = new Scanner(System.in);
+        System.out.println("Your array is: ");
+        for (int index = 0; index < array.length; index++) {
+            System.out.print(array[index] + " ");
+        }
+        System.out.println();
+        //Deleting element at given index
         int choice;
         do {
             System.out.println("Please input the index of the element you want to delete:");
-            choice = input.nextInt();
+            choice = scanner.nextInt();
             if ((choice < 0) || (choice > array.length)) {
                 System.out.println("Invalid index!");
             } else {
@@ -28,9 +39,10 @@ public class Xoa_phan_tu_khoi_mang {
                 array[i] = array[i + 1];
             }
         }
+        //Printing the result
         System.out.println("New Array: ");
-        for (int newIndex = 0; newIndex < array.length; newIndex++) {
-            System.out.print(array[newIndex] + " ");
+        for (int index = 0; index < array.length; index++) {
+            System.out.print(array[index] + " ");
         }
     }
 }

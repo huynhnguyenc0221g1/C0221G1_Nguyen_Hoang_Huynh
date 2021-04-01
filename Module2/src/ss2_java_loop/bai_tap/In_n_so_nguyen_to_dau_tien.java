@@ -6,7 +6,7 @@ public class In_n_so_nguyen_to_dau_tien {
         boolean check = true;
         int num = 3;
         int amount;
-        System.out.println("Please input the ammount of first prime numbers you want to see:");
+        System.out.println("Please input the amount of first prime numbers that you want to see:");
         amount = scanner.nextInt();
         System.out.println("First " + amount + " prime numbers are:");
         System.out.println(2);
@@ -17,7 +17,7 @@ public class In_n_so_nguyen_to_dau_tien {
                     break;
                 }
             }
-            if (check != false) {
+            if (check == true) {
                 System.out.println(num);
                 count++;
             }

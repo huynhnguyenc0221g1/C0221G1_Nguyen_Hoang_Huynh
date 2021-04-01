@@ -13,7 +13,7 @@ public class So_nguyen_to_nho_hon_100 {
                     break;
                 }
             }
-            if (check != false) {
+            if (check == true) {
                 System.out.println(num);
             }
             check=true;
