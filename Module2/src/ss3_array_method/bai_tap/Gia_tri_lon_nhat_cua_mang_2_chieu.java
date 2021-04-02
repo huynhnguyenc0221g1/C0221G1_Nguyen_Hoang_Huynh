@@ -14,7 +14,7 @@ public class Gia_tri_lon_nhat_cua_mang_2_chieu {
         int[][] matrix = new int[height][width];
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
-                System.out.println("Please input element [" +i+ "]["+j+"] of the matrix:");
+                System.out.println("Please input element [" + i + "][" + j + "] of the matrix:");
                 matrix[i][j] = scanner.nextInt();
             }
         }
@@ -39,7 +39,7 @@ public class Gia_tri_lon_nhat_cua_mang_2_chieu {
                 }
             }
         }
-        System.out.print("The maximum element is " + max + " at id ["+maxHeight+"]["+maxWidth+"]");
+        System.out.print("The maximum element is " + max + " at id [" + maxHeight + "][" + maxWidth + "]");
     }
 }
 

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Dem_so_lan_xuat_hien_ky_tu_trong_chuoi {
 
-    public static int countChar(String str, char c) {
+    private static int countChar(String str, char c) {
         int count = 0;
         for (int i = 0; i < str.length(); i++) {
             if (c == str.charAt(i) || c == Character.toLowerCase(str.charAt(i)) || c == Character.toUpperCase(str.charAt(i))) {
