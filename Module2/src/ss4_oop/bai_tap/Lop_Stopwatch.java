@@ -40,14 +40,14 @@ public class Lop_Stopwatch {
         Random random = new Random();
         int int_random = random.nextInt(Integer.MAX_VALUE);
         int[] arr = new int[100000];
-        for (int i = 0; i<arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             arr[i] = int_random;
             int_random = random.nextInt(Integer.MAX_VALUE);
         }
         System.out.println();
         System.out.println("Start sorting time:" + stopwatch.start());
         sortArray(arr);
-        for (int i = 0; i<arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             System.out.println(arr[i]);
         }
         System.out.println("End sorting time:" + stopwatch.end());
