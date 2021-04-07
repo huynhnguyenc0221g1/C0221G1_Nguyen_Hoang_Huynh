@@ -34,6 +34,7 @@ public class Rectangle extends Shape {
         this.length = length;
     }
 
+    @Override
     public double getArea() {
         return width * this.length;
     }
@@ -51,5 +52,5 @@ public class Rectangle extends Shape {
                 + ", its' area = "
                 + getArea();
     }
-    
+
 }
