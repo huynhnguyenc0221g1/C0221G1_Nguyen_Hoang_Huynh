@@ -1,4 +1,4 @@
-package ss7_abstractclass_interface.bai_tap.colorable.;
+package ss7_abstractclass_interface.bai_tap.colorable;
 
 public class Rectangle extends Shape {
     private double width = 1.0;
@@ -51,10 +51,5 @@ public class Rectangle extends Shape {
                 + ", its' area = "
                 + getArea();
     }
-
-    @Override
-    public void resize(double percent) {
-        width = width*percent/100;
-        length = length*percent/100;
-    }
+    
 }

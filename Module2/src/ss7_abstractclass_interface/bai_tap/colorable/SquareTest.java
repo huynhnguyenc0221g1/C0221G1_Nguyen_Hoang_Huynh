@@ -1,4 +1,4 @@
-package ss7_abstractclass_interface.bai_tap.colorable.;
+package ss7_abstractclass_interface.bai_tap.colorable;
 
 public class SquareTest {
     public static void main(String[] args) {
