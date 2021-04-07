@@ -1,4 +1,4 @@
-package ss6_inheritance.bai_tap.Triangle;
+package ss6_inheritance.bai_tap.triangle;
 
 public class Triangle extends Shape{
     private double side1 = 1.0;

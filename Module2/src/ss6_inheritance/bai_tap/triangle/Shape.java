@@ -1,4 +1,4 @@
-package ss6_inheritance.bai_tap.Triangle;
+package ss6_inheritance.bai_tap.triangle;
 
 public class Shape {
     private String color = "red";

@@ -1,4 +1,4 @@
-package ss6_inheritance.bai_tap.point2D_point3D;
+package ss6_inheritance.bai_tap.point2d_point3d;
 
 public class Point3D extends Point2D {
     private float z = 0.0f;
