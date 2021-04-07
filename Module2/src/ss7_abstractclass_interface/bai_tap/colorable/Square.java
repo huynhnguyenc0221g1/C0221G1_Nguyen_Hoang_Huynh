@@ -1,6 +1,6 @@
-package ss7_abstractclass_interface.bai_tap.resizeable;
+package ss7_abstractclass_interface.bai_tap.colorable.;
 
-public class Square extends Shape implements Resizeable {
+public class Square extends Shape {
     private double side = 1.0;
     public Square() {}
     public Square(double side) {
@@ -32,10 +32,6 @@ public class Square extends Shape implements Resizeable {
                 + getSide()
                 + ", its' area = "
                 + getArea();
-    }
-    @Override
-    public void resize(double percent) {
-        side = side * percent / 100;
     }
 }
 

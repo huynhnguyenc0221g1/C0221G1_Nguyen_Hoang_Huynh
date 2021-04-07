@@ -1,6 +1,6 @@
-package ss7_abstractclass_interface.bai_tap.resizeable;
+package ss7_abstractclass_interface.bai_tap.colorable.;
 
-public class Circle extends Shape implements Resizeable {
+public class Circle extends Shape{
     private double radius = 1.0;
 
     public Circle() {
@@ -37,10 +37,5 @@ public class Circle extends Shape implements Resizeable {
                 + getRadius()
                 + ", its' area = "
                 + getArea();
-    }
-
-    @Override
-    public void resize(double percent) {
-        radius = radius*percent/100;
     }
 }

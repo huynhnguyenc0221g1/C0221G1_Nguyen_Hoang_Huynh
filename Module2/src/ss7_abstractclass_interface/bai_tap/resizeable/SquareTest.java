@@ -10,5 +10,9 @@ public class SquareTest {
 
         square = new Square(5.8, "yellow", true);
         System.out.println(square);
+
+        System.out.println("Resize the last square by 40%");
+        square.resize(40);
+        System.out.println(square);
     }
 }
