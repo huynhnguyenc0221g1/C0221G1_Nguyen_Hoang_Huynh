@@ -1,6 +1,6 @@
 package ss7_abstractclass_interface.bai_tap.colorable;
 
-public class Main {
+public class TestCase {
     public static void main(String[] args) {
         Shape circle1 = new Circle();
         Shape circle2 = new Circle(23);
