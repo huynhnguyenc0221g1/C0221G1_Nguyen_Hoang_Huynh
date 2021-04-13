@@ -16,9 +16,6 @@ public class BracketCheck {
                         stack.pop();
                     }
                 }
-                if (expression.charAt(i) == '(' && expression.charAt(i+1) == ')') {
-                    return false;
-                }
             }
         }
         if (stack.isEmpty()) {
