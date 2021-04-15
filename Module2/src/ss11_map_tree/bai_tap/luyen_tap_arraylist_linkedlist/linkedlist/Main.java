@@ -1,31 +1,9 @@
-package ss11_map_tree.bai_tap.luyen_tap_arraylist_linkedlist;
+package ss11_map_tree.bai_tap.luyen_tap_arraylist_linkedlist.linkedlist;
 
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-//        Product iphone = new Product("Iphone","12",1000);
-//        Product samsung = new Product("Samsung","02",1500);
-//        ProductManager.addNewProduct(iphone);
-//        ProductManager.addNewProduct(samsung);
-//        ProductManager.showListProduct();
-//        ProductManager.editById("02","Xiaomi",1500);
-//        ProductManager.showListProduct();
-//        ProductManager.removeById("12");
-//        ProductManager.showListProduct();
-//        Product oppo = new Product("Oppo","11",500);
-//        ProductManager.addNewProduct(oppo);
-//        ProductManager.showListProduct();
-//        ProductManager.searchByName("Asus");
-//        ProductManager.searchByName("Xiaomi");
-//        Product huawei = new Product("Huawei","00",2000);
-//        ProductManager.addNewProduct(huawei);
-//        ProductManager.PriceComparatorAscending priceComparatorAscending = new ProductManager.PriceComparatorAscending();
-//        Collections.sort(ProductManager.productList,priceComparatorAscending);
-//        ProductManager.showListProduct();
-//        ProductManager.PriceComparatorDescending priceComparatorDescending = new ProductManager.PriceComparatorDescending();
-//        Collections.sort(ProductManager.productList,priceComparatorDescending);
-//        ProductManager.showListProduct();
         Scanner scanner = new Scanner(System.in);
         int choice;
         do {

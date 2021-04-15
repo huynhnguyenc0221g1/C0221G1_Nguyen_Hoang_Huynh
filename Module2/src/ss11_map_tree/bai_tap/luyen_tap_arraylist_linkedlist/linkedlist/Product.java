@@ -1,4 +1,4 @@
-package ss11_map_tree.bai_tap.luyen_tap_arraylist_linkedlist;
+package ss11_map_tree.bai_tap.luyen_tap_arraylist_linkedlist.linkedlist;
 
 public class Product implements Comparable<Product>{
     private String name;
