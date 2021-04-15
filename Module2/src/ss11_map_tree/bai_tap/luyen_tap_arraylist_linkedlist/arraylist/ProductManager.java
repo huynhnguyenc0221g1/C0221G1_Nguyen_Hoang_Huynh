@@ -44,7 +44,10 @@ public class ProductManager {
     }
 
     public static void showListProduct() {
-        System.out.println(productList);
+        int listSize = productList.size();
+        for (int i = 0; i<listSize;i++) {
+            System.out.println(productList.get(i) + "\n");
+        }
     }
 
     public static void searchByName(String name) {
