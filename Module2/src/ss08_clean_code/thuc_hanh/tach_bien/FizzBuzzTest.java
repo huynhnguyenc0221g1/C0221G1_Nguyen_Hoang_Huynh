@@ -1,6 +1,7 @@
 package ss08_clean_code.thuc_hanh.tach_bien;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,6 +14,9 @@ class FizzBuzzTest {
 
         String result = FizzBuzz.fizzBuzz(number);
         assertEquals(expected, result);
+    }
+
+    private void assertEquals(String expected, String result) {
     }
 
     @Test
