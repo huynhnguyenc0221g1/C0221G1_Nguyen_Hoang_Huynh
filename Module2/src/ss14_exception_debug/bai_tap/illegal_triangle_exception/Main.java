@@ -4,13 +4,14 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+
         Triangle triangle = new Triangle();
         boolean done = false;
 
         System.out.println("Enter three sides: ");
 
         while (!done) {
+            Scanner scanner = new Scanner(System.in);
             try {
                 double side1 = scanner.nextDouble();
                 double side2 = scanner.nextDouble();
@@ -21,6 +22,9 @@ public class Main {
                 System.out.println(e.getMessage());
                 System.out.println("Enter three sides:  ");
                 scanner.nextLine();
+            } catch (InputMismatchException e) {
+                System.out.println("Must input number!");
+                System.out.println("Enter three sides: ");
             }
         }
         System.out.println("Valid triangle!");
