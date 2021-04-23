@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         try {
             BufferedWriter bw = new BufferedWriter(
-                    new FileWriter("/Users/huynhnguyen/Downloads/C0221G1_Nguyen_Hoang_Huynh/Module2/src/ss15_text_file/bai_tap/copy_file_text/output.txt"));
+                    new FileWriter("src/ss15_text_file/bai_tap/copy_file_text/output.txt"));
             bw.write("1. Travis Scott\n");
             bw.write("2. J. Cole\n");
             bw.write("3. Kendrick Lamar\n");
@@ -21,9 +21,9 @@ public class Main {
         System.out.println("Successfully created output.txt file in your package path!");
         try {
             BufferedWriter bw = new BufferedWriter(
-                    new FileWriter("/Users/huynhnguyen/Downloads/C0221G1_Nguyen_Hoang_Huynh/Module2/src/ss15_text_file/bai_tap/copy_file_text/output-copy.txt"));
+                    new FileWriter("src/ss15_text_file/bai_tap/copy_file_text/output-copy.txt"));
             BufferedReader br = new BufferedReader(
-                    new FileReader("/Users/huynhnguyen/Downloads/C0221G1_Nguyen_Hoang_Huynh/Module2/src/ss15_text_file/bai_tap/copy_file_text/output.txt"));
+                    new FileReader("src/ss15_text_file/bai_tap/copy_file_text/output.txt"));
             String string;
             while ((string = br.readLine()) != null) {
                 bw.write(string + "\n");
