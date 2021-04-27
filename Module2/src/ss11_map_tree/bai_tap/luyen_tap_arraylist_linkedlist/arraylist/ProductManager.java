@@ -49,26 +49,44 @@ public class ProductManager {
             System.out.println(productList.get(i) + "\n");
         }
     }
-
-    public static void searchByName(String name) {
+public static void searchByName(String name) {
         int count = 0;
         int index = 0;
         int price = 0;
-        int listSize = productList.size();
-        for (int i = 0; i < listSize; i++) {
-            boolean equalsName = name.equals(productList.get(i).getName());
+        int listSize  = productList.size();
+        for (int i = 0; i< listSize; i++) {
+            boolean equalsName  = name.equals(productList.get(i).getName());
             if (equalsName) {
                 count++;
                 index = productList.get(i).getId();
                 price = productList.get(i).getPrice();
             }
+            if (count == 0) {
+                System.out.println("Couldn't found the product " + name + " in your product list!");
+            } else {
+                System.out.println("The product " + name + " is at ID = " + index + " with the price of " + price) ;
+            }
         }
-        if (count == 0) {
-            System.out.println("Couldn't found the product " + name + " in your product list!");
-        } else {
-            System.out.println("The product " + name + " is at ID = " + index + " with the price of " + price);
-        }
-    }
+}
+//    public static void searchByName(String name) {
+//        int count = 0;
+//        int index = 0;
+//        int price = 0;
+//        int listSize = productList.size();
+//        for (int i = 0; i < listSize; i++) {
+//            boolean equalsName = name.equals(productList.get(i).getName());
+//            if (equalsName) {
+//                count++;
+//                index = productList.get(i).getId();
+//                price = productList.get(i).getPrice();
+//            }
+//        }
+//        if (count == 0) {
+//            System.out.println("Couldn't found the product " + name + " in your product list!");
+//        } else {
+//            System.out.println("The product " + name + " is at ID = " + index + " with the price of " + price);
+//        }
+//    }
 
     public static class PriceComparatorAscending implements Comparator<Product> {
 
