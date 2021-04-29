@@ -48,12 +48,18 @@ public class Villa extends Services{
 
 
     @Override
+    public String toString() {
+        return super.toString() + villaRoomStandard + ","
+                + villaOtherAmenities + ","
+                + villaPoolArea + ","
+                + villaNumberOfFloors;
+    }
+
+    @Override
     public String showInfor() {
-        return "Villa{" +
-                "villaRoomStandard='" + villaRoomStandard + '\'' +
-                ", villaOtherAmenities='" + villaOtherAmenities + '\'' +
-                ", villaPoolArea=" + villaPoolArea +
-                ", villaNumberOfFloors=" + villaNumberOfFloors +
-                '}' + super.toString();
+        return "Villa ID :" + super.getId() + "\n[ Villa's Room Standard: " + villaRoomStandard + "\n"
+              + "Villa's Other Amenities: "  + villaOtherAmenities + "\n"
+               + "Villa's Pool Area: " + villaPoolArea + "\n"
+               + "Number Of Floors: " + villaNumberOfFloors +" ]\n";
     }
 }

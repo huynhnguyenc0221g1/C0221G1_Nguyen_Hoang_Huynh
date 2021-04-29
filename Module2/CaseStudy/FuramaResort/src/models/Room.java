@@ -17,10 +17,13 @@ public class Room extends Services {
     }
 
     @Override
+    public String toString() {
+        return  super.toString()+ roomFreeAmenities;
+    }
+
+    @Override
     public String showInfor() {
-        return "Room{" +
-                "roomFreeAmenities='" + roomFreeAmenities + '\'' +
-                "} " + super.toString();
+        return "Room ID :" + super.getId() + "\n[ Room's Free Amenities: " + roomFreeAmenities +" ]\n";
     }
 
 

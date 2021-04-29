@@ -1,14 +1,16 @@
-package ss16_binary_file.thuc_hanh.copy_file_dung_luong_lon;
+package ss16_binary_file.thuc_hanh.CopyFileDatabig;
 
 import java.io.*;
-import java.nio.file.*;
-import java.util.*;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
+import java.util.Scanner;
 
 public class Main {
-    private static void copyFileUsingJava7Files(File source, File dest) throws IOException {
+    private static void copyFileUsingJava7Files(File source,File dest)throws IOException {
         Files.copy(source.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING);
     }
-    private static void copyFileUsingStream(File source, File dest) throws IOException {
+
+    private static void copyFileUsingStream(File source,File dest)throws IOException{
         InputStream is = null;
         OutputStream os = null;
         try {
@@ -23,7 +25,9 @@ public class Main {
             is.close();
             os.close();
         }
+
     }
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 

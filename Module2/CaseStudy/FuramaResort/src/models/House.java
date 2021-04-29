@@ -37,11 +37,16 @@ public class House extends Services{
     }
 
     @Override
+    public String toString() {
+        return  super.toString() + houseRoomStandard + "," +
+                houseOtherAmenities + "," +
+                houseNumberOfFloors + ",";
+    }
+
+    @Override
     public String showInfor() {
-        return "House{" +
-                "houseRoomStandard='" + houseRoomStandard + '\'' +
-                ", houseOtherAmenities='" + houseOtherAmenities + '\'' +
-                ", houseNumberOfFloors=" + houseNumberOfFloors +
-                "} " + super.toString();
+        return "House ID :" + super.getId() + "\n[ House's Room Standard: " + houseRoomStandard + "\n" +
+                "House's Other Amenities: " + houseOtherAmenities + "\n" +
+                "Number Of Floors: " + houseNumberOfFloors +" ]\n";
     }
 }
