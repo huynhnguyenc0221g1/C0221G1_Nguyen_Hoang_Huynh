@@ -1,4 +1,4 @@
-package input_output;
+package commons;
 
 public class IOString {
     public static final String COMMA = ",";
