@@ -1,52 +1,52 @@
 package models;
 
 public class House extends Services{
-    private String houseRoomStandard;
-    private String houseOtherAmenities;
-    private int houseNumberOfFloors;
+    private String standard;
+    private String otherDescription;
+    private int numberOfFloors;
 
-    public House(String serviceName, double areaUsageService, double priceService, int maximumGuests, String rentOption, String id, String houseRoomStandard, String houseOtherAmenities, int houseNumberOfFloors) {
-        super(serviceName, areaUsageService, priceService, maximumGuests, rentOption, id);
-        this.houseRoomStandard = houseRoomStandard;
-        this.houseOtherAmenities = houseOtherAmenities;
-        this.houseNumberOfFloors = houseNumberOfFloors;
+    public House(String id, String serviceName, double areaUsage, double rentCost, int maxGuests, String rentType, String standard, String otherDescription, int numberOfFloors) {
+        super(id, serviceName, areaUsage, rentCost, maxGuests, rentType);
+        this.standard = standard;
+        this.otherDescription = otherDescription;
+        this.numberOfFloors = numberOfFloors;
     }
 
-    public String getHouseRoomStandard() {
-        return houseRoomStandard;
+    public String getStandard() {
+        return standard;
     }
 
-    public void setHouseRoomStandard(String houseRoomStandard) {
-        this.houseRoomStandard = houseRoomStandard;
+    public void setStandard(String standard) {
+        this.standard = standard;
     }
 
-    public String getHouseOtherAmenities() {
-        return houseOtherAmenities;
+    public String getOtherDescription() {
+        return otherDescription;
     }
 
-    public void setHouseOtherAmenities(String houseOtherAmenities) {
-        this.houseOtherAmenities = houseOtherAmenities;
+    public void setOtherDescription(String otherDescription) {
+        this.otherDescription = otherDescription;
     }
 
-    public int getHouseNumberOfFloors() {
-        return houseNumberOfFloors;
+    public int getNumberOfFloors() {
+        return numberOfFloors;
     }
 
-    public void setHouseNumberOfFloors(int houseNumberOfFloors) {
-        this.houseNumberOfFloors = houseNumberOfFloors;
+    public void setNumberOfFloors(int numberOfFloors) {
+        this.numberOfFloors = numberOfFloors;
     }
 
     @Override
     public String toString() {
-        return  super.toString() + houseRoomStandard + "," +
-                houseOtherAmenities + "," +
-                houseNumberOfFloors + ",";
+        return "House{" +
+                "standard='" + standard + '\'' +
+                ", otherDescription='" + otherDescription + '\'' +
+                ", numberOfFloors=" + numberOfFloors +
+                "} " + super.toString();
     }
 
     @Override
-    public String showInfor() {
-        return "House ID :" + super.getId() + "\n[ House's Room Standard: " + houseRoomStandard + "\n" +
-                "House's Other Amenities: " + houseOtherAmenities + "\n" +
-                "Number Of Floors: " + houseNumberOfFloors +" ]\n";
+    public void showInfo() {
+        System.out.format(this.toString());
     }
 }

@@ -1,30 +1,30 @@
 package models;
 
-public class Room extends Services {
-    private String roomFreeAmenities;
+public class Room extends Services{
+    private ExtraService extraService;
 
-    public Room(String serviceName, double areaUsageService, double priceService, int maximumGuests, String rentOption, String id, String roomFreeAmenities) {
-        super(serviceName, areaUsageService, priceService, maximumGuests, rentOption, id);
-        this.roomFreeAmenities = roomFreeAmenities;
+    public Room(String id, String serviceName, double areaUsage, double rentCost, int maxGuests, String rentType, ExtraService extraService) {
+        super(id, serviceName, areaUsage, rentCost, maxGuests, rentType);
+        this.extraService = extraService;
     }
 
-    public String getRoomFreeAmenities() {
-        return roomFreeAmenities;
+    public ExtraService getExtraService() {
+        return extraService;
     }
 
-    public void setRoomFreeAmenities(String roomFreeAmenities) {
-        this.roomFreeAmenities = roomFreeAmenities;
+    public void setExtraService(ExtraService extraService) {
+        this.extraService = extraService;
     }
 
     @Override
     public String toString() {
-        return  super.toString()+ roomFreeAmenities;
+        return "Room{" +
+                "extraService=" + extraService +
+                "} " + super.toString();
     }
 
     @Override
-    public String showInfor() {
-        return "Room ID :" + super.getId() + "\n[ Room's Free Amenities: " + roomFreeAmenities +" ]\n";
+    public void showInfo() {
+
     }
-
-
 }

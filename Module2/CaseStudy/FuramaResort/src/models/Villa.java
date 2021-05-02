@@ -1,65 +1,63 @@
 package models;
 
 public class Villa extends Services{
-    private String villaRoomStandard;
-    private String villaOtherAmenities;
-    private double villaPoolArea;
-    private int villaNumberOfFloors;
+    private String standard;
+    private String otherInfo;
+    private double poolArea;
+    private int numberOfFloors;
 
-    public Villa(String serviceName, double areaUsageService, double priceService, int maximumGuests, String rentOption, String id, String villaRoomStandard, String villaOtherAmenities, double villaPoolArea, int villaNumberOfFloors) {
-        super(serviceName,areaUsageService,priceService,maximumGuests,rentOption,id);
-        this.villaRoomStandard = villaRoomStandard;
-        this.villaOtherAmenities = villaOtherAmenities;
-        this.villaPoolArea = villaPoolArea;
-        this.villaNumberOfFloors = villaNumberOfFloors;
+    public Villa(String id, String serviceName, double areaUsage, double rentCost, int maxGuests, String rentType, String standard, String otherInfo, double poolArea, int numberOfFloors) {
+        super(id, serviceName, areaUsage, rentCost, maxGuests, rentType);
+        this.standard = standard;
+        this.otherInfo = otherInfo;
+        this.poolArea = poolArea;
+        this.numberOfFloors = numberOfFloors;
     }
 
-    public String getVillaRoomStandard() {
-        return villaRoomStandard;
+    public String getStandard() {
+        return standard;
     }
 
-    public void setVillaRoomStandard(String villaRoomStandard) {
-        this.villaRoomStandard = villaRoomStandard;
+    public void setStandard(String standard) {
+        this.standard = standard;
     }
 
-    public String getVillaOtherAmenities() {
-        return villaOtherAmenities;
+    public String getOtherInfo() {
+        return otherInfo;
     }
 
-    public void setVillaOtherAmenities(String villaOtherAmenities) {
-        this.villaOtherAmenities = villaOtherAmenities;
+    public void setOtherInfo(String otherInfo) {
+        this.otherInfo = otherInfo;
     }
 
-    public double getVillaPoolArea() {
-        return villaPoolArea;
+    public double getPoolArea() {
+        return poolArea;
     }
 
-    public void setVillaPoolArea(double villaPoolArea) {
-        this.villaPoolArea = villaPoolArea;
+    public void setPoolArea(double poolArea) {
+        this.poolArea = poolArea;
     }
 
-    public int getVillaNumberOfFloors() {
-        return villaNumberOfFloors;
+    public int getNumberOfFloors() {
+        return numberOfFloors;
     }
 
-    public void setVillaNumberOfFloors(int villaNumberOfFloors) {
-        this.villaNumberOfFloors = villaNumberOfFloors;
+    public void setNumberOfFloors(int numberOfFloors) {
+        this.numberOfFloors = numberOfFloors;
     }
-
 
     @Override
     public String toString() {
-        return super.toString() + villaRoomStandard + ","
-                + villaOtherAmenities + ","
-                + villaPoolArea + ","
-                + villaNumberOfFloors;
+        return "Villa{" +
+                "villaStandard='" + standard + '\'' +
+                ", otherInfo='" + otherInfo + '\'' +
+                ", poolArea=" + poolArea +
+                ", numberOfFloors=" + numberOfFloors +
+                "} " + super.toString();
     }
 
     @Override
-    public String showInfor() {
-        return "Villa ID :" + super.getId() + "\n[ Villa's Room Standard: " + villaRoomStandard + "\n"
-              + "Villa's Other Amenities: "  + villaOtherAmenities + "\n"
-               + "Villa's Pool Area: " + villaPoolArea + "\n"
-               + "Number Of Floors: " + villaNumberOfFloors +" ]\n";
+    public void showInfo() {
+        System.out.println(this.toString());
     }
 }

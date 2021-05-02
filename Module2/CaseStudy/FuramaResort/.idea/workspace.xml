@@ -2,53 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c42c60f-d374-4a93-92e6-536d08ee006d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/FuramaResort/controllers/AddNewServices.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/FuramaResort/controllers/MainControllers.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/FuramaResort/data/IOFile.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/FuramaResort/models/House.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/FuramaResort/models/Room.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/FuramaResort/models/Services.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/FuramaResort/models/Villa.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/AddNewServices.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/ShowServices.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/House.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/IOFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/Room.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/Villa.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../out/production/Module2/ss16_binary_file/bai_tap/product_manager/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../out/production/Module2/ss16_binary_file/bai_tap/product_manager/Product.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../out/production/Module2/ss16_binary_file/bai_tap/product_manager/product.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../out/production/Module2/ss16_binary_file/thuc_hanh/CopyFileDatabig/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../out/production/Module2/ss16_binary_file/thuc_hanh/CopyFileDatabig/copy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../out/production/Module2/ss16_binary_file/thuc_hanh/CopyFileDatabig/source" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../out/production/Module2/ss16_binary_file/thuc_hanh/readAndWriteListStudent/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../out/production/Module2/ss16_binary_file/thuc_hanh/readAndWriteListStudent/Student.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../out/production/Module2/ss16_binary_file/thuc_hanh/readAndWriteListStudent/student.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/ss16_binary_file/bai_tap/product_manager/IOFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/ss16_binary_file/bai_tap/product_manager/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/ss16_binary_file/bai_tap/product_manager/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/ss16_binary_file/bai_tap/product_manager/ProductManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/ss16_binary_file/bai_tap/product_manager/product.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/ss16_binary_file/thuc_hanh/CopyFileDatabig/copy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/ss16_binary_file/thuc_hanh/CopyFileDatabig/source" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/ss16_binary_file/thuc_hanh/readAndWriteListStudent/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/ss16_binary_file/thuc_hanh/readAndWriteListStudent/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/ss16_binary_file/thuc_hanh/readAndWriteListStudent/student.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/MainControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/MainControllers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/House.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Services.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Services.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Villa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Villa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../out/production/Module2/ss16_binary_file/bai_tap/quan_ly_san_pham/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../out/production/Module2/ss16_binary_file/bai_tap/quan_ly_san_pham/Product.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../out/production/Module2/ss16_binary_file/bai_tap/quan_ly_san_pham/ProductManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../out/production/Module2/ss16_binary_file/thuc_hanh/copy_file_dung_luong_lon/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/ss16_binary_file/bai_tap/quan_ly_san_pham/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/ss16_binary_file/bai_tap/quan_ly_san_pham/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/ss16_binary_file/bai_tap/quan_ly_san_pham/ProductManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/ss16_binary_file/thuc_hanh/copy_file_dung_luong_lon/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/ss16_binary_file/thuc_hanh/CopyFileDatabig/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FuramaResort/controllers/AddNewServices.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FuramaResort/controllers/MainControllers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FuramaResort/controllers/ShowServices.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FuramaResort/data/House.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FuramaResort/data/IOFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FuramaResort/data/Room.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FuramaResort/data/Villa.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FuramaResort/models/House.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FuramaResort/models/House.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FuramaResort/models/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FuramaResort/models/Room.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FuramaResort/models/Services.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FuramaResort/models/Services.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FuramaResort/models/Villa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FuramaResort/models/Villa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commons/IOFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commons/IOFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commons/IOString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commons/IOString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/AddNewServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/MainControllers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/ShowServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/House.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/IOFile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Room.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Villa.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/House.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Room.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Services.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Villa.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,9 +77,22 @@
       <recent name="models" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MainControllers">
+  <component name="RunManager" selected="Application.MainController">
     <configuration name="AddNewServices" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controllers.AddNewServices" />
+      <module name="FuramaResort" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="controllers.MainController" />
       <module name="FuramaResort" />
       <extension name="coverage">
         <pattern>
@@ -126,19 +117,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainController" />
         <item itemvalue="Application.MainControllers" />
         <item itemvalue="Application.AddNewServices" />
       </list>
@@ -157,7 +151,8 @@
       <workItem from="1619581136713" duration="614000" />
       <workItem from="1619591138276" duration="8516000" />
       <workItem from="1619660127309" duration="2598000" />
-      <workItem from="1619662880483" duration="5571000" />
+      <workItem from="1619662880483" duration="13743000" />
+      <workItem from="1619942442315" duration="2899000" />
     </task>
     <servers />
   </component>
