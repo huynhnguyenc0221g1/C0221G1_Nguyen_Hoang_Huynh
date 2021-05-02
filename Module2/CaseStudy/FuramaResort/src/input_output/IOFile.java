@@ -1,4 +1,4 @@
-package commons;
+package input_output;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -41,7 +41,7 @@ public class IOFile {
     }
 
     public static void setFilePath(String fileName) {
-        StringBuffer path = new StringBuffer("src/data");
+        StringBuffer path = new StringBuffer("src/data/");
         path.append(fileName);
         path.append(IOString.CSV);
 

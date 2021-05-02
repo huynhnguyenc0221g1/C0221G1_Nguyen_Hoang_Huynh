@@ -2,31 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c42c60f-d374-4a93-92e6-536d08ee006d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/data/house.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/room.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/villa.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/input_output/ReadService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FuramaResort/controllers/AddNewServices.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FuramaResort/controllers/MainControllers.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FuramaResort/controllers/ShowServices.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FuramaResort/data/House.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FuramaResort/data/IOFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FuramaResort/data/Room.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FuramaResort/data/Villa.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FuramaResort/models/House.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FuramaResort/models/House.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FuramaResort/models/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FuramaResort/models/Room.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FuramaResort/models/Services.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FuramaResort/models/Services.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FuramaResort/models/Villa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FuramaResort/models/Villa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commons/IOFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commons/IOFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commons/IOString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commons/IOString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/AddNewServices.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/MainControllers.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/ShowServices.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/House.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/IOFile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Room.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Villa.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/House.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Room.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Services.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Villa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FuramaResort/controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FuramaResort/controllers/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commons/IOFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/input_output/IOFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commons/IOString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/input_output/IOString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/House.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Services.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Services.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Villa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Villa.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,15 +105,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -152,7 +138,8 @@
       <workItem from="1619591138276" duration="8516000" />
       <workItem from="1619660127309" duration="2598000" />
       <workItem from="1619662880483" duration="13743000" />
-      <workItem from="1619942442315" duration="2899000" />
+      <workItem from="1619942442315" duration="5962000" />
+      <workItem from="1619948671823" duration="3602000" />
     </task>
     <servers />
   </component>

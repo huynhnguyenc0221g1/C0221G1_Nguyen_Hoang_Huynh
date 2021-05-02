@@ -3,6 +3,7 @@ package models;
 public class Room extends Services{
     private ExtraService extraService;
 
+    public Room(){}
     public Room(String id, String serviceName, double areaUsage, double rentCost, int maxGuests, String rentType, ExtraService extraService) {
         super(id, serviceName, areaUsage, rentCost, maxGuests, rentType);
         this.extraService = extraService;
@@ -25,6 +26,6 @@ public class Room extends Services{
 
     @Override
     public void showInfo() {
-
+        System.out.println(this.toString());
     }
 }

@@ -6,6 +6,7 @@ public class Villa extends Services{
     private double poolArea;
     private int numberOfFloors;
 
+    public Villa(){}
     public Villa(String id, String serviceName, double areaUsage, double rentCost, int maxGuests, String rentType, String standard, String otherInfo, double poolArea, int numberOfFloors) {
         super(id, serviceName, areaUsage, rentCost, maxGuests, rentType);
         this.standard = standard;
