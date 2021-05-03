@@ -1,8 +1,7 @@
 package controllers;
 
 import commons.*;
-import models.Customer;
-import models.Services;
+import models.*;
 
 import java.util.*;
 
@@ -13,6 +12,8 @@ public class MainController {
     private static String HOUSE = "house";
     private static String ROOM = "room";
     private static String CUSTOMER = "customer";
+    private static String BOOKING = "booking";
+    private static String EMPLOYEE = "employee";
     private static boolean back = false;
 
     public static void displayMainMenu() {
@@ -24,7 +25,8 @@ public class MainController {
                 "5.\tAdd New Booking\n" +
                 "6.\tShow Information of Employee\n" +
                 "7.\tShow 4D Theatre's Queue\n" +
-                "8.\tExit\n");
+                "8.\tSearch for Employee's Information in the File Cabinet\n" +
+                "9.\tExit\n");
         System.out.println("Please choose one option above:");
         choice = scanner.nextInt();
         do {
@@ -47,20 +49,24 @@ public class MainController {
                     addNewBooking();
                     break;
                 case 6:
-                    showInformationOfEmployee();
+                    showInformationOfEmployee(EMPLOYEE);
+                    displayMainMenu();
                     break;
                 case 7:
                     show4DTheatreQueue();
                     break;
                 case 8:
+                    searchEmployeeInFileCabinet();
+                    displayMainMenu();
+                    break;
+                case 9:
                     exit = true;
             }
             if (exit) {
                 break;
             }
-        } while (choice >= 1 && choice <= 8);
+        } while (choice >= 1 && choice <= 9);
     }
-
 
     public static void main(String[] args) {
         displayMainMenu();
@@ -356,9 +362,104 @@ public class MainController {
     }
 
     private static void addNewBooking() {
+        System.out.println("***************************");
+        System.out.println("List of Customers at the moment:");
+        List<Customer> customersList = ReadCustomer.readCustomer(CUSTOMER);
+        for (Customer customer: customersList) {
+            customer.showInfo();
+        }
+        System.out.println("Which customer is going to commit this booking?");
+        int choiceCustomer = scanner.nextInt();
+        Customer bookingCustomer = customersList.get(choiceCustomer);
+        int choiceBookingOption = 0;
+        do {
+            System.out.println("1.\tBooking Villa\n" +
+                    "2.\tBooking House\n" +
+                    "3.\tBooking Room\n");
+            System.out.println("Please choose one option above:");
+            choiceBookingOption = scanner.nextInt();
+            switch (choiceBookingOption) {
+                case 1:
+                    bookingVilla(bookingCustomer);
+                    displayMainMenu();
+                    break;
+                case 2:
+                    bookingHouse(bookingCustomer);
+                    displayMainMenu();
+                    break;
+                case 3:
+                    bookingRoom(bookingCustomer);
+                    break;
+            }
+        } while (choiceBookingOption >= 1 && choiceBookingOption <= 3);
     }
 
-    private static void showInformationOfEmployee() {
+    private static void bookingVilla(Customer bookingCustomer) {
+        System.out.println("***************************");
+        System.out.println("List of Villas at the moment:");
+        List<Services> villaList = ReadService.readAllServices(VILLA);
+        for (Services villa: villaList) {
+            villa.showInfo();
+        }
+        System.out.println("Which villa do you want to add to the current booking?");
+        int choiceVilla = scanner.nextInt();
+        Services bookingVilla = villaList.get(choiceVilla);
+        IOFile.setFilePath(BOOKING);
+        IOFile.writeFile(new String[] {bookingCustomer.getFullName(),bookingCustomer.getDateOfBirth(),bookingCustomer.getGender()
+                ,bookingCustomer.getIdNumber(),bookingCustomer.getPhoneNumber(),bookingCustomer.getEmail(),bookingCustomer.getTypeOfCustomer(),
+                bookingCustomer.getAddress(), String.valueOf(bookingVilla)});
+        System.out.println("***************************");
+
+    }
+
+    private static void bookingHouse(Customer bookingCustomer) {
+        System.out.println("***************************");
+        System.out.println("List of Houses at the moment:");
+        List<Services> houseList = ReadService.readAllServices(HOUSE);
+        for (Services house: houseList) {
+            house.showInfo();
+        }
+        System.out.println("Which house do you want to add to the current booking?");
+        int choiceHouse = scanner.nextInt();
+        Services bookingHouse = houseList.get(choiceHouse);
+        IOFile.setFilePath(BOOKING);
+        IOFile.writeFile(new String[] {bookingCustomer.getFullName(),bookingCustomer.getDateOfBirth(),bookingCustomer.getGender()
+                ,bookingCustomer.getIdNumber(),bookingCustomer.getPhoneNumber(),bookingCustomer.getEmail(),bookingCustomer.getTypeOfCustomer(),
+                bookingCustomer.getAddress(), String.valueOf(bookingHouse)});
+        System.out.println("***************************");
+    }
+
+
+    private static void bookingRoom(Customer bookingCustomer) {
+        System.out.println("***************************");
+        System.out.println("List of Rooms at the moment:");
+        List<Services> roomList = ReadService.readAllServices(ROOM);
+        for (Services room: roomList) {
+            room.showInfo();
+        }
+        System.out.println("Which room do you want to add to the current booking?");
+        int choiceRoom = scanner.nextInt();
+        Services bookingRoom = roomList.get(choiceRoom);
+        IOFile.setFilePath(BOOKING);
+        IOFile.writeFile(new String[] {bookingCustomer.getFullName(),bookingCustomer.getDateOfBirth(),bookingCustomer.getGender()
+                ,bookingCustomer.getIdNumber(),bookingCustomer.getPhoneNumber(),bookingCustomer.getEmail(),bookingCustomer.getTypeOfCustomer(),
+                bookingCustomer.getAddress(), String.valueOf(bookingRoom)});
+        System.out.println("***************************");
+    }
+
+    private static void showInformationOfEmployee(String fileName) {
+        int i = 1;
+        System.out.println("***************************");
+        System.out.println("List of Employee:");
+        Map<String,Employee> employeeOfFuramaTreeMap = new HashMap<>();
+        List<Employee> employeeList = ReadEmployee.readEmployee(fileName);
+        for (Employee employee: employeeList) {
+          employeeOfFuramaTreeMap.put("00"+i,employee);
+          i++;
+        }
+        for (Map.Entry<String, Employee> element : employeeOfFuramaTreeMap.entrySet()) {
+            System.out.println("Employee's ID: " + element.getKey() + " / " + element.getValue());
+        }
     }
 
     private static void show4DTheatreQueue() {
@@ -375,6 +476,30 @@ public class MainController {
         while (!theatreQueue.isEmpty()) {
             customer = theatreQueue.poll();
             customer.showInfo();
+        }
+        System.out.println("***************************");
+    }
+
+    private static void searchEmployeeInFileCabinet() {
+        scanner.nextLine();
+        System.out.println("***************************");
+        System.out.println("Please input Employee's Name:");
+        String employeeName = scanner.nextLine();
+        List<Employee> employeeList = FileCabinet.getFileCabinet();
+        Iterator iterator = employeeList.iterator();
+        int count = 0;
+        String employeeInfo = null;
+        while(iterator.hasNext()){
+            Employee value = (Employee) iterator.next();
+            if (employeeName.toLowerCase().equals(value.getEmployeeName().toLowerCase())) {
+                employeeInfo = value.toString();
+                count++;
+            }
+        }
+        if (count == 0) {
+            System.out.println("Couldn't find the employee " + employeeName + " in the File Cabinet!");
+        } else {
+            System.out.println(employeeInfo);
         }
         System.out.println("***************************");
     }
