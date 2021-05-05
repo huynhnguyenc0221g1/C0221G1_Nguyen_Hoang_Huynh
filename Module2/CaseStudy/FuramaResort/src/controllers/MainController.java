@@ -67,11 +67,6 @@ public class MainController {
             }
         } while (choice >= 1 && choice <= 9);
     }
-
-    public static void main(String[] args) {
-        displayMainMenu();
-    }
-
     private static void addNewService() {
         int choice = 0;
         do {
