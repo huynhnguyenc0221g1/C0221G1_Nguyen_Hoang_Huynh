@@ -2,44 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c42c60f-d374-4a93-92e6-536d08ee006d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/FuramaResort/data/booking.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/FuramaResort/views/RunProgram.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/RunProgram.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/out/production/Quan_li_phuong_tien_giao_thong/commons/IOFile.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/out/production/Quan_li_phuong_tien_giao_thong/commons/IOString.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/out/production/Quan_li_phuong_tien_giao_thong/controllers/MainController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/out/production/Quan_li_phuong_tien_giao_thong/models/Bike.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/out/production/Quan_li_phuong_tien_giao_thong/models/Car.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/out/production/Quan_li_phuong_tien_giao_thong/models/Truck.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/out/production/Quan_li_phuong_tien_giao_thong/models/Vehicle.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/src/commons/IOFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/src/commons/IOString.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/src/commons/Validators.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/src/controllers/MainController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/src/data/bike.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/src/data/car.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/src/data/manufaturer.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/src/data/truck.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/src/models/Bike.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/src/models/Car.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/src/models/Manufacturer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/src/models/Truck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/src/models/Vehicle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/src/views/Display.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Thi_Module2/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Thi_Module2/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Thi_Module2/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Thi_Module2/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Thi_Module2/Thi_Module2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Thi_Module2/out/production/Thi_Module2/commons/IOConvert.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Thi_Module2/out/production/Thi_Module2/commons/IOFile.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Thi_Module2/out/production/Thi_Module2/commons/IOString.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Thi_Module2/out/production/Thi_Module2/commons/Validators.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Thi_Module2/out/production/Thi_Module2/controllers/MainControllers.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Thi_Module2/out/production/Thi_Module2/data/contacts.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Thi_Module2/out/production/Thi_Module2/models/DanhBa.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Thi_Module2/src/commons/IOConvert.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Thi_Module2/src/commons/IOFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Thi_Module2/src/commons/IOString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Thi_Module2/src/commons/Validators.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Thi_Module2/src/controllers/MainControllers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Thi_Module2/src/data/contacts.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/Thi_Module2/src/models/DanhBa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/untitled/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/untitled/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/untitled/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/untitled/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/untitled/out/production/untitled/DRAFT.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/untitled/src/DRAFT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ExtraTasks/untitled/untitled.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FuramaResort/controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FuramaResort/controllers/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FuramaResort/data/customer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FuramaResort/data/customer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FuramaResort/data/room.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FuramaResort/data/room.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FuramaResort/data/villa.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FuramaResort/data/villa.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commons/IOFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commons/IOFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commons/Validators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commons/Validators.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/customer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/customer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/room.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/room.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/villa.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/villa.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/out/production/Quan_li_phuong_tien_giao_thong/commons/Validators.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/out/production/Quan_li_phuong_tien_giao_thong/commons/Validators.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/out/production/Quan_li_phuong_tien_giao_thong/controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/out/production/Quan_li_phuong_tien_giao_thong/controllers/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/out/production/Quan_li_phuong_tien_giao_thong/data/car.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/out/production/Quan_li_phuong_tien_giao_thong/data/car.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/src/commons/Validators.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/src/commons/Validators.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/src/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/src/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/src/data/car.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../ExtraTasks/Quan_li_phuong_tien_giao_thong/src/data/car.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,6 +168,7 @@
       <workItem from="1620023512304" duration="4614000" />
       <workItem from="1620028558237" duration="6912000" />
       <workItem from="1620179089882" duration="6421000" />
+      <workItem from="1620607534713" duration="2283000" />
     </task>
     <servers />
   </component>

@@ -5,6 +5,7 @@ import commons.IOString;
 import commons.Validators;
 import models.*;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -210,7 +211,7 @@ public class MainController {
     }
 
     private static void showAllVehicle() {
-        int choice = 0;
+        String choice;
         do {
             System.out.println("1.\tShow all Trucks\n" +
                     "2.\tShow all Cars\n" +
@@ -218,32 +219,34 @@ public class MainController {
                     "4.\tBack To Main Menu\n" +
                     "5.\tExit");
             System.out.println("Please choose one option above:");
-            choice = scanner.nextInt();
+            choice = scanner.nextLine();
 
             switch (choice) {
-                case 1:
+                case "1":
                     showVehicle(TRUCK);
                     displayMainMenu();
                     break;
-                case 2:
+                case "2":
                     showVehicle(CAR);
                     displayMainMenu();
                     break;
-                case 3:
+                case "3":
                     showVehicle(BIKE);
                     displayMainMenu();
                     break;
-                case 4:
+                case "4":
                     back = true;
                     displayMainMenu();
                     break;
-                case 5:
+                case "5":
                     exit=true;
+                default:
+                    System.out.println("Not a valid option! Please input again!");
             }
             if (back || exit) {
                 return;
             }
-        } while (choice >= 1 && choice <= 5);
+        } while (choice != "5");
     }
 
     private static void showVehicle(String fileName) {
@@ -256,23 +259,16 @@ public class MainController {
     }
 
     private static void deleteVehicle() {
-        List<Vehicle> truckList = new ArrayList<>();
-        for (Vehicle truck : readAllVehicle(TRUCK)) {
-            truckList.add(truck);
-        }
-        List<Vehicle> carList = new ArrayList<>();
-        for (Vehicle car : readAllVehicle(CAR)) {
-            carList.add(car);
-        }
-        List<Vehicle> bikeList = new ArrayList<>();
-        for (Vehicle bike : readAllVehicle(BIKE)) {
-            bikeList.add(bike);
-        }
+        List<Vehicle> truckList = new ArrayList<>(readAllVehicle(TRUCK));
+        List<Vehicle> carList = new ArrayList<>(readAllVehicle(CAR));
+        List<Vehicle> bikeList = new ArrayList<>(readAllVehicle(BIKE));
         scanner.nextLine();
         System.out.println("***************************");
         String deleteNumberPlate = null;
         System.out.println("Please input a number plate that you want to delete in the database:");
-        deleteNumberPlate = scanner.nextLine();
+        do {
+            deleteNumberPlate = scanner.nextLine();
+        } while (!Validators.inputValidate(deleteNumberPlate,Validators.NUMBER_PLATE_REGEX));
         int countTruck = 0;
         int idTruck = 0;
         int countCar = 0;
@@ -288,7 +284,7 @@ public class MainController {
         for (Vehicle car: carList) {
             if (deleteNumberPlate.equals(car.getNumberPlate())) {
                 countCar++;
-                idCar = truckList.indexOf(car);
+                idCar = carList.indexOf(car);
             }
         }
         for (Vehicle bike: bikeList) {
@@ -297,44 +293,65 @@ public class MainController {
                 idBike = truckList.indexOf(bike);
             }
         }
-        if (countTruck != 0) {
-            truckList.remove(idTruck);
-            Truck truck1 = (Truck) truckList.get(0);
-            IOFile.setFilePath(TRUCK);
-            IOFile.overWriteFile(new String[] {truck1.getNumberPlate(),truck1.getManufacturer(), String.valueOf(truck1.getYearProduced()),
-            truck1.getOwner(), String.valueOf(truck1.getLoadAmount())});
-            for (int i = 1; i<truckList.size(); i++) {
-                Truck otherTruck = (Truck) truckList.get(i);
-                IOFile.writeFile(new String[] {otherTruck.getNumberPlate(),otherTruck.getManufacturer(), String.valueOf(otherTruck.getYearProduced()),
-                        otherTruck.getOwner(), String.valueOf(otherTruck.getLoadAmount())});
+        if (countTruck!=0||countBike!=0||countCar!=0) {
+            int choiceDelete = 0;
+            System.out.println("Founded number plate " + deleteNumberPlate + " in the Database! Do you want to delete it?\n"
+            +"1.\tYes\n"
+            +"2.\tNo");
+            choiceDelete = scanner.nextInt();
+            switch (choiceDelete) {
+                case 1:
+                    if (countTruck != 0) {
+                        truckList.remove(idTruck);
+                        Truck truck1 = (Truck) truckList.get(0);
+                        IOFile.setFilePath(TRUCK);
+                        IOFile.overWriteFile(new String[] {truck1.getNumberPlate(),truck1.getManufacturer(), String.valueOf(truck1.getYearProduced()),
+                                truck1.getOwner(), String.valueOf(truck1.getLoadAmount())});
+                        for (int i = 1; i<truckList.size(); i++) {
+                            Truck otherTruck = (Truck) truckList.get(i);
+                            IOFile.writeFile(new String[] {otherTruck.getNumberPlate(),otherTruck.getManufacturer(), String.valueOf(otherTruck.getYearProduced()),
+                                    otherTruck.getOwner(), String.valueOf(otherTruck.getLoadAmount())});
+                        }
+                        System.out.println("Successfully deleted truck with number plate " + deleteNumberPlate + " in the truck.csv file");
+                        System.out.println("PRESS ENTER TO GO BACK TO THE MAIN MENU!");
+                        scanner.nextLine();
+                    }
+                    if (countCar != 0) {
+                        carList.remove(idCar);
+                        Car car1 = (Car) carList.get(0);
+                        IOFile.setFilePath(CAR);
+                        IOFile.overWriteFile(new String[] {car1.getNumberPlate(),car1.getManufacturer(), String.valueOf(car1.getYearProduced()),
+                                car1.getOwner(), String.valueOf(car1.getNumberOfSeats()),car1.getType()});
+                        for (int i = 1; i<carList.size(); i++) {
+                            Car otherCar = (Car) carList.get(i);
+                            IOFile.writeFile(new String[] {otherCar.getNumberPlate(),otherCar.getManufacturer(), String.valueOf(otherCar.getYearProduced()),
+                                    otherCar.getOwner(), String.valueOf(otherCar.getNumberOfSeats()),otherCar.getType()});
+                        }
+                        System.out.println("Successfully deleted car with number plate " + deleteNumberPlate + " in the car.csv file");
+                        System.out.println("PRESS ENTER TO GO BACK TO THE MAIN MENU!");
+                        scanner.nextLine();
+                    }
+                    if (countBike != 0) {
+                        bikeList.remove(idBike);
+                        Bike bike1 = (Bike) bikeList.get(0);
+                        IOFile.setFilePath(BIKE);
+                        IOFile.overWriteFile(new String[] {bike1.getNumberPlate(),bike1.getManufacturer(), String.valueOf(bike1.getYearProduced()),
+                                bike1.getOwner(), String.valueOf(bike1.getHorsePower())});
+                        for (int i = 1; i<bikeList.size(); i++) {
+                            Bike otherBike = (Bike) bikeList.get(i);
+                            IOFile.writeFile(new String[] {otherBike.getNumberPlate(),otherBike.getManufacturer(), String.valueOf(otherBike.getYearProduced()),
+                                    otherBike.getOwner(), String.valueOf(otherBike.getHorsePower())});
+                        }
+                        System.out.println("Successfully deleted bike with number plate " + deleteNumberPlate + " in the bike.csv file");
+                        System.out.println("PRESS ENTER TO GO BACK TO THE MAIN MENU!");
+                        scanner.nextLine();
+                    }
+                    displayMainMenu();
+                    break;
+                case 2:
+                    displayMainMenu();
+                    break;
             }
-            System.out.println("Successfully deleted truck with number plate " + deleteNumberPlate + " in the truck.csv file");
-        }
-        if (countCar != 0) {
-            carList.remove(idCar);
-            Car car1 = (Car) carList.get(0);
-            IOFile.setFilePath(CAR);
-            IOFile.overWriteFile(new String[] {car1.getNumberPlate(),car1.getManufacturer(), String.valueOf(car1.getYearProduced()),
-                    car1.getOwner(), String.valueOf(car1.getNumberOfSeats()),car1.getType()});
-            for (int i = 1; i<carList.size(); i++) {
-                Car otherCar = (Car) carList.get(i);
-                IOFile.writeFile(new String[] {otherCar.getNumberPlate(),otherCar.getManufacturer(), String.valueOf(otherCar.getYearProduced()),
-                        otherCar.getOwner(), String.valueOf(otherCar.getNumberOfSeats()),otherCar.getType()});
-            }
-            System.out.println("Successfully deleted car with number plate " + deleteNumberPlate + " in the car.csv file");
-        }
-        if (countBike != 0) {
-            bikeList.remove(idBike);
-            Bike bike1 = (Bike) bikeList.get(0);
-            IOFile.setFilePath(BIKE);
-            IOFile.overWriteFile(new String[] {bike1.getNumberPlate(),bike1.getManufacturer(), String.valueOf(bike1.getYearProduced()),
-                    bike1.getOwner(), String.valueOf(bike1.getHorsePower())});
-            for (int i = 1; i<bikeList.size(); i++) {
-                Bike otherBike = (Bike) bikeList.get(i);
-                IOFile.writeFile(new String[] {otherBike.getNumberPlate(),otherBike.getManufacturer(), String.valueOf(otherBike.getYearProduced()),
-                        otherBike.getOwner(), String.valueOf(otherBike.getHorsePower())});
-            }
-            System.out.println("Successfully deleted bike with number plate " + deleteNumberPlate + " in the bike.csv file");
         }
         if (countTruck == 0 && countCar == 0 && countBike == 0) {
             System.out.println("Couldn't find the number plate " + deleteNumberPlate + " in the database!");
