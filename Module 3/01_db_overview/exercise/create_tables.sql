@@ -1,4 +1,4 @@
-CREATE SCHEMA if not EXISTS `student-management`;
+CREATE database if not EXISTS `student-management`;
 CREATE TABLE if not EXISTS `student-management`.`student` (
 `id` INT AUTO_INCREMENT,
 `name` varchar(45),
