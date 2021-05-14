@@ -10,8 +10,7 @@ create table `order` (
 `order_id` int not null primary key,
 `customer_id` int not null,
 foreign key (`customer_id`) references customer(`customer_id`),
-`order_date` date,
-`order_total_price` varchar(45));
+`order_date` date);
 
 create table product (
 `product_id` int not null primary key,
@@ -76,7 +75,7 @@ VALUES ('2', '3', '3');
 
 -- Hiển thị các thông tin  gồm oID, oDate, oPrice của tất cả các hóa đơn trong bảng Order
 use business_management;
-select order_id,order_date,order_total_price
+select order_id,order_date
 from `order`;
 
 -- Hiển thị danh sách các khách hàng đã mua hàng, và danh sách sản phẩm được mua bởi các khách
