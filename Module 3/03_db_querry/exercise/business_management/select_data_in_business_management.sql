@@ -102,7 +102,9 @@ where `order`.order_id is null;
 -- Hiển thị mã hóa đơn, ngày bán và giá tiền của từng hóa đơn 
 -- (giá một hóa đơn được tính bằng tổng giá bán của từng loại mặt hàng xuất hiện trong hóa đơn)
 -- Giá bán của từng loại được tính = odQTY*pPrice)
+-- Sử dụng lệnh này sau khi research vì lệnh group by ở phần phía dưới dính lỗi #1055
 SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
+
 use business_management;
 select order_detail.order_id,`order`.order_date,sum(product.product_price * order_detail.order_quantity) as total_price
 from order_detail
