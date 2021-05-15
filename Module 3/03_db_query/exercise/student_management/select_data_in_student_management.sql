@@ -76,9 +76,9 @@ where student.student_name like "H%";
 
 -- Hiển thị thông tin lớp học bắt đầu từ tháng 12
 USE student_management;
-select *
-from class
-where class.start_date >= '2008-12-01 00:00:00';
+SELECT* FROM class
+WHERE MONTH(start_date) = 12;
+
 
 -- Hiển thị tất cả thông tin môn học có credit từ 3-5
 USE student_management;
