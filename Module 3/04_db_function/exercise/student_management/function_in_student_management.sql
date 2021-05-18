@@ -84,9 +84,10 @@ group by `subject`.subject_id
 having max(mark.mark)>= all (select max(mark.mark) from mark);
 
 -- Hiển thị các thông tin sinh viên và điểm trung bình của mỗi sinh viên, xếp hạng theo thứ tự điểm giảm dần.
-select student.student_name,student.address,student.phone , avg(mark.mark) as average_point
-from student
-join mark 
-on student.student_id = mark.student_id
-group by student.student_id
-order by avg(mark.mark) DESC;
+select student.student_id,student.student_name,avg(mark.mark)
+from student 
+left join mark
+on mark.student_id = student.student_id
+group by mark.student_id
+order by mark.student_id desc,student.student_name
+;
