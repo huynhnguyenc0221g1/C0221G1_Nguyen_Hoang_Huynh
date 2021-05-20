@@ -3,11 +3,10 @@ use furama_resort;
 SET FOREIGN_KEY_CHECKS=0;
 delete from employee
 where employee.employee_id not in (
-	  select contract.employee_id
-	  from contract
-	  where year(contract_made_date) between 2017 and 2019
-      )
-;
+select contract.employee_id
+from contract
+where year(contract_made_date) between 2017 and 2019
+);
 
 -- Task 17
 UPDATE `furama_resort`.`service` SET `service_rent_price` = '5000000' WHERE (`service_id` = '1');

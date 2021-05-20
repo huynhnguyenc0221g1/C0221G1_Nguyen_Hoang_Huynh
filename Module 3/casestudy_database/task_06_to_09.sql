@@ -60,16 +60,18 @@ use furama_resort;
 select month(contract.contract_made_date) as "Month", 
 sum(service.service_rent_price + (additional_service.additional_service_price * additional_service.additional_service_unit)) as "Total Gross"
 from customer
-join customer_type 
-on customer.customer_type_id = customer_type.customer_type_id
-join contract 
-on customer.customer_id = contract.customer_id
-join service
-on contract.service_id = service.service_id
-join contract_detail
-on contract.contract_id = contract_detail.contract_id
-join additional_service 
-on contract_detail.additional_service_id = additional_service.additional_service_id
+
+	join customer_type 
+		on customer.customer_type_id = customer_type.customer_type_id
+	join contract 
+		on customer.customer_id = contract.customer_id
+	join service
+		on contract.service_id = service.service_id
+	join contract_detail
+		on contract.contract_id = contract_detail.contract_id
+	join additional_service 
+		on contract_detail.additional_service_id = additional_service.additional_service_id
+        
 where year(contract.contract_made_date) = 2019
 group by month(contract.contract_made_date);
 
