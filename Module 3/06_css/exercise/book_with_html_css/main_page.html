@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+    <style>
+        body{
+            background-color: #f1faee;
+        }
+        th.book-title{
+            color: #e63946;
+            font-style: italic;
+            font-size: 40px;
+        }
+        th.chapter-title{
+            font-style: oblique;
+            font-size: 20px;
+        }
+        td.menu-info{
+            color: #457b9d;
+            font-weight: bold;
+            text-indent: 5px;
+        }
+        table.main-table{
+            border: 5px solid #1d3557;
+            width: 50%;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        img.image-size{
+            border: 1px solid #e63946;
+            border-radius: 2px;
+            padding: 5px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+<table class="main-table">
+    <tr>
+        <td valign="top" class="menu-info">
+            <p>Book Title</p>
+        </td>
+        <th class="book-title">
+            The Little Prince
+        </th>
+    </tr>
+    <tr>
+        <td valign="top" class="menu-info">
+            <p>Artwork</p>
+        </td>
+        <th>
+            <img class="image-size" src="the_little_prince__antoine_de_saint_exupery.jpg" alt="The Little Prince">
+        </th>
+    </tr>
+    <tr class="chapter-menu">
+        <td valign="top" class="menu-info" rowspan="3">Select</td>
+        <th class="chapter-title"><a href="chapter_1.html">Chapter 1</a></th>
+    </tr>
+    <tr>
+        <th class="chapter-title"><a href="chapter_2.html">Chapter 2</a></th>
+    </tr>
+</table>
+
+</body>
+</html>
