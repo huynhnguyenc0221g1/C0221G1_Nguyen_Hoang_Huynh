@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Layout With RWD</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Helvetica;
+        }
+        .header img {
+            height:30px;
+            width: 30px;
+        }
+        .menu img {
+            height:30px;
+            width: 30px;
+        }
+        .profile-name img {
+            height:30px;
+            width: 30px;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        [class*="col-"] {
+            float: left;
+            padding: 15px;
+        }
+        .header {
+            align-content: center;
+        }
+        .header div {
+            display: inline-block;
+            background-color: lightgray;
+            text-align: center;
+        }
+        .header-left button {
+            border: 0;
+            background-color: lightgray;
+        }
+        .header-left input {
+            border: 0;
+            width: 200px
+        }
+        .header-center button {
+            border: 0;
+            width: 90px;
+            background-color: lightgray;
+        }
+        .header-right button {
+            border: 0;
+            background-color: lightgray;
+        }
+        .menu header a{
+            display: inline-block;
+        }
+        a:link {
+            color: white;
+            text-decoration: none;
+        }
+        a:visited {
+            color: white;
+            text-decoration: none;
+        }
+        a:hover {
+            color: white;
+            text-decoration: none;
+            background-color: gray;
+        }
+        a:active {
+            color: white;
+            text-decoration: none;
+        }
+        .row {
+            background-color: white;
+            text-align: left;
+        }
+        .menu {
+            display: inline-block;
+            text-align: left;
+        }
+        .side-button {
+            display: inline-block;
+        }
+        .side-button button {
+            display: inline-block;
+        }
+        .side-button p {
+            display: inline-block;
+        }
+        .menu ul {
+            list-style-type: none;
+        }
+        .menu li a{
+            color: white;
+        }
+        .profile-name {
+            display: inline-block;
+        }
+        .profile-name img {
+            display: inline-block;
+        }
+        .profile-name h6 {
+            display: inline-block;
+        }
+        .aside {
+            padding: 30px;
+            color: white;
+            text-align: center;
+            font-size: 25px;
+        }
+        .aside h2 {
+            padding: 30px;
+            background-color: gray;
+        }
+        .footer {
+            background-color: lightgray;
+            color: black;
+            text-align: center;
+            font-size: 12px;
+            padding: 15px;
+            width: 100%;
+        }
+
+        [class*="col-"] {
+            width: 100%;
+        }
+        @media only screen and (min-width: 600px) {
+            .col-m-1 {width: 8.33%;}
+            .col-m-2 {width: 16.66%;}
+            .col-m-3 {width: 25%;}
+            .col-m-4 {width: 33.33%;}
+            .col-m-5 {width: 41.66%;}
+            .col-m-6 {width: 50%;}
+            .col-m-7 {width: 58.33%;}
+            .col-m-8 {width: 66.66%;}
+            .col-m-9 {width: 75%;}
+            .col-m-10 {width: 83.33%;}
+            .col-m-11 {width: 91.66%;}
+            .col-m-12 {width: 100%;}
+        }
+        @media only screen and (min-width: 768px) {
+            .col-1 {width: 8.33%;}
+            .col-2 {width: 16.66%;}
+            .col-3 {width: 25%;}
+            .col-4 {width: 33.33%;}
+            .col-5 {width: 41.66%;}
+            .col-6 {width: 50%;}
+            .col-7 {width: 58.33%;}
+            .col-8 {width: 66.66%;}
+            .col-9 {width: 75%;}
+            .col-10 {width: 83.33%;}
+            .col-11 {width: 91.66%;}
+            .col-12 {width: 100%;}
+        }
+
+    </style>
+</head>
+<body>
+<div class="header menu-header">
+    <div class="col-3 col-m-3 header-left">
+    <button><img src="icons/facebook.png"/></button>
+    <input type="text" placeholder="🔍 Search Facebook">
+    </div>
+    <div class="col-6 col-m-9 header-center">
+        <button><img src="icons/home.png"/></button>
+        <button><img src="icons/friends.png"/></button>
+            <button><img src="icons/play-button.png"/></button>
+                <button><img src="icons/shopping-store.png"/></button>
+                    <button><img src="icons/group.png"/></button>
+    </div>
+    <div div class="col-3 col-m-12 header-right">
+        <button><img src="icons/user.png"/></button>
+            <button><img src="icons/add.png"/></button>
+                <button><img src="icons/messenger.png"/></button>
+                    <button><img src="icons/bell.png"/></button>
+                        <button><img src="icons/arrow-down-sign-to-navigate.png"/></button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3 col-m-3 menu">
+        <ul>
+            <li>
+                <div class="side-button">
+                    <button><img src="icons/user.png"/></button></a>
+                    <p>Profile</p>
+                </div>
+            </li>
+            <li>
+                <div class="side-button">
+                    <button><img src="icons/friends.png"/></button>
+                    <p>Find Friends</p>
+                </div>
+            </li>
+            <li>
+                <div class="side-button">
+                    <button><img src="icons/group.png"/></button>
+                    <p>Groups</p>
+                </div>
+            </li>
+            <li>
+                <div class="side-button">
+                    <button><img src="icons/shopping-store.png"/></button>
+                    <p>Marketplace</p>
+                </div>
+            </li>
+            <li>
+                <div class="side-button">
+                    <button><img src="icons/play-button.png"/></button>
+                    <p>Watch</p>
+                </div>
+            </li>
+            <li>
+                <div class="side-button">
+                    <button><img src="icons/event.png"/></button>
+                    <p>Events</p>
+                </div>
+            </li>
+            <li>
+                <div class="side-button">
+                    <button><img src="icons/arrow-down-sign-to-navigate.png"/></button>
+                    <p>See more</p>
+                </div>
+            </li>
+        </ul>
+        <hr>
+        <h3 style="text-align: left; color:black">Your shortcuts</h3>
+    </div>
+
+    <div class="col-6 col-m-9">
+        <div class="profile-name">
+            <img src="icons/play-button.png"/>
+            <h6>Profile Name</h6>
+            <p style="color: black">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <img src="icons/example.jpg" height="300" width="300"/>
+    </div>
+
+    <div class="col-3 col-m-12">
+        <div class="aside">
+            <h2>ADS</h2>
+            <hr>
+            <h6 style="text-align: left; color:black">Contacts</h6>
+        </div>
+    </div>
+
+</div>
+<div class="footer">
+    <p>Facebook</p>
+</div>
+</body>
+</html>

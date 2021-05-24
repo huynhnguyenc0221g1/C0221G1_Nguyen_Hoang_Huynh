@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Layout With RWD</title>
+  <style>
+      * {
+          box-sizing: border-box;
+          font-family: Helvetica;
+      }
+      .row::after {
+          content: "";
+          clear: both;
+          display: table;
+      }
+      [class*="col-"] {
+          float: left;
+          padding: 15px;
+      }
+      .header {
+          background-color: black;
+          color: white;
+          padding: 15px;
+      }
+      .menu header a{
+          display: inline-block;
+      }
+      a:link {
+          color: white;
+          text-decoration: none;
+      }
+      a:visited {
+          color: white;
+          text-decoration: none;
+      }
+      a:hover {
+          color: white;
+          text-decoration: none;
+          background-color: gray;
+      }
+      a:active {
+          color: white;
+          text-decoration: none;
+      }
+      .login {
+          position: absolute;
+          right: 15px;
+          text-align: right;
+      }
+      .menu {
+          background-color: gray;
+      }
+      .menu ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+      }
+      .menu li {
+          padding: 8px;
+          text-align: center;
+      }
+      .menu li a{
+          color: white;
+      }
+      .aside {
+          padding: 30px;
+          color: white;
+          text-align: center;
+          font-size: 25px;
+      }
+      .aside h2 {
+          padding: 30px;
+          background-color: gray;
+      }
+      .footer {
+          background-color: black;
+          color: white;
+          text-align: center;
+          font-size: 12px;
+          padding: 15px;
+          width: 100%;
+      }
+
+      [class*="col-"] {
+          width: 100%;
+      }
+      @media only screen and (min-width: 600px) {
+          .col-m-1 {width: 8.33%;}
+          .col-m-2 {width: 16.66%;}
+          .col-m-3 {width: 25%;}
+          .col-m-4 {width: 33.33%;}
+          .col-m-5 {width: 41.66%;}
+          .col-m-6 {width: 50%;}
+          .col-m-7 {width: 58.33%;}
+          .col-m-8 {width: 66.66%;}
+          .col-m-9 {width: 75%;}
+          .col-m-10 {width: 83.33%;}
+          .col-m-11 {width: 91.66%;}
+          .col-m-12 {width: 100%;}
+      }
+      @media only screen and (min-width: 768px) {
+          .col-1 {width: 8.33%;}
+          .col-2 {width: 16.66%;}
+          .col-3 {width: 25%;}
+          .col-4 {width: 33.33%;}
+          .col-5 {width: 41.66%;}
+          .col-6 {width: 50%;}
+          .col-7 {width: 58.33%;}
+          .col-8 {width: 66.66%;}
+          .col-9 {width: 75%;}
+          .col-10 {width: 83.33%;}
+          .col-11 {width: 91.66%;}
+          .col-12 {width: 100%;}
+      }
+
+  </style>
+</head>
+<body>
+<div class="header menu-header">
+        <a href="#">LOGO</a>
+        <a href="#">HOME</a>
+        <a href="#">ABOUT</a>
+        <a href="#">PROJECT</a>
+        <a href="#">CONTACT</a>
+        <a href="#" class="login">LOGIN</a>
+</div>
+<div class="row">
+
+    <div class="col-3 col-m-3 menu">
+        <ul>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+        </ul>
+    </div>
+
+    <div class="col-6 col-m-9">
+        <h1>Welcome</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <hr>
+        <h3>Test</h3>
+        <p>Lorem ipsum ...</p>
+    </div>
+
+    <div class="col-3 col-m-12">
+        <div class="aside">
+            <h2>ADS</h2>
+            <h2>ADS</h2>
+        </div>
+    </div>
+
+</div>
+<div class="footer">
+  <p>Footer Text</p>
+</div>
+</body>
+</html>
