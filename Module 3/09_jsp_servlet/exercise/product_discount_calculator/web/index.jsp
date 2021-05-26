@@ -11,7 +11,7 @@
     <title>$Title$</title>
   </head>
   <body>
-  <form action="/display-discount" method="post">
+  <form method="post" action="/calculator">
     <p>Product Description:</p>
     <input type="text" name="product_description" placeholder="Product Description: "/>
     <br>
