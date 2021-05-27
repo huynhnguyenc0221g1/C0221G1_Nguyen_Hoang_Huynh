@@ -23,7 +23,7 @@
         <th>Address</th>
         <th>Image</th>
     </tr>
-    <c:forEach items="${customers}" var="customer" varStatus="status">
+    <c:forEach var="customer"  items="${customers}" varStatus="status">
         <tr>
             <td><c:out value="${customer.name}"></c:out></td>
             <td><c:out value="${customer.birthdate}"></c:out></td>
