@@ -37,7 +37,7 @@
     </tr>
     <tr>
         <td>Manufacturer:</td>
-        <td>${product.manufacturers}</td>
+        <td>${product.manufacturer}</td>
     </tr>
 </table>
 </body>

@@ -44,11 +44,11 @@
             </tr>
             <tr>
                 <td>Manufacturer: </td>
-                <td><input type="text" name="manu" id="manu" value="${product.manufacturers}"></td>
+                <td><input type="text" name="manu" id="manu" value="${product.manufacturer}"></td>
             </tr>
             <tr>
                 <td></td>
-                <td><input type="submit" value="Update customer"></td>
+                <td><input type="submit" value="Update product"></td>
             </tr>
         </table>
 </form>

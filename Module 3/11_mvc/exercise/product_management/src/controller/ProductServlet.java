@@ -1,9 +1,7 @@
 package controller;
-
 import model.bean.Product;
 import model.service.ProductService;
 import model.service.impl.ProductServiceImpl;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -69,9 +67,8 @@ public class ProductServlet extends HttpServlet {
         String name = request.getParameter("name");
         float price = Float.parseFloat(request.getParameter("price"));
         String description = request.getParameter("des");
-        String manufacture = request.getParameter("manu");
-
-        Product product = new Product(id, name, price, description, manufacture);
+        String manufacturer = request.getParameter("manu");
+        Product product = new Product(id, name, price, description, manufacturer);
         this.productService.save(product);
         request.setAttribute("message", "Your product has been added to the list!");
         RequestDispatcher dispatcher = request.getRequestDispatcher("/view/product/add.jsp");
@@ -100,7 +97,7 @@ public class ProductServlet extends HttpServlet {
         String name = request.getParameter("name");
         float price = Float.parseFloat(request.getParameter("price"));
         String description = request.getParameter("des");
-        String manufacture = request.getParameter("manu");
+        String manufacturer = request.getParameter("manu");
 
         Product product = this.productService.findById(id);
 
@@ -112,7 +109,7 @@ public class ProductServlet extends HttpServlet {
             product.setName(name);
             product.setPrice(price);
             product.setDescription(description);
-            product.setManufacturers(manufacture);
+            product.setManufacturer(manufacturer);
             this.productService.update(id, product);
             request.setAttribute("product", product);
             request.setAttribute("message", "Product's Information has been updated!");
@@ -171,7 +168,6 @@ public class ProductServlet extends HttpServlet {
         } else {
             request.setAttribute("product", product);
             dispatcher = request.getRequestDispatcher("/view/product/delete.jsp");
-
         }
         try {
             dispatcher.forward(request, response);
@@ -191,7 +187,6 @@ public class ProductServlet extends HttpServlet {
         } else {
             request.setAttribute("products", productList);
             requestDispatcher = request.getRequestDispatcher("/view/product/show.jsp");
-
         }
         try {
             requestDispatcher.forward(request, response);
@@ -245,6 +240,4 @@ public class ProductServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
-
-
 }

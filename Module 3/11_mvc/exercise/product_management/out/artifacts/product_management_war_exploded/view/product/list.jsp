@@ -37,7 +37,7 @@
             <td><a href="/product?action=view&id=${product.id}">${product.name}</a></td>
             <td>${product.price}</td>
             <td>${product.description}</td>
-            <td>${product.manufacturers}</td>
+            <td>${product.manufacturer}</td>
             <td><a href="/product?action=edit&id=${product.id}">edit</a></td>
             <td><a href="/product?action=delete&id=${product.id}">delete</a></td>
         </tr>

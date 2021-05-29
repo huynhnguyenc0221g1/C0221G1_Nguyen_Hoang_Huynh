@@ -40,7 +40,7 @@
             </tr>
             <tr>
                 <td>Manufacturer: </td>
-                <td>${product.manufacturers}</td>
+                <td>${product.manufacturer}</td>
             </tr>
             <tr>
                 <td><input type="submit" value="Delete"></td>
