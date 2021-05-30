@@ -16,20 +16,11 @@
 <body>
 <h1>Edit product</h1>
 <p>
-    <c:if test='${requestScope["message"] != null}'>
-        <span class="message">${requestScope["message"]}</span>
-    </c:if>
-</p>
-<p>
     <a href="/product">Back</a>
 </p>
 <form method="post">
         <h4>Edit the Product's Information in the form below</h4>
         <table class="table table-dark table-striped">
-            <tr>
-                <td>ID: </td>
-                <td><input type="text" name="id" id="id" value="${product.id}" disabled></td>
-            </tr>
             <tr>
                 <td>Name: </td>
                 <td><input type="text" name="name" id="name" value="${product.name}"></td>

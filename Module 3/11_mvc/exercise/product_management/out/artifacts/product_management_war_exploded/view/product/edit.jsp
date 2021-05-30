@@ -15,11 +15,11 @@
 </head>
 <body>
 <h1>Edit product</h1>
-<p>
-    <c:if test='${requestScope["message"] != null}'>
-        <span class="message">${requestScope["message"]}</span>
-    </c:if>
-</p>
+<%--<p>--%>
+<%--    <c:if test='${requestScope["message"] != null}'>--%>
+<%--        <span class="message">${requestScope["message"]}</span>--%>
+<%--    </c:if>--%>
+<%--</p>--%>
 <p>
     <a href="/product">Back</a>
 </p>
