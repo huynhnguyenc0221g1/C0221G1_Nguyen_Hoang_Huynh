@@ -134,8 +134,8 @@
                             <td>${status.count}</td>
                             <td>${employee.employeeID}</td>
                             <td>${employee.employeeName}</td>
-                            <td>${employee.employeeBirthday}</td>
-                            <td>${employee.employeeIDCard}</td>
+                            <td>${employee.employeeBirthdate}</td>
+                            <td>${employee.employeeIDNumber}</td>
                             <td>${employee.employeeSalary}</td>
                             <td>${employee.employeePhone}</td>
                             <td>${employee.employeeEmail}</td>

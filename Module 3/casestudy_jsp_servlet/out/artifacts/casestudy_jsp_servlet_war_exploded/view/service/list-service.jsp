@@ -114,16 +114,16 @@
                 <h1 class="text-center">Service List</h1>
                 <table class="table table-striped">
                     <tr class="text-center">
-                        <th>STT</th>
+                        <th>No</th>
                         <th>ID</th>
                         <th>Name</th>
-                        <th>Are</th>
+                        <th>Area</th>
                         <th>Cost</th>
-                        <th>Max People</th>
+                        <th>Max Inhouse</th>
                         <th>Rent Type ID</th>
                         <th>Service Type ID</th>
                         <th>Standard Room</th>
-                        <th>Description Other Convenience</th>
+                        <th>Description</th>
                         <th>Pool Area</th>
                         <th>Number Of Floors</th>
                         <th>Edit</th>
@@ -136,10 +136,10 @@
                             <td>${service.serviceName}</td>>
                             <td>${service.serviceArea}</td>>
                             <td>${service.serviceCost}</td>>
-                            <td>${service.serviceMaxPeople}</td>>
+                            <td>${service.serviceMaxInhouse}</td>>
                             <td>${service.rentTypeID}</td>>
                             <td>${service.serviceTypeID}</td>>
-                            <td>${service.serviceStandardRooom}</td>>
+                            <td>${service.serviceRoomStandard}</td>>
                             <td>${service.serviceDescription}</td>>
                             <td>${service.servicePoolArea}</td>>
                             <td>${service.serviceNumberOfFloors}</td>>

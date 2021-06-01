@@ -135,19 +135,19 @@
                 </div>
                 <div class="row p-2">
                     <div class="col-lg-3">
-                        <label class="font-weight-bold">Employee Birthday</label>
+                        <label class="font-weight-bold">Employee Birthdate</label>
                     </div>
                     <div class="col-lg-9">
-                        <input type="text" name="employeeBirthday">
+                        <input type="text" name="employeeBirthdate">
                     </div>
                 </div>
 
                 <div class="row p-2">
                     <div class="col-lg-3">
-                        <label class="font-weight-bold">Employee ID Card</label>
+                        <label class="font-weight-bold">Employee ID Card Number</label>
                     </div>
                     <div class="col-lg-9">
-                        <input type="text" name="employeeIDCard">
+                        <input type="text" name="employeeIDNumber">
                     </div>
                 </div>
                 <div class="row p-2">
@@ -160,10 +160,10 @@
                 </div>
                 <div class="row p-2">
                     <div class="col-lg-3">
-                        <label class="font-weight-bold">Employee Phone</label>
+                        <label class="font-weight-bold">Employee Phone Number</label>
                     </div>
                     <div class="col-lg-9">
-                        <input type="text" name="employeePhone">
+                        <input type="text" name="employeePhoneNumber">
                     </div>
                 </div>
                 <div class="row p-2">
@@ -192,18 +192,18 @@
                 </div>
                 <div class="row p-2">
                     <div class="col-lg-3">
-                        <label class="font-weight-bold">Employee Education ID</label>
+                        <label class="font-weight-bold">Employee Qualification ID</label>
                     </div>
                     <div class="col-lg-9">
-                        <input type="text" name="employeeEducationID">
+                        <input type="text" name="employeeQualificationID">
                     </div>
                 </div>
                 <div class="row p-2">
                     <div class="col-lg-3">
-                        <label class="font-weight-bold">Employee Division ID</label>
+                        <label class="font-weight-bold">Employee Department ID</label>
                     </div>
                     <div class="col-lg-9">
-                        <input type="text" name="employeeDivisionID">
+                        <input type="text" name="employeeDepartmentID">
                     </div>
                 </div>
                 <div class="row p-2 align-items-center">

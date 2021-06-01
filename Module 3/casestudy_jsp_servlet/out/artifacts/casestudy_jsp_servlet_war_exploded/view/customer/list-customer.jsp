@@ -118,7 +118,7 @@
                         <th>ID</th>
                         <th>Type ID</th>
                         <th>Name</th>
-                        <th>Birthday</th>
+                        <th>Birthdate</th>
                         <th>Gender</th>
                         <th>ID Card Number</th>
                         <th>Phone Number</th>

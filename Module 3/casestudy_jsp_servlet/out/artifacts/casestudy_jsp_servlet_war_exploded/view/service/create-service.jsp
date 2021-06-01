@@ -151,10 +151,10 @@
                 </div>
                 <div class="row p-2">
                     <div class="col-lg-3">
-                        <label class="font-weight-bold">Service Max people</label>
+                        <label class="font-weight-bold">Service Max Inhouse</label>
                     </div>
                     <div class="col-lg-9">
-                        <input type="text" name="serviceMaxPeople">
+                        <input type="text" name="serviceMaxInhouse">
                     </div>
                 </div>
                 <div class="row p-2">
@@ -175,15 +175,15 @@
                 </div>
                 <div class="row p-2">
                     <div class="col-lg-3">
-                        <label class="font-weight-bold">Standard Room</label>
+                        <label class="font-weight-bold">Room Standard</label>
                     </div>
                     <div class="col-lg-9">
-                        <input type="text" name="serviceStandardRoom">
+                        <input type="text" name="serviceRoomStandard">
                     </div>
                 </div>
                 <div class="row p-2">
                     <div class="col-lg-3">
-                        <label class="font-weight-bold">Service Description Other Convenience</label>
+                        <label class="font-weight-bold">Service Description</label>
                     </div>
                     <div class="col-lg-9">
                         <input type="text" name="serviceDescription">

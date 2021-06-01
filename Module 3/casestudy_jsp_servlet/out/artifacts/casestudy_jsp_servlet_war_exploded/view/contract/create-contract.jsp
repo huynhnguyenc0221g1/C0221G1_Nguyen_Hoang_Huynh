@@ -127,7 +127,7 @@
                 </div>
                 <div class="row p-2">
                     <div class="col-lg-3">
-                        <label class="font-weight-bold">Contract Start Date</label>
+                        <label class="font-weight-bold">Contract Made Date</label>
                     </div>
                     <div class="col-lg-9">
                         <input  type="text" name="contractStartDate">
@@ -151,7 +151,7 @@
                 </div>
                 <div class="row p-2">
                     <div class="col-lg-3">
-                        <label class="font-weight-bold">Contract Total Money</label>
+                        <label class="font-weight-bold">Contract Total Cost</label>
                     </div>
                     <div class="col-lg-9">
                         <input type="text" name="contractTotalMoney">

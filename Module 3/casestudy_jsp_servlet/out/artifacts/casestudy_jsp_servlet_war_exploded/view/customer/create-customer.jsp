@@ -143,10 +143,10 @@
                 </div>
                 <div class="row p-2">
                     <div class="col-lg-3">
-                        <label class="font-weight-bold">Customer Birthday</label>
+                        <label class="font-weight-bold">Customer Birthdate</label>
                     </div>
                     <div class="col-lg-9">
-                        <input type="text" name="customerBirthday">
+                        <input type="text" name="customerBirthdate">
                     </div>
                 </div>
                 <div class="row p-2">
@@ -159,18 +159,18 @@
                 </div>
                 <div class="row p-2">
                     <div class="col-lg-3">
-                        <label class="font-weight-bold">Customer ID Card</label>
+                        <label class="font-weight-bold">Customer ID Card Number</label>
                     </div>
                     <div class="col-lg-9">
-                        <input type="text" name="customerIDCard">
+                        <input type="text" name="customerIDNumber">
                     </div>
                 </div>
                 <div class="row p-2">
                     <div class="col-lg-3">
-                        <label class="font-weight-bold">Customer Phone</label>
+                        <label class="font-weight-bold">Customer Phone Number</label>
                     </div>
                     <div class="col-lg-9">
-                        <input type="text" name="customerPhone">
+                        <input type="text" name="customerPhoneNumber">
                     </div>
                 </div>
                 <div class="row p-2">

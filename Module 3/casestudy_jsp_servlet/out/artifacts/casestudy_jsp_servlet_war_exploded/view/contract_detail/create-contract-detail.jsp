@@ -135,18 +135,18 @@
                 </div>
                 <div class="row p-2">
                     <div class="col-lg-3">
-                        <label class="font-weight-bold">Attach Service ID</label>
+                        <label class="font-weight-bold">Additional Service ID</label>
                     </div>
                     <div class="col-lg-9">
-                        <input type="text" name="attachServiceID">
+                        <input type="text" name="additionalServiceID">
                     </div>
                 </div>
                 <div class="row p-2">
                     <div class="col-lg-3">
-                        <label class="font-weight-bold">Quantity</label>
+                        <label class="font-weight-bold">Amount</label>
                     </div>
                     <div class="col-lg-9">
-                        <input type="text" name="contractDetailQuantity">
+                        <input type="text" name="contractDetailAmount">
                     </div>
                 </div>
                 <div class="row p-2 align-items-center">
