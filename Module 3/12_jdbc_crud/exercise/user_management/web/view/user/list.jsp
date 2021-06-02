@@ -16,8 +16,8 @@
 <body>
 <div class="container">
     <h1>User List</h1>
-            <h6><a href="/user?action=create">Create User</a></h6>
-            <h6><a href="/user?action=sort">Sort By Name</a></h6>
+            <h6><a href="/user?action=create">Create an user</a></h6>
+            <h6><a href="/user?action=sort">Sort (by name)</a></h6>
             <form method="get" action="/user">
                 <input name="action" value="search" hidden>
                 <input  type="text" name="search" id="search" placeholder="Input Search">

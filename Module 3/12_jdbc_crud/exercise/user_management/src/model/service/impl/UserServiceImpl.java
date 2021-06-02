@@ -44,6 +44,4 @@ public class UserServiceImpl implements IUserService {
     public List<User> findByCountry(String country) {
         return userRepository.findByCountry(country);
     }
-
-
 }
