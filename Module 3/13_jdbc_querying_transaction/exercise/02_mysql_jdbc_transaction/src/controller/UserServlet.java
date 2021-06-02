@@ -66,12 +66,6 @@ public class UserServlet extends HttpServlet {
         }
     }
 
-    private void addPermission(HttpServletRequest request, HttpServletResponse response) {
-        User user = new User("chau", "minhchau.nguyenngoc@codegym.vn", "aus");
-        int[] permission = {3,4};
-        userService.addUserTransaction(user,permission);
-    }
-
     private void createUser(HttpServletRequest request, HttpServletResponse response) {
         String name = request.getParameter("name");
         String email = request.getParameter("email");
@@ -171,6 +165,12 @@ public class UserServlet extends HttpServlet {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void addPermission(HttpServletRequest request, HttpServletResponse response) {
+        User user = new User("chau", "minhchau.nguyenngoc@codegym.vn", "aus");
+        int[] permission = {3,4};
+        userService.addUserTransaction(user,permission);
     }
 
     private void listUser(HttpServletRequest request, HttpServletResponse response) {

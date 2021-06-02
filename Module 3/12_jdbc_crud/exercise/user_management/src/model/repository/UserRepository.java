@@ -12,12 +12,12 @@ import java.util.List;
 public class UserRepository {
     BaseRepository baseRepository = new BaseRepository();
     final String INSERT_USER = "insert into users(name,email,country) values(?,?,?);";
-    final String SELECT_USERS_BY_ID = "select* from users\n" +
+    final String SELECT_USERS_BY_ID = "select * from users\n" +
             "where id=?;";
-    final String SELECT_ALL_USERS = "select* from users;";
+    final String SELECT_ALL_USERS = "select * from users;";
     final String DELETE_USER = "delete from users where id = ?;";
     final String UPDATE_USER = "update users set name = ?,email= ?, country =? where id = ?;";
-    final String SORT_BY_NAME = "select *from users order by name ;";
+    final String SORT_BY_NAME = "select * from users order by name ;";
     final String FIND_BY_COUNTRY =
             "select *from users\n" +
             "where country like ?";
