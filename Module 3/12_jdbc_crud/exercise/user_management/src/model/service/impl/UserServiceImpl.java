@@ -10,9 +10,10 @@ public class UserServiceImpl implements IUserService {
 
 
     UserRepository userRepository = new UserRepository();
+
     @Override
     public void insertUser(User user) {
-         userRepository.insertUser(user);
+        userRepository.insertUser(user);
     }
 
     @Override

@@ -20,7 +20,7 @@ public class UserRepository {
     final String SORT_BY_NAME = "select * from users order by name ;";
     final String FIND_BY_COUNTRY =
             "select *from users\n" +
-            "where country like ?";
+            "where country like ?;";
     public void insertUser(User user) {
         Connection connection = baseRepository.connectDatabase();
         try {
