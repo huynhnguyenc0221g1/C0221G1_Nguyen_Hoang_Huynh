@@ -68,15 +68,15 @@ public class CustomerServlet extends HttpServlet {
 
     private void createCustomer(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
-        int type_id = Integer.parseInt(request.getParameter("type_id"));
+        int typeId = Integer.parseInt(request.getParameter("type_id"));
         String name = request.getParameter("name");
         String birthdate = request.getParameter("birthdate");
         Byte gender = Byte.parseByte(request.getParameter("gender"));
-        String id_number = request.getParameter("id_number");
-        String phone_number = request.getParameter("phone_number");
+        String idNumber = request.getParameter("id_number");
+        String phoneNumber = request.getParameter("phone_number");
         String email = request.getParameter("email");
         String address = request.getParameter("address");
-        Customer newCustomer = new Customer(id,type_id,name,birthdate,gender,id_number,phone_number,email,address);
+        Customer newCustomer = new Customer(id,typeId,name,birthdate,gender,idNumber,phoneNumber,email,address);
         customerService.insertCustomer(newCustomer);
         request.setAttribute("message","Successfully Created!");
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view/customer/create-customer.jsp");
@@ -102,15 +102,15 @@ public class CustomerServlet extends HttpServlet {
 
     private void editCustomer(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
-        int type_id = Integer.parseInt(request.getParameter("type_id"));
+        int typeId = Integer.parseInt(request.getParameter("type_id"));
         String name = request.getParameter("name");
         String birthdate = request.getParameter("birthdate");
         Byte gender = Byte.parseByte(request.getParameter("gender"));
-        String id_number = request.getParameter("id_number");
-        String phone_number = request.getParameter("phone_number");
+        String idNumber = request.getParameter("id_number");
+        String phoneNumber = request.getParameter("phone_number");
         String email = request.getParameter("email");
         String address = request.getParameter("address");
-        Customer customer = new Customer(id,type_id,name,birthdate,gender,id_number,phone_number,email,address);
+        Customer customer = new Customer(id,typeId,name,birthdate,gender,idNumber,phoneNumber,email,address);
         boolean check = customerService.updateCustomer(customer);
         if (check) {
             request.setAttribute("message","Successfully Edited The Customer!");

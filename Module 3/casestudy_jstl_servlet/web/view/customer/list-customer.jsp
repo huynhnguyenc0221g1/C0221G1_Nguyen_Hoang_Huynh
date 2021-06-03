@@ -115,7 +115,7 @@
     </div>
 </div>
 <div align="center">
-    <table class="table table-striped" border="1" cellpadding="5">
+    <table id="dtBasicExample" class="table table-striped" border="1" cellpadding="5">
         <tr>
             <th>No</th>
             <th>ID</th>
@@ -133,12 +133,12 @@
             <tr>
                 <td>${status.count}</td>
                 <td>${customer.id}</td>
-                <td>${customer.type_id}</td>
+                <td>${customer.typeId}</td>
                 <td>${customer.name}</td>
                 <td>${customer.birthdate}</td>
                 <td>${customer.gender}</td>
-                <td>${customer.id_number}</td>
-                <td>${customer.phone_number}</td>
+                <td>${customer.idNumber}</td>
+                <td>${customer.phoneNumber}</td>
                 <td>${customer.email}</td>
                 <td>${customer.address}</td>
                 <td>
@@ -178,11 +178,17 @@
     </form>
 </div>
 </body>
+
 <script>
     function sendDataToModal(id, name) {
         document.getElementById("idCustomer").value = id;
         document.getElementById("nameCustomer").innerText = name
     }
+
+    $(document).ready(function () {
+        $('#dtBasicExample').DataTable();
+    });
+
 </script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

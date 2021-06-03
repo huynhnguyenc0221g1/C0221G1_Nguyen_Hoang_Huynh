@@ -41,7 +41,7 @@
                     </a>
                     <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/customer">List Customer</a>
-                        <a class="dropdown-item" href="../../view/customer/create-customer.jsp">Create Customer</a>
+                        <a class="dropdown-item" href="/customer?action=create">Create Customer</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown px-4">

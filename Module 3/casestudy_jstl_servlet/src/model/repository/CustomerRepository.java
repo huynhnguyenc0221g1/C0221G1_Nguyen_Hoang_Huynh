@@ -23,12 +23,12 @@ public class CustomerRepository {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_CUSTOMER);
             preparedStatement.setInt(1, customer.getId());
-            preparedStatement.setInt(2, customer.getType_id());
+            preparedStatement.setInt(2, customer.getTypeId());
             preparedStatement.setString(3, customer.getName());
             preparedStatement.setString(4, customer.getBirthdate());
             preparedStatement.setByte(5, customer.getGender());
-            preparedStatement.setString(6, customer.getId_number());
-            preparedStatement.setString(7, customer.getPhone_number());
+            preparedStatement.setString(6, customer.getIdNumber());
+            preparedStatement.setString(7, customer.getPhoneNumber());
             preparedStatement.setString(8, customer.getEmail());
             preparedStatement.setString(9, customer.getAddress());
             preparedStatement.executeUpdate();
@@ -46,15 +46,15 @@ public class CustomerRepository {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("customer_id");
-                int type_id = resultSet.getInt("customer_type_id");
+                int typeId = resultSet.getInt("customer_type_id");
                 String name = resultSet.getString("customer_fullname");
                 String birthdate = resultSet.getString("customer_birthdate");
                 byte gender = resultSet.getByte("customer_gender");
-                String id_number = resultSet.getString("customer_id_number");
+                String idNumber = resultSet.getString("customer_id_number");
                 String phone_number = resultSet.getString("customer_phone_number");
                 String email = resultSet.getString("customer_email");
                 String address = resultSet.getString("customer_address");
-                customer = new Customer(id,type_id,name,birthdate,gender,id_number,phone_number,email,address);
+                customer = new Customer(id,typeId,name,birthdate,gender,idNumber,phone_number,email,address);
             }
             preparedStatement.close();
             connection.close();
@@ -72,15 +72,15 @@ public class CustomerRepository {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("customer_id");
-                int type_id = resultSet.getInt("customer_type_id");
+                int typeId = resultSet.getInt("customer_type_id");
                 String name = resultSet.getString("customer_fullname");
                 String birthdate = resultSet.getString("customer_birthdate");
                 byte gender = resultSet.getByte("customer_gender");
-                String id_number = resultSet.getString("customer_id_number");
-                String phone_number = resultSet.getString("customer_phone_number");
+                String idNumber = resultSet.getString("customer_id_number");
+                String phoneNumber = resultSet.getString("customer_phone_number");
                 String email = resultSet.getString("customer_email");
                 String address = resultSet.getString("customer_address");
-                Customer customer = new Customer(id,type_id,name,birthdate,gender,id_number,phone_number,email,address);
+                Customer customer = new Customer(id,typeId,name,birthdate,gender,idNumber,phoneNumber,email,address);
                 customerList.add(customer);
             }
         } catch (SQLException e){
@@ -109,12 +109,12 @@ public class CustomerRepository {
         boolean check = false;
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_CUSTOMER);
-            preparedStatement.setInt(1, customer.getType_id());
+            preparedStatement.setInt(1, customer.getTypeId());
             preparedStatement.setString(2, customer.getName());
             preparedStatement.setString(3, customer.getBirthdate());
             preparedStatement.setByte(4, customer.getGender());
-            preparedStatement.setString(5, customer.getId_number());
-            preparedStatement.setString(6, customer.getPhone_number());
+            preparedStatement.setString(5, customer.getIdNumber());
+            preparedStatement.setString(6, customer.getPhoneNumber());
             preparedStatement.setString(7, customer.getEmail());
             preparedStatement.setString(8, customer.getAddress());
             preparedStatement.setInt(9,customer.getId());
@@ -136,15 +136,15 @@ public class CustomerRepository {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("customer_id");
-                int type_id = resultSet.getInt("customer_type_id");
+                int typeId = resultSet.getInt("customer_type_id");
                 String name = resultSet.getString("customer_fullname");
                 String birthdate = resultSet.getString("customer_birthdate");
                 byte gender = resultSet.getByte("customer_gender");
-                String id_number = resultSet.getString("customer_id_number");
-                String phone_number = resultSet.getString("customer_phone_number");
+                String idNumber = resultSet.getString("customer_id_number");
+                String phoneNumber = resultSet.getString("customer_phone_number");
                 String email = resultSet.getString("customer_email");
                 String address = resultSet.getString("customer_address");
-                Customer customer = new Customer(id,type_id,name,birthdate,gender,id_number,phone_number,email,address);
+                Customer customer = new Customer(id,typeId,name,birthdate,gender,idNumber,phoneNumber,email,address);
                 customerList.add(customer);
             }
             preparedStatement.close();

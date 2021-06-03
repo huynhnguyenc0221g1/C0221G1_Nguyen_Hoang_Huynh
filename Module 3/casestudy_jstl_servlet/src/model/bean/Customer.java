@@ -2,26 +2,26 @@ package model.bean;
 
 public class Customer {
     private int id;
-    private int type_id;
+    private int typeId;
     private String name;
     private String birthdate;
     private byte gender;
-    private String id_number;
-    private String phone_number;
+    private String idNumber;
+    private String phoneNumber;
     private String email;
     private String address;
 
     public Customer() {
     }
 
-    public Customer(int id, int type_id, String name, String birthdate, byte gender, String id_number, String phone_number, String email, String address) {
+    public Customer(int id, int typeId, String name, String birthdate, byte gender, String idNumber, String phoneNumber, String email, String address) {
         this.id = id;
-        this.type_id = type_id;
+        this.typeId = typeId;
         this.name = name;
         this.birthdate = birthdate;
         this.gender = gender;
-        this.id_number = id_number;
-        this.phone_number = phone_number;
+        this.idNumber = idNumber;
+        this.phoneNumber = phoneNumber;
         this.email = email;
         this.address = address;
     }
@@ -34,12 +34,12 @@ public class Customer {
         this.id = id;
     }
 
-    public int getType_id() {
-        return type_id;
+    public int getTypeId() {
+        return typeId;
     }
 
-    public void setType_id(int type_id) {
-        this.type_id = type_id;
+    public void setTypeId(int typeId) {
+        this.typeId = typeId;
     }
 
     public String getName() {
@@ -66,20 +66,20 @@ public class Customer {
         this.gender = gender;
     }
 
-    public String getId_number() {
-        return id_number;
+    public String getIdNumber() {
+        return idNumber;
     }
 
-    public void setId_number(String id_number) {
-        this.id_number = id_number;
+    public void setIdNumber(String idNumber) {
+        this.idNumber = idNumber;
     }
 
-    public String getPhone_number() {
-        return phone_number;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhone_number(String phone_number) {
-        this.phone_number = phone_number;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getEmail() {
