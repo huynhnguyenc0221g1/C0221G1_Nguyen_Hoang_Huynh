@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/furama_resort.iml" filepath="$PROJECT_DIR$/furama_resort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/casestudy_jstl_servlet.iml" filepath="$PROJECT_DIR$/.idea/modules/casestudy_jstl_servlet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/casestudy_jstl_servlet.main.iml" filepath="$PROJECT_DIR$/.idea/modules/casestudy_jstl_servlet.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/casestudy_jstl_servlet.test.iml" filepath="$PROJECT_DIR$/.idea/modules/casestudy_jstl_servlet.test.iml" />
     </modules>
   </component>
 </project>
