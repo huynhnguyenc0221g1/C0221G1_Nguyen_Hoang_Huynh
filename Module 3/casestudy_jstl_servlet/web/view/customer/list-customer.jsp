@@ -115,7 +115,8 @@
     </div>
 </div>
 <div align="center">
-    <table id="dtBasicExample" class="table table-striped" border="1" cellpadding="5">
+    <table id="customerTable" class="table table-striped" border="1" cellpadding="5">
+        <thead>
         <tr>
             <th>No</th>
             <th>ID</th>
@@ -129,14 +130,41 @@
             <th>Address</th>
             <th>Action</th>
         </tr>
+        </thead>
+        <tbody>
         <c:forEach var="customer" items="${customers}" varStatus="status">
             <tr>
                 <td>${status.count}</td>
                 <td>${customer.id}</td>
-                <td>${customer.typeId}</td>
+                <c:choose>
+                    <c:when test="${customer.typeId ==1}">
+                        <td>Diamond</td>
+                    </c:when>
+                    <c:when test="${customer.typeId ==2}">
+                        <td>Platinum</td>
+                    </c:when>
+                    <c:when test="${customer.typeId ==3}">
+                        <td>Gold</td>
+                    </c:when>
+                    <c:when test="${customer.typeId ==4}">
+                        <td>Silver</td>
+                    </c:when>
+                    <c:when test="${customer.typeId ==5}">
+                        <td>Member</td>
+                    </c:when>
+                    <c:otherwise><td>Not Valid</td></c:otherwise>
+                </c:choose>
                 <td>${customer.name}</td>
                 <td>${customer.birthdate}</td>
-                <td>${customer.gender}</td>
+                <c:choose>
+                    <c:when test="${customer.gender ==1}">
+                        <td>Male</td>
+                    </c:when>
+                    <c:when test="${customer.gender ==0}">
+                        <td>Female</td>
+                    </c:when>
+                    <c:otherwise><td>Not Valid</td></c:otherwise>
+                </c:choose>
                 <td>${customer.idNumber}</td>
                 <td>${customer.phoneNumber}</td>
                 <td>${customer.email}</td>
@@ -152,6 +180,7 @@
                 </td>
             </tr>
         </c:forEach>
+        </tbody>
     </table>
 </div>
 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
@@ -179,24 +208,23 @@
 </div>
 </body>
 
+<script src="/jquery/jquery-3.5.1.min.js"></script>
+<script src="/datatables/js/jquery.dataTables.min.js"></script>
+<script src="/datatables/js/dataTables.bootstrap4.min.js"></script>
+
 <script>
     function sendDataToModal(id, name) {
         document.getElementById("idCustomer").value = id;
         document.getElementById("nameCustomer").innerText = name
     }
 
-    $(document).ready(function () {
-        $('#dtBasicExample').DataTable();
-    });
+    $(document).ready(function() {
+        $('#customerTable').dataTable( {
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 5
+        } );
+    } );
 
 </script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
 </html>
