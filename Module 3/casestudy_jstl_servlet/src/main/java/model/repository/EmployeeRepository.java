@@ -2,16 +2,15 @@ package model.repository;
 
 import model.bean.Employee;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeRepository {
     BaseRepository baseRepository = new BaseRepository();
-    final String INSERT_EMPLOYEE = "INSERT INTO employee (`employee_id`, `employee_name`, `position_id`, `qualification_id`, `department_id`, `employee_birthdate`, `employee_id_number`, `employee_salary`, `employee_phone_number`, `employee_email`, `employee_address`, `username`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?);";
+    final String DISABLE_FOREIGN_KEY_CHECK = "SET FOREIGN_KEY_CHECKS=0";
+    final String ENABLE_FOREIGN_KEY_CHECK = "SET FOREIGN_KEY_CHECKS=1";
+    final String INSERT_EMPLOYEE = "INSERT INTO employee (`employee_id`, `employee_name`, `position_id`, `qualification_id`, `department_id`, `employee_birthdate`, `employee_id_number`, `employee_salary`, `employee_phone_number`, `employee_email`, `employee_address`, `username`) values (?,?,?,?,?,?,?,?,?,?,?,?);";
     final String SELECT_EMPLOYEE_BY_ID = "select * from employee\n" +
             "where employee_id=?;";
     final String SELECT_ALL_EMPLOYEE = "select * from employee;";
@@ -22,6 +21,9 @@ public class EmployeeRepository {
     public void insertEmployee(Employee employee){
         Connection connection = baseRepository.connectDatabase();
         try {
+            Statement disableForeignKeyCheck = connection.createStatement();
+            disableForeignKeyCheck.execute(DISABLE_FOREIGN_KEY_CHECK);
+            disableForeignKeyCheck.close();
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_EMPLOYEE);
             preparedStatement.setInt(1, employee.getId());
             preparedStatement.setString(2, employee.getName());
@@ -36,6 +38,9 @@ public class EmployeeRepository {
             preparedStatement.setString(11, employee.getAddress());
             preparedStatement.setString(12, employee.getUsername());
             preparedStatement.executeUpdate();
+            Statement enableForeignKeyCheck = connection.createStatement();
+            enableForeignKeyCheck.execute(ENABLE_FOREIGN_KEY_CHECK);
+            enableForeignKeyCheck.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -118,6 +123,9 @@ public class EmployeeRepository {
         Connection connection = baseRepository.connectDatabase();
         boolean check = false;
         try {
+            Statement disableForeignKeyCheck = connection.createStatement();
+            disableForeignKeyCheck.execute(DISABLE_FOREIGN_KEY_CHECK);
+            disableForeignKeyCheck.close();
             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_EMPLOYEE);
             preparedStatement.setString(1, employee.getName());
             preparedStatement.setInt(2, employee.getPositionId());
@@ -134,6 +142,9 @@ public class EmployeeRepository {
             check = preparedStatement.executeUpdate() > 0;
             preparedStatement.close();
             connection.close();
+            Statement enableForeignKeyCheck = connection.createStatement();
+            enableForeignKeyCheck.execute(ENABLE_FOREIGN_KEY_CHECK);
+            enableForeignKeyCheck.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
