@@ -41,8 +41,8 @@
                         Customer
                     </a>
                     <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../../view/customer/list-customer.jsp">List Customer</a>
-                        <a class="dropdown-item" href="../../view/customer/create-customer.jsp">Create Customer</a>
+                        <a class="dropdown-item" href="/customer">List Customer</a>
+                        <a class="dropdown-item" href="/customer?action=create">Create Customer</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown px-4">
@@ -52,8 +52,8 @@
                         Employee
                     </a>
                     <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../../view/employee/list-employee.jsp">List Employee </a>
-                        <a class="dropdown-item" href="../../view/employee/create-employee.jsp">Create Employee </a>
+                        <a class="dropdown-item" href="/employee">List Employee </a>
+                        <a class="dropdown-item" href="/employee?action=create">Create Employee </a>
                     </div>
                 </li>
                 <li class="nav-item dropdown px-4">
@@ -85,66 +85,64 @@
                         Contract Detail
                     </a>
                     <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../../view/contract_detail/list-contract-detail.jsp">List Contract Detail</a>
-                        <a class="dropdown-item" href="../../view/contract_detail/create-contract-detail.jsp">Create Contract Detail</a>
+                        <a class="dropdown-item" href="../../view/contract_detail/list-contract-detail.jsp">List
+                            Contract Detail</a>
+                        <a class="dropdown-item" href="../../view/contract_detail/create-contract-detail.jsp">Create
+                            Contract Detail</a>
                     </div>
                 </li>
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success text-light" type="submit">Search</button>
-            </form>
         </div>
     </nav>
 </div>
-<div class="container-fluid col-lg-12 col-sm-12 align-content-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="text-center">Service List</h1>
-                <table class="table table-striped">
-                    <tr class="text-center">
-                        <th>No</th>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Area</th>
-                        <th>Cost</th>
-                        <th>Max Inhouse</th>
-                        <th>Rent Type ID</th>
-                        <th>Service Type ID</th>
-                        <th>Standard Room</th>
-                        <th>Description</th>
-                        <th>Pool Area</th>
-                        <th>Number Of Floors</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-                    <c:forEach items="${services}" var="service" varStatus="status">
-                        <tr>
-                            <td>${status.count}</td>
-                            <td>${service.serviceID}</td>>
-                            <td>${service.serviceName}</td>>
-                            <td>${service.serviceArea}</td>>
-                            <td>${service.serviceCost}</td>>
-                            <td>${service.serviceMaxInhouse}</td>>
-                            <td>${service.rentTypeID}</td>>
-                            <td>${service.serviceTypeID}</td>>
-                            <td>${service.serviceRoomStandard}</td>>
-                            <td>${service.serviceDescription}</td>>
-                            <td>${service.servicePoolArea}</td>>
-                            <td>${service.serviceNumberOfFloors}</td>>
-                            <td><a href="service?action=edit&id=${service.contractID}">Edit</a></td>
-                            <td><a href="service?action=delete&id=${service.contractID}">Delete</a></td>
-                        </tr>
-                    </c:forEach>
-                </table>
-            </div>
-        </div>
+<div class="row ml-4 mt-4">
+    <div class="col-lg-6">
+        <h5>Service Management</h5>
+    </div>
+    <div class="col-lg-6">
+        <h5>
+            <a href="/service?action=create">Add New Service</a>
+        </h5>
     </div>
 </div>
-<nav class="navbar navbar-dark bg-success col-lg-12 col-sm-12 justify-content-center" style="position: fixed; bottom:0">
-    <span class="text-light">COVID 19 UPDATE: The safety and well-being are our utmost priority</span>
-</nav>
+<div align="center">
+    <table id="serviceTable" class="table table-striped" border="1" cellpadding="5">
+        <thead>
+        <tr>
+            <th>No</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Area</th>
+            <th>Cost</th>
+            <th>Max In House</th>
+            <th>Rent Option ID</th>
+            <th>Service Type ID</th>
+            <th>Standard</th>
+            <th>Other Convenience Description</th>
+            <th>Pool Area</th>
+            <th>Number of Floors</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach var="service" items="${services}" varStatus="status">
+            <tr>
+                <td>${status.count}</td>
+                <td>${service.id}</td>
+                <td>${service.name}</td>
+                <td>${service.area}</td>
+                <td>${service.cost}</td>
+                <td>${service.maxInHouse}</td>
+                <td>${service.rentTypeId}</td>
+                <td>${service.serviceTypeId}</td>
+                <td>${service.standard}</td>
+                <td>${service.description}</td>
+                <td>${service.poolArea}</td>
+                <td>${service.numberOfFloors}</td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -155,4 +153,17 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+<script src="${pageContext.request.contextPath}/jquery/jquery-3.5.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/datatables/js/jquery.dataTables.min.js"></script>
+<script src="${pageContext.request.contextPath}/datatables/js/dataTables.bootstrap4.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#serviceTable').dataTable( {
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 5
+        } );
+    } );
+
+</script>
 </html>

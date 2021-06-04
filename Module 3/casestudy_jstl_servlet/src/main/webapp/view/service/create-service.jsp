@@ -5,7 +5,7 @@
   Time: 6:02 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -18,7 +18,8 @@
 <div class="container-fluid col-lg-12 col-sm-12">
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="col-lg-11 col-sm-10">
-            <a class="navbar-brand" href="../../view/main/main.jsp"><img class="mb-1" src="../../image/furama.png" style="width: auto;height: 2.5rem"/></a>
+            <a class="navbar-brand" href="../../view/main/main.jsp"><img class="mb-1" src="../../image/furama.png"
+                                                                         style="width: auto;height: 2.5rem"/></a>
         </div>
         <div class="col-lg-1 justify-content-end">
             <a class="text-muted link-dark mr-4" href="#">Profile</a>
@@ -41,8 +42,8 @@
                         Customer
                     </a>
                     <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../../view/customer/list-customer.jsp">List Customer</a>
-                        <a class="dropdown-item" href="../../view/customer/create-customer.jsp">Create Customer</a>
+                        <a class="dropdown-item" href="/customer">List Customer</a>
+                        <a class="dropdown-item" href="/customer?action=create">Create Customer</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown px-4">
@@ -52,8 +53,8 @@
                         Employee
                     </a>
                     <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../../view/employee/list-employee.jsp">List Employee </a>
-                        <a class="dropdown-item" href="../../view/employee/create-employee.jsp">Create Employee </a>
+                        <a class="dropdown-item" href="/employee">List Employee </a>
+                        <a class="dropdown-item" href="/employee?action=create">Create Employee </a>
                     </div>
                 </li>
                 <li class="nav-item dropdown px-4">
@@ -85,134 +86,94 @@
                         Contract Detail
                     </a>
                     <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../../view/contract_detail/list-contract-detail.jsp">List Contract Detail</a>
-                        <a class="dropdown-item" href="../../view/contract_detail/create-contract-detail.jsp">Create Contract Detail</a>
+                        <a class="dropdown-item" href="../../view/contract_detail/list-contract-detail.jsp">List
+                            Contract Detail</a>
+                        <a class="dropdown-item" href="../../view/contract_detail/create-contract-detail.jsp">Create
+                            Contract Detail</a>
                     </div>
                 </li>
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success text-light" type="submit">Search</button>
-            </form>
         </div>
     </nav>
 </div>
 <div class="container">
-    <form>
-        <div class=" row">
-            <div class="col-lg-2"></div>
-            <div class="col-lg-8 bg-light">
-                <div class="row p-3 bg-light">
-                    <div class="col-lg-12 text-center">
-                        <h1>Create Service</h1>
-                    </div>
-                </div>
-                <div class="row p-2 pt-5">
-                    <div class="col-lg-3">
-                        <label class="font-weight-bold">Service ID</label>
-                    </div>
-                    <div class="col-lg-9">
-                        <input type="text" name="serviceID">
-                    </div>
-                </div>
-                <div class="row p-2">
-                    <div class="col-lg-3">
-                        <label class="font-weight-bold">Service Name</label>
-                    </div>
-                    <div class="col-lg-9">
-                        <input type="text" name="serviceName">
-                    </div>
-                </div>
-                <div class="row p-2">
-                    <div class="col-lg-3">
-                        <label class="font-weight-bold">Service Area</label>
-                    </div>
-                    <div class="col-lg-9">
-                        <input type="text" name="serviceArea">
-                    </div>
-                </div>
-                <div class="row p-2">
-                    <div class="col-lg-3">
-                        <label class="font-weight-bold">Service Cost</label>
-                    </div>
-                    <div class="col-lg-9">
-                        <input type="text" name="serviceCost">
-                    </div>
-                </div>
-                <div class="row p-2">
-                    <div class="col-lg-3">
-                        <label class="font-weight-bold">Service Max Inhouse</label>
-                    </div>
-                    <div class="col-lg-9">
-                        <input type="text" name="serviceMaxInhouse">
-                    </div>
-                </div>
-                <div class="row p-2">
-                    <div class="col-lg-3">
-                        <label class="font-weight-bold">Rent Type ID</label>
-                    </div>
-                    <div class="col-lg-9">
-                        <input type="text" name="rentTypeID">
-                    </div>
-                </div>
-                <div class="row p-2">
-                    <div class="col-lg-3">
-                        <label class="font-weight-bold">Service Type ID</label>
-                    </div>
-                    <div class="col-lg-9">
-                        <input type="text" name="serviceTypeID">
-                    </div>
-                </div>
-                <div class="row p-2">
-                    <div class="col-lg-3">
-                        <label class="font-weight-bold">Room Standard</label>
-                    </div>
-                    <div class="col-lg-9">
-                        <input type="text" name="serviceRoomStandard">
-                    </div>
-                </div>
-                <div class="row p-2">
-                    <div class="col-lg-3">
-                        <label class="font-weight-bold">Service Description</label>
-                    </div>
-                    <div class="col-lg-9">
-                        <input type="text" name="serviceDescription">
-                    </div>
-                </div>
-                <div class="row p-2">
-                    <div class="col-lg-3">
-                        <label class="font-weight-bold">Pool Area</label>
-                    </div>
-                    <div class="col-lg-9">
-                        <input type="text" name="servicePoolArea">
-                    </div>
-                </div>
-                <div class="row p-2">
-                    <div class="col-lg-3">
-                        <label class="font-weight-bold">Number Of Floors</label>
-                    </div>
-                    <div class="col-lg-9">
-                        <input type="text" name="serviceNumberOfFloors">
-                    </div>
-                </div>
-                <div class="row p-2 align-items-center">
-                    <div class="col-lg-5 col-md-4 col-sm-4 "></div>
-                    <div class="col-lg-2 col-md-4 col-sm-4 ">
-                        <input class="btn btn-success" type="submit" id="submit" value="Create Service"
-                               style="width: 200px">
-                    </div>
-                    <div class="col-lg-5 col-md-4 col-sm-4 col-xl-4"></div>
-
-                </div>
-            </div>
-            <div class="col-lg-2"></div>
-
-        </div>
-    </form>
+    <h1>Create Service</h1>
+    <a href="/service">Back to Service List</a>
+    <div class="container">
+        <c:if test="${message!=null}">
+            <p class="text-success">${message}</p>
+        </c:if>
+        <form method="post">
+            <fieldset>
+                <legend>Service Information</legend>
+                <table>
+                    <%--                    <th>No</th>--%>
+                    <%--                    <th>ID</th>--%>
+                    <%--                    <th>Name</th>--%>
+                    <%--                    <th>Area</th>--%>
+                    <%--                    <th>Cost</th>--%>
+                    <%--                    <th>Max In House</th>--%>
+                    <%--                    <th>Rent Option ID</th>--%>
+                    <%--                    <th>Service Type ID</th>--%>
+                    <%--                    <th>Standard</th>--%>
+                    <%--                    <th>Other Convenience Description</th>--%>
+                    <%--                    <th>Pool Area</th>--%>
+                    <%--                    <th>Number of Floors</th>--%>
+                    <tr>
+                        <td>ID:</td>
+                        <td><input type="text" name="id" id="id" value="${service.id}"></td>
+                    </tr>
+                    <tr>
+                        <td>Name:</td>
+                        <td><input type="text" name="name" id="name" value="${service.name}"></td>
+                    </tr>
+                    <tr>
+                        <td>Area:</td>
+                        <td><input type="text" name="area" id="area" value="${service.area}"></td>
+                    </tr>
+                    <tr>
+                        <td>Cost:</td>
+                        <td><input type="text" name="cost" id="cost" value="${service.cost}"></td>
+                    </tr>
+                    <tr>
+                        <td>Max In House:</td>
+                        <td><input type="text" name="max_in_house" id="max_in_house" value="${service.maxInHouse}"></td>
+                    </tr>
+                    <tr>
+                        <td>Rent Option ID:</td>
+                        <td><input type="text" name="rent_option_id" id="rent_option_id" value="${service.rentTypeId}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Service Type ID:</td>
+                        <td><input type="text" name="service_type_id" id="service_type_id"
+                                   value="${service.serviceTypeId}"></td>
+                    </tr>
+                    <tr>
+                        <td>Room Standard:</td>
+                        <td><input type="text" name="standard" id="standard" value="${service.standard}"></td>
+                    </tr>
+                    <tr>
+                        <td>Other Convenience Description:</td>
+                        <td><input type="text" name="description" id="description" value="${service.description}"></td>
+                    </tr>
+                    <tr>
+                        <td>Pool Area:</td>
+                        <td><input type="text" name="pool_area" id="pool_area" value="${service.poolArea}"></td>
+                    </tr>
+                    <tr>
+                        <td>Number Of Floors:</td>
+                        <td><input type="text" name="number_of_floors" id="number_of_floors" value="${service.numberOfFloors}"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input class="btn btn-success" type="submit" value="Create Service"></td>
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
+    </div>
 </div>
-<nav class="navbar navbar-dark bg-success col-lg-12 col-sm-12 justify-content-center" style="position: fixed; bottom:0">
-    <span class="text-light">COVID 19 UPDATE: The safety and well-being are our utmost priority</span>
-</nav>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

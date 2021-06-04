@@ -52,8 +52,8 @@
                         Employee
                     </a>
                     <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../../view/employee/list-employee.jsp">List Employee </a>
-                        <a class="dropdown-item" href="../../view/employee/create-employee.jsp">Create Employee </a>
+                        <a class="dropdown-item" href="/employee">List Employee </a>
+                        <a class="dropdown-item" href="/employee?action=create">Create Employee </a>
                     </div>
                 </li>
                 <li class="nav-item dropdown px-4">
@@ -85,8 +85,10 @@
                         Contract Detail
                     </a>
                     <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../../view/contract_detail/list-contract-detail.jsp">List Contract Detail</a>
-                        <a class="dropdown-item" href="../../view/contract_detail/create-contract-detail.jsp">Create Contract Detail</a>
+                        <a class="dropdown-item" href="../../view/contract_detail/list-contract-detail.jsp">List
+                            Contract Detail</a>
+                        <a class="dropdown-item" href="../../view/contract_detail/create-contract-detail.jsp">Create
+                            Contract Detail</a>
                     </div>
                 </li>
             </ul>
@@ -110,7 +112,7 @@
                     </tr>
                     <tr>
                         <td>Type ID:</td>
-                        <td><input  type="text" name="type_id" id="type_id" value="${customer.type_id}"></td>
+                        <td><input  type="text" name="type_id" id="type_id" value="${customer.typeId}"></td>
                     </tr>
                     <tr>
                         <td>Name:</td>
@@ -126,11 +128,11 @@
                     </tr>
                     <tr>
                         <td>ID Card Number:</td>
-                        <td><input  type="text" name="id_number" id="id_number" value="${customer.id_number}"></td>
+                        <td><input  type="text" name="id_number" id="id_number" value="${customer.idNumber}"></td>
                     </tr>
                     <tr>
                         <td>Phone Number:</td>
-                        <td><input  type="text" name="phone_number" id="phone_number" value="${customer.phone_number}"></td>
+                        <td><input  type="text" name="phone_number" id="phone_number" value="${customer.phoneNumber}"></td>
                     </tr>
                     <tr>
                         <td>Email:</td>
@@ -142,16 +144,13 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td><input class="btn btn-success" type="submit" value="Create User"></td>
+                        <td><input class="btn btn-success" type="submit" value="Create Customer"></td>
                     </tr>
                 </table>
             </fieldset>
         </form>
     </div>
 </div>
-<nav class="navbar navbar-dark bg-success col-lg-12 col-sm-12 justify-content-center" style="position: fixed; bottom:0">
-    <span class="text-light">COVID 19 UPDATE: The safety and well-being are our utmost priority</span>
-</nav>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

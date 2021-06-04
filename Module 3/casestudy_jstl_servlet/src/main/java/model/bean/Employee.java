@@ -3,32 +3,32 @@ package model.bean;
 public class Employee {
     private int id;
     private String name;
+    private int positionId;
+    private int qualificationId;
+    private int departmentId;
     private String birthdate;
-    private String id_number;
+    private String idNumber;
     private double salary;
-    private String phone_number;
+    private String phoneNumber;
     private String email;
     private String address;
-    private int position_id;
-    private int qualification_id;
-    private int department_id;
     private String username;
 
     public Employee() {
     }
 
-    public Employee(int id, String name, String birthdate, String id_number, double salary, String phone_number, String email, String address, int position_id, int qualification_id, int department_id, String username) {
+    public Employee(int id, String name, int positionId, int qualificationId, int departmentId, String birthdate, String idNumber, double salary, String phoneNumber, String email, String address, String username) {
         this.id = id;
         this.name = name;
+        this.positionId = positionId;
+        this.qualificationId = qualificationId;
+        this.departmentId = departmentId;
         this.birthdate = birthdate;
-        this.id_number = id_number;
+        this.idNumber = idNumber;
         this.salary = salary;
-        this.phone_number = phone_number;
+        this.phoneNumber = phoneNumber;
         this.email = email;
         this.address = address;
-        this.position_id = position_id;
-        this.qualification_id = qualification_id;
-        this.department_id = department_id;
         this.username = username;
     }
 
@@ -56,12 +56,12 @@ public class Employee {
         this.birthdate = birthdate;
     }
 
-    public String getId_number() {
-        return id_number;
+    public String getIdNumber() {
+        return idNumber;
     }
 
-    public void setId_number(String id_number) {
-        this.id_number = id_number;
+    public void setIdNumber(String idNumber) {
+        this.idNumber = idNumber;
     }
 
     public double getSalary() {
@@ -72,12 +72,12 @@ public class Employee {
         this.salary = salary;
     }
 
-    public String getPhone_number() {
-        return phone_number;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhone_number(String phone_number) {
-        this.phone_number = phone_number;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getEmail() {
@@ -96,28 +96,28 @@ public class Employee {
         this.address = address;
     }
 
-    public int getPosition_id() {
-        return position_id;
+    public int getPositionId() {
+        return positionId;
     }
 
-    public void setPosition_id(int position_id) {
-        this.position_id = position_id;
+    public void setPositionId(int positionId) {
+        this.positionId = positionId;
     }
 
-    public int getQualification_id() {
-        return qualification_id;
+    public int getQualificationId() {
+        return qualificationId;
     }
 
-    public void setQualification_id(int qualification_id) {
-        this.qualification_id = qualification_id;
+    public void setQualificationId(int qualificationId) {
+        this.qualificationId = qualificationId;
     }
 
-    public int getDepartment_id() {
-        return department_id;
+    public int getDepartmentId() {
+        return departmentId;
     }
 
-    public void setDepartment_id(int department_id) {
-        this.department_id = department_id;
+    public void setDepartmentId(int departmentId) {
+        this.departmentId = departmentId;
     }
 
     public String getUsername() {

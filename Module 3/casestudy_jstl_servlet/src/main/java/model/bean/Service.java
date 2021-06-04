@@ -5,29 +5,29 @@ public class Service {
     private String name;
     private int area;
     private double cost;
-    private int max_in_house;
-    private int rent_type_id;
-    private int service_type_id;
+    private int maxInHouse;
+    private int rentTypeId;
+    private int serviceTypeId;
     private String standard;
     private String description;
-    private Double pool_area;
-    private int number_of_floors;
+    private Double poolArea;
+    private int numberOfFloors;
 
     public Service() {
     }
 
-    public Service(int id, String name, int area, double cost, int max_in_house, int rent_type_id, int service_type_id, String standard, String description, Double pool_area, int number_of_floors) {
+    public Service(int id, String name, int area, double cost, int maxInHouse, int rentTypeId, int serviceTypeId, String standard, String description, Double poolArea, int numberOfFloors) {
         this.id = id;
         this.name = name;
         this.area = area;
         this.cost = cost;
-        this.max_in_house = max_in_house;
-        this.rent_type_id = rent_type_id;
-        this.service_type_id = service_type_id;
+        this.maxInHouse = maxInHouse;
+        this.rentTypeId = rentTypeId;
+        this.serviceTypeId = serviceTypeId;
         this.standard = standard;
         this.description = description;
-        this.pool_area = pool_area;
-        this.number_of_floors = number_of_floors;
+        this.poolArea = poolArea;
+        this.numberOfFloors = numberOfFloors;
     }
 
     public int getId() {
@@ -62,28 +62,28 @@ public class Service {
         this.cost = cost;
     }
 
-    public int getMax_in_house() {
-        return max_in_house;
+    public int getMaxInHouse() {
+        return maxInHouse;
     }
 
-    public void setMax_in_house(int max_in_house) {
-        this.max_in_house = max_in_house;
+    public void setMaxInHouse(int maxInHouse) {
+        this.maxInHouse = maxInHouse;
     }
 
-    public int getRent_type_id() {
-        return rent_type_id;
+    public int getRentTypeId() {
+        return rentTypeId;
     }
 
-    public void setRent_type_id(int rent_type_id) {
-        this.rent_type_id = rent_type_id;
+    public void setRentTypeId(int rentTypeId) {
+        this.rentTypeId = rentTypeId;
     }
 
-    public int getService_type_id() {
-        return service_type_id;
+    public int getServiceTypeId() {
+        return serviceTypeId;
     }
 
-    public void setService_type_id(int service_type_id) {
-        this.service_type_id = service_type_id;
+    public void setServiceTypeId(int serviceTypeId) {
+        this.serviceTypeId = serviceTypeId;
     }
 
     public String getStandard() {
@@ -102,19 +102,19 @@ public class Service {
         this.description = description;
     }
 
-    public Double getPool_area() {
-        return pool_area;
+    public Double getPoolArea() {
+        return poolArea;
     }
 
-    public void setPool_area(Double pool_area) {
-        this.pool_area = pool_area;
+    public void setPoolArea(Double poolArea) {
+        this.poolArea = poolArea;
     }
 
-    public int getNumber_of_floors() {
-        return number_of_floors;
+    public int getNumberOfFloors() {
+        return numberOfFloors;
     }
 
-    public void setNumber_of_floors(int number_of_floors) {
-        this.number_of_floors = number_of_floors;
+    public void setNumberOfFloors(int numberOfFloors) {
+        this.numberOfFloors = numberOfFloors;
     }
 }

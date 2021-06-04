@@ -52,8 +52,8 @@
                         Employee
                     </a>
                     <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../../view/employee/list-employee.jsp">List Employee </a>
-                        <a class="dropdown-item" href="../../view/employee/create-employee.jsp">Create Employee </a>
+                        <a class="dropdown-item" href="/employee">List Employee </a>
+                        <a class="dropdown-item" href="/employee?action=create">Create Employee </a>
                     </div>
                 </li>
                 <li class="nav-item dropdown px-4">
@@ -85,66 +85,154 @@
                         Contract Detail
                     </a>
                     <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../../view/contract_detail/list-contract-detail.jsp">List Contract Detail</a>
-                        <a class="dropdown-item" href="../../view/contract_detail/create-contract-detail.jsp">Create Contract Detail</a>
+                        <a class="dropdown-item" href="../../view/contract_detail/list-contract-detail.jsp">List
+                            Contract Detail</a>
+                        <a class="dropdown-item" href="../../view/contract_detail/create-contract-detail.jsp">Create
+                            Contract Detail</a>
                     </div>
                 </li>
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success text-light" type="submit">Search</button>
-            </form>
         </div>
     </nav>
 </div>
-<div class="row py-4 col-lg-12 col-sm-12">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="text-center">Employee List</h1>
-                <table class="table table-striped">
-                    <tr>
-                        <th>No</th>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Birthdate</th>
-                        <th>ID Card Number</th>
-                        <th>Salary</th>
-                        <th>Phone Number</th>
-                        <th>Email</th>
-                        <th>Address</th>
-                        <th>Position ID</th>
-                        <th>Qualification ID</th>
-                        <th>Department ID</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-                    <c:forEach items="${employees}" var="employee" varStatus="status">
-                        <tr>
-                            <td>${status.count}</td>
-                            <td>${employee.employeeID}</td>
-                            <td>${employee.employeeName}</td>
-                            <td>${employee.employeeBirthdate}</td>
-                            <td>${employee.employeeIDNumber}</td>
-                            <td>${employee.employeeSalary}</td>
-                            <td>${employee.employeePhone}</td>
-                            <td>${employee.employeeEmail}</td>
-                            <td>${employee.employeeAddress}</td>
-                            <td>${employee.employeePositionID}</td>
-                            <td>${employee.employeeQualificationID}</td>
-                            <td>${employee.employeeDepartmentID}</td>
-                            <td><a href="employee?action=edit&id=${employee.employeeID}">Edit</a></td>
-                            <td><a href="employee?action=delete&id=${employee.employeeID}">Delete</a></td>
-                        </tr>
-                    </c:forEach>
-                </table>
-            </div>
-        </div>
+<div class="row ml-4 mt-4">
+    <div class="col-lg-4">
+        <h5>Employee Management</h5>
+    </div>
+    <div class="col-lg-4">
+        <h5>
+            <a href="/employee?action=create">Add New Employee</a>
+        </h5>
+    </div>
+    <div class="col-lg-4 pd-4">
+        <form method="get" action="/employee">
+            <input name="action" value="search" hidden>
+            <input  type="text" name="search" id="search" placeholder="Input Search">
+            <button class="btn btn-success">Search</button>
+        </form>
     </div>
 </div>
-<nav class="navbar navbar-dark bg-success col-lg-12 col-sm-12 justify-content-center" style="position: fixed; bottom:0">
-    <span class="text-light">COVID 19 UPDATE: The safety and well-being are our utmost priority</span>
-</nav>
+<div align="center">
+    <table id="employeeTable" class="table table-striped" border="1" cellpadding="5" style="width: 100%">
+        <thead>
+        <tr>
+            <th>No</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Qualification</th>
+            <th>Department</th>
+            <th>Birthdate</th>
+            <th>ID Card Number</th>
+            <th>Salary</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Username</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach var="employee" items="${employees}" varStatus="status">
+            <tr>
+                <td>${status.count}</td>
+                <td>${employee.id}</td>
+                <td>${employee.name}</td>
+                <c:choose>
+                    <c:when test="${employee.positionId ==1}">
+                        <td>Receptionist</td>
+                    </c:when>
+                    <c:when test="${employee.positionId ==2}">
+                        <td>Server</td>
+                    </c:when>
+                    <c:when test="${employee.positionId ==3}">
+                        <td>Expert</td>
+                    </c:when>
+                    <c:when test="${employee.positionId ==4}">
+                        <td>Supervisor</td>
+                    </c:when>
+                    <c:when test="${employee.positionId ==5}">
+                        <td>Manager</td>
+                    </c:when>
+                    <c:when test="${employee.positionId ==6}">
+                        <td>General Manager</td>
+                    </c:when>
+                    <c:otherwise><td>Not Valid</td></c:otherwise>
+                </c:choose>
+                <c:choose>
+                    <c:when test="${employee.qualificationId ==1}">
+                        <td>Intermediate</td>
+                    </c:when>
+                    <c:when test="${employee.qualificationId ==2}">
+                        <td>College</td>
+                    </c:when>
+                    <c:when test="${employee.qualificationId ==3}">
+                        <td>University</td>
+                    </c:when>
+                    <c:when test="${employee.qualificationId ==4}">
+                        <td>Higher Education</td>
+                    </c:when>
+                    <c:otherwise><td>Not Valid</td></c:otherwise>
+                </c:choose>
+                <c:choose>
+                    <c:when test="${employee.departmentId ==1}">
+                        <td>Sale - Marketing</td>
+                    </c:when>
+                    <c:when test="${employee.departmentId ==2}">
+                        <td>Administration</td>
+                    </c:when>
+                    <c:when test="${employee.departmentId ==3}">
+                        <td>Service</td>
+                    </c:when>
+                    <c:when test="${employee.departmentId ==4}">
+                        <td>Management</td>
+                    </c:when>
+                    <c:otherwise><td>Not Valid</td></c:otherwise>
+                </c:choose>
+                <td>${employee.birthdate}</td>
+                <td>${employee.idNumber}</td>
+                <td>${employee.salary}</td>
+                <td>${employee.phoneNumber}</td>
+                <td>${employee.email}</td>
+                <td>${employee.address}</td>
+                <td>${employee.username}</td>
+                <td>
+                    <button type="button" class="btn btn-warning"><a
+                            href="/employee?action=edit&id=${employee.id}">Edit</a></button>
+                    <button type="button" class="btn btn-danger"
+                            onclick="sendDataToModal('${employee.id}','${employee.name}')" data-toggle="modal"
+                            data-target="#exampleModalLong">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</div>
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+     aria-hidden="true">
+    <form action="/employee?action=delete" method="post">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Delete An Employee</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input hidden type="text" name="id" id="idEmployee">
+                    <p>Do you really want to delete this employee: <span id="nameEmployee"></span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -155,4 +243,22 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+<script src="${pageContext.request.contextPath}/jquery/jquery-3.5.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/datatables/js/jquery.dataTables.min.js"></script>
+<script src="${pageContext.request.contextPath}/datatables/js/dataTables.bootstrap4.min.js"></script>
+<script>
+    function sendDataToModal(id, name) {
+        document.getElementById("idEmployee").value = id;
+        document.getElementById("nameEmployee").innerText = name
+    }
+</script>
+<script>
+    $(document).ready(function() {
+        $('#employeeTable').dataTable( {
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 5
+        } );
+    } );
+</script>
 </html>
