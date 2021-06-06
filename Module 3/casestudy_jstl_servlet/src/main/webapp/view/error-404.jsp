@@ -83,6 +83,16 @@
                             Contract Detail</a>
                     </div>
                 </li>
+                <li class="nav-item dropdown px-4">
+                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown-5" role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Customers With Services
+                    </a>
+                    <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/customer-with-services">List</a>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>

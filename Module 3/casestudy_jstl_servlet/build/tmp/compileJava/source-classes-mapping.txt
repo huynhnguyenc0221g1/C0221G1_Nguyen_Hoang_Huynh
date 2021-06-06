@@ -64,3 +64,21 @@ model/service/impl/ContractServiceImpl.java
  model.service.impl.ContractServiceImpl
 controller/ContractDetailServlet.java
  controller.ContractDetailServlet
+model/bean/CustomerWithServices.java
+ model.bean.CustomerWithServices
+model/service/ICustomerWithServicesService.java
+ model.service.ICustomerWithServicesService
+model/repository/CustomerWithServicesRepository.java
+ model.repository.CustomerWithServicesRepository
+model/service/impl/CustomerWithServicesServiceImpl.java
+ model.service.impl.CustomerWithServicesServiceImpl
+controller/CustomerWithServicesServlet.java
+ controller.CustomerWithServicesServlet
+model/repository/AdditionalServiceRepository.java
+ model.repository.AdditionalServiceRepository
+model/service/impl/AdditionalServiceServiceImpl.java
+ model.service.impl.AdditionalServiceServiceImpl
+model/service/IAdditionalServiceService.java
+ model.service.IAdditionalServiceService
+controller/AdditionalServiceServlet.java
+ controller.AdditionalServiceServlet
