@@ -1,6 +1,7 @@
 package model.repository;
 
 import model.bean.Customer;
+import model.bean.CustomerType;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,12 +13,12 @@ import java.util.List;
 public class CustomerRepository {
     BaseRepository baseRepository = new BaseRepository();
     final String INSERT_CUSTOMER = "INSERT INTO customer (customer_id, customer_type_id, customer_fullname, customer_birthdate, customer_gender, customer_id_number, customer_phone_number, customer_email, customer_address) values (?,?,?,?,?,?,?,?,?);";
-    final String SELECT_CUSTOMER_BY_ID = "select * from customer\n" +
-            "where customer_id=?;";
+    final String SELECT_CUSTOMER_BY_ID = "select * from customer where customer.customer_id=?;";
     final String SELECT_ALL_CUSTOMER = "select * from customer;";
     final String DELETE_CUSTOMER = "delete from `customer` where customer_id=?;";
     final String UPDATE_CUSTOMER = "update `customer` set customer_type_id = ?, customer_fullname = ?, customer_birthdate = ?, customer_gender = ?, customer_id_number = ?, customer_phone_number = ?, customer_email = ? , customer_address = ? where customer_id =?;";
     final String FIND_BY_NAME = "select * from `customer` where customer_fullname like ?;";
+    final String SELECT_ALL_CUSTOMER_TYPES = "select * from customer_type";
     public void insertCustomer(Customer customer){
         Connection connection = baseRepository.connectDatabase();
         try {
@@ -153,5 +154,22 @@ public class CustomerRepository {
             e.printStackTrace();
         }
         return customerList;
+    }
+
+    public List<CustomerType> selectAllCustomerTypes() {
+        List<CustomerType> customerTypeList = new ArrayList<>();
+        try {
+            Connection connection = baseRepository.connectDatabase();
+            PreparedStatement statement = connection.prepareStatement(SELECT_ALL_CUSTOMER_TYPES);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("customer_type_id");
+                String name = resultSet.getString("customer_type_name");
+                customerTypeList.add(new CustomerType(id,name));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return customerTypeList;
     }
 }

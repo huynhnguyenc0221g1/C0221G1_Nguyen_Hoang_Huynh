@@ -1,6 +1,9 @@
 package controller;
 
+import model.bean.Department;
 import model.bean.Employee;
+import model.bean.Position;
+import model.bean.Qualification;
 import model.service.IEmployeeService;
 import model.service.impl.EmployeeServiceImpl;
 
@@ -16,9 +19,15 @@ import java.util.List;
 @WebServlet(name = "EmployeeServlet", urlPatterns = {"/employee"})
 public class EmployeeServlet extends HttpServlet {
     private IEmployeeService employeeService;
+    private List<Position> positionList;
+    private List<Qualification> qualificationList;
+    private List<Department> departmentList;
     @Override
     public void init() throws ServletException {
         employeeService = new EmployeeServiceImpl();
+        positionList = employeeService.selectAllPositions();
+        qualificationList = employeeService.selectAllQualifications();
+        departmentList = employeeService.selectAllDepartments();
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -82,6 +91,9 @@ public class EmployeeServlet extends HttpServlet {
         employeeService.insertEmployee(newEmployee);
         request.setAttribute("message","Successfully Created!");
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view/employee/create-employee.jsp");
+        request.setAttribute("positions",positionList);
+        request.setAttribute("qualifications",qualificationList);
+        request.setAttribute("departments",departmentList);
         try {
             requestDispatcher.forward(request, response);
         } catch (ServletException e) {
@@ -93,6 +105,9 @@ public class EmployeeServlet extends HttpServlet {
 
     private void showCreateForm(HttpServletRequest request, HttpServletResponse response) {
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/employee/create-employee.jsp");
+        request.setAttribute("positions",positionList);
+        request.setAttribute("qualifications",qualificationList);
+        request.setAttribute("departments",departmentList);
         try {
             requestDispatcher.forward(request,response);
         } catch (ServletException e) {
@@ -123,6 +138,9 @@ public class EmployeeServlet extends HttpServlet {
             request.setAttribute("message","Not Successful");
         }
         request.setAttribute("employee",employee);
+        request.setAttribute("positions",positionList);
+        request.setAttribute("qualifications",qualificationList);
+        request.setAttribute("departments",departmentList);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view/employee/edit-employee.jsp");
         try {
             requestDispatcher.forward(request, response);
@@ -141,7 +159,10 @@ public class EmployeeServlet extends HttpServlet {
             requestDispatcher = request.getRequestDispatcher("/view/error-404.jsp");
         } else {
             requestDispatcher = request.getRequestDispatcher("/view/employee/edit-employee.jsp");
-            request.setAttribute("employee",employee);
+            request.setAttribute("employees",employee);
+            request.setAttribute("positions",positionList);
+            request.setAttribute("qualifications",qualificationList);
+            request.setAttribute("departments",departmentList);
         }
         try {
             requestDispatcher.forward(request,response);
@@ -186,6 +207,9 @@ public class EmployeeServlet extends HttpServlet {
         List<Employee> employeeList = employeeService.findByName(search);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view/employee/list-employee.jsp");
         request.setAttribute("employees",employeeList);
+        request.setAttribute("positions",positionList);
+        request.setAttribute("qualifications",qualificationList);
+        request.setAttribute("departments",departmentList);
         try {
             requestDispatcher.forward(request,response);
         } catch (ServletException e) {
@@ -199,6 +223,9 @@ public class EmployeeServlet extends HttpServlet {
         List<Employee> employeeList = employeeService.selectAllEmployee();
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view/employee/list-employee.jsp");
         request.setAttribute("employees",employeeList);
+        request.setAttribute("positions",positionList);
+        request.setAttribute("qualifications",qualificationList);
+        request.setAttribute("departments",departmentList);
         try {
             requestDispatcher.forward(request,response);
         } catch (ServletException e) {

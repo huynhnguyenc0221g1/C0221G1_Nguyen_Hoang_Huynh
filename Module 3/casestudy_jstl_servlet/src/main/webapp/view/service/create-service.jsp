@@ -18,8 +18,7 @@
 <div class="container-fluid col-lg-12 col-sm-12">
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="col-lg-11 col-sm-10">
-            <a class="navbar-brand" href="../../view/main/main.jsp"><img class="mb-1" src="../../image/furama.png"
-                                                                         style="width: auto;height: 2.5rem"/></a>
+            <a class="navbar-brand" href="../view/main/main.jsp"><img class="mb-1" src="../image/furama.png" style="width: auto;height: 2.5rem"/></a>
         </div>
         <div class="col-lg-1 justify-content-end">
             <a class="text-muted link-dark mr-4" href="#">Profile</a>
@@ -28,7 +27,7 @@
 </div>
 <div class="container-fluid col-lg-12 col-sm-12 align-content-center">
     <nav class="navbar navbar-dark bg-success navbar-expand-lg">
-        <a class="text-light link-dark mr-4" href="../../view/main/main.jsp">Home</a>
+        <a class="text-light link-dark mr-4" href="../view/main/main.jsp">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -64,8 +63,7 @@
                         Service
                     </a>
                     <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../../view/service/list-service.jsp">List Service</a>
-                        <a class="dropdown-item" href="../../view/service/create-service.jsp">Create Service</a>
+                        <a class="dropdown-item" href="/service?action=create">Create Service</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown px-4">
@@ -75,8 +73,7 @@
                         Contract
                     </a>
                     <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../../view/contract/list-contract.jsp">List Contract</a>
-                        <a class="dropdown-item" href="../../view/contract/create-contract.jsp">Create Contract</a>
+                        <a class="dropdown-item" href="/contract?action=create">Create Contract</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown px-4">
@@ -86,9 +83,7 @@
                         Contract Detail
                     </a>
                     <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../../view/contract_detail/list-contract-detail.jsp">List
-                            Contract Detail</a>
-                        <a class="dropdown-item" href="../../view/contract_detail/create-contract-detail.jsp">Create
+                        <a class="dropdown-item" href="/contract-detail?action=create">Create
                             Contract Detail</a>
                     </div>
                 </li>
@@ -98,7 +93,6 @@
 </div>
 <div class="container">
     <h1>Create Service</h1>
-    <a href="/service">Back to Service List</a>
     <div class="container">
         <c:if test="${message!=null}">
             <p class="text-success">${message}</p>
@@ -107,18 +101,6 @@
             <fieldset>
                 <legend>Service Information</legend>
                 <table>
-                    <%--                    <th>No</th>--%>
-                    <%--                    <th>ID</th>--%>
-                    <%--                    <th>Name</th>--%>
-                    <%--                    <th>Area</th>--%>
-                    <%--                    <th>Cost</th>--%>
-                    <%--                    <th>Max In House</th>--%>
-                    <%--                    <th>Rent Option ID</th>--%>
-                    <%--                    <th>Service Type ID</th>--%>
-                    <%--                    <th>Standard</th>--%>
-                    <%--                    <th>Other Convenience Description</th>--%>
-                    <%--                    <th>Pool Area</th>--%>
-                    <%--                    <th>Number of Floors</th>--%>
                     <tr>
                         <td>ID:</td>
                         <td><input type="text" name="id" id="id" value="${service.id}"></td>
@@ -140,14 +122,24 @@
                         <td><input type="text" name="max_in_house" id="max_in_house" value="${service.maxInHouse}"></td>
                     </tr>
                     <tr>
-                        <td>Rent Option ID:</td>
-                        <td><input type="text" name="rent_option_id" id="rent_option_id" value="${service.rentTypeId}">
+                        <td>Rent Option:</td>
+                        <td>
+                            <select  name="rent_option_id" class="form-control">
+                                <c:forEach var="option" items="${rentOptions}">
+                                    <option value="${option.id}">${option.name}</option>
+                                </c:forEach>
+                            </select>
                         </td>
                     </tr>
                     <tr>
-                        <td>Service Type ID:</td>
-                        <td><input type="text" name="service_type_id" id="service_type_id"
-                                   value="${service.serviceTypeId}"></td>
+                        <td>Service Type:</td>
+                        <td>
+                            <select  name="service_type_id" class="form-control">
+                                <c:forEach var="type" items="${serviceTypes}">
+                                    <option value="${type.id}">${type.name}</option>
+                                </c:forEach>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <td>Room Standard:</td>

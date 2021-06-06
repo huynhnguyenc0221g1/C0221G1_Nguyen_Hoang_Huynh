@@ -5,7 +5,7 @@
   Time: 5:59 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -18,7 +18,7 @@
 <div class="container-fluid col-lg-12 col-sm-12">
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="col-lg-11 col-sm-10">
-            <a class="navbar-brand" href="../../view/main/main.jsp"><img class="mb-1" src="../../image/furama.png" style="width: auto;height: 2.5rem"/></a>
+            <a class="navbar-brand" href="../view/main/main.jsp"><img class="mb-1" src="../image/furama.png" style="width: auto;height: 2.5rem"/></a>
         </div>
         <div class="col-lg-1 justify-content-end">
             <a class="text-muted link-dark mr-4" href="#">Profile</a>
@@ -27,7 +27,7 @@
 </div>
 <div class="container-fluid col-lg-12 col-sm-12 align-content-center">
     <nav class="navbar navbar-dark bg-success navbar-expand-lg">
-        <a class="text-light link-dark mr-4" href="../../view/main/main.jsp">Home</a>
+        <a class="text-light link-dark mr-4" href="../view/main/main.jsp">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -63,8 +63,7 @@
                         Service
                     </a>
                     <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../../view/service/list-service.jsp">List Service</a>
-                        <a class="dropdown-item" href="../../view/service/create-service.jsp">Create Service</a>
+                        <a class="dropdown-item" href="/service?action=create">Create Service</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown px-4">
@@ -74,8 +73,7 @@
                         Contract
                     </a>
                     <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../../view/contract/list-contract.jsp">List Contract</a>
-                        <a class="dropdown-item" href="../../view/contract/create-contract.jsp">Create Contract</a>
+                        <a class="dropdown-item" href="/contract?action=create">Create Contract</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown px-4">
@@ -85,9 +83,7 @@
                         Contract Detail
                     </a>
                     <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../../view/contract_detail/list-contract-detail.jsp">List
-                            Contract Detail</a>
-                        <a class="dropdown-item" href="../../view/contract_detail/create-contract-detail.jsp">Create
+                        <a class="dropdown-item" href="/contract-detail?action=create">Create
                             Contract Detail</a>
                     </div>
                 </li>
@@ -96,92 +92,76 @@
     </nav>
 </div>
 <div class="container">
-    <form class="justify-content-center">
-        <div class=" row">
-            <div class="col-lg-2"></div>
-            <div class="col-lg-8 bg-light">
-                <div class="row p-3 bg-light">
-                    <div class="col-lg-12 text-center">
-                        <h1>Create Contract</h1>
-                    </div>
-                </div>
-                <div class="row p-2 pt-5">
-                    <div class="col-lg-3">
-                        <label class="font-weight-bold">Contract ID</label>
-                    </div>
-                    <div class="col-lg-9">
-                        <input  type="text" name="contractID">
-                    </div>
-                </div>
-                <div class="row p-2">
-                    <div class="col-lg-3">
-                        <label class="font-weight-bold">Contract Made Date</label>
-                    </div>
-                    <div class="col-lg-9">
-                        <input  type="text" name="contractStartDate">
-                    </div>
-                </div>
-                <div class="row p-2">
-                    <div class="col-lg-3">
-                        <label class="font-weight-bold">Customer End Date</label>
-                    </div>
-                    <div class="col-lg-9">
-                        <input type="text" name="contractEndDate">
-                    </div>
-                </div>
-                <div class="row p-2">
-                    <div class="col-lg-3">
-                        <label class="font-weight-bold">Contract Deposit</label>
-                    </div>
-                    <div class="col-lg-9">
-                        <input type="text" name="contractDeposit">
-                    </div>
-                </div>
-                <div class="row p-2">
-                    <div class="col-lg-3">
-                        <label class="font-weight-bold">Contract Total Cost</label>
-                    </div>
-                    <div class="col-lg-9">
-                        <input type="text" name="contractTotalMoney">
-                    </div>
-                </div>
-                <div class="row p-2">
-                    <div class="col-lg-3">
-                        <label class="font-weight-bold">Employee ID</label>
-                    </div>
-                    <div class="col-lg-9">
-                        <input type="text" name="employeeID">
-                    </div>
-                </div>
-                <div class="row p-2">
-                    <div class="col-lg-3">
-                        <label class="font-weight-bold">Customer ID</label>
-                    </div>
-                    <div class="col-lg-9">
-                        <input type="text" name="customerID">
-                    </div>
-                </div>
-                <div class="row p-2">
-                    <div class="col-lg-3">
-                        <label class="font-weight-bold">Service ID</label>
-                    </div>
-                    <div class="col-lg-9">
-                        <input type="text" name="serviceID">
-                    </div>
-                </div>
-                <div class="row p-2 align-items-center">
-                    <div class="col-lg-5 col-md-4 col-sm-4 "></div>
-                    <div class="col-lg-2 col-md-4 col-sm-4 ">
-                        <input class="btn btn-success" type="submit" id="submit" value="Create Contract" style="width: 200px">
-                    </div>
-                    <div class="col-lg-5 col-md-4 col-sm-4 col-xl-4"></div>
-
-                </div>
-            </div>
-            <div class="col-lg-2"></div>
-
-        </div>
-    </form>
+    <h1>Create Contract</h1>
+    <div class="container">
+        <c:if test="${message!=null}">
+            <p class="text-success">${message}</p>
+        </c:if>
+        <form method="post">
+            <fieldset>
+                <legend>Contract Information</legend>
+                <table>
+                    <tr>
+                        <td>ID:</td>
+                        <td><input type="text" name="id" id="id" value="${contract.id}"></td>
+                    </tr>
+                    <tr>
+                        <td>Employee:</td>
+                        <td>
+                            <%--                            <input type="text" name="employee_id" id="employee_id" value="${contract.employeeId}">--%>
+                            <select name="employee_id" class="form-control">
+                                <c:forEach var="employee" items="${employees}">
+                                    <option value="${employee.id}">${employee.name}</option>
+                                </c:forEach>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Customer:</td>
+                        <td>
+                            <%--                            <input type="text" name="customer_id" id="customer_id" value="${contract.customerId}">--%>
+                            <select name="customer_id" class="form-control">
+                                <c:forEach var="customer" items="${customers}">
+                                    <option value="${customer.id}">${customer.name}</option>
+                                </c:forEach>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Service:</td>
+                        <td>
+                            <%--                            <input type="text" name="service_id" id="service_id" value="${contract.serviceId}">--%>
+                            <select name="service_id" class="form-control">
+                                <c:forEach var="service" items="${services}">
+                                    <option value="${service.id}">${service.name}</option>
+                                </c:forEach>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Made Date:</td>
+                        <td><input type="date" name="made_date" id="made_date" value="${contract.madeDate}"></td>
+                    </tr>
+                    <tr>
+                        <td>End Date:</td>
+                        <td><input type="date" name="end_date" id="end_date" value="${contract.endDate}"></td>
+                    </tr>
+                    <tr>
+                        <td>Deposit:</td>
+                        <td><input type="text" name="deposit" id="deposit" value="${contract.deposit}"></td>
+                    </tr>
+                    <tr>
+                        <td>Total Money:</td>
+                        <td><input type="text" name="total_money" id="total_money" value="${contract.totalMoney}"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input class="btn btn-success" type="submit" value="Create Contract"></td>
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
+    </div>
 </div>
 </div>
 </body>

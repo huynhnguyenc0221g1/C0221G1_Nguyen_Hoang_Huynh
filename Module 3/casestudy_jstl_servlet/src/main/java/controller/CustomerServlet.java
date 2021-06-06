@@ -2,6 +2,7 @@ package controller;
 
 
 import model.bean.Customer;
+import model.bean.CustomerType;
 import model.service.ICustomerService;
 import model.service.impl.CustomerServiceImpl;
 
@@ -17,9 +18,11 @@ import java.util.List;
 @WebServlet(name = "CustomerServlet", urlPatterns = {"/customer"})
 public class CustomerServlet extends HttpServlet {
     private ICustomerService customerService;
+    private List<CustomerType> customerTypeList;
     @Override
     public void init() throws ServletException {
         customerService = new CustomerServiceImpl();
+        customerTypeList = customerService.selectAllCustomerTypes();
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -80,6 +83,7 @@ public class CustomerServlet extends HttpServlet {
         customerService.insertCustomer(newCustomer);
         request.setAttribute("message","Successfully Created!");
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view/customer/create-customer.jsp");
+        request.setAttribute("customerTypes",customerTypeList);
         try {
             requestDispatcher.forward(request, response);
         } catch (ServletException e) {
@@ -91,6 +95,7 @@ public class CustomerServlet extends HttpServlet {
 
     private void showCreateForm(HttpServletRequest request, HttpServletResponse response) {
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/customer/create-customer.jsp");
+        request.setAttribute("customerTypes",customerTypeList);
         try {
             requestDispatcher.forward(request,response);
         } catch (ServletException e) {
@@ -118,6 +123,7 @@ public class CustomerServlet extends HttpServlet {
             request.setAttribute("message","Not Successful");
         }
         request.setAttribute("customer",customer);
+        request.setAttribute("customerTypes", customerTypeList);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view/customer/edit-customer.jsp");
         try {
             requestDispatcher.forward(request, response);
@@ -137,6 +143,7 @@ public class CustomerServlet extends HttpServlet {
         } else {
             requestDispatcher = request.getRequestDispatcher("/view/customer/edit-customer.jsp");
             request.setAttribute("customer",customer);
+            request.setAttribute("customerTypes", customerTypeList);
         }
         try {
             requestDispatcher.forward(request,response);
@@ -181,6 +188,7 @@ public class CustomerServlet extends HttpServlet {
         List<Customer> customerList = customerService.findByName(search);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view/customer/list-customer.jsp");
         request.setAttribute("customers",customerList);
+        request.setAttribute("customerTypes",customerTypeList);
         try {
             requestDispatcher.forward(request,response);
         } catch (ServletException e) {
@@ -194,6 +202,7 @@ public class CustomerServlet extends HttpServlet {
         List<Customer> customerList = customerService.selectAllCustomer();
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view/customer/list-customer.jsp");
         request.setAttribute("customers",customerList);
+        request.setAttribute("customerTypes",customerTypeList);
         try {
             requestDispatcher.forward(request,response);
         } catch (ServletException e) {

@@ -71,7 +71,7 @@ FOREIGN KEY (`qualification_id`) REFERENCES qualification (`qualification_id`),
 FOREIGN KEY (`department_id`) REFERENCES department (`department_id`),
 `employee_birthdate` date,
 `employee_id_number` varchar(45),
-`employee_salary` varchar(45),
+`employee_salary` double,
 `employee_phone_number` varchar(45),
 `employee_email` varchar(45),
 `employee_address` varchar(45),
@@ -144,29 +144,30 @@ create table if not exists service_type (
 `service_type_name` varchar(45),
 primary key (`service_type_id`));
 
-INSERT INTO `furama_resort`.`service_type` (`service_type_id`, `service_type_name`) VALUES ('1', 'Standard');
-INSERT INTO `furama_resort`.`service_type` (`service_type_id`, `service_type_name`) VALUES ('2', 'Superior');
-INSERT INTO `furama_resort`.`service_type` (`service_type_id`, `service_type_name`) VALUES ('3', 'Deluxe');
+INSERT INTO `furama_resort`.`service_type` (`service_type_id`, `service_type_name`) VALUES ('1', 'Room');
+INSERT INTO `furama_resort`.`service_type` (`service_type_id`, `service_type_name`) VALUES ('2', 'Home');
+INSERT INTO `furama_resort`.`service_type` (`service_type_id`, `service_type_name`) VALUES ('3', 'Villa');
 
 
 create table if not exists service (
 `service_id` int not null,
 `service_name` varchar(45),
 `service_area` int,
-`service_number_of_floor` int,
-`service_max_inhouse` varchar(45),
-`service_rent_price` varchar(45),
+`service_cost` double,
+`service_max_inhouse` int,
 `rent_option_id` int,
 foreign key (`rent_option_id`) references rent_option (`rent_option_id`),
 `service_type_id` int not null,
 foreign key (`service_type_id`) references service_type (`service_type_id`),
-`service_status` varchar(45),
+`service_room_standard` varchar(45),
+`service_other_convenience` varchar(45),
+`service_pool_area` double,
+`service_number_of_floor` int,
 primary key (`service_id`));
 
-INSERT INTO `furama_resort`.`service` (`service_id`, `service_name`, `service_area`, `service_number_of_floor`, `service_max_inhouse`, `service_rent_price`, `rent_option_id`, `service_type_id`, `service_status`) VALUES ('1', 'Villa', '300', '3', '8', '500', '1', '1', 'Available');
-INSERT INTO `furama_resort`.`service` (`service_id`, `service_name`, `service_area`, `service_number_of_floor`, `service_max_inhouse`, `service_rent_price`, `rent_option_id`, `service_type_id`, `service_status`) VALUES ('2', 'Room', '50', '1', '2', '150', '2', '2', 'Available');
-INSERT INTO `furama_resort`.`service` (`service_id`, `service_name`, `service_area`, `service_number_of_floor`, `service_max_inhouse`, `service_rent_price`, `rent_option_id`, `service_type_id`, `service_status`) VALUES ('3', 'House', '150', '2', '4', '300', '3', '3', 'Available');
-
+INSERT INTO `furama_resort`.`service` (`service_id`, `service_name`, `service_area`, `service_cost`, `service_max_inhouse`, `rent_option_id`, `service_type_id`, `service_room_standard`, `service_other_convenience`, `service_pool_area`, `service_number_of_floor`) VALUES ('1', 'Room', '30', '3000000', '2', '1', '1', 'Standard', 'TV', '0', '1');
+INSERT INTO `furama_resort`.`service` (`service_id`, `service_name`, `service_area`, `service_cost`, `service_max_inhouse`, `rent_option_id`, `service_type_id`, `service_room_standard`, `service_other_convenience`, `service_pool_area`, `service_number_of_floor`) VALUES ('2', 'House', '60', '5000000', '4', '2', '2', 'Superior', '2 Bed Rooms', '40', '1');
+INSERT INTO `furama_resort`.`service` (`service_id`, `service_name`, `service_area`, `service_cost`, `service_max_inhouse`, `rent_option_id`, `service_type_id`, `service_room_standard`, `service_other_convenience`, `service_pool_area`, `service_number_of_floor`) VALUES ('3', 'Villa', '100', '7000000', '8', '3', '3', 'Deluxe', 'Garden and Electric Car', '80', '2');
 
 
 -- Table Hợp đồng | Contract Table

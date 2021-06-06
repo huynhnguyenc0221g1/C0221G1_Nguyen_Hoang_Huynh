@@ -18,7 +18,7 @@
 <div class="container-fluid col-lg-12 col-sm-12">
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="col-lg-11 col-sm-10">
-            <a class="navbar-brand" href="../../view/main/main.jsp"><img class="mb-1" src="../../image/furama.png" style="width: auto;height: 2.5rem"/></a>
+            <a class="navbar-brand" href="../view/main/main.jsp"><img class="mb-1" src="../image/furama.png" style="width: auto;height: 2.5rem"/></a>
         </div>
         <div class="col-lg-1 justify-content-end">
             <a class="text-muted link-dark mr-4" href="#">Profile</a>
@@ -27,7 +27,7 @@
 </div>
 <div class="container-fluid col-lg-12 col-sm-12 align-content-center">
     <nav class="navbar navbar-dark bg-success navbar-expand-lg">
-        <a class="text-light link-dark mr-4" href="../../view/main/main.jsp">Home</a>
+        <a class="text-light link-dark mr-4" href="../view/main/main.jsp">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -63,8 +63,7 @@
                         Service
                     </a>
                     <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../../view/service/list-service.jsp">List Service</a>
-                        <a class="dropdown-item" href="../../view/service/create-service.jsp">Create Service</a>
+                        <a class="dropdown-item" href="/service?action=create">Create Service</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown px-4">
@@ -74,8 +73,7 @@
                         Contract
                     </a>
                     <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../../view/contract/list-contract.jsp">List Contract</a>
-                        <a class="dropdown-item" href="../../view/contract/create-contract.jsp">Create Contract</a>
+                        <a class="dropdown-item" href="/contract?action=create">Create Contract</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown px-4">
@@ -85,9 +83,7 @@
                         Contract Detail
                     </a>
                     <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../../view/contract_detail/list-contract-detail.jsp">List
-                            Contract Detail</a>
-                        <a class="dropdown-item" href="../../view/contract_detail/create-contract-detail.jsp">Create
+                        <a class="dropdown-item" href="/contract-detail?action=create">Create
                             Contract Detail</a>
                     </div>
                 </li>
@@ -138,57 +134,21 @@
                 <td>${status.count}</td>
                 <td>${employee.id}</td>
                 <td>${employee.name}</td>
-                <c:choose>
-                    <c:when test="${employee.positionId ==1}">
-                        <td>Receptionist</td>
-                    </c:when>
-                    <c:when test="${employee.positionId ==2}">
-                        <td>Server</td>
-                    </c:when>
-                    <c:when test="${employee.positionId ==3}">
-                        <td>Expert</td>
-                    </c:when>
-                    <c:when test="${employee.positionId ==4}">
-                        <td>Supervisor</td>
-                    </c:when>
-                    <c:when test="${employee.positionId ==5}">
-                        <td>Manager</td>
-                    </c:when>
-                    <c:when test="${employee.positionId ==6}">
-                        <td>General Manager</td>
-                    </c:when>
-                    <c:otherwise><td>Not Valid</td></c:otherwise>
-                </c:choose>
-                <c:choose>
-                    <c:when test="${employee.qualificationId ==1}">
-                        <td>Intermediate</td>
-                    </c:when>
-                    <c:when test="${employee.qualificationId ==2}">
-                        <td>College</td>
-                    </c:when>
-                    <c:when test="${employee.qualificationId ==3}">
-                        <td>University</td>
-                    </c:when>
-                    <c:when test="${employee.qualificationId ==4}">
-                        <td>Higher Education</td>
-                    </c:when>
-                    <c:otherwise><td>Not Valid</td></c:otherwise>
-                </c:choose>
-                <c:choose>
-                    <c:when test="${employee.departmentId ==1}">
-                        <td>Sale - Marketing</td>
-                    </c:when>
-                    <c:when test="${employee.departmentId ==2}">
-                        <td>Administration</td>
-                    </c:when>
-                    <c:when test="${employee.departmentId ==3}">
-                        <td>Service</td>
-                    </c:when>
-                    <c:when test="${employee.departmentId ==4}">
-                        <td>Management</td>
-                    </c:when>
-                    <c:otherwise><td>Not Valid</td></c:otherwise>
-                </c:choose>
+                <c:forEach var="position" items="${requestScope['positions']}">
+                    <c:if test="${position.id == employee.positionId}">
+                        <td>${position.name}</td>
+                    </c:if>
+                </c:forEach>
+                <c:forEach var="qualification" items="${qualifications}">
+                    <c:if test="${qualification.id == employee.qualificationId}">
+                        <td>${qualification.name}</td>
+                    </c:if>
+                </c:forEach>
+                <c:forEach var="department" items="${departments}">
+                    <c:if test="${department.id == employee.departmentId}">
+                        <td>${department.name}</td>
+                    </c:if>
+                </c:forEach>
                 <td>${employee.birthdate}</td>
                 <td>${employee.idNumber}</td>
                 <td>${employee.salary}</td>

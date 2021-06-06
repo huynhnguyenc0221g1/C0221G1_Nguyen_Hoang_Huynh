@@ -18,8 +18,7 @@
 <div class="container-fluid col-lg-12 col-sm-12">
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="col-lg-11 col-sm-10">
-            <a class="navbar-brand" href="../../view/main/main.jsp"><img class="mb-1" src="../../image/furama.png"
-                                                                         style="width: auto;height: 2.5rem"/></a>
+            <a class="navbar-brand" href="../view/main/main.jsp"><img class="mb-1" src="../image/furama.png" style="width: auto;height: 2.5rem"/></a>
         </div>
         <div class="col-lg-1 justify-content-end">
             <a class="text-muted link-dark mr-4" href="#">Profile</a>
@@ -28,7 +27,7 @@
 </div>
 <div class="container-fluid col-lg-12 col-sm-12 align-content-center">
     <nav class="navbar navbar-dark bg-success navbar-expand-lg">
-        <a class="text-light link-dark mr-4" href="../../view/main/main.jsp">Home</a>
+        <a class="text-light link-dark mr-4" href="../view/main/main.jsp">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -64,8 +63,7 @@
                         Service
                     </a>
                     <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../../view/service/list-service.jsp">List Service</a>
-                        <a class="dropdown-item" href="../../view/service/create-service.jsp">Create Service</a>
+                        <a class="dropdown-item" href="/service?action=create">Create Service</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown px-4">
@@ -75,8 +73,7 @@
                         Contract
                     </a>
                     <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../../view/contract/list-contract.jsp">List Contract</a>
-                        <a class="dropdown-item" href="../../view/contract/create-contract.jsp">Create Contract</a>
+                        <a class="dropdown-item" href="/contract?action=create">Create Contract</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown px-4">
@@ -86,9 +83,7 @@
                         Contract Detail
                     </a>
                     <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../../view/contract_detail/list-contract-detail.jsp">List
-                            Contract Detail</a>
-                        <a class="dropdown-item" href="../../view/contract_detail/create-contract-detail.jsp">Create
+                        <a class="dropdown-item" href="/contract-detail?action=create">Create
                             Contract Detail</a>
                     </div>
                 </li>
@@ -111,66 +106,91 @@
                        placeholder="Example input placeholder">
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput2">Employee's Name</label>
+                <label for="formGroupExampleInput1">Employee's Name</label>
                 <input type="text" class="form-control" name="name" value="${employee.name}" id="formGroupExampleInput1"
                        placeholder="Another input placeholder">
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput2">Employee's Position Id</label>
-                <input type="text" value="${employee.positionId}" name="position_id" class="form-control"
-                       id="formGroupExampleInput2"
-                       placeholder="Another input placeholder">
+                <label>Employee's Position</label>
+                <select class="form-control" name="position_id">
+                    <c:forEach var="position" items="${requestScope['positions']}">
+                        <c:choose>
+                            <c:when test="${position.id == employee.positionId}">
+                                <option value="${position.id}" selected>${position.name}</option>
+                            </c:when>
+                            <c:otherwise>
+                                <option value="${position.id}">${position.name}</option>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:forEach>
+                </select>
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput2">Employee's Qualification Id</label>
-                <input type="text" value="${employee.qualificationId}" name="qualification_id" class="form-control"
-                       id="formGroupExampleInput3"
-                       placeholder="Another input placeholder">
+                <label>Employee's Qualification</label>
+                <select class="form-control" name="qualification_id">
+                    <c:forEach var="qualification" items="${requestScope['qualifications']}">
+                        <c:choose>
+                            <c:when test="${qualification.id == employee.qualificationId}">
+                                <option value="${qualification.id}" selected>${qualification.name}</option>
+                            </c:when>
+                            <c:otherwise>
+                                <option value="${qualification.id}">${qualification.name}</option>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:forEach>
+                </select>
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput2">Employee's Department Id</label>
-                <input type="text" value="${employee.departmentId}" name="department_id" class="form-control"
-                       id="formGroupExampleInput4"
-                       placeholder="Another input placeholder">
+                <label>Employee's Department</label>
+                <select class="form-control" name="department_id">
+                    <c:forEach var="department" items="${requestScope['departments']}">
+                        <c:choose>
+                            <c:when test="${department.id == employee.departmentId}">
+                                <option value="${department.id}" selected>${department.name}</option>
+                            </c:when>
+                            <c:otherwise>
+                                <option value="${department.id}">${department.name}</option>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:forEach>
+                </select>
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput2">Employee's Birthdate</label>
-                <input type="text" class="form-control" name="birthdate" value="${employee.birthdate}"
-                       id="formGroupExampleInput5"
-                       placeholder="Another input placeholder">
+                <label>Employee's Birthdate</label>
+                <input type="date" class="form-control" name="birthdate" value="${employee.birthdate}">
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput2">Employee's ID Card Number</label>
+                <label for="formGroupExampleInput6">Employee's ID Card Number</label>
                 <input type="text" class="form-control" name="id_number" value="${employee.idNumber}"
                        id="formGroupExampleInput6"
                        placeholder="Another input placeholder">
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput2">Employee's Salary</label>
+                <label for="formGroupExampleInput7">Employee's Salary</label>
                 <input type="text" class="form-control" name="salary" value="${employee.salary}"
                        id="formGroupExampleInput7"
                        placeholder="Another input placeholder">
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput2">Employee's Phone Number</label>
+                <label for="formGroupExampleInput8">Employee's Phone Number</label>
                 <input type="text" class="form-control" name="phone_number" value="${employee.phoneNumber}"
                        id="formGroupExampleInput8"
                        placeholder="Another input placeholder">
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput2">Employee's Email</label>
+                <label for="formGroupExampleInput9">Employee's Email</label>
                 <input type="text" class="form-control" name="email" value="${employee.email}"
                        id="formGroupExampleInput9"
                        placeholder="Another input placeholder">
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput2">Employee's Address</label>
+                <label for="formGroupExampleInput10">Employee's Address</label>
                 <input type="text" class="form-control" name="address" value="${employee.address}"
                        id="formGroupExampleInput10"
                        placeholder="Another input placeholder">
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput2">Employee's Username</label>
+                <label for="formGroupExampleInput11">Employee's Username</label>
                 <input type="text" class="form-control" name="username" value="${employee.username}"
                        id="formGroupExampleInput11"
                        placeholder="Another input placeholder">

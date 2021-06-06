@@ -2,17 +2,17 @@ package model.bean;
 
 public class ContractDetail {
     private int id;
-    private int contract_id;
-    private int attach_service_id;
+    private int contractId;
+    private int additionalServiceId;
     private int amount;
 
     public ContractDetail() {
     }
 
-    public ContractDetail(int id, int contract_id, int attach_service_id, int amount) {
+    public ContractDetail(int id, int contractId, int additionalServiceId, int amount) {
         this.id = id;
-        this.contract_id = contract_id;
-        this.attach_service_id = attach_service_id;
+        this.contractId = contractId;
+        this.additionalServiceId = additionalServiceId;
         this.amount = amount;
     }
 
@@ -24,20 +24,20 @@ public class ContractDetail {
         this.id = id;
     }
 
-    public int getContract_id() {
-        return contract_id;
+    public int getContractId() {
+        return contractId;
     }
 
-    public void setContract_id(int contract_id) {
-        this.contract_id = contract_id;
+    public void setContractId(int contractId) {
+        this.contractId = contractId;
     }
 
-    public int getAttach_service_id() {
-        return attach_service_id;
+    public int getAdditionalServiceId() {
+        return additionalServiceId;
     }
 
-    public void setAttach_service_id(int attach_service_id) {
-        this.attach_service_id = attach_service_id;
+    public void setAdditionalServiceId(int additionalServiceId) {
+        this.additionalServiceId = additionalServiceId;
     }
 
     public int getAmount() {

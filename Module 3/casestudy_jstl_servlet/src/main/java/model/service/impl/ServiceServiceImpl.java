@@ -1,6 +1,8 @@
 package model.service.impl;
 
+import model.bean.RentOption;
 import model.bean.Service;
+import model.bean.ServiceType;
 import model.repository.ServiceRepository;
 import model.service.IServiceService;
 
@@ -16,5 +18,15 @@ public class ServiceServiceImpl implements IServiceService {
     @Override
     public List<Service> selectAllService() {
         return serviceRepository.selectAllService();
+    }
+
+    @Override
+    public List<ServiceType> selectAllServiceTypes() {
+        return serviceRepository.selectAllServiceTypes();
+    }
+
+    @Override
+    public List<RentOption> selectAllRentOption() {
+        return serviceRepository.selectAllRentOption();
     }
 }

@@ -1,6 +1,9 @@
 package model.repository;
 
+import model.bean.Department;
 import model.bean.Employee;
+import model.bean.Position;
+import model.bean.Qualification;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -17,8 +20,11 @@ public class EmployeeRepository {
     final String DELETE_EMPLOYEE = "delete from `employee` where employee_id=?;";
     final String UPDATE_EMPLOYEE = "update `employee` set employee_name = ?, position_id = ?, qualification_id = ?, department_id = ?, employee_birthdate = ?, employee_id_number = ?, employee_salary = ? , employee_phone_number = ?, employee_email = ?, employee_address = ?, username = ? where employee_id =?;";
     final String FIND_BY_NAME = "select * from `employee` where employee_name like ?;";
+    final String SELECT_ALL_POSITION = "select * from position;";
+    final String SELECT_ALL_QUALIFICATION = "select * from qualification;";
+    final String SELECT_ALL_DEPARTMENT = "select * from department;";
 
-    public void insertEmployee(Employee employee){
+    public void insertEmployee(Employee employee) {
         Connection connection = baseRepository.connectDatabase();
         try {
             Statement disableForeignKeyCheck = connection.createStatement();
@@ -66,7 +72,7 @@ public class EmployeeRepository {
                 String email = resultSet.getString("employee_email");
                 String address = resultSet.getString("employee_address");
                 String username = resultSet.getString("username");
-                employee = new Employee(id,name,positionId,qualificationId,departmentId,birthdate,idNumber,salary,phone_number,email,address,username);
+                employee = new Employee(id, name, positionId, qualificationId, departmentId, birthdate, idNumber, salary, phone_number, email, address, username);
             }
             preparedStatement.close();
             connection.close();
@@ -95,10 +101,10 @@ public class EmployeeRepository {
                 String email = resultSet.getString("employee_email");
                 String address = resultSet.getString("employee_address");
                 String username = resultSet.getString("username");
-                Employee employee = new Employee(id,name,positionId,qualificationId,departmentId,birthdate,idNumber,salary,phone_number,email,address,username);
+                Employee employee = new Employee(id, name, positionId, qualificationId, departmentId, birthdate, idNumber, salary, phone_number, email, address, username);
                 employeeList.add(employee);
             }
-        } catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return employeeList;
@@ -109,7 +115,7 @@ public class EmployeeRepository {
         boolean rowDelete = false;
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(DELETE_EMPLOYEE);
-            preparedStatement.setInt(1,id);
+            preparedStatement.setInt(1, id);
             rowDelete = preparedStatement.executeUpdate() > 0;
             preparedStatement.close();
             connection.close();
@@ -156,7 +162,7 @@ public class EmployeeRepository {
         List<Employee> employeeList = new ArrayList<>();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(FIND_BY_NAME);
-            preparedStatement.setString(1,"%"+inputName+"%");
+            preparedStatement.setString(1, "%" + inputName + "%");
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("employee_id");
@@ -171,7 +177,7 @@ public class EmployeeRepository {
                 String email = resultSet.getString("employee_email");
                 String address = resultSet.getString("employee_address");
                 String username = resultSet.getString("username");
-                Employee employee = new Employee(id,name,positionId,qualificationId,departmentId,birthdate,idNumber,salary,phone_number,email,address,username);
+                Employee employee = new Employee(id, name, positionId, qualificationId, departmentId, birthdate, idNumber, salary, phone_number, email, address, username);
                 employeeList.add(employee);
             }
             preparedStatement.close();
@@ -182,4 +188,60 @@ public class EmployeeRepository {
         return employeeList;
     }
 
+    public List<Position> selectAllPositions() {
+        List<Position> positionList = new ArrayList<>();
+        Connection connection = baseRepository.connectDatabase();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_POSITION);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("position_id");
+                String name =resultSet.getString("position_name");
+                positionList.add(new Position(id,name));
+            }
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return positionList;
+    }
+
+    public List<Qualification> selectAllQualifications() {
+        List<Qualification> qualificationList = new ArrayList<>();
+        Connection connection = baseRepository.connectDatabase();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_QUALIFICATION);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("qualification_id");
+                String name =resultSet.getString("qualification_name");
+                qualificationList.add(new Qualification(id,name));
+            }
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return qualificationList;
+    }
+
+    public List<Department> selectAllDepartments() {
+        List<Department> departmentList = new ArrayList<>();
+        Connection connection = baseRepository.connectDatabase();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_DEPARTMENT);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("department_id");
+                String name =resultSet.getString("department_name");
+                departmentList.add(new Department(id,name));
+            }
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return departmentList;
+    }
 }

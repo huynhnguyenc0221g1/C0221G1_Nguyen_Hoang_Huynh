@@ -1,7 +1,9 @@
 package controller;
 
 
+import model.bean.RentOption;
 import model.bean.Service;
+import model.bean.ServiceType;
 import model.service.IServiceService;
 import model.service.impl.ServiceServiceImpl;
 
@@ -17,9 +19,13 @@ import java.util.List;
 @WebServlet(name = "ServiceServlet", urlPatterns = {"/service"})
 public class ServiceServlet extends HttpServlet {
     private IServiceService serviceService;
+    private List<ServiceType> serviceTypeList;
+    private List<RentOption> rentOptionList;
     @Override
     public void init() throws ServletException {
         serviceService = new ServiceServiceImpl();
+        serviceTypeList = serviceService.selectAllServiceTypes();
+        rentOptionList = serviceService.selectAllRentOption();
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -46,7 +52,6 @@ public class ServiceServlet extends HttpServlet {
                 showCreateForm(request, response);
                 break;
             default:
-                listService(request,response);
                 break;
         }
     }
@@ -66,6 +71,8 @@ public class ServiceServlet extends HttpServlet {
         Service newService = new Service(id,name,area,cost,maxInHouse,rentOptionId,serviceTypeId,standard,description,poolArea,numberOfFloors);
         serviceService.insertService(newService);
         request.setAttribute("message","Successfully Created!");
+        request.setAttribute("serviceTypes",serviceTypeList);
+        request.setAttribute("rentOptions",rentOptionList);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view/service/create-service.jsp");
         try {
             requestDispatcher.forward(request, response);
@@ -77,6 +84,8 @@ public class ServiceServlet extends HttpServlet {
     }
 
     private void showCreateForm(HttpServletRequest request, HttpServletResponse response) {
+        request.setAttribute("serviceTypes",serviceTypeList);
+        request.setAttribute("rentOptions",rentOptionList);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/service/create-service.jsp");
         try {
             requestDispatcher.forward(request,response);

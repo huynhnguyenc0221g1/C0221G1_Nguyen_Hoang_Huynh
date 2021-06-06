@@ -2,26 +2,26 @@ package model.bean;
 
 public class Contract {
     private int id;
-    private String made_date;
-    private String end_date;
+    private int employeeId;
+    private int customerId;
+    private int serviceId;
+    private String madeDate;
+    private String endDate;
     private double deposit;
-    private double total_money;
-    private int employee_id;
-    private int customer_id;
-    private int service_id;
+    private double totalMoney;
 
     public Contract() {
     }
 
-    public Contract(int id, String made_date, String end_date, double deposit, double total_money, int employee_id, int customer_id, int service_id) {
+    public Contract(int id, int employeeId, int customerId, int serviceId, String madeDate, String endDate, double deposit, double totalMoney) {
         this.id = id;
-        this.made_date = made_date;
-        this.end_date = end_date;
+        this.employeeId = employeeId;
+        this.customerId = customerId;
+        this.serviceId = serviceId;
+        this.madeDate = madeDate;
+        this.endDate = endDate;
         this.deposit = deposit;
-        this.total_money = total_money;
-        this.employee_id = employee_id;
-        this.customer_id = customer_id;
-        this.service_id = service_id;
+        this.totalMoney = totalMoney;
     }
 
     public int getId() {
@@ -32,20 +32,20 @@ public class Contract {
         this.id = id;
     }
 
-    public String getMade_date() {
-        return made_date;
+    public String getMadeDate() {
+        return madeDate;
     }
 
-    public void setMade_date(String made_date) {
-        this.made_date = made_date;
+    public void setMadeDate(String madeDate) {
+        this.madeDate = madeDate;
     }
 
-    public String getEnd_date() {
-        return end_date;
+    public String getEndDate() {
+        return endDate;
     }
 
-    public void setEnd_date(String end_date) {
-        this.end_date = end_date;
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
     }
 
     public double getDeposit() {
@@ -56,35 +56,35 @@ public class Contract {
         this.deposit = deposit;
     }
 
-    public double getTotal_money() {
-        return total_money;
+    public double getTotalMoney() {
+        return totalMoney;
     }
 
-    public void setTotal_money(double total_money) {
-        this.total_money = total_money;
+    public void setTotalMoney(double totalMoney) {
+        this.totalMoney = totalMoney;
     }
 
-    public int getEmployee_id() {
-        return employee_id;
+    public int getEmployeeId() {
+        return employeeId;
     }
 
-    public void setEmployee_id(int employee_id) {
-        this.employee_id = employee_id;
+    public void setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
     }
 
-    public int getCustomer_id() {
-        return customer_id;
+    public int getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomer_id(int customer_id) {
-        this.customer_id = customer_id;
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 
-    public int getService_id() {
-        return service_id;
+    public int getServiceId() {
+        return serviceId;
     }
 
-    public void setService_id(int service_id) {
-        this.service_id = service_id;
+    public void setServiceId(int serviceId) {
+        this.serviceId = serviceId;
     }
 }

@@ -1,6 +1,9 @@
 package model.service;
 
+import model.bean.Department;
 import model.bean.Employee;
+import model.bean.Position;
+import model.bean.Qualification;
 
 import java.util.List;
 
@@ -11,5 +14,8 @@ public interface IEmployeeService {
     public boolean deleteEmployee(int id);
     public boolean updateEmployee(Employee employee);
     public List<Employee> findByName(String name);
+    public List<Position> selectAllPositions();
+    public List<Qualification> selectAllQualifications();
+    public List<Department> selectAllDepartments();
 }
 

@@ -5,7 +5,7 @@
   Time: 6:00 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -18,7 +18,7 @@
 <div class="container-fluid col-lg-12 col-sm-12">
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="col-lg-11 col-sm-10">
-            <a class="navbar-brand" href="../../view/main/main.jsp"><img class="mb-1" src="../../image/furama.png" style="width: auto;height: 2.5rem"/></a>
+            <a class="navbar-brand" href="/"><img class="mb-1" src="../image/furama.png" style="width: auto;height: 2.5rem"/></a>
         </div>
         <div class="col-lg-1 justify-content-end">
             <a class="text-muted link-dark mr-4" href="#">Profile</a>
@@ -27,7 +27,7 @@
 </div>
 <div class="container-fluid col-lg-12 col-sm-12 align-content-center">
     <nav class="navbar navbar-dark bg-success navbar-expand-lg">
-        <a class="text-light link-dark mr-4" href="../../view/main/main.jsp">Home</a>
+        <a class="text-light link-dark mr-4" href="/">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -63,8 +63,7 @@
                         Service
                     </a>
                     <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../../view/service/list-service.jsp">List Service</a>
-                        <a class="dropdown-item" href="../../view/service/create-service.jsp">Create Service</a>
+                        <a class="dropdown-item" href="/service?action=create">Create Service</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown px-4">
@@ -74,8 +73,7 @@
                         Contract
                     </a>
                     <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../../view/contract/list-contract.jsp">List Contract</a>
-                        <a class="dropdown-item" href="../../view/contract/create-contract.jsp">Create Contract</a>
+                        <a class="dropdown-item" href="/contract?action=create">Create Contract</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown px-4">
@@ -85,9 +83,7 @@
                         Contract Detail
                     </a>
                     <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../../view/contract_detail/list-contract-detail.jsp">List
-                            Contract Detail</a>
-                        <a class="dropdown-item" href="../../view/contract_detail/create-contract-detail.jsp">Create
+                        <a class="dropdown-item" href="/contract-detail?action=create">Create
                             Contract Detail</a>
                     </div>
                 </li>
@@ -110,23 +106,31 @@
                         <label class="font-weight-bold">Contract Detail ID</label>
                     </div>
                     <div class="col-lg-9">
-                        <input type="text" name="contractDetailID">
+                        <input type="text" name="id">
                     </div>
                 </div>
                 <div class="row p-2">
                     <div class="col-lg-3">
-                        <label class="font-weight-bold">Contract ID</label>
+                        <label class="font-weight-bold">Contract</label>
                     </div>
                     <div class="col-lg-9">
-                        <input type="text" name="contractID">
+                        <select name="contract_id" class="form-control">
+                            <c:forEach var="contract" items="${contracts}">
+                                <option value="${contract.id}">${contract.id}</option>
+                            </c:forEach>
+                        </select>
                     </div>
                 </div>
                 <div class="row p-2">
                     <div class="col-lg-3">
-                        <label class="font-weight-bold">Additional Service ID</label>
+                        <label class="font-weight-bold">Additional Service</label>
                     </div>
                     <div class="col-lg-9">
-                        <input type="text" name="additionalServiceID">
+                        <select name="additional_service_id" class="form-control">
+                            <c:forEach var="service" items="${additionalServices}">
+                                <option value="${service.id}">${service.name}</option>
+                            </c:forEach>
+                        </select>
                     </div>
                 </div>
                 <div class="row p-2">
@@ -152,9 +156,6 @@
         </div>
     </form>
 </div>
-<nav class="navbar navbar-dark bg-success col-lg-12 col-sm-12 justify-content-center" style="position: fixed; bottom:0">
-    <span class="text-light">COVID 19 UPDATE: The safety and well-being are our utmost priority</span>
-</nav>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
