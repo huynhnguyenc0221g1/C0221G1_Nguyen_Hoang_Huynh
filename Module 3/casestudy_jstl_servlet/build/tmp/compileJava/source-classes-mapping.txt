@@ -16,16 +16,16 @@ model/bean/Position.java
  model.bean.Position
 model/service/impl/EmployeeServiceImpl.java
  model.service.impl.EmployeeServiceImpl
-controller/EmployeeServlet.java
- controller.EmployeeServlet
+controller/CustomerServlet.java
+ controller.CustomerServlet
 model/bean/Service.java
  model.bean.Service
 model/bean/Customer.java
  model.bean.Customer
 commons/Validators.java
  commons.Validators
-controller/CustomerServlet.java
- controller.CustomerServlet
+model/service/impl/AdditionalServiceServiceImpl.java
+ model.service.impl.AdditionalServiceServiceImpl
 model/service/impl/CustomerServiceImpl.java
  model.service.impl.CustomerServiceImpl
 commons/PhoneNumberException.java
@@ -90,7 +90,7 @@ commons/CustomerCodeException.java
  commons.CustomerCodeException
 model/repository/EmployeeRepository.java
  model.repository.EmployeeRepository
-model/service/impl/AdditionalServiceServiceImpl.java
- model.service.impl.AdditionalServiceServiceImpl
 controller/ServiceServlet.java
  controller.ServiceServlet
+controller/EmployeeServlet.java
+ controller.EmployeeServlet

@@ -120,7 +120,7 @@
                         <td><input type="text" name="id" id="id" value="${customer.id}"></td>
                     </tr>
                     <tr>
-                        <td>Code:</td>
+                        <td>Code (Format: KH-XXXX):</td>
                         <td><input type="text" name="code" id="code" value="${customer.code}"></td>
                     </tr>
                     <tr>
@@ -149,11 +149,11 @@
                         </select></td>
                     </tr>
                     <tr>
-                        <td>ID Card Number:</td>
+                        <td>ID Card Number (Format: 9 or 12 digits):</td>
                         <td><input type="text" name="id_number" id="id_number" value="${customer.idNumber}"></td>
                     </tr>
                     <tr>
-                        <td>Phone Number:</td>
+                        <td>Phone Number (Format: 090xxxxxxx | 091xxxxxxx | (84)+90xxxxxxx |(84)+91xxxxxxx):</td>
                         <td><input type="text" name="phone_number" id="phone_number" value="${customer.phoneNumber}">
                         </td>
                     </tr>

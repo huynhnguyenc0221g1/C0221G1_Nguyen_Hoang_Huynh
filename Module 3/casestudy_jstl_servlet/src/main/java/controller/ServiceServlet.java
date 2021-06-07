@@ -65,7 +65,10 @@ public class ServiceServlet extends HttpServlet {
 
     private void createService(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
-        String code = request.getParameter("code");
+        String code;
+        do {
+            code = request.getParameter("code");
+        } while (!Validators.inputValidate(code,Validators.SERVICE_REGEX));
         String name = request.getParameter("name");
         int area = Integer.parseInt(request.getParameter("area"));
         double cost = Double.parseDouble(request.getParameter("cost"));
@@ -106,7 +109,10 @@ public class ServiceServlet extends HttpServlet {
 
     private void editService(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
-        String code = request.getParameter("code");
+        String code;
+        do {
+            code = request.getParameter("code");
+        } while (!Validators.inputValidate(code,Validators.SERVICE_REGEX));
         String name = request.getParameter("name");
         int area = Integer.parseInt(request.getParameter("area"));
         double cost = Double.parseDouble(request.getParameter("cost"));

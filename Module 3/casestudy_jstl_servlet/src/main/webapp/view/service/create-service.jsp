@@ -116,7 +116,7 @@
                         <td><input type="text" name="id" id="id" value="${service.id}"></td>
                     </tr>
                     <tr>
-                        <td>Code:</td>
+                        <td>Code (Format: DV-XXXX):</td>
                         <td><input type="text" name="code" id="code" value="${service.code}"></td>
                     </tr>
                     <tr>

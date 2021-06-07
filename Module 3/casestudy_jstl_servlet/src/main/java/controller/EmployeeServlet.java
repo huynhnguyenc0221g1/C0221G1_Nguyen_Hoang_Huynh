@@ -1,5 +1,6 @@
 package controller;
 
+import commons.Validators;
 import model.bean.Department;
 import model.bean.Employee;
 import model.bean.Position;
@@ -81,15 +82,35 @@ public class EmployeeServlet extends HttpServlet {
         int qualificationId = Integer.parseInt(request.getParameter("qualification_id"));
         int departmentId = Integer.parseInt(request.getParameter("department_id"));
         String birthdate = request.getParameter("birthdate");
-        String idNumber = request.getParameter("id_number");
+        String idNumber;
+        do {
+            idNumber = request.getParameter("id_number");
+        } while (!Validators.inputValidate(idNumber,Validators.ID_NUMBER_REGEX));
         double salary = Double.parseDouble(request.getParameter("salary"));
-        String phoneNumber = request.getParameter("phone_number");
-        String email = request.getParameter("email");
+        String phoneNumber;
+        do {
+            phoneNumber = request.getParameter("phone_number");
+        } while (!Validators.inputValidate(phoneNumber,Validators.PHONE_NUMBER_REGEX));
+        String email;
+        do {
+            email = request.getParameter("email");
+        } while (!Validators.inputValidate(email,Validators.EMAIL_REGEX));
         String address = request.getParameter("address");
         String username = request.getParameter("username");
-        Employee newEmployee = new Employee(id,name,positionId,qualificationId,departmentId,birthdate,idNumber,salary,phoneNumber,email,address,username);
-        employeeService.insertEmployee(newEmployee);
-        request.setAttribute("message","Successfully Created!");
+        int count = 0;
+        List<Employee> employeeList = employeeService.selectAllEmployee();
+        for (Employee employee : employeeList) {
+            if (id == employee.getId()) {
+                count++;
+            }
+        }
+        if (count!=0) {
+            request.setAttribute("message_error", "ID is not available!! The creation is not successful!");
+        } else {
+            Employee newEmployee = new Employee(id, name, positionId, qualificationId, departmentId, birthdate, idNumber, salary, phoneNumber, email, address, username);
+            employeeService.insertEmployee(newEmployee);
+            request.setAttribute("message", "Successfully Created!");
+        }
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view/employee/create-employee.jsp");
         request.setAttribute("positions",positionList);
         request.setAttribute("qualifications",qualificationList);
@@ -159,7 +180,7 @@ public class EmployeeServlet extends HttpServlet {
             requestDispatcher = request.getRequestDispatcher("/view/error-404.jsp");
         } else {
             requestDispatcher = request.getRequestDispatcher("/view/employee/edit-employee.jsp");
-            request.setAttribute("employees",employee);
+            request.setAttribute("employee",employee);
             request.setAttribute("positions",positionList);
             request.setAttribute("qualifications",qualificationList);
             request.setAttribute("departments",departmentList);

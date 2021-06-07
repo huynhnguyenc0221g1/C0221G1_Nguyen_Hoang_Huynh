@@ -73,7 +73,10 @@ public class CustomerServlet extends HttpServlet {
 
     private void createCustomer(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
-        String code = request.getParameter("code");
+        String code;
+        do {
+            code = request.getParameter("code");
+        } while (!Validators.inputValidate(code,Validators.CUSTOMER_REGEX));
         int typeId = Integer.parseInt(request.getParameter("type_id"));
         String name = request.getParameter("name");
         String birthdate = request.getParameter("birthdate");
@@ -130,7 +133,10 @@ public class CustomerServlet extends HttpServlet {
 
     private void editCustomer(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
-        String code = request.getParameter("code");
+        String code;
+        do {
+           code = request.getParameter("code");
+        }  while (!Validators.inputValidate(code,Validators.CUSTOMER_REGEX));
         int typeId = Integer.parseInt(request.getParameter("type_id"));
         String name = request.getParameter("name");
         String birthdate = request.getParameter("birthdate");
@@ -142,9 +148,6 @@ public class CustomerServlet extends HttpServlet {
         String phoneNumber;
         do {
             phoneNumber = request.getParameter("phone_number");
-            if (!Validators.inputValidate(phoneNumber, Validators.PHONE_NUMBER_REGEX)) {
-
-            }
         } while (!Validators.inputValidate(phoneNumber, Validators.PHONE_NUMBER_REGEX));
         String email;
         do {

@@ -110,15 +110,14 @@
         </c:if>
         <form method="post">
             <div class="form-group">
-                <label for="formGroupExampleInput"></label>
+                <label></label>
                 <input hidden type="text" value="${employee.id}" name="id" class="form-control"
-                       id="formGroupExampleInput"
-                       placeholder="Example input placeholder">
+                       placeholder="${employee.id}">
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput1">Employee's Name</label>
-                <input type="text" class="form-control" name="name" value="${employee.name}" id="formGroupExampleInput1"
-                       placeholder="Another input placeholder">
+                <label>Employee's Name</label>
+                <input type="text" class="form-control" name="name" value="${employee.name}"
+                       placeholder="${employee.name}">
             </div>
             <div class="form-group">
                 <label>Employee's Position</label>
@@ -167,43 +166,37 @@
             </div>
             <div class="form-group">
                 <label>Employee's Birthdate</label>
-                <input type="date" class="form-control" name="birthdate" value="${employee.birthdate}">
+                <input type="date" class="form-control" name="birthdate" value="${employee.birthdate}" placeholder="${employee.birthdate}">
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput6">Employee's ID Card Number</label>
+                <label>Employee's ID Card Number (Format: 9 or 12 digits)</label>
                 <input type="text" class="form-control" name="id_number" value="${employee.idNumber}"
-                       id="formGroupExampleInput6"
-                       placeholder="Another input placeholder">
+                       placeholder="${employee.idNumber}">
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput7">Employee's Salary</label>
+                <label>Employee's Salary</label>
                 <input type="text" class="form-control" name="salary" value="${employee.salary}"
-                       id="formGroupExampleInput7"
-                       placeholder="Another input placeholder">
+                       placeholder="${employee.salary}">
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput8">Employee's Phone Number</label>
+                <label>Employee's Phone Number (Format: 090xxxxxxx | 091xxxxxxx | (84)+90xxxxxxx |(84)+91xxxxxxx)</label>
                 <input type="text" class="form-control" name="phone_number" value="${employee.phoneNumber}"
-                       id="formGroupExampleInput8"
-                       placeholder="Another input placeholder">
+                       placeholder="${employee.phoneNumber}">
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput9">Employee's Email</label>
+                <label>Employee's Email</label>
                 <input type="text" class="form-control" name="email" value="${employee.email}"
-                       id="formGroupExampleInput9"
-                       placeholder="Another input placeholder">
+                       placeholder="${employee.email}">
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput10">Employee's Address</label>
+                <label>Employee's Address</label>
                 <input type="text" class="form-control" name="address" value="${employee.address}"
-                       id="formGroupExampleInput10"
-                       placeholder="Another input placeholder">
+                       placeholder="${employee.address}">
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput11">Employee's Username</label>
+                <label>Employee's Username</label>
                 <input type="text" class="form-control" name="username" value="${employee.username}"
-                       id="formGroupExampleInput11"
-                       placeholder="Another input placeholder">
+                       placeholder="${employee.username}">
             </div>
             <div class="d-fex justify-content-center">
                 <input class="btn" type="submit" value="update">

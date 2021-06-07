@@ -110,13 +110,12 @@
         </c:if>
         <form method="post">
             <div class="form-group">
-                <label for="formGroupExampleInput"></label>
+                <label></label>
                 <input hidden type="text" value="${customer.id}" name="id" class="form-control"
-                       id="formGroupExampleInput"
                        placeholder="${customer.id}">
             </div>
             <div class="form-group">
-                <label >Customer's Code</label>
+                <label >Customer's Code (Format: KH-XXXX)</label>
                 <input type="text" class="form-control" name="code" value="${customer.code}"
                        placeholder="${customer.code}">
             </div>
@@ -153,13 +152,13 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput6">Customer's ID Card Number</label>
+                <label for="formGroupExampleInput6">Customer's ID Card Number (Format: 9 or 12 digits)</label>
                 <input type="text" class="form-control" name="id_number" value="${customer.idNumber}"
                        id="formGroupExampleInput5"
                        placeholder="${customer.idNumber}">
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput7">Customer's Phone Number</label>
+                <label for="formGroupExampleInput7">Customer's Phone Number (Format: 090xxxxxxx | 091xxxxxxx | (84)+90xxxxxxx |(84)+91xxxxxxx)</label>
                 <input type="text" class="form-control" name="phone_number" value="${customer.phoneNumber}"
                        id="formGroupExampleInput6"
                        placeholder="${customer.phoneNumber}">

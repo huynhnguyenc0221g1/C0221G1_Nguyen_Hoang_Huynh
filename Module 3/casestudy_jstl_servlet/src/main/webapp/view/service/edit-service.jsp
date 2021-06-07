@@ -116,7 +116,7 @@
                        placeholder="Example input placeholder">
             </div>
             <div class="form-group">
-                <label>Service's Code</label>
+                <label>Service's Code (Format: DV-XXXX)</label>
                 <input type="text" class="form-control" name="name" value="${service.code}"
                        placeholder="${service.code}">
             </div>
