@@ -118,7 +118,7 @@ public class ServiceServlet extends HttpServlet {
         Service service = new Service(id, name, area, cost, maxInHouse, rentOptionId, serviceTypeId, standard, description, poolArea, numberOfFloors);
         boolean check = serviceService.updateService(service);
         if (check) {
-            request.setAttribute("message", "Successfully Edited The Customer!");
+            request.setAttribute("message", "Successfully Edited The Service!");
         } else {
             request.setAttribute("message", "Not Successful");
         }

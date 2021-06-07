@@ -102,7 +102,7 @@
     </nav>
 </div>
 <div class="container">
-    <h1>Edit Customer</h1>
+    <h1>Edit Service</h1>
     <a href="/customer-with-services">Back to Customers With Services List</a>
     <div class="container">
         <c:if test="${message!=null}">
