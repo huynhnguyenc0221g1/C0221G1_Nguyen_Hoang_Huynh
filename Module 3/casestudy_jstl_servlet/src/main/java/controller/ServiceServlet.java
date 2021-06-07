@@ -65,6 +65,7 @@ public class ServiceServlet extends HttpServlet {
 
     private void createService(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
+        String code = request.getParameter("code");
         String name = request.getParameter("name");
         int area = Integer.parseInt(request.getParameter("area"));
         double cost = Double.parseDouble(request.getParameter("cost"));
@@ -75,7 +76,7 @@ public class ServiceServlet extends HttpServlet {
         String description = request.getParameter("description");
         double poolArea = Double.parseDouble(request.getParameter("pool_area"));
         int numberOfFloors = Integer.parseInt(request.getParameter("number_of_floors"));
-        Service newService = new Service(id, name, area, cost, maxInHouse, rentOptionId, serviceTypeId, standard, description, poolArea, numberOfFloors);
+        Service newService = new Service(id,code, name, area, cost, maxInHouse, rentOptionId, serviceTypeId, standard, description, poolArea, numberOfFloors);
         serviceService.insertService(newService);
         request.setAttribute("message", "Successfully Created!");
         request.setAttribute("serviceTypes", serviceTypeList);
@@ -105,6 +106,7 @@ public class ServiceServlet extends HttpServlet {
 
     private void editService(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
+        String code = request.getParameter("code");
         String name = request.getParameter("name");
         int area = Integer.parseInt(request.getParameter("area"));
         double cost = Double.parseDouble(request.getParameter("cost"));
@@ -115,7 +117,7 @@ public class ServiceServlet extends HttpServlet {
         String description = request.getParameter("description");
         double poolArea = Double.parseDouble(request.getParameter("pool_area"));
         int numberOfFloors = Integer.parseInt(request.getParameter("number_of_floors"));
-        Service service = new Service(id, name, area, cost, maxInHouse, rentOptionId, serviceTypeId, standard, description, poolArea, numberOfFloors);
+        Service service = new Service(id,code, name, area, cost, maxInHouse, rentOptionId, serviceTypeId, standard, description, poolArea, numberOfFloors);
         boolean check = serviceService.updateService(service);
         if (check) {
             request.setAttribute("message", "Successfully Edited The Service!");

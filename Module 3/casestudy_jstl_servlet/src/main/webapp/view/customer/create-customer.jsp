@@ -120,6 +120,10 @@
                         <td><input type="text" name="id" id="id" value="${customer.id}"></td>
                     </tr>
                     <tr>
+                        <td>Code:</td>
+                        <td><input type="text" name="code" id="code" value="${customer.code}"></td>
+                    </tr>
+                    <tr>
                         <td>Type:</td>
                         <td>
                         <select name="type_id">

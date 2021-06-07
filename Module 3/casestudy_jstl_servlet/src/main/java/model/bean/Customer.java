@@ -2,6 +2,7 @@ package model.bean;
 
 public class Customer {
     private int id;
+    private String code;
     private int typeId;
     private String name;
     private String birthdate;
@@ -14,8 +15,9 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(int id, int typeId, String name, String birthdate, byte gender, String idNumber, String phoneNumber, String email, String address) {
+    public Customer(int id, String code, int typeId, String name, String birthdate, byte gender, String idNumber, String phoneNumber, String email, String address) {
         this.id = id;
+        this.code = code;
         this.typeId = typeId;
         this.name = name;
         this.birthdate = birthdate;
@@ -32,6 +34,14 @@ public class Customer {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public int getTypeId() {

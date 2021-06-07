@@ -113,7 +113,12 @@
                 <label for="formGroupExampleInput"></label>
                 <input hidden type="text" value="${customer.id}" name="id" class="form-control"
                        id="formGroupExampleInput"
-                       placeholder="Example input placeholder">
+                       placeholder="${customer.id}">
+            </div>
+            <div class="form-group">
+                <label >Customer's Code</label>
+                <input type="text" class="form-control" name="code" value="${customer.code}"
+                       placeholder="${customer.code}">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput1">Customer's Type:</label>
@@ -133,12 +138,12 @@
             <div class="form-group">
                 <label for="formGroupExampleInput3">Customer's Name</label>
                 <input type="text" class="form-control" name="name" value="${customer.name}" id="formGroupExampleInput1"
-                       placeholder="Another input placeholder">
+                       placeholder="${customer.name}">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput3">Customer's Birthdate</label>
                 <input type="text" class="form-control" name="birthdate" value="${customer.birthdate}" id="formGroupExampleInput3"
-                       placeholder="Another input placeholder">
+                       placeholder="${customer.birthdate}">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput5">Customer's Gender</label>
@@ -151,25 +156,25 @@
                 <label for="formGroupExampleInput6">Customer's ID Card Number</label>
                 <input type="text" class="form-control" name="id_number" value="${customer.idNumber}"
                        id="formGroupExampleInput5"
-                       placeholder="Another input placeholder">
+                       placeholder="${customer.idNumber}">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput7">Customer's Phone Number</label>
                 <input type="text" class="form-control" name="phone_number" value="${customer.phoneNumber}"
                        id="formGroupExampleInput6"
-                       placeholder="Another input placeholder">
+                       placeholder="${customer.phoneNumber}">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput8">Customer's Email</label>
                 <input type="text" class="form-control" name="email" value="${customer.email}"
                        id="formGroupExampleInput7"
-                       placeholder="Another input placeholder">
+                       placeholder="${customer.email}">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput">Customer's Address</label>
                 <input type="text" class="form-control" name="address" value="${customer.address}"
                        id="formGroupExampleInput8"
-                       placeholder="Another input placeholder">
+                       placeholder="${customer.address}">
             </div>
             <div class="d-fex justify-content-center">
                 <input class="btn" type="submit" value="update">

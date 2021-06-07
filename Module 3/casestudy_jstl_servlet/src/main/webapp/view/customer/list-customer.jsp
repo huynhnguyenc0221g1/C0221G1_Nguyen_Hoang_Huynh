@@ -123,6 +123,7 @@
         <tr>
             <th>No</th>
             <th>ID</th>
+            <th>Code</th>
             <th>Type</th>
             <th>Name</th>
             <th>Birthdate</th>
@@ -139,6 +140,7 @@
             <tr>
                 <td>${status.count}</td>
                 <td>${customer.id}</td>
+                <td>${customer.code}</td>
                 <c:forEach var="type" items="${customerTypes}">
                     <c:if test="${type.id == customer.typeId}">
                         <td>${type.name}</td>

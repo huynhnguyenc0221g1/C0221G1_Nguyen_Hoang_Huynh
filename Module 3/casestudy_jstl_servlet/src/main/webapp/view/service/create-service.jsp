@@ -116,6 +116,10 @@
                         <td><input type="text" name="id" id="id" value="${service.id}"></td>
                     </tr>
                     <tr>
+                        <td>Code:</td>
+                        <td><input type="text" name="code" id="code" value="${service.code}"></td>
+                    </tr>
+                    <tr>
                         <td>Name:</td>
                         <td><input type="text" name="name" id="name" value="${service.name}"></td>
                     </tr>

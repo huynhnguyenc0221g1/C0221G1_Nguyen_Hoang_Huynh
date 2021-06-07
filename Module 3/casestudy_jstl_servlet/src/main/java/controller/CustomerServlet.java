@@ -73,6 +73,7 @@ public class CustomerServlet extends HttpServlet {
 
     private void createCustomer(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
+        String code = request.getParameter("code");
         int typeId = Integer.parseInt(request.getParameter("type_id"));
         String name = request.getParameter("name");
         String birthdate = request.getParameter("birthdate");
@@ -100,7 +101,7 @@ public class CustomerServlet extends HttpServlet {
         if (count!=0) {
             request.setAttribute("message_error", "ID is not available!! The creation is not successful!");
         } else {
-            Customer newCustomer = new Customer(id, typeId, name, birthdate, gender, idNumber, phoneNumber, email, address);
+            Customer newCustomer = new Customer(id, code, typeId, name, birthdate, gender, idNumber, phoneNumber, email, address);
             customerService.insertCustomer(newCustomer);
             request.setAttribute("message", "Successfully Created!");
         }
@@ -129,6 +130,7 @@ public class CustomerServlet extends HttpServlet {
 
     private void editCustomer(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
+        String code = request.getParameter("code");
         int typeId = Integer.parseInt(request.getParameter("type_id"));
         String name = request.getParameter("name");
         String birthdate = request.getParameter("birthdate");
@@ -149,7 +151,7 @@ public class CustomerServlet extends HttpServlet {
             email = request.getParameter("email");
         } while (!Validators.inputValidate(email,Validators.EMAIL_REGEX));
         String address = request.getParameter("address");
-        Customer customer = new Customer(id, typeId, name, birthdate, gender, idNumber, phoneNumber, email, address);
+        Customer customer = new Customer(id, code, typeId, name, birthdate, gender, idNumber, phoneNumber, email, address);
         boolean check = customerService.updateCustomer(customer);
         if (check) {
             request.setAttribute("message", "Successfully Edited The Customer!");

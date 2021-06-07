@@ -26,7 +26,7 @@ group by customer.customer_id;
 use furama_resort;
 select customer.customer_id, customer.customer_fullname, customer_type.customer_type_name, 
 contract.contract_id, service.service_name, contract.contract_made_date, contract.contract_end_date, 
-(service.service_rent_price + (additional_service.additional_service_price * additional_service.additional_service_unit)) as total_price
+(service.service_cost + (additional_service.additional_service_price * additional_service.additional_service_unit)) as total_price
 from customer
 left outer join contract
 on customer.customer_id = contract.customer_id
