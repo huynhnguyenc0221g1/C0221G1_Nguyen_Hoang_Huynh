@@ -21,6 +21,16 @@ public class ServiceServiceImpl implements IServiceService {
     }
 
     @Override
+    public boolean updateService(Service service) {
+        return serviceRepository.updateService(service);
+    }
+
+    @Override
+    public Service selectServiceById(int id) {
+        return serviceRepository.selectService(id);
+    }
+
+    @Override
     public List<ServiceType> selectAllServiceTypes() {
         return serviceRepository.selectAllServiceTypes();
     }

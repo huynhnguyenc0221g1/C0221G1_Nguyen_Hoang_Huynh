@@ -12,10 +12,12 @@ import java.util.List;
 
 public class CustomerWithServicesRepository {
     BaseRepository baseRepository = new BaseRepository();
-    final String SELECT_CUSTOMER_WITH_SERVICES = "select customer.customer_id,customer.customer_fullname,contract.contract_id,contract.contract_made_date,contract.contract_end_date,contract_detail.contract_detail_id,additional_service.additional_service_id,additional_service.additional_service_name\n" +
+    final String SELECT_CUSTOMER_WITH_SERVICES = "select customer.customer_id,customer.customer_fullname,contract.contract_id,contract.contract_made_date,contract.contract_end_date,contract.service_id,service.service_name,contract_detail.contract_detail_id,additional_service.additional_service_id,additional_service.additional_service_name\n" +
             "from customer\n" +
             "join contract\n" +
             "on contract.customer_id = customer.customer_id\n" +
+            "join service\n" +
+            "on contract.service_id = service.service_id\n" +
             "left outer join contract_detail\n" +
             "on contract_detail.contract_id = contract.contract_id\n" +
             "left outer join additional_service\n" +
@@ -33,10 +35,12 @@ public class CustomerWithServicesRepository {
                 int contractId = resultSet.getInt("contract_id");
                 String contractMadeDate = resultSet.getString("contract_made_date");
                 String contractEndDate = resultSet.getString("contract_end_date");
+                int serviceId = resultSet.getInt("service_id");
+                String serviceName = resultSet.getString("service_name");
                 int contractDetailId = resultSet.getInt("contract_detail_id");
                 int additionalServiceId = resultSet.getInt("additional_service_id");
                 String additionalServiceName = resultSet.getString("additional_service_name");
-                CustomerWithServices customerWithServices = new CustomerWithServices(customerId,customerName,contractId,contractMadeDate,contractEndDate,contractDetailId,additionalServiceId,additionalServiceName);
+                CustomerWithServices customerWithServices = new CustomerWithServices(customerId,customerName,contractId,contractMadeDate,contractEndDate,serviceId,serviceName,contractDetailId,additionalServiceId,additionalServiceName);
                 customerWithServicesList.add(customerWithServices);
             }
         } catch (SQLException e){

@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="58abef70-d46c-4eae-9788-7aadbcbf82f6" name="Default Changelist" comment="" />
+    <list default="true" id="58abef70-d46c-4eae-9788-7aadbcbf82f6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../Module 3/casestudy_jstl_servlet/src/main/java/commons/CustomerCodeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module 3/casestudy_jstl_servlet/src/main/java/commons/IDCardException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module 3/casestudy_jstl_servlet/src/main/java/commons/ServiceCodeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module 3/casestudy_jstl_servlet/src/main/java/commons/Validators.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CaseStudy/FuramaResort/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../CaseStudy/FuramaResort/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Module 3/casestudy_jstl_servlet/.gradle/6.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module 3/casestudy_jstl_servlet/.gradle/6.8/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Module 3/casestudy_jstl_servlet/.gradle/6.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module 3/casestudy_jstl_servlet/.gradle/6.8/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Module 3/casestudy_jstl_servlet/.gradle/6.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module 3/casestudy_jstl_servlet/.gradle/6.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Module 3/casestudy_jstl_servlet/.gradle/6.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module 3/casestudy_jstl_servlet/.gradle/6.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Module 3/casestudy_jstl_servlet/.gradle/6.8/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module 3/casestudy_jstl_servlet/.gradle/6.8/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Module 3/casestudy_jstl_servlet/.gradle/6.8/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module 3/casestudy_jstl_servlet/.gradle/6.8/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Module 3/casestudy_jstl_servlet/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module 3/casestudy_jstl_servlet/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Module 3/casestudy_jstl_servlet/build/libs/casestudy2-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module 3/casestudy_jstl_servlet/build/libs/casestudy2-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Module 3/casestudy_jstl_servlet/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module 3/casestudy_jstl_servlet/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Module 3/casestudy_jstl_servlet/src/main/webapp/view/customer/customer-with-services.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module 3/casestudy_jstl_servlet/src/main/webapp/view/customer/customer-with-services.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,7 +58,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/commons" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -79,6 +96,8 @@
       <updated>1620613950497</updated>
       <workItem from="1620613951846" duration="11108000" />
       <workItem from="1621169912543" duration="6000" />
+      <workItem from="1623047553938" duration="1105000" />
+      <workItem from="1623050586631" duration="33000" />
     </task>
     <servers />
   </component>

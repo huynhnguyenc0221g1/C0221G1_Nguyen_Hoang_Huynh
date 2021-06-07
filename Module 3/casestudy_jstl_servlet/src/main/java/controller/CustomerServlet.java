@@ -1,6 +1,7 @@
 package controller;
 
 
+import commons.*;
 import model.bean.Customer;
 import model.bean.CustomerType;
 import model.service.ICustomerService;
@@ -19,6 +20,7 @@ import java.util.List;
 public class CustomerServlet extends HttpServlet {
     private ICustomerService customerService;
     private List<CustomerType> customerTypeList;
+
     @Override
     public void init() throws ServletException {
         customerService = new CustomerServiceImpl();
@@ -32,13 +34,13 @@ public class CustomerServlet extends HttpServlet {
         }
         switch (action) {
             case "create":
-                createCustomer(request,response);
+                createCustomer(request, response);
                 break;
             case "edit":
-                editCustomer(request,response);
+                editCustomer(request, response);
                 break;
             case "delete":
-                deleteCustomer(request,response);
+                deleteCustomer(request, response);
                 break;
             default:
                 break;
@@ -58,13 +60,13 @@ public class CustomerServlet extends HttpServlet {
                 showEditForm(request, response);
                 break;
             case "delete":
-                showDeleteFrom(request,response);
+                showDeleteFrom(request, response);
                 break;
             case "search":
-                findByName(request,response);
+                findByName(request, response);
                 break;
             default:
-                listCustomer(request,response);
+                listCustomer(request, response);
                 break;
         }
     }
@@ -75,15 +77,35 @@ public class CustomerServlet extends HttpServlet {
         String name = request.getParameter("name");
         String birthdate = request.getParameter("birthdate");
         Byte gender = Byte.parseByte(request.getParameter("gender"));
-        String idNumber = request.getParameter("id_number");
-        String phoneNumber = request.getParameter("phone_number");
-        String email = request.getParameter("email");
+        String idNumber;
+        do {
+            idNumber = request.getParameter("id_number");
+        } while (!Validators.inputValidate(idNumber, Validators.ID_NUMBER_REGEX));
+        String phoneNumber;
+        do {
+            phoneNumber = request.getParameter("phone_number");
+        } while (!Validators.inputValidate(phoneNumber, Validators.PHONE_NUMBER_REGEX));
+        String email;
+        do {
+            email = request.getParameter("email");
+        } while (!Validators.inputValidate(email,Validators.EMAIL_REGEX));
         String address = request.getParameter("address");
-        Customer newCustomer = new Customer(id,typeId,name,birthdate,gender,idNumber,phoneNumber,email,address);
-        customerService.insertCustomer(newCustomer);
-        request.setAttribute("message","Successfully Created!");
+        int count = 0;
+        List<Customer> customerList = customerService.selectAllCustomer();
+        for (Customer customer : customerList) {
+            if (id == customer.getId()) {
+                count++;
+            }
+        }
+        if (count!=0) {
+            request.setAttribute("message_error", "ID is not available!! The creation is not successful!");
+        } else {
+            Customer newCustomer = new Customer(id, typeId, name, birthdate, gender, idNumber, phoneNumber, email, address);
+            customerService.insertCustomer(newCustomer);
+            request.setAttribute("message", "Successfully Created!");
+        }
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view/customer/create-customer.jsp");
-        request.setAttribute("customerTypes",customerTypeList);
+        request.setAttribute("customerTypes", customerTypeList);
         try {
             requestDispatcher.forward(request, response);
         } catch (ServletException e) {
@@ -95,9 +117,9 @@ public class CustomerServlet extends HttpServlet {
 
     private void showCreateForm(HttpServletRequest request, HttpServletResponse response) {
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/customer/create-customer.jsp");
-        request.setAttribute("customerTypes",customerTypeList);
+        request.setAttribute("customerTypes", customerTypeList);
         try {
-            requestDispatcher.forward(request,response);
+            requestDispatcher.forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException ex) {
@@ -111,18 +133,30 @@ public class CustomerServlet extends HttpServlet {
         String name = request.getParameter("name");
         String birthdate = request.getParameter("birthdate");
         Byte gender = Byte.parseByte(request.getParameter("gender"));
-        String idNumber = request.getParameter("id_number");
-        String phoneNumber = request.getParameter("phone_number");
-        String email = request.getParameter("email");
+        String idNumber;
+        do {
+            idNumber = request.getParameter("id_number");
+        } while (!Validators.inputValidate(idNumber, Validators.ID_NUMBER_REGEX));
+        String phoneNumber;
+        do {
+            phoneNumber = request.getParameter("phone_number");
+            if (!Validators.inputValidate(phoneNumber, Validators.PHONE_NUMBER_REGEX)) {
+
+            }
+        } while (!Validators.inputValidate(phoneNumber, Validators.PHONE_NUMBER_REGEX));
+        String email;
+        do {
+            email = request.getParameter("email");
+        } while (!Validators.inputValidate(email,Validators.EMAIL_REGEX));
         String address = request.getParameter("address");
-        Customer customer = new Customer(id,typeId,name,birthdate,gender,idNumber,phoneNumber,email,address);
+        Customer customer = new Customer(id, typeId, name, birthdate, gender, idNumber, phoneNumber, email, address);
         boolean check = customerService.updateCustomer(customer);
         if (check) {
-            request.setAttribute("message","Successfully Edited The Customer!");
+            request.setAttribute("message", "Successfully Edited The Customer!");
         } else {
-            request.setAttribute("message","Not Successful");
+            request.setAttribute("message", "Not Successful");
         }
-        request.setAttribute("customer",customer);
+        request.setAttribute("customer", customer);
         request.setAttribute("customerTypes", customerTypeList);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view/customer/edit-customer.jsp");
         try {
@@ -142,11 +176,11 @@ public class CustomerServlet extends HttpServlet {
             requestDispatcher = request.getRequestDispatcher("/view/error-404.jsp");
         } else {
             requestDispatcher = request.getRequestDispatcher("/view/customer/edit-customer.jsp");
-            request.setAttribute("customer",customer);
+            request.setAttribute("customer", customer);
             request.setAttribute("customerTypes", customerTypeList);
         }
         try {
-            requestDispatcher.forward(request,response);
+            requestDispatcher.forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException ex) {
@@ -172,10 +206,10 @@ public class CustomerServlet extends HttpServlet {
             requestDispatcher = request.getRequestDispatcher("/view/error-404.jsp");
         } else {
             requestDispatcher = request.getRequestDispatcher("/view/customer/list-customer.jsp");
-            request.setAttribute("deleted_customer",deletedCustomer);
+            request.setAttribute("deleted_customer", deletedCustomer);
         }
         try {
-            requestDispatcher.forward(request,response);
+            requestDispatcher.forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException ex) {
@@ -187,10 +221,10 @@ public class CustomerServlet extends HttpServlet {
         String search = request.getParameter("search");
         List<Customer> customerList = customerService.findByName(search);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view/customer/list-customer.jsp");
-        request.setAttribute("customers",customerList);
-        request.setAttribute("customerTypes",customerTypeList);
+        request.setAttribute("customers", customerList);
+        request.setAttribute("customerTypes", customerTypeList);
         try {
-            requestDispatcher.forward(request,response);
+            requestDispatcher.forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException ex) {
@@ -201,10 +235,10 @@ public class CustomerServlet extends HttpServlet {
     private void listCustomer(HttpServletRequest request, HttpServletResponse response) {
         List<Customer> customerList = customerService.selectAllCustomer();
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view/customer/list-customer.jsp");
-        request.setAttribute("customers",customerList);
-        request.setAttribute("customerTypes",customerTypeList);
+        request.setAttribute("customers", customerList);
+        request.setAttribute("customerTypes", customerTypeList);
         try {
-            requestDispatcher.forward(request,response);
+            requestDispatcher.forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException ex) {

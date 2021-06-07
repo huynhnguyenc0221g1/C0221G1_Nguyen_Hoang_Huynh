@@ -106,7 +106,10 @@
     <a href="/customer">Back to Customers List</a>
     <div class="container">
         <c:if test="${message!=null}">
-            <p class="text-success">${message}</p>
+            <h4 class="text-success">${message}</h4>
+        </c:if>
+        <c:if test="${message_error!=null}">
+            <h4 class="text-danger">${message_error}</h4>
         </c:if>
         <form method="post">
             <fieldset>

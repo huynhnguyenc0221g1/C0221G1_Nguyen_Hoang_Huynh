@@ -122,6 +122,8 @@
             <th>Contract's ID</th>
             <th>Contract's Made Date</th>
             <th>Contract's End Date</th>
+            <th>Service's Id</th>
+            <th>Service's Name</th>
             <th>Contract Detail's ID</th>
             <th>Additional Service's ID</th>
             <th>Additional Service's Name</th>
@@ -137,6 +139,8 @@
                 <td>${customer.contractId}</td>
                 <td>${customer.contractMadeDate}</td>
                 <td>${customer.contractEndDate}</td>
+                <td>${customer.serviceId}</td>
+                <td>${customer.serviceName}</td>
                 <c:choose>
                     <c:when test="${customer.contractDetailId == 0}">
                         <td>No Additional Service</td>
@@ -163,7 +167,7 @@
                 </c:choose>
                 <td>
                     <button type="button" class="btn btn-warning"><a
-                            href="/additional-service?action=edit&id=${customer.additionalServiceId}">Edit</a></button>
+                            href="/service?action=edit&id=${customer.serviceId}">Edit</a></button>
                 </td>
             </tr>
         </c:forEach>

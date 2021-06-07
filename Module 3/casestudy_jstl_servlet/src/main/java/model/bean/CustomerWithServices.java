@@ -6,6 +6,8 @@ public class CustomerWithServices {
    private int contractId;
    private String contractMadeDate;
    private String contractEndDate;
+   private int serviceId;
+   private String serviceName;
    private int contractDetailId;
    private int additionalServiceId;
    private String additionalServiceName;
@@ -13,23 +15,25 @@ public class CustomerWithServices {
     public CustomerWithServices() {
     }
 
-    public CustomerWithServices(int customerId, String customerName, int contractId, String contractMadeDate, String contractEndDate) {
+    public CustomerWithServices(int customerId, String customerName, int contractId, String contractMadeDate, String contractEndDate, int serviceId, String serviceName, int contractDetailId, int additionalServiceId, String additionalServiceName) {
         this.customerId = customerId;
         this.customerName = customerName;
         this.contractId = contractId;
         this.contractMadeDate = contractMadeDate;
         this.contractEndDate = contractEndDate;
-    }
-
-    public CustomerWithServices(int customerId, String customerName, int contractId, String contractMadeDate, String contractEndDate, int contractDetailId, int additionalServiceId, String additionalServiceName) {
-        this.customerId = customerId;
-        this.customerName = customerName;
-        this.contractId = contractId;
-        this.contractMadeDate = contractMadeDate;
-        this.contractEndDate = contractEndDate;
+        this.serviceId = serviceId;
+        this.serviceName = serviceName;
         this.contractDetailId = contractDetailId;
         this.additionalServiceId = additionalServiceId;
         this.additionalServiceName = additionalServiceName;
+    }
+
+    public String getServiceName() {
+        return serviceName;
+    }
+
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
     }
 
     public int getCustomerId() {
@@ -70,6 +74,14 @@ public class CustomerWithServices {
 
     public void setContractEndDate(String contractEndDate) {
         this.contractEndDate = contractEndDate;
+    }
+
+    public int getServiceId() {
+        return serviceId;
+    }
+
+    public void setServiceId(int serviceId) {
+        this.serviceId = serviceId;
     }
 
     public int getContractDetailId() {

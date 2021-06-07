@@ -1,5 +1,6 @@
 package model.repository;
 
+import model.bean.Customer;
 import model.bean.RentOption;
 import model.bean.Service;
 import model.bean.ServiceType;
@@ -14,7 +15,8 @@ public class ServiceRepository {
     final String ENABLE_FOREIGN_KEY_CHECK = "SET FOREIGN_KEY_CHECKS=1";
     final String INSERT_SERVICE = "INSERT INTO `service` (`service_id`, `service_name`, `service_area`, `service_cost`, `service_max_inhouse`, `rent_option_id`, `service_type_id`, `service_room_standard`, `service_other_convenience`, `service_pool_area`, `service_number_of_floor`) VALUES (?,?,?,?,?,?,?,?,?,?,?);";
     final String SELECT_ALL_SERVICE = "select * from `service`;";
-
+    final String SELECT_SERVICE_BY_ID = "select * from service where service_id = ?";
+    final String UPDATE_SERVICE_BY_ID = "UPDATE `furama_resort`.`service` SET `service_name` = ?, `service_area` = ?, `service_cost` = ?, `service_max_inhouse` = ?, `rent_option_id` = ?, `service_type_id` = ?, `service_room_standard` = ?, `service_other_convenience` = ?, `service_pool_area` = ?, `service_number_of_floor` = ? WHERE (`service_id` = ?);";
     final String SELECT_ALL_SERVICE_TYPE = "select * from service_type;";
     final String SELECT_ALL_RENT_OPTION ="select * from rent_option;";
 
@@ -52,7 +54,6 @@ public class ServiceRepository {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_SERVICE);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-
                 int id = resultSet.getInt("service_id");
                 String name = resultSet.getString("service_name");
                 int area = resultSet.getInt("service_area");
@@ -71,6 +72,66 @@ public class ServiceRepository {
             e.printStackTrace();
         }
         return serviceList;
+    }
+
+    public Service selectService(int inputID) {
+        Connection connection = baseRepository.connectDatabase();
+        Service service = null;
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_SERVICE_BY_ID);
+            preparedStatement.setInt(1, inputID);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("service_id");
+                String name = resultSet.getString("service_name");
+                int area = resultSet.getInt("service_area");
+                Double cost = resultSet.getDouble("service_cost");
+                int maxInHouse = resultSet.getInt("service_max_inhouse");
+                int rentOptionId = resultSet.getInt("rent_option_id");
+                int serviceTypeId = resultSet.getInt("service_type_id");
+                String standard = resultSet.getString("service_room_standard");
+                String description = resultSet.getString("service_other_convenience");
+                Double poolArea = resultSet.getDouble("service_pool_area");
+                int numberOfFloors = resultSet.getInt("service_number_of_floor");
+                service = new Service(id,name,area,cost,maxInHouse,rentOptionId,serviceTypeId,standard,description,poolArea,numberOfFloors);
+            }
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return service;
+    }
+
+    public boolean updateService(Service service) {
+        Connection connection = baseRepository.connectDatabase();
+        boolean check = false;
+        try {
+            Statement disableForeignKeyCheck = connection.createStatement();
+            disableForeignKeyCheck.execute(DISABLE_FOREIGN_KEY_CHECK);
+            disableForeignKeyCheck.close();
+            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_SERVICE_BY_ID);
+            preparedStatement.setString(1, service.getName());
+            preparedStatement.setInt(2, service.getArea());
+            preparedStatement.setDouble(3, service.getCost());
+            preparedStatement.setInt(4, service.getMaxInHouse());
+            preparedStatement.setInt(5, service.getRentTypeId());
+            preparedStatement.setInt(6, service.getServiceTypeId());
+            preparedStatement.setString(7, service.getStandard());
+            preparedStatement.setString(8, service.getDescription());
+            preparedStatement.setDouble(9, service.getPoolArea());
+            preparedStatement.setInt(10, service.getNumberOfFloors());
+            preparedStatement.setInt(11, service.getId());
+            check = preparedStatement.executeUpdate() > 0;
+            preparedStatement.close();
+            Statement enableForeignKeyCheck = connection.createStatement();
+            enableForeignKeyCheck.execute(ENABLE_FOREIGN_KEY_CHECK);
+            enableForeignKeyCheck.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return check;
     }
 
     public List<ServiceType> selectAllServiceTypes() {
