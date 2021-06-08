@@ -148,7 +148,7 @@
                         <label class="font-weight-bold">Amount</label>
                     </div>
                     <div class="col-lg-9">
-                        <input type="text" name="contractDetailAmount">
+                        <input type="number" min="0" step="1" name="contractDetailAmount">
                     </div>
                 </div>
                 <div class="row p-2 align-items-center">

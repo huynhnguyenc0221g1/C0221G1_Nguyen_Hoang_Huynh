@@ -127,17 +127,17 @@
             </div>
             <div class="form-group">
                 <label>Service's Area</label>
-                <input type="text" class="form-control" name="area" value="${service.area}"
+                <input type="number" min="0" class="form-control" name="area" value="${service.area}"
                        placeholder="${service.area}">
             </div>
             <div class="form-group">
-                <label>Service's Area</label>
-                <input type="text" class="form-control" name="cost" value="${service.cost}"
+                <label>Service's Cost</label>
+                <input type="number" min="0" class="form-control" name="cost" value="${service.cost}"
                        placeholder="${service.cost}">
             </div>
             <div class="form-group">
                 <label>Service's Max In House</label>
-                <input type="text" class="form-control" name="max_in_house" value="${service.maxInHouse}"
+                <input type="number" step="1" min="0" class="form-control" name="max_in_house" value="${service.maxInHouse}"
                        placeholder="${service.maxInHouse}">
             </div>
             <div class="form-group">
@@ -182,12 +182,12 @@
             </div>
             <div class="form-group">
                 <label>Service's Pool Area</label>
-                <input type="text" class="form-control" name="pool_area" value="${service.poolArea}"
+                <input type="number" min="0" class="form-control" name="pool_area" value="${service.poolArea}"
                        placeholder="${service.poolArea}">
             </div>
             <div class="form-group">
                 <label>Service's Number of Floors</label>
-                <input type="text" class="form-control" name="number_of_floors" value="${service.numberOfFloors}"
+                <input type="number" step="1" min="0" class="form-control" name="number_of_floors" value="${service.numberOfFloors}"
                        placeholder="${service.numberOfFloors}">
             </div>
             <div class="d-fex justify-content-center">

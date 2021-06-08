@@ -65,10 +65,7 @@ public class ServiceServlet extends HttpServlet {
 
     private void createService(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
-        String code;
-        do {
-            code = request.getParameter("code");
-        } while (!Validators.inputValidate(code,Validators.SERVICE_REGEX));
+        String code = request.getParameter("code");
         String name = request.getParameter("name");
         int area = Integer.parseInt(request.getParameter("area"));
         double cost = Double.parseDouble(request.getParameter("cost"));
@@ -79,9 +76,20 @@ public class ServiceServlet extends HttpServlet {
         String description = request.getParameter("description");
         double poolArea = Double.parseDouble(request.getParameter("pool_area"));
         int numberOfFloors = Integer.parseInt(request.getParameter("number_of_floors"));
-        Service newService = new Service(id,code, name, area, cost, maxInHouse, rentOptionId, serviceTypeId, standard, description, poolArea, numberOfFloors);
-        serviceService.insertService(newService);
-        request.setAttribute("message", "Successfully Created!");
+        int count = 0;
+        List<Service> serviceList = serviceService.selectAllService();
+        for (Service service : serviceList) {
+            if (id == service.getId()) {
+                count++;
+            }
+        }
+        if (count!=0) {
+            request.setAttribute("message_error", "ID is not available!! The creation is not successful!");
+        } else {
+            Service newService = new Service(id, code, name, area, cost, maxInHouse, rentOptionId, serviceTypeId, standard, description, poolArea, numberOfFloors);
+            serviceService.insertService(newService);
+            request.setAttribute("message", "Successfully Created!");
+        }
         request.setAttribute("serviceTypes", serviceTypeList);
         request.setAttribute("rentOptions", rentOptionList);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view/service/create-service.jsp");
@@ -109,10 +117,7 @@ public class ServiceServlet extends HttpServlet {
 
     private void editService(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
-        String code;
-        do {
-            code = request.getParameter("code");
-        } while (!Validators.inputValidate(code,Validators.SERVICE_REGEX));
+        String code = request.getParameter("code");
         String name = request.getParameter("name");
         int area = Integer.parseInt(request.getParameter("area"));
         double cost = Double.parseDouble(request.getParameter("cost"));
@@ -123,17 +128,17 @@ public class ServiceServlet extends HttpServlet {
         String description = request.getParameter("description");
         double poolArea = Double.parseDouble(request.getParameter("pool_area"));
         int numberOfFloors = Integer.parseInt(request.getParameter("number_of_floors"));
-        Service service = new Service(id,code, name, area, cost, maxInHouse, rentOptionId, serviceTypeId, standard, description, poolArea, numberOfFloors);
-        boolean check = serviceService.updateService(service);
-        if (check) {
-            request.setAttribute("message", "Successfully Edited The Service!");
-        } else {
-            request.setAttribute("message", "Not Successful");
-        }
-        request.setAttribute("service", service);
+            Service service = new Service(id, code, name, area, cost, maxInHouse, rentOptionId, serviceTypeId, standard, description, poolArea, numberOfFloors);
+            boolean check = serviceService.updateService(service);
+            if (check) {
+                request.setAttribute("message", "Successfully Edited The Service!");
+            } else {
+                request.setAttribute("message", "Not Successful");
+            }
+            request.setAttribute("service", service);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view/service/edit-service.jsp");
         request.setAttribute("serviceTypes", serviceTypeList);
         request.setAttribute("rentOptions", rentOptionList);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view/service/edit-service.jsp");
         try {
             requestDispatcher.forward(request, response);
         } catch (ServletException e) {
@@ -142,6 +147,7 @@ public class ServiceServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
+
 
     private void showEditForm(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));

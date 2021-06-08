@@ -107,6 +107,9 @@
         <c:if test="${message!=null}">
             <p class="text-success">${message}</p>
         </c:if>
+        <c:if test="${message_error!=null}">
+            <h4 class="text-danger">${message_error}</h4>
+        </c:if>
         <form method="post">
             <fieldset>
                 <legend>Service Information</legend>
@@ -117,7 +120,7 @@
                     </tr>
                     <tr>
                         <td>Code (Format: DV-XXXX):</td>
-                        <td><input type="text" name="code" id="code" value="${service.code}"></td>
+                        <td><input pattern="^DV-[\d]{4}$" title="DV-XXXX" type="text" name="code" id="code" value="${service.code}"></td>
                     </tr>
                     <tr>
                         <td>Name:</td>
@@ -125,15 +128,15 @@
                     </tr>
                     <tr>
                         <td>Area:</td>
-                        <td><input type="text" name="area" id="area" value="${service.area}"></td>
+                        <td><input type="number" min="0" name="area" id="area" value="${service.area}"></td>
                     </tr>
                     <tr>
                         <td>Cost:</td>
-                        <td><input type="text" name="cost" id="cost" value="${service.cost}"></td>
+                        <td><input type="number" min="0" name="cost" id="cost" value="${service.cost}"></td>
                     </tr>
                     <tr>
                         <td>Max In House:</td>
-                        <td><input type="text" name="max_in_house" id="max_in_house" value="${service.maxInHouse}"></td>
+                        <td><input type="number" step="1" min="0" name="max_in_house" id="max_in_house" value="${service.maxInHouse}"></td>
                     </tr>
                     <tr>
                         <td>Rent Option:</td>
@@ -165,11 +168,11 @@
                     </tr>
                     <tr>
                         <td>Pool Area:</td>
-                        <td><input type="text" name="pool_area" id="pool_area" value="${service.poolArea}"></td>
+                        <td><input type="number" min="0" name="pool_area" id="pool_area" value="${service.poolArea}"></td>
                     </tr>
                     <tr>
                         <td>Number Of Floors:</td>
-                        <td><input type="text" name="number_of_floors" id="number_of_floors" value="${service.numberOfFloors}"></td>
+                        <td><input type="number" step="1" min="0" name="number_of_floors" id="number_of_floors" value="${service.numberOfFloors}"></td>
                     </tr>
                     <tr>
                         <td></td>

@@ -121,7 +121,7 @@
                     </tr>
                     <tr>
                         <td>Code (Format: KH-XXXX):</td>
-                        <td><input type="text" name="code" id="code" value="${customer.code}"></td>
+                        <td><input pattern="^KH-[\d]{4}$" title="KH-XXXX" type="text" name="code" id="code" value="${customer.code}"></td>
                     </tr>
                     <tr>
                         <td>Type:</td>
@@ -150,16 +150,16 @@
                     </tr>
                     <tr>
                         <td>ID Card Number (Format: 9 or 12 digits):</td>
-                        <td><input type="text" name="id_number" id="id_number" value="${customer.idNumber}"></td>
+                        <td><input pattern="(^[0-9]{9}$)|(^[0-9]{12}$)" title="9 or 12 digits" type="text" name="id_number" id="id_number" value="${customer.idNumber}"></td>
                     </tr>
                     <tr>
                         <td>Phone Number (Format: 090xxxxxxx | 091xxxxxxx | (84)+90xxxxxxx |(84)+91xxxxxxx):</td>
-                        <td><input type="text" name="phone_number" id="phone_number" value="${customer.phoneNumber}">
+                        <td><input pattern="(^0(90|91)[0-9]{7}$)|(^[(]84[)][+](90|91)[0-9]{7}$)" title="090xxxxxxx | 091xxxxxxx | (84)+90xxxxxxx |(84)+91xxxxxxx" type="text" name="phone_number" id="phone_number" value="${customer.phoneNumber}">
                         </td>
                     </tr>
                     <tr>
                         <td>Email:</td>
-                        <td><input type="text" name="email" id="email" value="${customer.email}"></td>
+                        <td><input type="email" name="email" id="email" value="${customer.email}"></td>
                     </tr>
                     <tr>
                         <td>Address:</td>

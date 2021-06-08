@@ -127,11 +127,13 @@
             <th>Contract Detail's ID</th>
             <th>Additional Service's ID</th>
             <th>Additional Service's Name</th>
+            <th>Price</th>
             <th>Action</th>
         </tr>
         </thead>
         <tbody>
         <c:forEach var="customer" items="${customers}" varStatus="status">
+            <c:forEach var="price" items="${prices}">
             <tr>
                 <td>${status.count}</td>
                 <td>${customer.customerId}</td>
@@ -165,11 +167,13 @@
                         <td>${customer.additionalServiceName}</td>
                     </c:otherwise>
                 </c:choose>
+                <td>${price}</td>
                 <td>
                     <button type="button" class="btn btn-warning"><a
                             href="/service?action=edit&id=${customer.serviceId}">Edit</a></button>
                 </td>
             </tr>
+            </c:forEach>
         </c:forEach>
         </tbody>
     </table>

@@ -170,22 +170,22 @@
             </div>
             <div class="form-group">
                 <label>Employee's ID Card Number (Format: 9 or 12 digits)</label>
-                <input type="text" class="form-control" name="id_number" value="${employee.idNumber}"
+                <input pattern="(^[0-9]{9}$)|(^[0-9]{12}$)" title="9 or 12 digits" class="form-control" name="id_number" value="${employee.idNumber}"
                        placeholder="${employee.idNumber}">
             </div>
             <div class="form-group">
                 <label>Employee's Salary</label>
-                <input type="text" class="form-control" name="salary" value="${employee.salary}"
+                <input type="number" min="0" class="form-control" name="salary" value="${employee.salary}"
                        placeholder="${employee.salary}">
             </div>
             <div class="form-group">
                 <label>Employee's Phone Number (Format: 090xxxxxxx | 091xxxxxxx | (84)+90xxxxxxx |(84)+91xxxxxxx)</label>
-                <input type="text" class="form-control" name="phone_number" value="${employee.phoneNumber}"
+                <input pattern="(^0(90|91)[0-9]{7}$)|(^[(]84[)][+](90|91)[0-9]{7}$)" title="090xxxxxxx | 091xxxxxxx | (84)+90xxxxxxx |(84)+91xxxxxxx" class="form-control" name="phone_number" value="${employee.phoneNumber}"
                        placeholder="${employee.phoneNumber}">
             </div>
             <div class="form-group">
                 <label>Employee's Email</label>
-                <input type="text" class="form-control" name="email" value="${employee.email}"
+                <input type="email" class="form-control" name="email" value="${employee.email}"
                        placeholder="${employee.email}">
             </div>
             <div class="form-group">

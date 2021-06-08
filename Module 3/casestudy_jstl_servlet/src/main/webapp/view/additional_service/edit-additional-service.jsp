@@ -121,12 +121,12 @@
             </div>
             <div class="form-group">
                 <label >Additional Service's Price</label>
-                <input type="text" class="form-control" name="price" value="${additional_service.price}" id="formGroupExampleInput2"
+                <input type="number" min="0" class="form-control" name="price" value="${additional_service.price}" id="formGroupExampleInput2"
                        placeholder="Another input placeholder">
             </div>
             <div class="form-group">
                 <label >Additional Service's Unit</label>
-                <input type="text" class="form-control" name="unit" value="${additional_service.unit}" id="formGroupExampleInput3"
+                <input type="number" min="0" step="1" class="form-control" name="unit" value="${additional_service.unit}" id="formGroupExampleInput3"
                        placeholder="Another input placeholder">
             </div>
             <div class="form-group">

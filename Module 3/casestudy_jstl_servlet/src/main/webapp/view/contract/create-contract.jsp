@@ -158,11 +158,11 @@
                     </tr>
                     <tr>
                         <td>Deposit:</td>
-                        <td><input type="text" name="deposit" id="deposit" value="${contract.deposit}"></td>
+                        <td><input type="number" min="0" name="deposit" id="deposit" value="${contract.deposit}"></td>
                     </tr>
                     <tr>
                         <td>Total Money:</td>
-                        <td><input type="text" name="total_money" id="total_money" value="${contract.totalMoney}"></td>
+                        <td><input type="number" min="0" name="total_money" id="total_money" value="${contract.totalMoney}"></td>
                     </tr>
                     <tr>
                         <td></td>

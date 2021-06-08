@@ -1,8 +1,12 @@
 package controller;
 
 
+import model.bean.AdditionalService;
 import model.bean.Customer;
 import model.bean.CustomerWithServices;
+import model.bean.Service;
+import model.repository.AdditionalServiceRepository;
+import model.repository.ServiceRepository;
 import model.service.ICustomerWithServicesService;
 import model.service.impl.CustomerWithServicesServiceImpl;
 
@@ -73,6 +77,16 @@ public class CustomerWithServicesServlet extends HttpServlet {
 
     private void listCustomerWithServices(HttpServletRequest request, HttpServletResponse response) {
         List<CustomerWithServices> customerWithServicesList = customerWithServicesService.selectAllCustomerWithServices();
+        ServiceRepository serviceRepository = new ServiceRepository();
+        AdditionalServiceRepository additionalServiceRepository = new AdditionalServiceRepository();
+        List<Double> priceList = new ArrayList<>();
+        for (CustomerWithServices customerWithServices : customerWithServicesList) {
+            Service service = serviceRepository.selectService(customerWithServices.getServiceId());
+            AdditionalService additionalService = additionalServiceRepository.selectAdditionalService(customerWithServices.getAdditionalServiceId());
+            double price = service.getCost() + additionalService.getPrice()*additionalService.getUnit();
+            priceList.add(price);
+        }
+        request.setAttribute("prices",priceList);
         request.setAttribute("customers",customerWithServicesList);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view/customer/customer-with-services.jsp");
         try {

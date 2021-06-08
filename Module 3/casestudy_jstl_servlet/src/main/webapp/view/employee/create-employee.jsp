@@ -159,20 +159,20 @@
                     </tr>
                     <tr>
                         <td>ID Card Number (Format: 9 or 12 digits):</td>
-                        <td><input type="text" name="id_number" id="id_number" value="${employee.id_number}"></td>
+                        <td><input pattern="(^[0-9]{9}$)|(^[0-9]{12}$)" title="9 or 12 digits" name="id_number" id="id_number" value="${employee.id_number}"></td>
                     </tr>
                     <tr>
                         <td>Salary:</td>
-                        <td><input type="text" name="salary" id="salary" value="${employee.salary}"></td>
+                        <td><input type="number" min="0" name="salary" id="salary" value="${employee.salary}"></td>
                     </tr>
                     <tr>
                         <td>Phone Number (Format: 090xxxxxxx | 091xxxxxxx | (84)+90xxxxxxx |(84)+91xxxxxxx):</td>
-                        <td><input type="text" name="phone_number" id="phone_number" value="${employee.phoneNumber}">
+                        <td><input pattern="(^0(90|91)[0-9]{7}$)|(^[(]84[)][+](90|91)[0-9]{7}$)" title="090xxxxxxx | 091xxxxxxx | (84)+90xxxxxxx |(84)+91xxxxxxx" name="phone_number" id="phone_number" value="${employee.phoneNumber}">
                         </td>
                     </tr>
                     <tr>
                         <td>Email:</td>
-                        <td><input type="text" name="email" id="email" value="${employee.email}"></td>
+                        <td><input type="email" name="email" id="email" value="${employee.email}"></td>
                     </tr>
                     <tr>
                         <td>Address:</td>

@@ -73,26 +73,14 @@ public class CustomerServlet extends HttpServlet {
 
     private void createCustomer(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
-        String code;
-        do {
-            code = request.getParameter("code");
-        } while (!Validators.inputValidate(code,Validators.CUSTOMER_REGEX));
+        String code = request.getParameter("code");
         int typeId = Integer.parseInt(request.getParameter("type_id"));
         String name = request.getParameter("name");
         String birthdate = request.getParameter("birthdate");
         Byte gender = Byte.parseByte(request.getParameter("gender"));
-        String idNumber;
-        do {
-            idNumber = request.getParameter("id_number");
-        } while (!Validators.inputValidate(idNumber, Validators.ID_NUMBER_REGEX));
-        String phoneNumber;
-        do {
-            phoneNumber = request.getParameter("phone_number");
-        } while (!Validators.inputValidate(phoneNumber, Validators.PHONE_NUMBER_REGEX));
-        String email;
-        do {
-            email = request.getParameter("email");
-        } while (!Validators.inputValidate(email,Validators.EMAIL_REGEX));
+        String idNumber = request.getParameter("id_number");
+        String phoneNumber = request.getParameter("phone_number");
+        String email = request.getParameter("email");
         String address = request.getParameter("address");
         int count = 0;
         List<Customer> customerList = customerService.selectAllCustomer();
@@ -133,26 +121,14 @@ public class CustomerServlet extends HttpServlet {
 
     private void editCustomer(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
-        String code;
-        do {
-           code = request.getParameter("code");
-        }  while (!Validators.inputValidate(code,Validators.CUSTOMER_REGEX));
+        String code = request.getParameter("code");
         int typeId = Integer.parseInt(request.getParameter("type_id"));
         String name = request.getParameter("name");
         String birthdate = request.getParameter("birthdate");
         Byte gender = Byte.parseByte(request.getParameter("gender"));
-        String idNumber;
-        do {
-            idNumber = request.getParameter("id_number");
-        } while (!Validators.inputValidate(idNumber, Validators.ID_NUMBER_REGEX));
-        String phoneNumber;
-        do {
-            phoneNumber = request.getParameter("phone_number");
-        } while (!Validators.inputValidate(phoneNumber, Validators.PHONE_NUMBER_REGEX));
-        String email;
-        do {
-            email = request.getParameter("email");
-        } while (!Validators.inputValidate(email,Validators.EMAIL_REGEX));
+        String idNumber = request.getParameter("id_number");
+        String phoneNumber = request.getParameter("phone_number");
+        String email = request.getParameter("email");
         String address = request.getParameter("address");
         Customer customer = new Customer(id, code, typeId, name, birthdate, gender, idNumber, phoneNumber, email, address);
         boolean check = customerService.updateCustomer(customer);

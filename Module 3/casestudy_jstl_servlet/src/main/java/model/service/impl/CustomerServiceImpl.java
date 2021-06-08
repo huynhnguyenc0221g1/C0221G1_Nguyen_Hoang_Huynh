@@ -5,7 +5,9 @@ import model.bean.CustomerType;
 import model.repository.CustomerRepository;
 import model.service.ICustomerService;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class CustomerServiceImpl implements ICustomerService {
     CustomerRepository customerRepository = new CustomerRepository();
