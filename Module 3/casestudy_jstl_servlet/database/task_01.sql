@@ -102,9 +102,10 @@ INSERT INTO `furama_resort`.`customer_type` (`customer_type_id`, `customer_type_
 INSERT INTO `furama_resort`.`customer_type` (`customer_type_id`, `customer_type_name`) VALUES ('5', 'Member');
 
 
-
+use furama_resort;
 create table if not exists customer (
 `customer_id` int not null,
+`customer_code` varchar(45),
 `customer_type_id` int not null,
 foreign key (`customer_type_id`) references customer_type (`customer_type_id`),
 `customer_fullname` varchar(45),
@@ -151,6 +152,7 @@ INSERT INTO `furama_resort`.`service_type` (`service_type_id`, `service_type_nam
 
 create table if not exists service (
 `service_id` int not null,
+`service_code` varchar(45),
 `service_name` varchar(45),
 `service_area` int,
 `service_cost` double,

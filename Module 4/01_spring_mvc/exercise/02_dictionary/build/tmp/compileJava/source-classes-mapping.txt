@@ -1,0 +1,6 @@
+com/dictionary/controller/DictionaryController.java
+ com.dictionary.controller.DictionaryController
+com/dictionary/service/impl/DictionaryServiceImpl.java
+ com.dictionary.service.impl.DictionaryServiceImpl
+com/dictionary/service/IDictionaryService.java
+ com.dictionary.service.IDictionaryService
