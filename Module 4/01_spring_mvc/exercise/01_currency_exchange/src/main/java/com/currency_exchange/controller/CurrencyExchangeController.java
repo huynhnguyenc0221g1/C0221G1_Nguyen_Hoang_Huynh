@@ -18,7 +18,7 @@ public class CurrencyExchangeController {
         return "input";
     }
 
-    @PostMapping(value = {"/" , "/input"})
+    @PostMapping(value = "/input")
     public String exchange(@RequestParam String amount, @RequestParam String rate, Model model) {
         double usd = Double.parseDouble(amount);
         double usdToVND = Double.parseDouble(rate);

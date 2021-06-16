@@ -18,7 +18,7 @@ public class DictionaryController{
         return "input";
     }
 
-    @PostMapping(value = {"/" , "/input"})
+    @PostMapping(value = "/input")
     public String translate(@RequestParam String english, Model model) {
         String englishWord = english;
         model.addAttribute("vietnamese",dictionaryService.translate(englishWord));
