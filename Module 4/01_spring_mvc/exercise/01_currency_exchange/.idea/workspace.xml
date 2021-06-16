@@ -5,8 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f11326b6-ca37-4720-b983-4d4e93952326" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../02_spring_mvc_controller/exercise/02_calculator/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../02_spring_mvc_controller/exercise/02_calculator/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../02_spring_mvc_controller/exercise/02_calculator/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../02_spring_mvc_controller/exercise/02_calculator/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../02_spring_mvc_controller/exercise/02_calculator/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../02_spring_mvc_controller/practice/01_validate_email/src/main/java/com/codegym/controller/EmailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../02_spring_mvc_controller/practice/01_validate_email/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../02_spring_mvc_controller/practice/01_validate_email/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../02_spring_mvc_controller/practice/01_validate_email/src/main/webapp/WEB-INF/views/success.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../02_spring_mvc_controller/practice/01_validate_email/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../02_spring_mvc_controller/practice/02_current_time/src/main/java/com/codegym/controller/TimeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../02_spring_mvc_controller/practice/02_current_time/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../02_spring_mvc_controller/practice/02_current_time/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../02_spring_mvc_controller/practice/02_current_time/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/currency_exchange/controller/CurrencyExchangeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/currency_exchange/controller/CurrencyExchangeController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,6 +178,7 @@
       <workItem from="1623742106485" duration="1230000" />
       <workItem from="1623743351358" duration="2788000" />
       <workItem from="1623805244927" duration="13000" />
+      <workItem from="1623818263874" duration="612000" />
     </task>
     <servers />
   </component>
