@@ -1,0 +1,6 @@
+com/email_configuration/model/bean/Email.java
+ com.email_configuration.model.bean.Email
+com/email_configuration/controller/EmailController.java
+ com.email_configuration.controller.EmailController
+com/email_configuration/config/AppConfig.java
+ com.email_configuration.config.AppConfig
