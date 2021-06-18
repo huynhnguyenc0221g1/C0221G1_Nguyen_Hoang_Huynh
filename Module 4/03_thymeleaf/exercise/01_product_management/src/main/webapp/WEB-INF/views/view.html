@@ -4,28 +4,26 @@
 <body>
 
 
-<h3>View Product</h3>
+<h3>Product's Information</h3>
 <div style="margin-left: 200px">
     <p>
         <a th:href="@{/product}">
-            Back to product list
+            Back to Products list
         </a>
     </p>
     <div id="detail">
-        <div class="cusdetail">
-<!--            <label>Name : </label>-->
+        <div class="info">
             <label th:text="${product.name}"></label>
         </div>
-        <!--    cusdetail-->
-        <div class="cusdetail">
+        <div class="info">
             <label>Description :</label>
             <label th:text="${product.description}"></label>
         </div>
-        <div class="cusdetail">
+        <div class="info">
             <label>Manufacturer : </label>
             <label th:text="${product.manufacturer}"></label>
         </div>
-        <div class="cusdetail">
+        <div class="info">
             <label>Price: </label>
             <label th:text="${product.price}"></label>
         </div>
