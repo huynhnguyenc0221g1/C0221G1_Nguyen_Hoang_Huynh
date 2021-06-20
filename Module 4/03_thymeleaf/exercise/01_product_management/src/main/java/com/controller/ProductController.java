@@ -24,7 +24,7 @@ public class ProductController {
     }
 
     @GetMapping(value ="/create")
-    public String create(Model model) {
+    public String showCreateForm(Model model) {
         model.addAttribute("product", new Product());
         return "/create";
     }
@@ -39,7 +39,7 @@ public class ProductController {
     }
 
     @GetMapping(value = "/{id}/edit")
-    public String edit(@PathVariable int id,Model model) {
+    public String showEditForm(@PathVariable int id, Model model) {
       model.addAttribute("product",productService.findById(id));
         return "/edit";
     }
@@ -54,7 +54,7 @@ public class ProductController {
 
 
     @PostMapping(value = "/delete")
-    public String delete(@RequestParam int id, RedirectAttributes redirect) {
+    public String showDeleteForm(@RequestParam int id, RedirectAttributes redirect) {
         productService.remove(id);
         redirect.addFlashAttribute("message", "Successfully Deleted!");
         return "redirect:/product/";
@@ -62,7 +62,7 @@ public class ProductController {
 
 
     @GetMapping(value = "/{id}/view")
-    public String view(@PathVariable int id, Model model) {
+    public String showView(@PathVariable int id, Model model) {
         model.addAttribute("product", productService.findById(id));
         return "/view";
     }

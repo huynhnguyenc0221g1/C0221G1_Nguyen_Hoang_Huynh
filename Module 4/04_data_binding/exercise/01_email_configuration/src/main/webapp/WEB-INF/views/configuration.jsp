@@ -34,7 +34,7 @@
         </c:choose>
     </tr>
     <tr>
-        <td>Signture:</td>
+        <td>Signature:</td>
         <td>${signature}</td>
     </tr>
 </table>
