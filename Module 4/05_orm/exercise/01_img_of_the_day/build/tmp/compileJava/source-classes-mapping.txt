@@ -1,0 +1,10 @@
+com/img_of_the_day/model/repository/BaseRepository.java
+ com.img_of_the_day.model.repository.BaseRepository
+com/img_of_the_day/model/entity/Comment.java
+ com.img_of_the_day.model.entity.Comment
+com/img_of_the_day/model/repository/ICommentService.java
+ com.img_of_the_day.model.repository.ICommentService
+com/img_of_the_day/model/repository/impl/CommentRepository.java
+ com.img_of_the_day.model.repository.impl.CommentRepository
+com/img_of_the_day/controller/CommentController.java
+ com.img_of_the_day.controller.CommentController
