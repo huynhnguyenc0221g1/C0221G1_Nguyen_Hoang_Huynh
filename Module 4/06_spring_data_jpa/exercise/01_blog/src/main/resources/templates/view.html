@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Blog</title>
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css" th:href="@{bootstrap.min.css}"/>
+</head>
+<body>
+<div class="col-3"></div>
+<div class="container col-6">
+    <h1>Blog's Detail</h1>
+    <div style="clear: both; display: block; height: 5px"></div>
+    <a th:href="@{/}" class="btn btn-warning">Back to Main Page</a>
+    <div style="clear: both; display: block; height: 20px"></div>
+    <form th:object="${blog}" th:action="@{save}" action="#" method="post">
+        <div>
+            <label th:text="Title" th:for="title"></label>
+            <input disabled type="text" th:field="*{title}" class="form-control"/>
+        </div>
+        <div style="clear: both; display: block; height: 10px"></div>
+        <div>
+            <label th:text="Content" th:for="content"></label>
+            <textarea disabled th:field="*{content}" rows="10" cols="70" class="form-control"/></textarea>
+        </div>
+    </form>
+</div>
+</body>
+</html>

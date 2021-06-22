@@ -10,26 +10,27 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping(value = {"","/comment"})
+@RequestMapping(value = {"", "/comment"})
 public class CommentController {
     @Autowired
     ICommentService iCommentService;
+
     @GetMapping(value = "")
-    public String comment(Model model){
+    public String comment(Model model) {
         List<Comment> comments = iCommentService.findAll();
-        model.addAttribute("comments",comments);
-        model.addAttribute("comment",new Comment());
+        model.addAttribute("comments", comments);
+        model.addAttribute("comment", new Comment());
         return "/comment";
     }
 
     @PostMapping("/save")
-    public String comment(@ModelAttribute("comment") Comment comment){
+    public String comment(@ModelAttribute("comment") Comment comment) {
         iCommentService.save(comment);
         return "redirect:/comment/";
     }
 
     @GetMapping("/like")
-    public String like(@RequestParam int id){
+    public String like(@RequestParam int id) {
         iCommentService.like(id);
         return "redirect:/comment/";
     }
