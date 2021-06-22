@@ -22,6 +22,10 @@
             <label th:text="Content" th:for="content"></label>
             <textarea disabled th:field="*{content}" rows="10" cols="70" class="form-control"/></textarea>
         </div>
+        <div>
+            <label th:text="Date" th:for="date"></label>
+            <input disabled type="text" th:field="*{date}" class="form-control"/>
+        </div>
     </form>
 </div>
 </body>
