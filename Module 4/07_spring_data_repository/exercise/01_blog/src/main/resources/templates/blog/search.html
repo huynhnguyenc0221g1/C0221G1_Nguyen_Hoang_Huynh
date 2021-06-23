@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+  <title>Blog List</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link type="text/css" rel="stylesheet" href="bootstrap.min.css" th:href="@{bootstrap.min.css}"/>
+</head>
+<body>
+<div class="col-3"></div>
+<div class="container col-6">
+  <h1>Search Result</h1>
+  <div style="clear: both; display: block; height: 5px"></div>
+  <a th:href="@{/}" class="btn btn-warning">Back to Main Page</a>
+  <div style="clear: both; display: block; height: 20px"></div>
+  <form action="/search"
+        method="get">
+    <input name="nameTitle">
+    <button type="submit" >Search</button>
+  </form>
+  <div style="clear: both; display: block; height: 20px"></div>
+  <table class="table table-active">
+    <tr>
+      <th>No</th>
+      <th>Title</th>
+      <th>Date</th>
+      <th>Category</th>
+      <th>Actions</th>
+    </tr>
+    <tr th:each="blog,rowIndex : ${blogs}">
+      <td th:text="${rowIndex.count}"></td>
+      <td th:text="${blog.title}"></td>
+      <td th:text="${blog.date}"></td>
+      <td th:text="${blog.category.name}"></td>
+      <td>
+        <a th:href="@{/view?id={id}(id=${blog.id})}" class="btn btn-success">View</a>
+        <a th:href="@{/edit?id={id}(id=${blog.id})}" class="btn btn-primary">Edit</a>
+        <a th:href="@{/delete?id={id}(id=${blog.id})}" class="btn btn-danger">Delete</a>
+      </td>
+    </tr>
+  </table>
+  <div style="clear: both; display: block; height: 20px"></div>
+</div>
+</body>
+</html>
