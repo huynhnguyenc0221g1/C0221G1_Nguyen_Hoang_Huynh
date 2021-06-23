@@ -1,7 +1,7 @@
 package com.img_of_the_day.controller;
 
 import com.img_of_the_day.model.entity.Comment;
-import com.img_of_the_day.model.repository.ICommentService;
+import com.img_of_the_day.model.service.ICommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
