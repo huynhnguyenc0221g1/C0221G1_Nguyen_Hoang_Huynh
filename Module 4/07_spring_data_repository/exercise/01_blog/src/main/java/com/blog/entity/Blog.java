@@ -31,6 +31,12 @@ public class Blog {
         this.content = content;
     }
 
+    public Blog(String title, String content, Category category) {
+        this.title = title;
+        this.content = content;
+        this.category = category;
+    }
+
     public Long getId() {
         return id;
     }

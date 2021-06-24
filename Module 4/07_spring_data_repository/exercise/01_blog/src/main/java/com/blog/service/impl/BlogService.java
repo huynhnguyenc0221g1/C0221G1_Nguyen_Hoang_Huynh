@@ -37,7 +37,7 @@ public class BlogService implements IBlogService {
     }
 
     @Override
-    public List<Blog> searchBlogByTitle(String nameTitle) {
-        return iBlogRepository.searchBlogByTitle(nameTitle);
+    public Page<Blog> searchBlogByTitle(String nameTitle, Pageable pageable) {
+        return iBlogRepository.searchBlogByTitle(nameTitle,pageable);
     }
 }

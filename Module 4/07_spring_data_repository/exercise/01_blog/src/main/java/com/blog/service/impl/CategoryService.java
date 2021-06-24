@@ -17,6 +17,21 @@ public class CategoryService implements ICategoryService {
 
     @Override
     public List<Category> findAllCategories() {
-        return this.categoryRepository.findAll();
+        return (List<Category>) this.categoryRepository.findAll();
+    }
+
+    @Override
+    public void saveCategory(Category category) {
+        categoryRepository.save(category);
+    }
+
+    @Override
+    public void deleteCategory(Integer id) {
+        categoryRepository.deleteById(id);
+    }
+
+    @Override
+    public Optional<Category> findCategoryById(Integer id) {
+        return this.categoryRepository.findById(id);
     }
 }

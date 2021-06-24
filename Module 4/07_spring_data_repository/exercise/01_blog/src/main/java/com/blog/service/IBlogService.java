@@ -16,5 +16,5 @@ public interface IBlogService {
 
     Optional<Blog> findBlogById(Long id);
 
-    List<Blog> searchBlogByTitle(String nameTitle);
+    Page<Blog> searchBlogByTitle(String nameTitle,Pageable pageable);
 }

@@ -10,10 +10,9 @@
 <div class="container col-6">
     <h1>Blog Management</h1>
     <div style="clear: both; display: block; height: 5px"></div>
-    <form action="/search"
-    method="get">
-    <input name="nameTitle">
-           <button type="submit" >Search</button>
+    <form action="/">
+    <input type="text" name="keyword">
+        <input value="Search" type="submit">
     </form>
     <div style="clear: both; display: block; height: 20px"></div>
     <table class="table table-active">
@@ -24,7 +23,7 @@
             <th>Category</th>
             <th>Actions</th>
         </tr>
-        <tr th:each="blog,rowIndex : ${blogs}">
+        <tr th:each="blog,rowIndex : ${blogs.content}">
             <td th:text="${rowIndex.count}"></td>
             <td th:text="${blog.title}"></td>
             <td th:text="${blog.date}"></td>
@@ -39,12 +38,13 @@
     <div style="clear: both; display: block; height: 5px"></div>
     <div>
         <p>Page:</p>
-        <a th:href="@{'/'(page=${blogs.number - 1})}" th:if="${blogs.hasPrevious()}">Previous</a>
+        <a th:href="@{/(page=${blogs.number - 1} , keyword=${titleValue})}" th:if="${blogs.hasPrevious()}">Previous</a>
         <span th:text="${blogs.number + 1}"></span>/<span th:text="${blogs.totalPages}"></span>
-        <a th:href="@{'/'(page=${blogs.number + 1})}" th:if="${blogs.hasNext()}">Next</a>
+        <a th:href="@{/(page=${blogs.number + 1}, keyword=${titleValue})}" th:if="${blogs.hasNext()}">Next</a>
     </div>
     <div style="clear: both; display: block; height: 20px"></div>
     <a href="/add" class="btn btn-success">Add New Blog</a>
+    <a href="/category" class="btn btn-warning">Categories List</a>
 </div>
 </body>
 </html>

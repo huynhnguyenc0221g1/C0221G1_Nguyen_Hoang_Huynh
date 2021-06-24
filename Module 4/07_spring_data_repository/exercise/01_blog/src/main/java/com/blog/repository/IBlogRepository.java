@@ -12,5 +12,5 @@ import java.util.List;
 @Repository
 public interface IBlogRepository extends PagingAndSortingRepository<Blog, Long> {
     @Query("SELECT b FROM blog b WHERE b.title LIKE %?1%")
-    public List<Blog> searchBlogByTitle(String nameTitle);
+    public Page<Blog> searchBlogByTitle(String nameTitle,Pageable pageable);
 }

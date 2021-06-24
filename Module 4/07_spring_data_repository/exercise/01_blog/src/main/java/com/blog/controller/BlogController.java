@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -24,8 +25,8 @@ public class BlogController {
 
 
     @RequestMapping("/")
-    public ModelAndView index(Pageable pageable) {
-        Page<Blog> blogs = blogService.getAllBlog(PageRequest.of(pageable.getPageNumber(), 3));
+    public ModelAndView index(@PageableDefault(size = 3) Pageable pageable) {
+        Page<Blog> blogs = blogService.getAllBlog(pageable);
         ModelAndView modelAndView = new ModelAndView("/blog/index");
         modelAndView.addObject("blogs", blogs);
         return modelAndView;
@@ -62,13 +63,20 @@ public class BlogController {
     public String showView(@RequestParam("id") Long blogId, Model model) {
         Optional<Blog> blogEdit = blogService.findBlogById(blogId);
         blogEdit.ifPresent(blog -> model.addAttribute("blog", blog));
-        return "view";
+        return "blog/view";
     }
 
-    @GetMapping(value = "/search")
-    public String showSearch(@RequestParam("nameTitle") String nameTitle, Model model) {
-        List<Blog> blogs = blogService.searchBlogByTitle(nameTitle);
-        model.addAttribute("blogs",blogs);
-        return "/blog/search";
+    @GetMapping(value = {"/"})
+    public ModelAndView showSearch(@PageableDefault(value = 3) Pageable pageable,
+                                   @RequestParam Optional<String> keyword) {
+        String titleValue = "";
+        if (keyword.isPresent()) {
+            titleValue = keyword.get();
+        }
+        ModelAndView modelAndView = new ModelAndView("/blog/index");
+        Page<Blog> blogs = blogService.searchBlogByTitle(titleValue,pageable);
+        modelAndView.addObject("titleValue",titleValue);
+        modelAndView.addObject("blogs",blogs);
+        return modelAndView;
     }
 }
