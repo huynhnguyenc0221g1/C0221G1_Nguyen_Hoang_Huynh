@@ -11,7 +11,7 @@
     <h1>Register Form</h1>
     <div style="clear: both; display: block; height: 20px"></div>
     <div class="col-md-auto">
-        <form th:object="${user}" th:action="@{/result}" action="#" method="post">
+        <form th:object="${userDto}" th:action="@{/result}" action="#" method="post">
             <div>
                 <label th:text="Firstname" th:for="firstName"></label>
                 <br>

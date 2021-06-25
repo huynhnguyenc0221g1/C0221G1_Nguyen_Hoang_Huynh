@@ -1,7 +1,9 @@
 package com.form.controller;
 
+import com.form.model.dto.UserDto;
 import com.form.model.entity.User;
 import com.form.model.service.IUserService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -18,11 +20,13 @@ public class UserController {
 
     @GetMapping(value = {"/" , "/index"})
     public ModelAndView showCreateForm() {
-        return new ModelAndView("/index" , "user", new User());
+        return new ModelAndView("/index" , "userDto", new UserDto());
     }
 
     @PostMapping(value = {"/result"})
-    public ModelAndView showResult(@Validated @ModelAttribute User user, BindingResult result) {
+    public ModelAndView showResult(@Validated @ModelAttribute UserDto userDto, BindingResult result) {
+        User user = new User();
+        BeanUtils.copyProperties(userDto,user);
         if (result.hasFieldErrors()){
             ModelAndView modelAndView = new ModelAndView("/index");
             modelAndView.addAllObjects(result.getModel());
