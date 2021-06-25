@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="col-3"></div>
+<div class="container col-6">
+    <h1>Register Form</h1>
+    <div style="clear: both; display: block; height: 20px"></div>
+    <div class="col-md-auto">
+        <form th:object="${user}" th:action="@{/result}" action="#" method="post">
+            <div>
+                <label th:text="Firstname" th:for="firstName"></label>
+                <br>
+                <a class="text-danger" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">Firstname
+                    Error</a>
+                <input type="text" th:field="*{firstName}" class="form-control" placeholder="Firstname"/>
+            </div>
+            <div style="clear: both; display: block; height: 10px"></div>
+            <div>
+                <label th:text="Lastname" th:for="lastName"></label>
+                <br>
+                <a class="text-danger" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Lastname
+                    Error</a>
+                <input type="text" th:field="*{lastName}" class="form-control" placeholder="Lastname"/>
+            </div>
+            <div style="clear: both; display: block; height: 10px"></div>
+            <div>
+                <label th:text="PhoneNumber" th:for="phoneNumber"></label>
+                <br>
+                <a class="text-danger" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}">Phone
+                    Number
+                    Error</a>
+                <input type="text" th:field="*{phoneNumber}" class="form-control" placeholder="PhoneNumber"/>
+            </div>
+            <div style="clear: both; display: block; height: 10px"></div>
+            <div>
+                <label th:text="Age" th:for="age"></label>
+                <br>
+                <a class="text-danger" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age
+                    Error</a>
+                <input type="text" th:field="*{age}" class="form-control" placeholder="Age"/>
+            </div>
+            <div style="clear: both; display: block; height: 10px"></div>
+            <div>
+                <label th:text="Email" th:for="email"></label>
+                <br>
+                <a class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email
+                    Error</a>
+                <input type="text" th:field="*{email}" class="form-control" placeholder="Email"/>
+            </div>
+            <div style="clear: both; display: block; height: 10px"></div>
+            <input type="submit" class="btn btn-success" value="Save"/>
+        </form>
+    </div>
+</div>
+</body>
+</html>

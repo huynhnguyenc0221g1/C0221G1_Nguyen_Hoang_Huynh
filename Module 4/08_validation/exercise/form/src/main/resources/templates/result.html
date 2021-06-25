@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<body>
+<div class="col-3"></div>
+<div class="container col-6">
+    <h1>Registry Result:</h1>
+    <div style="clear: both; display: block; height: 5px"></div>
+    <form th:object="${user}">
+        <div>
+            <label th:text="Firstname" th:for="firstName"></label>
+            <input disabled type="text" th:field="*{firstName}" class="form-control"/>
+        </div>
+        <div style="clear: both; display: block; height: 10px"></div>
+        <div>
+            <label th:text="Lastname" th:for="lastName"></label>
+            <input disabled type="text" th:field="*{lastName}" class="form-control"/>
+        </div>
+        <div style="clear: both; display: block; height: 10px"></div>
+        <div>
+            <label th:text="PhoneNumber" th:for="phoneNumber"></label>
+            <input disabled type="text" th:field="*{phoneNumber}" class="form-control"/>
+        </div>
+        <div style="clear: both; display: block; height: 10px"></div>
+        <div>
+            <label th:text="Age" th:for="age"></label>
+            <input disabled type="text" th:field="*{age}" class="form-control"/>
+        </div>
+        <div style="clear: both; display: block; height: 10px"></div>
+        <div>
+            <label th:text="Email" th:for="email"></label>
+            <input disabled type="text" th:field="*{email}" class="form-control"/>
+        </div>
+        <div style="clear: both; display: block; height: 10px"></div>
+    </form>
+</div>
+</body>
+</html>
