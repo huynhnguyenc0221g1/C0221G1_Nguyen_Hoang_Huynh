@@ -28,7 +28,7 @@ public class CategoryController {
     @RequestMapping("/category")
     public ModelAndView index() {
         List<Category> categories = categoryService.findAllCategories();
-        ModelAndView modelAndView = new ModelAndView("/blog/category/index_category");
+        ModelAndView modelAndView = new ModelAndView("/index_category");
         modelAndView.addObject("categories", categories);
         return modelAndView;
     }
@@ -36,14 +36,14 @@ public class CategoryController {
     @RequestMapping(value = "addCategory")
     public String showCreateForm(Model model) {
         model.addAttribute("category", new Category());
-        return "blog/category/add_category";
+        return "add_category";
     }
 
     @GetMapping(value = "editCategory")
     public String showEditForm(@RequestParam("id") Integer categoryId, Model model) {
         Optional<Category> categoryEdit = categoryService.findCategoryById(categoryId);
         categoryEdit.ifPresent(category -> model.addAttribute("category", category));
-        return "blog/category/edit_category";
+        return "edit_category";
     }
 
     @PostMapping(value = "saveCategory")

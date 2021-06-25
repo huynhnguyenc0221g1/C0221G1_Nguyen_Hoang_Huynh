@@ -27,7 +27,7 @@ public class BlogController {
     @RequestMapping("/")
     public ModelAndView index(@PageableDefault(size = 3) Pageable pageable) {
         Page<Blog> blogs = blogService.getAllBlog(pageable);
-        ModelAndView modelAndView = new ModelAndView("/blog/index");
+        ModelAndView modelAndView = new ModelAndView("/index");
         modelAndView.addObject("blogs", blogs);
         return modelAndView;
     }
@@ -36,7 +36,7 @@ public class BlogController {
     public String showCreateForm(Model model) {
         model.addAttribute("blog", new Blog());
         model.addAttribute("categories", this.categoryService.findAllCategories());
-        return "blog/add";
+        return "add";
     }
 
     @GetMapping(value = "/edit")
@@ -44,7 +44,7 @@ public class BlogController {
         Optional<Blog> blogEdit = blogService.findBlogById(blogId);
         blogEdit.ifPresent(blog -> model.addAttribute("blog", blog));
         model.addAttribute("categories", this.categoryService.findAllCategories());
-        return "blog/edit";
+        return "edit";
     }
 
     @PostMapping(value = "save")
@@ -63,7 +63,7 @@ public class BlogController {
     public String showView(@RequestParam("id") Long blogId, Model model) {
         Optional<Blog> blogEdit = blogService.findBlogById(blogId);
         blogEdit.ifPresent(blog -> model.addAttribute("blog", blog));
-        return "blog/view";
+        return "view";
     }
 
     @GetMapping(value = {"/"})
@@ -73,7 +73,7 @@ public class BlogController {
         if (keyword.isPresent()) {
             titleValue = keyword.get();
         }
-        ModelAndView modelAndView = new ModelAndView("/blog/index");
+        ModelAndView modelAndView = new ModelAndView("/index");
         Page<Blog> blogs = blogService.searchBlogByTitle(titleValue,pageable);
         modelAndView.addObject("titleValue",titleValue);
         modelAndView.addObject("blogs",blogs);
