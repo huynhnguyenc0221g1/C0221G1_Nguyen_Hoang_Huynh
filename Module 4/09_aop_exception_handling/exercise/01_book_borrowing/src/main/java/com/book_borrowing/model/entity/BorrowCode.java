@@ -8,7 +8,7 @@ public class BorrowCode {
     @Id
     private Long id;
     @ManyToOne
-    @JoinColumn(name = "book_id",referencedColumnName = "id")
+    @JoinColumn(name = "book_id", referencedColumnName = "id")
     private Book book;
 
     public BorrowCode() {

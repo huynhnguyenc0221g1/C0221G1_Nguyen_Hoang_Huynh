@@ -2,13 +2,14 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>View Book</title>
+    <title>Book's Detail</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
-  <h1>Book Information</h1>
-  <form th:action="@{/borrow-book/book}" method="post" th:object="${book}">
+  <h1>Book's Detail</h1>
+  <form th:action="@{/borrow-book/borrow}" method="post" th:object="${book}">
       <input type="hidden" th:field="*{id}">
-    <table border="1">
+    <table class="table table-striped table-dark">
         <tr>
             <td>Name:</td>
             <td><input type="text" th:field="*{name}"></td>

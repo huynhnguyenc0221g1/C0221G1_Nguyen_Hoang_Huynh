@@ -6,10 +6,7 @@ import java.util.List;
 
 public interface IBorrowCodeService {
     List<BorrowCode> findAll();
-
     void deleteById(Long id);
-
     void create(BorrowCode borrowCode);
-
     BorrowCode findById(Long id);
 }

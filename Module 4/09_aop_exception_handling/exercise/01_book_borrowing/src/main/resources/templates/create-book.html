@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Create Book</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
   <h1>Create Book</h1>
-  <form th:action="@{/create-book/creating}" th:object="${book}" method="post">
+  <form th:action="@{/create-book/create}" th:object="${book}" method="post">
     <table>
       <tr>
-        <td>Book Name: </td>
+        <td>Book's Name: </td>
         <td><input type="text" th:field="*{name}"></td>
       </tr>
       <tr>
-        <td>Quantity: </td>
+        <td>Quantity : </td>
         <td><input type="text" th:field="*{quantity}"></td>
       </tr>
       <tr><input type="submit" value="Save"></tr>

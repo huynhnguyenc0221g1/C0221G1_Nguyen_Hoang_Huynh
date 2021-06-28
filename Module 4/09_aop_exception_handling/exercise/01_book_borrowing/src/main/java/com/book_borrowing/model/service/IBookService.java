@@ -7,13 +7,9 @@ import java.util.List;
 
 public interface IBookService {
     List<Book> findAll();
-
     void createBook(Book book);
-
     Book findById(Integer id);
-
     void updateBook(Book book);
+    void giveBook(BorrowCode borrowCode);
 
-    void lendBook(BorrowCode borrowCode);
 }
-

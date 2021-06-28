@@ -1,21 +1,22 @@
-package com.book_borrowing.model.service.impl;
+package com.book_borrowing.model.service.Impl;
 
 import com.book_borrowing.model.entity.Book;
 import com.book_borrowing.model.entity.BorrowCode;
 import com.book_borrowing.model.repository.IBookRepository;
 import com.book_borrowing.model.service.IBookService;
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.stereotype.Service;
 import java.util.List;
 
+@Service
 public class BookService implements IBookService {
     @Autowired
     IBookRepository bookRepository;
-
     @Override
     public List<Book> findAll() {
         return bookRepository.findAll();
     }
+
 
     @Override
     public void createBook(Book book) {
@@ -33,7 +34,8 @@ public class BookService implements IBookService {
     }
 
     @Override
-    public void lendBook(BorrowCode borrowCode) {
-
+    public void giveBook(BorrowCode borrowCode) {
     }
+
+
 }

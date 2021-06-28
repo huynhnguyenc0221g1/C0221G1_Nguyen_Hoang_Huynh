@@ -12,7 +12,7 @@ public class Book {
     private String name;
     private Integer quantity;
     @OneToMany(mappedBy = "book",cascade = CascadeType.ALL)
-    private List<BorrowCode> BorrowCodeList;
+    private List<BorrowCode> borrowCodeList;
 
     public Book() {
     }
@@ -42,10 +42,10 @@ public class Book {
     }
 
     public List<BorrowCode> getBorrowCodeList() {
-        return BorrowCodeList;
+        return borrowCodeList;
     }
 
-    public void setBorrowCodeList(List<BorrowCode> BorrowCodeList) {
-        this.BorrowCodeList = BorrowCodeList;
+    public void setBorrowCodeList(List<BorrowCode> borrowCodeList) {
+        this.borrowCodeList = borrowCodeList;
     }
 }
