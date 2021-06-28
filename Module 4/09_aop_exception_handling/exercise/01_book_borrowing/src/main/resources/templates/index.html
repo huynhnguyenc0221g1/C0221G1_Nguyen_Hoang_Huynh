@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index Book Borrowing</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+    <h1>Library</h1>
+    <h2 th:text = "${codeId}"> </h2>
+    <h2 th:text="${message}" class="text-danger"></h2>
+    <h2><a th:href="@{/book-list}">View Books List</a></h2>
+    <h2><a th:href="@{/return-book}">Return Book</a></h2>
+</body>
+</html>
