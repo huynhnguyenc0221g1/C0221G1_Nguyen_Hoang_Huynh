@@ -1,0 +1,4 @@
+INSERT INTO `product` (`id`, `image_url`, `name`, `price`) VALUES ('1', 'https://cdn.tgdd.vn/Products/Images/42/213031/iphone-12-xanh-duong-200x200.jpg', 'iPhone', '1000');
+INSERT INTO `product` (`id`, `image_url`, `name`, `price`) VALUES ('2', 'https://cdn.tgdd.vn/Products/Images/42/226316/samsung-galaxy-s21-ultra-bac-600x600-1-200x200.jpg', 'Samsung', '1500');
+INSERT INTO `product` (`id`, `image_url`, `name`, `price`) VALUES ('3', 'https://cdn.tgdd.vn/Products/Images/42/232190/oppo-find-x3-pro-black-001-1-600x600.jpg', 'Oppo', '500');
+INSERT INTO `product` (`id`, `image_url`, `name`, `price`) VALUES ('4', 'https://cdn.tgdd.vn/Products/Images/42/235578/xiaomi-mi-11-ultra-600x600-2-600x600.jpg', 'Xiaomi', '800');

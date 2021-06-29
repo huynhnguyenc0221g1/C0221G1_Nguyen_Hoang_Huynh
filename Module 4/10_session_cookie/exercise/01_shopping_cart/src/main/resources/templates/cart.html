@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<p>
+    <h1><a class="ml-3" href="/shop">Shop</a></h1>
+</p>
+<h1 class="ml-3">Your Cart</h1>
+<form th:action="@{/shop}" th:object="${cart}" method="post">
+    <h5 class="ml-3">Total Items: <span th:text="${cart.countItemQuantity()}"></span></h5>
+    <h5 class="ml-3">Total Products: <span th:text="${cart.countProductQuantity()}"></span></h5>
+    <table class="table table-striped">
+        <tr>
+            <th>Item</th>
+            <th>Image</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        <tr th:each="product: ${cart.products}">
+            <td th:text="${product.getKey().name}"></td>
+            <td><img style="width: 200px" th:src="${product.getKey().getImageUrl()}"></td>
+            <td>
+                <a id="decrease_button" th:text="${'-'}"></a>
+                <span th:text="${product.getValue()}"></span>
+                <a id="increase_button" th:href="@{/add/__${product.getKey().id}__(action='show')}"
+                   th:text="${'+'}"></a>
+            </td>
+            <td th:text="${product.getKey().price}"></td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td class="text-right text-danger" colspan="3" th:text="${cart.countTotalPayment()}"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
