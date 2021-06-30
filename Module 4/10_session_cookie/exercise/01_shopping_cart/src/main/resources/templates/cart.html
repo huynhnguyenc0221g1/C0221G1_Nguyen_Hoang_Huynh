@@ -24,8 +24,10 @@
             <td th:text="${product.getKey().name}"></td>
             <td><img style="width: 200px" th:src="${product.getKey().getImageUrl()}"></td>
             <td>
+                <a class="h4" th:href="@{/change/__${product.getKey().id}__(action='-')}"
+                   th:text="${'-'}"></a>
                 <span th:text="${product.getValue()}"></span>
-                <a id="increase_button" th:href="@{/add/__${product.getKey().id}__(action='show')}"
+                <a class="h4" th:href="@{/change/__${product.getKey().id}__(action='+')}"
                    th:text="${'+'}"></a>
             </td>
             <td th:text="${product.getKey().price}"></td>

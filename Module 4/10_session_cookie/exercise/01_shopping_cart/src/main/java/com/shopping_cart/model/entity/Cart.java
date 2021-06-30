@@ -45,6 +45,24 @@ public class Cart {
         }
     }
 
+    public void changeCount(Product product, String action){
+        Map.Entry<Product, Integer> itemEntry = selectItemInCart(product);
+        Integer newQuantity;
+        if(action.equals("+")){
+            newQuantity = itemEntry.getValue() + 1;
+        }else {
+            newQuantity = itemEntry.getValue() - 1;
+        }
+        if(newQuantity == 0){
+            removeProduct(product);
+        }else {
+            products.replace(itemEntry.getKey(),newQuantity);
+        }
+    }
+    public void removeProduct(Product product){
+        this.products.remove(product);
+    }
+
     public Integer countProductQuantity(){
         Integer productQuantity = 0;
         for (Map.Entry<Product, Integer> entry : products.entrySet()) {

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product's Detail</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<p>
+<h1><a class="ml-3" href="/shop">Shop</a></h1>
+</p>
+<br>
+<h1 class="ml-3">Product's Detail</h1>
+<table class="table table-striped">
+  <tr>
+    <td>Name</td>
+    <td>Price</td>
+    <td>Image</td>
+  </tr>
+  <tr>
+    <td th:text="${product.name}"></td>
+    <td th:text="${product.price}"></td>
+    <td><img style="width: 200px" th:src="${product.imageUrl}"></td>
+  </tr>
+</table>
+</body>
+</html>
