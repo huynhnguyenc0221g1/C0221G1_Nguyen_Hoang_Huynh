@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Category</title>
+  <link type="text/css" rel="stylesheet" href="bootstrap.min.css" th:href="@{bootstrap.min.css}"/>
+</head>
+<body>
+<div class="col-3"></div>
+<div class="container col-6">
+  <h1>Edit Category</h1>
+  <div style="clear: both; display: block; height: 5px"></div>
+  <a th:href="@{/}" class="btn btn-warning">Back to Main Page</a>
+  <div style="clear: both; display: block; height: 5px"></div>
+  <a th:href="@{/category}" class="btn btn-warning">Back to Categories List</a>
+  <div style="clear: both; display: block; height: 20px"></div>
+  <form th:object="${category}" th:action="@{saveCategory}" action="#" method="post">
+    <input type="hidden" th:field="*{id}">
+    <div>
+      <label th:text="Name" th:for="name"></label>
+      <input type="text" th:field="*{name}" class="form-control"/>
+    </div>
+    <div style="clear: both; display: block; height: 10px"></div>
+    <input type="submit" class="btn btn-success" value="Save"/>
+  </form>
+</div>
+</body>
+</html>
