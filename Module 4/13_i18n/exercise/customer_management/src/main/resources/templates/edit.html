@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 th:text="#{edit.title}"></h1>
+<a href="?lang=vi">Vietnamese</a>
+<br>
+<a href="?lang=en">English</a>
+<br>
+<form th:action="@{/edit}" th:object="${customer}" method="post">
+    <input type="hidden" th:field="*{id}">
+    <table>
+        <tr>
+            <td th:text="#{name}"></td>
+            <td><input type="text" th:field="*{name}"></td>
+        </tr>
+        <tr>
+            <td th:text="#{province}"></td>
+            <td>
+                <select th:field="*{customerProvince}" >
+                    <option th:each="province : ${provinceList}"
+                            th:value="${province.id}"
+                            th:text="${province.name}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Update"></td>
+        </tr>
+    </table>
+
+</form>
+
+</body>
+</html>
