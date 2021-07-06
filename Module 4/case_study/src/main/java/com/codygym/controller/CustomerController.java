@@ -30,6 +30,16 @@ public class CustomerController {
         return customerService.findAllCustomerType();
     }
 
+    @GetMapping(value = "/list")
+    public String showListCustomer(Model model,
+                                   @PageableDefault(size = 2) Pageable pageable,
+                                   @RequestParam Optional<String> keyword) {
+        Page<Customer> customerList = customerService.findByName(keyword.orElse(""), pageable);
+        model.addAttribute("customers", customerList);
+        model.addAttribute("keyword", keyword.orElse(""));
+        return "/customer/list";
+    }
+
     @GetMapping(value = "/create")
     public String createCustomer(Model model) {
         model.addAttribute("customerDto", new CustomerDto());
@@ -48,19 +58,28 @@ public class CustomerController {
         return "redirect:/list";
     }
 
-    @GetMapping(value = "/list")
-    public String showListCustomer(Model model,
-                                   @PageableDefault(size = 2) Pageable pageable,
-                                   @RequestParam Optional<String> keyword) {
-        Page<Customer> customerList = customerService.findByName(keyword.orElse(""), pageable);
-        model.addAttribute("customers", customerList);
-        model.addAttribute("keyword", keyword.orElse(""));
-        return "/customer/list";
-
+    @GetMapping("/edit")
+    public String showEditForm(@RequestParam Long id, Model model) {
+        model.addAttribute("customer", customerService.findById(id));
+        return "/customer/edit";
     }
 
+    @PostMapping("/update")
+    public String updateCustomer(@ModelAttribute CustomerDto customerDto,
+                                 RedirectAttributes redirect) {
+        Customer customer = new Customer();
+        BeanUtils.copyProperties(customerDto, customer);
+        this.customerService.save(customer);
+
+        redirect.addFlashAttribute("success", "Updated product information successfully!");
+        return "redirect:/list";
+    }
+
+
+
+
     @GetMapping(value = "delete")
-    public String showDeleteCustomer(@RequestParam Long id, Model model) {
+    public String showDeleteForm(@RequestParam Long id, Model model) {
         model.addAttribute("customer", customerService.findById(id));
         return "/customer/delete";
 
@@ -73,21 +92,5 @@ public class CustomerController {
         return "redirect:/list";
     }
 
-    @GetMapping("/edit")
-    public String showEditForm(@RequestParam Long id, Model model) {
-        model.addAttribute("customer", customerService.findById(id));
-        return "/customer/edit";
-    }
-
-    @PostMapping("/update")
-    public String updateCustomer(@ModelAttribute CustomerDto customerDto,
-                                RedirectAttributes redirect) {
-        Customer customer = new Customer();
-        BeanUtils.copyProperties(customerDto, customer);
-        this.customerService.save(customer);
-
-        redirect.addFlashAttribute("success", "Updated product information successfully!");
-        return "redirect:/list";
-    }
 
 }
