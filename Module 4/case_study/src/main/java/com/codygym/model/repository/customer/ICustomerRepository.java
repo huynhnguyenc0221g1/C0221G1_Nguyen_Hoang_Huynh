@@ -8,10 +8,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ICustomerRepository  extends JpaRepository<Customer, Long> {
+public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
 
-    @Query(value = "select * from customer where `name` like %?1%", nativeQuery = true)
-    Page<Customer> findByName(String name, Pageable pageable);
-
-
+    @Query(value = "select * from customer where  customer_name like %?1% and flag=0 ", nativeQuery = true)
+    Page<Customer> findByCustomerNameContaining(String name, Pageable pageable);
 }

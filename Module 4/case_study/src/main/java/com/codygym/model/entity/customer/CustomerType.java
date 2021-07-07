@@ -3,32 +3,36 @@ package com.codygym.model.entity.customer;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity(name = "customerType")
-
+@Entity
 public class CustomerType {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long customerTypeId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
     private String customerTypeName;
 
-    @OneToMany(mappedBy = "customerType")
-    private List<Customer> customerList;
+    @OneToMany(targetEntity = Customer.class)
+    private List<Customer> customers;
 
     public CustomerType() {
     }
 
-    public CustomerType(Long customerTypeId, String customerTypeName, List<Customer> customerList) {
-        this.customerTypeId = customerTypeId;
+    public CustomerType(String customerTypeName, List<Customer> customers) {
         this.customerTypeName = customerTypeName;
-        this.customerList = customerList;
+        this.customers = customers;
     }
 
-    public Long getCustomerTypeId() {
-        return customerTypeId;
+    public CustomerType(Integer id, String customerTypeName, List<Customer> customers) {
+        this.id = id;
+        this.customerTypeName = customerTypeName;
+        this.customers = customers;
     }
 
-    public void setCustomerTypeId(Long customerTypeId) {
-        this.customerTypeId = customerTypeId;
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getCustomerTypeName() {
@@ -39,11 +43,11 @@ public class CustomerType {
         this.customerTypeName = customerTypeName;
     }
 
-    public List<Customer> getCustomerList() {
-        return customerList;
+    public List<Customer> getCustomers() {
+        return customers;
     }
 
-    public void setCustomerList(List<Customer> customerList) {
-        this.customerList = customerList;
+    public void setCustomers(List<Customer> customers) {
+        this.customers = customers;
     }
 }

@@ -2,41 +2,39 @@ package com.codygym.model.entity.service;
 
 import javax.persistence.*;
 import java.util.List;
+
 @Entity
 public class RentType {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long rentTypeId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private  Integer id;
     private String rentTypeName;
-    private Double rentTypeCost;
-
-    @OneToMany(mappedBy = "rentType")
-    List<Service> serviceList;
-
-    public List<Service> getServiceList() {
-        return serviceList;
-    }
-
-    public void setServiceList(List<Service> serviceList) {
-        this.serviceList = serviceList;
-    }
-
-    public RentType(Long rentTypeId, String rentTypeName, Double rentTypeCost, List<Service> serviceList) {
-        this.rentTypeId = rentTypeId;
-        this.rentTypeName = rentTypeName;
-        this.rentTypeCost = rentTypeCost;
-        this.serviceList = serviceList;
-    }
+    private double rentTypeCost;
+    @OneToMany(targetEntity = Service.class)
+    List<Service> services;
 
     public RentType() {
     }
 
-    public Long getRentTypeId() {
-        return rentTypeId;
+    public RentType(String rentTypeName, double rentTypeCost, List<Service> services) {
+        this.rentTypeName = rentTypeName;
+        this.rentTypeCost = rentTypeCost;
+        this.services = services;
     }
 
-    public void setRentTypeId(Long rentTypeId) {
-        this.rentTypeId = rentTypeId;
+    public RentType(Integer id, String rentTypeName, double rentTypeCost, List<Service> services) {
+        this.id = id;
+        this.rentTypeName = rentTypeName;
+        this.rentTypeCost = rentTypeCost;
+        this.services = services;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getRentTypeName() {
@@ -47,11 +45,19 @@ public class RentType {
         this.rentTypeName = rentTypeName;
     }
 
-    public Double getRentTypeCost() {
+    public double getRentTypeCost() {
         return rentTypeCost;
     }
 
-    public void setRentTypeCost(Double rentTypeCost) {
+    public void setRentTypeCost(double rentTypeCost) {
         this.rentTypeCost = rentTypeCost;
+    }
+
+    public List<Service> getServices() {
+        return services;
+    }
+
+    public void setServices(List<Service> services) {
+        this.services = services;
     }
 }

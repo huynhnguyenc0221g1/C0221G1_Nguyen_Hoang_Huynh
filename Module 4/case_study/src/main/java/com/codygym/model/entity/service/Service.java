@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 public class Service {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private  Integer id;
     private  String serviceName;
     private  String serviceCode;
@@ -16,20 +16,35 @@ public class Service {
     private String descriptionOtherConvenience;
     private  double poolArea;
     private int numberOfFloors;
+    @ManyToOne(targetEntity = ServiceType.class)
+    @JoinColumn(name = "service_type_id", referencedColumnName = "id")
+    private  ServiceType serviceType;
 
-    @ManyToOne
-    @JoinColumn(name = "service_type_id", referencedColumnName = "serviceTypeId")
-    private ServiceType serviceType;
-
-    @ManyToOne
-    @JoinColumn(name = "rent_type_id", referencedColumnName = "rentTypeId")
-    private RentType rentType;
+    @ManyToOne(targetEntity = RentType.class)
+    @JoinColumn(name = "rent_type_id",referencedColumnName = "id")
+    private  RentType rentType;
 
     public Service() {
     }
 
-    public Service(Integer id, String serviceName, String serviceCode, int serviceArea, double serviceCost, int serviceMaxPeople, String standardRoom, String descriptionOtherConvenience, double poolArea, int numberOfFloors, ServiceType serviceType, RentType rentType) {
+    public Service(Integer id, String serviceName, String serviceCode, int serviceArea, double serviceCost, int serviceMaxPeople, String standardRoom,
+                   String descriptionOtherConvenience, double poolArea, int numberOfFloors, ServiceType serviceType, RentType rentType) {
         this.id = id;
+        this.serviceName = serviceName;
+        this.serviceCode = serviceCode;
+        this.serviceArea = serviceArea;
+        this.serviceCost = serviceCost;
+        this.serviceMaxPeople = serviceMaxPeople;
+        this.standardRoom = standardRoom;
+        this.descriptionOtherConvenience = descriptionOtherConvenience;
+        this.poolArea = poolArea;
+        this.numberOfFloors = numberOfFloors;
+        this.serviceType = serviceType;
+        this.rentType = rentType;
+    }
+
+    public Service(String serviceName, String serviceCode, int serviceArea, double serviceCost, int serviceMaxPeople,
+                   String standardRoom, String descriptionOtherConvenience, double poolArea, int numberOfFloors, ServiceType serviceType, RentType rentType) {
         this.serviceName = serviceName;
         this.serviceCode = serviceCode;
         this.serviceArea = serviceArea;
@@ -57,14 +72,6 @@ public class Service {
 
     public void setServiceName(String serviceName) {
         this.serviceName = serviceName;
-    }
-
-    public String getServiceCode() {
-        return serviceCode;
-    }
-
-    public void setServiceCode(String serviceCode) {
-        this.serviceCode = serviceCode;
     }
 
     public int getServiceArea() {
@@ -137,5 +144,13 @@ public class Service {
 
     public void setRentType(RentType rentType) {
         this.rentType = rentType;
+    }
+
+    public String getServiceCode() {
+        return serviceCode;
+    }
+
+    public void setServiceCode(String serviceCode) {
+        this.serviceCode = serviceCode;
     }
 }
