@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/bootraps_min/bootstrap.min.css">
+
+</head>
+<body>
+<div th:fragment="header">
+    <div class="container-fluid -3 mb-3 d-flex align-items-center justify-content-between bg-success"
+         style="height: 60px">
+        <div class="d-flex justify-content-around " style="width: 100%">
+            <a href="/" style="color: white">Home</a>
+            <a href="/employees" style="color: white">Employee</a>
+            <a href="/customers" style="color: white">Customer</a>
+            <a href="/services" style="color: white">Service</a>
+            <a href="/contracts/create" style="color: white">Contract</a>
+            <a href="/details/create" style="color: white">Contract Detail</a>
+        </div>
+    </div>
+</div>
+<th:block th:fragment="footer">
+    <script src="/bootraps_min/bootstrap.min.js"></script>
+<script src="/bootraps_min/jquery-3.6.0.min.js"></script>
+<script src="/bootraps_min/popper.min.js"></script>
+</th:block>
+</body>
+</html>

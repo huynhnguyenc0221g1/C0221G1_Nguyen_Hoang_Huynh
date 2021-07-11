@@ -1,0 +1,79 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head th:insert="layout :: head">-->
+<!--  <meta charset="UTF-8">-->
+<!--  <title>Title</title>-->
+
+<!--</head>-->
+<!--<body>-->
+<!--<style>-->
+<!--  small{-->
+<!--    color: red;-->
+<!--  }-->
+<!--</style>-->
+<!--<div th:insert="layout :: header" ></div>-->
+<!--<div class="container-fluid d-flex justify-content-center">-->
+<!--  <h1>Edit Contract</h1>-->
+<!--</div>-->
+<!--<p style="color: #005cbf" th:text="${msg}"></p>-->
+<!--<div class="container d-flex ">-->
+<!--  <form action="/contracts/create" style="width: 70%;margin-left: 155px" method="post" th:object="${contractDto}">-->
+<!--    <div class="form-group row">-->
+<!--      <label for="inputName" class="col-sm-3 col-form-label">Contract Start Date</label>-->
+<!--      <div class="col-sm-6">-->
+<!--        <input type="date" class="form-control" id="inputName" th:field="*{contractStartDate}">-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="form-group row">-->
+<!--      <label for="inputDate" class="col-sm-3 col-form-label">Contract End Date</label>-->
+<!--      <div class="col-sm-6">-->
+<!--        <input type="date" class="form-control" id="inputDate" th:field="*{contractEndDate}">-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="form-group row">-->
+<!--      <label for="inputIdCard" class="col-sm-3 col-form-label">Deposit</label>-->
+<!--      <div class="col-sm-6">-->
+<!--        <input type="number" class="form-control" id="inputIdCard" th:field="*{contractDeposit}">-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div class="form-group row">-->
+<!--      <label for="inputType" class="col-sm-3 col-form-label">Customer</label>-->
+<!--      <div class="col-sm-6">-->
+<!--        <select th:field="*{customer}" id="inputType">-->
+<!--          <option th:each="c : ${customers}"-->
+<!--                  th:value="${c.customerId}"-->
+<!--                  th:text="${c.customerName}"></option>-->
+<!--        </select>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="form-group row">-->
+<!--      <label for="inputType1" class="col-sm-3 col-form-label">Employee</label>-->
+<!--      <div class="col-sm-6">-->
+<!--        <select th:field="*{employee}" id="inputType1">-->
+<!--          <option th:each="e : ${employees}"-->
+<!--                  th:value="${e.employeeId}"-->
+<!--                  th:text="${e.name}"></option>-->
+<!--        </select>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="form-group row">-->
+<!--      <label for="inputType2" class="col-sm-3 col-form-label">Service</label>-->
+<!--      <div class="col-sm-6">-->
+<!--        <select th:field="*{service}" id="inputType2">-->
+<!--          <option th:each="s : ${services}"-->
+<!--                  th:value="${s.serviceId}"-->
+<!--                  th:text="${s.serviceName}"></option>-->
+<!--        </select>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div class="d-flex ">-->
+<!--      <a href="/" class="btn btn-secondary" style="margin-left: 200px">Back to home</a>-->
+<!--      <input type="submit" class="btn btn-success" style="margin-left: 174px;width: 100px" value="Create">-->
+<!--    </div>-->
+
+<!--  </form>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->

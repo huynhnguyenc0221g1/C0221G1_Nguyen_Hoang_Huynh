@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="layout :: head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<style>
+    small{
+        color: red;
+    }
+</style>
+<div th:insert="layout :: header" ></div>
+<div class="container-fluid d-flex justify-content-center">
+    <h1>Create New Service</h1>
+</div>
+<div class="container d-flex ">
+    <form action="/services/create" style="width: 70%;margin-left: 155px" method="post" th:object="${serviceDto}">
+
+        <div class="form-group row">
+            <label  class="col-sm-3 col-form-label">Type Service </label>
+            <div class="col-sm-6">
+                <select id="serviceTypeId" th:field="*{serviceType}"
+                        onchange="changeCreate(this.value)" >
+                    <option th:each="s : ${serviceTypes}"
+                    th:value="${s.serviceTypeId}"
+                    th:text="${s.serviceTypeName}"></option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputName" class="col-sm-3 col-form-label">Service Name</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="inputName" th:field="*{serviceName}">
+                <small th:errors="*{serviceName}"></small>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputDate" class="col-sm-3 col-form-label">Area</label>
+            <div class="col-sm-6">
+                <input type="number" class="form-control" id="inputDate" th:field="*{area}">
+                <small th:errors="*{area}"></small>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputGender" class="col-sm-3 col-form-label">Cost</label>
+            <div class="col-sm-6">
+                <input type="number" class="form-control" id="inputGender" th:field="*{cost}">
+                <small th:errors="*{cost}"></small>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputIdCard" class="col-sm-3 col-form-label">Max people</label>
+            <div class="col-sm-6">
+                <input type="number" class="form-control" id="inputIdCard" th:field="*{maxPeople}">
+                <small th:errors="*{maxPeople}"></small>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label  class="col-sm-3 col-form-label">Type of rent</label>
+            <div class="col-sm-6">
+                <select th:field="*{rentType}" >
+                    <option th:each="t : ${rentTypes}"
+                    th:value="${t.rentTypeId}"
+                    th:text="${t.rentTypeName}"></option>
+                </select>
+            </div>
+        </div>
+        <div id="divStandardRoom">
+            <div class="form-group row" >
+                <label for="inputEmail" class="col-sm-3 col-form-label">Standard room</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="inputEmail" th:field="*{standardRoom}">
+                    <small th:errors="*{standardRoom}"></small>
+                </div>
+            </div>
+        </div>
+        <div id="divDescription">
+            <div class="form-group row" >
+                <label for="inputType" class="col-sm-3 col-form-label">Description</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="inputType" th:field="*{description}">
+                    <small th:errors="*{description}"></small>
+                </div>
+            </div>
+        </div>
+        <div id="divPoolArea">
+            <div class="form-group row" >
+                <label for="inputPool" class="col-sm-3 col-form-label">Pool area</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="inputPool" th:field="*{poolArea}">
+                    <small th:errors="*{poolArea}"></small>
+                </div>
+            </div>
+        </div>
+        <div id="divNumberFloor">
+            <div class="form-group row" >
+                <label for="inpurfloor" class="col-sm-3 col-form-label">Number of floor</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="inpurfloor" th:field="*{numberFloor}">
+                    <small th:errors="*{numberFloor}"></small>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex ">
+            <a href="/services" class="btn btn-secondary " style="margin-left: 200px">Back to list</a>
+            <input type="submit" class="btn btn-success" style="margin-left: 174px;width: 100px" value="Create">
+        </div>
+
+    </form>
+</div>
+
+<script src="/bootraps_min/jquery-3.6.0.min.js"></script>
+<script src="/bootraps_min/popper.min.js"></script>
+<script src="/bootraps_min/bootstrap.min.js"></script>
+<script>
+    function changeCreate(value) {
+        document.getElementById("divStandardRoom").style.display = "block";
+        document.getElementById("divDescription").style.display = "block";
+        document.getElementById("divNumberFloor").style.display = "block";
+        document.getElementById("divPoolArea").style.display = "block";
+
+        if (value == 2){
+            document.getElementById("divPoolArea").style.display = "none";
+        }
+        if (value==3){
+            document.getElementById("divStandardRoom").style.display = "none";
+            document.getElementById("divDescription").style.display = "none";
+            document.getElementById("divNumberFloor").style.display = "none";
+            document.getElementById("divPoolArea").style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>

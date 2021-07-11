@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="layout :: head">
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+</head>
+<body>
+<style>
+  small{
+    color: red;
+  }
+</style>
+<div th:insert="layout :: header" ></div>
+<div class="container-fluid d-flex justify-content-center">
+  <h1>Create New Contract Detail</h1>
+</div>
+<p style="color: #005cbf" th:text="${msg}"></p>
+<div class="container d-flex ">
+  <form action="/details/create" style="width: 70%;margin-left: 155px" method="post" th:object="${contractDetail}">
+    <div class="form-group row">
+      <label for="inputType" class="col-sm-3 col-form-label">Id Contract</label>
+      <div class="col-sm-6">
+        <select th:field="*{contract}" id="inputType">
+          <option th:each="c : ${contracts}"
+          th:value="${c.contractId}"
+          th:text="${c.contractId}"></option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputType1" class="col-sm-3 col-form-label">Attach Service</label>
+      <div class="col-sm-6">
+        <select th:field="*{attachService}" id="inputType1">
+          <option th:each="a : ${attachServices}"
+          th:value="${a.attachServiceId}"
+          th:text="${a.name}"></option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputIdCard" class="col-sm-3 col-form-label">Quantity</label>
+      <div class="col-sm-6">
+        <input type="number" class="form-control" id="inputIdCard" th:field="*{quantity}" value="0">
+      </div>
+    </div>
+
+
+    <div class="d-flex ">
+      <a href="/" class="btn btn-secondary" style="margin-left: 200px">Back to home</a>
+      <input type="submit" class="btn btn-success" style="margin-left: 174px;width: 100px" value="Create">
+    </div>
+
+  </form>
+</div>
+</body>
+</html>
