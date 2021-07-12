@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="layout :: head">
     <meta charset="UTF-8">
-    <title>ERROR</title>
 </head>
 <body>
-403
+<html>
+
+<body >
+<div class="container-fluid align-items-center justify-content-between d-flex bg-success" style="height: 60px">
+    <div class=""><img src="../../img/FURAMA.png" width="100px"/></div>
+    <div class="col-md-2 h6 text-white">
+        <th:block th:if="${#request.userPrincipal==null}">
+            <a href="/login"> <button class="btn btn-primary"> Login </button></a>
+        </th:block>
+
+        <th:block th:if="${#request.userPrincipal!=null}">
+            <span th:text="${#request.userPrincipal.name}"></span>
+            <a href="/logout"> <button class="btn btn-danger"> Logout</button></a>
+        </th:block>
+    </div>
+</div>
+<div th:insert="layout :: header" class="my-3"></div>
+
+<div class="h1 text-danger"><span>ACCESS DENIED!</span></div>
+
+<!--footer-->
+<div class="container-fluid  d-flex justify-content-center align-items-center bg-success" style="height: 60px;clear: bottom">
+    <p class="text-white h3">Furama Resort @ 2021</p>
+</div>
+<script th:insert="layout :: footer">
+
+</script>
 </body>
 </html>

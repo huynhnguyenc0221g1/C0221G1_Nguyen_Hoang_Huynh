@@ -26,8 +26,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
-        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-        return bCryptPasswordEncoder;
+        return new BCryptPasswordEncoder();
     }
 
     @Autowired
@@ -48,6 +47,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers( "/login", "/logout","/home").permitAll();
 
         // Trang /userInfo yêu cầu phải login với vai trò ROLE_USER hoặc ROLE_ADMIN.
+        http.authorizeRequests().antMatchers("/employees").access("hasAnyRole('ROLE_ADMIN','ROLE_USER')");
+        http.authorizeRequests().antMatchers("/contracts").access("hasAnyRole('ROLE_ADMIN','ROLE_USER')");
+        http.authorizeRequests().antMatchers("/details").access("hasAnyRole('ROLE_ADMIN','ROLE_USER')");
+        http.authorizeRequests().antMatchers("/customers").access("hasAnyRole('ROLE_ADMIN','ROLE_USER')");
+        http.authorizeRequests().antMatchers("/services").access("hasAnyRole('ROLE_ADMIN','ROLE_USER')");
+
+
         // Nếu chưa login, nó sẽ redirect tới trang /login.
 
         // Trang chỉ dành cho ADMIN

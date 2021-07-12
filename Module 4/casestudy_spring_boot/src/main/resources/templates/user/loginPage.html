@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:insert="layout :: head">
 <body>
-
+<div class="col-lg-6 justify-content-center align-items-center my-auto mx-auto">
 <h1>Login</h1>
 <div th:if="${#request.getParameter('error') == 'true'}"
      style="color:red;margin:10px 0px;">
@@ -43,7 +43,7 @@ Username/pass (For demo testing):
     <li>user/123</li>
     <li>admin/123</li>
 </ul>
-
+</div>
 </body>
 
 </html>

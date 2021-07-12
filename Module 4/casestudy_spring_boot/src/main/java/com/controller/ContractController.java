@@ -48,19 +48,8 @@ public class ContractController {
         return service.findAll("",pageable);
     }
 
-
-    @GetMapping(value = {""})
-    public ModelAndView goList(@RequestParam("keyWord") Optional<String> keyWord,
-                               @RequestParam("page") Optional<Integer> page) {
-        Pageable pageable= PageRequest.of(page.orElse(0),5);
-        Page<Contract> contracts = contractService.findAll(keyWord.orElse(""),pageable);
-        ModelAndView modelAndView = new ModelAndView("customerUsingService/list","contracts",contracts);
-        modelAndView.addObject("keyWord", keyWord.orElse(""));
-        return modelAndView;
-    }
-
     @GetMapping("create")
-    public ModelAndView showFormCreate(){
+    public ModelAndView showCreateForm(){
         ModelAndView modelAndView = new ModelAndView("contract/create");
         modelAndView.addObject("contractDto", new ContractDto());
         return modelAndView;
@@ -77,7 +66,17 @@ public class ContractController {
         Contract contract = new Contract();
         BeanUtils.copyProperties(contractDto,contract);
         contractService.save(contract);
-        redirectAttributes.addFlashAttribute("msg","Create new contract successfully!!!");
+        redirectAttributes.addFlashAttribute("msg","Successfully created new contract!");
         return "contract/create";
+    }
+
+    @GetMapping(value = {""})
+    public ModelAndView showCustomerUsingServiceList(@RequestParam("keyWord") Optional<String> keyWord,
+                                                     @RequestParam("page") Optional<Integer> page) {
+        Pageable pageable= PageRequest.of(page.orElse(0),5);
+        Page<Contract> contracts = contractService.findAll(keyWord.orElse(""),pageable);
+        ModelAndView modelAndView = new ModelAndView("customerUsingService/list","contracts",contracts);
+        modelAndView.addObject("keyWord", keyWord.orElse(""));
+        return modelAndView;
     }
 }

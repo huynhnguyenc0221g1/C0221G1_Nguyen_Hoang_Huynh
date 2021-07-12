@@ -36,8 +36,8 @@ public class ServiceController {
         return service.listServiceType();
     }
     @GetMapping(value = "")
-    public ModelAndView goList(@RequestParam("keyWord") Optional<String> keyWord,
-                               @RequestParam("page") Optional<Integer> page) {
+    public ModelAndView showServiceList(@RequestParam("keyWord") Optional<String> keyWord,
+                                        @RequestParam("page") Optional<Integer> page) {
         Pageable pageable= PageRequest.of(page.orElse(0),5);
         Page<Service> services = service.findAll(keyWord.orElse(""),pageable);
         ModelAndView modelAndView = new ModelAndView("service/list","services",services);
@@ -62,7 +62,7 @@ public class ServiceController {
         Service service = new Service();
         BeanUtils.copyProperties(serviceDto,service);
         this.service.save(service);
-        redirectAttributes.addFlashAttribute("msg","create service successfully");
+        redirectAttributes.addFlashAttribute("msg","Successfully created the service!");
         return "redirect:/services";
     }
 }

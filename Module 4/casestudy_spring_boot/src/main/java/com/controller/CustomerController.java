@@ -32,8 +32,8 @@ public class CustomerController {
     }
 
     @GetMapping(value = {""})
-    public ModelAndView goList(@RequestParam("keyWord") Optional<String> keyWord,
-                               @RequestParam("page") Optional<Integer> page) {
+    public ModelAndView showCustomerList(@RequestParam("keyWord") Optional<String> keyWord,
+                                         @RequestParam("page") Optional<Integer> page) {
         Pageable pageable= PageRequest.of(page.orElse(0),5);
         Page<Customer> customers = customerService.findAll(keyWord.orElse(""),pageable);
         ModelAndView modelAndView = new ModelAndView("customer/list","customers",customers);
@@ -42,7 +42,7 @@ public class CustomerController {
     }
 
     @GetMapping(value = "create")
-    public String showFormCreate(Model model){
+    public String showCreateForm(Model model){
         model.addAttribute("customerDto",new CustomerDto());
         return "customer/create";
     }
@@ -58,12 +58,12 @@ public class CustomerController {
         Customer customer = new Customer();
         BeanUtils.copyProperties(customerDto,customer);
         this.customerService.save(customer);
-        redirectAttributes.addFlashAttribute("msg","Create new Customer successfully!!!");
+        redirectAttributes.addFlashAttribute("msg","Successfully created new customer!");
         return "redirect:/customers";
     }
 
     @GetMapping(value = "edit")
-    public String showFormEdit(@RequestParam Long id,Model model){
+    public String showEditForm(@RequestParam Long id, Model model){
         Customer customer = this.customerService.findById(id);
         CustomerDto customerDto = new CustomerDto();
         BeanUtils.copyProperties(customer,customerDto);
@@ -82,16 +82,14 @@ public class CustomerController {
         Customer customer = new Customer();
         BeanUtils.copyProperties(customerDto,customer);
         customerService.save(customer);
-        redirectAttributes.addFlashAttribute("msg","Update customer information successfully!!!");
+        redirectAttributes.addFlashAttribute("msg","Successfully updated customer's information!!");
         return "redirect:/customers";
     }
 
     @PostMapping(value = "delete")
     public String deleteCustomer(@RequestParam Long id,RedirectAttributes redirectAttributes){
         this.customerService.remove(id);
-        redirectAttributes.addFlashAttribute("msg","Delete successfully!!!");
+        redirectAttributes.addFlashAttribute("msg","Successfully deleted the customer!");
         return "redirect:/customers";
-
     }
-
 }

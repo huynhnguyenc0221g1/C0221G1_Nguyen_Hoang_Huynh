@@ -10,9 +10,9 @@
      style="height: 60px">
     <div class=""><img src="../../img/FURAMA.png" width="100px"/></div>
     <h1 class="d-flex justify-content-center text-white">Customer List</h1>
-    <div class="col-md-2 h6 text-white">
+    <div class="col-md-2 h5 ml-5 text-white">
         <th:block th:if="${#request.userPrincipal==null}">
-            <a href="/login"> <button class="btn btn-primary"> Login </button></a>
+            <a href="/login"> <button class="btn btn-light"> Login </button></a>
         </th:block>
 
         <th:block th:if="${#request.userPrincipal!=null}">
@@ -24,14 +24,12 @@
 <div th:insert="layout :: header" class="my-3"></div>
 <p style="color: #005cbf" th:text="${msg}"></p>
 <div class="d-flex justify-content-between my-3">
-    <a href="/customers/create" class="btn btn-info" style="border-radius: 5px">Create new customer</a>
+    <a href="/customers/create" class="btn btn-success ml-3" style="border-radius: 5px">Create new customer</a>
+    <a href="/contracts" class="btn btn-warning ml-3" style="border-radius: 5px">Customer Using Service</a>
     <form class="form-inline my-2 my-lg-0 d-flex" >
         <input class="form-control mr-sm-2" type="text" placeholder="Search" name="keyWord">
-        <button class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
+        <button class="btn btn-dark my-2 my-sm-0 mr-5" type="submit">Search</button>
     </form>
-</div>
-<div>
-    <a href="/contracts" class="btn btn-info" style="border-radius: 5px">Customer Using Service</a>
 </div>
 
 <!--content body-->

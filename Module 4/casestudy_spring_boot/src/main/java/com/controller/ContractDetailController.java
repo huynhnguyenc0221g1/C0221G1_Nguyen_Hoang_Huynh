@@ -36,7 +36,7 @@ public class ContractDetailController {
     }
 
     @GetMapping(value = "create")
-    public String showFormCreate(Model model){
+    public String showCreateForm(Model model){
         model.addAttribute("contractDetail",new ContractDetail());
         return "contractDetail/create";
     }
@@ -45,8 +45,7 @@ public class ContractDetailController {
     public String createContractDetail(@ModelAttribute ContractDetail contractDetail,
                                        Model model){
         this.contractDetailService.save(contractDetail);
-        model.addAttribute("msg","create successfully");
+        model.addAttribute("msg","Successfully created contract's detail!");
         return "contractDetail/create";
     }
-
 }

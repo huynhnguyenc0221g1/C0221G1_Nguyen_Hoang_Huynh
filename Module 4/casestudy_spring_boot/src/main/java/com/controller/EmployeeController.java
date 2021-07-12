@@ -42,8 +42,8 @@ public class EmployeeController {
     }
 
     @GetMapping(value = "")
-    public ModelAndView goList(@RequestParam("keyWord") Optional<String> keyWork,
-                               @RequestParam("page") Optional<Integer> page){
+    public ModelAndView showEmployeeList(@RequestParam("keyWord") Optional<String> keyWork,
+                                         @RequestParam("page") Optional<Integer> page){
         Pageable pageable = PageRequest.of(page.orElse(0),5);
         Page<Employee> employees = this.employeeService.findAll(keyWork.orElse(""),pageable);
         ModelAndView modelAndView = new ModelAndView("employee/list","employees",employees);
@@ -52,7 +52,7 @@ public class EmployeeController {
     }
 
     @GetMapping(value = "create")
-    public ModelAndView showFormCreate(){
+    public ModelAndView showCreateForm(){
         ModelAndView modelAndView = new ModelAndView("employee/create",
                 "employeeDto",new EmployeeDto());
         return modelAndView;
@@ -69,12 +69,12 @@ public class EmployeeController {
         Employee employee = new Employee();
         BeanUtils.copyProperties(employeeDto,employee);
         this.employeeService.save(employee);
-        redirectAttributes.addFlashAttribute("msg","create successfully");
+        redirectAttributes.addFlashAttribute("msg","Successfully created the employee!");
         return "redirect:/employees";
     }
 
     @GetMapping(value = "edit")
-    public String showFormEdit(@RequestParam Long id, Model model){
+    public String showEditForm(@RequestParam Long id, Model model){
         Employee employee = this.employeeService.findById(id);
         EmployeeDto employeeDto = new EmployeeDto();
         BeanUtils.copyProperties(employee,employeeDto);
@@ -93,14 +93,14 @@ public class EmployeeController {
         Employee employee = new Employee();
         BeanUtils.copyProperties(employeeDto,employee);
         this.employeeService.save(employee);
-        redirectAttributes.addFlashAttribute("msg","edit successfully");
+        redirectAttributes.addFlashAttribute("msg","Successfully updated the employee's information!");
         return "redirect:/employees";
     }
 
     @PostMapping(value = "delete")
     public String deleteEmployee(@RequestParam Long id,RedirectAttributes redirectAttributes){
         this.employeeService.remove(id);
-        redirectAttributes.addFlashAttribute("msg","delete successfully");
+        redirectAttributes.addFlashAttribute("msg","Successfully deleted the employee!");
         return "redirect:/employees";
     }
 }
