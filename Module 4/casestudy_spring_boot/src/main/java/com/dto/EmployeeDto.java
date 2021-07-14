@@ -143,10 +143,10 @@ public class EmployeeDto implements Validator {
     public void validate(Object target, Errors errors) {
         EmployeeDto employeeDto = (EmployeeDto) target;
 
-        if (!employeeDto.phone.matches("^(090|091)[0-9]{7}$")) {
-            errors.rejectValue("phone", "employee.validPhone", "Employee's Phone must have the format: 091xxxxxxx or 090xxxxxxx");
+        if (!employeeDto.phone.matches("^[0-9]{10}$")) {
+            errors.rejectValue("phone", "employee.validPhone", "Employee's Phone must contain 10 digits");
         }
-        if (!employeeDto.idCard.matches("^[0-9]{9,10}$")) {
+        if (!employeeDto.idCard.matches("^[0-9]{10}$")) {
             errors.rejectValue("idCard", "employee.validIdCard", "Employee's ID Card must contain 10 digits");
         }
         if (!employeeDto.salary.matches("^[0-9]+$")) {

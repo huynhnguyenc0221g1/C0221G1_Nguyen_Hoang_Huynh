@@ -21,7 +21,7 @@
     </div>
 </div>
 <div th:insert="layout :: header" class="my-3"></div>
-<p style="color: #005cbf" th:text="${msg}"></p>
+<p class="ml-3" style="color: #005cbf" th:text="${msg}"></p>
 <div class="d-flex justify-content-between my-3">
     <a href="/services/create" class="btn btn-success ml-3" style="border-radius: 5px">Create new service</a>
     <form class="form-inline my-2 my-lg-0 d-flex">
@@ -69,7 +69,7 @@
         </tbody>
     </table>
 </div>
-<div>
+<div class="ml-3">
     <a th:href="@{/services(page=${services.number - 1},keyWord=${keyWord})}" th:if="${services.hasPrevious()}">Previous</a>
     <span th:text="${services.number+1}"></span>/<span th:text="${services.totalPages}"></span>
     <a th:href="@{/services(page=${services.number + 1},keyWord=${keyWord})}" th:if="${services.hasNext()}">Next</a>

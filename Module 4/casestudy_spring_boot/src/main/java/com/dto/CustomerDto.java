@@ -133,10 +133,10 @@ public class CustomerDto implements Validator {
         if (!customerDto.customerCode.matches("^KH-[0-9]{4}$")) {
             errors.rejectValue("customerCode", "customer.validCode", "Customer's code must have the format: KH-XXXX");
         }
-        if (!customerDto.customerPhone.matches("^(090|091)[0-9]{7}$")) {
-            errors.rejectValue("customerPhone", "customer.validPhone", "Customer's phone must have the format: 091xxxxxxx or 090xxxxxxx");
+        if (!customerDto.customerPhone.matches("^[0-9]{10}$")) {
+            errors.rejectValue("customerPhone", "customer.validPhone", "Customer's phone must contain 10 digits");
         }
-        if (!customerDto.customerIdCard.matches("^[0-9]{9,10}$")) {
+        if (!customerDto.customerIdCard.matches("^[0-9]{10}$")) {
             errors.rejectValue("customerIdCard", "customer.validIdcard", "Customer ID Card must contain 10 digits");
         }
     }

@@ -22,7 +22,7 @@
     </div>
 </div>
 <div th:insert="layout :: header" class="my-3"></div>
-<p style="color: #005cbf" th:text="${msg}"></p>
+<p class="ml-3" style="color: #005cbf" th:text="${msg}"></p>
 <div class="d-flex justify-content-between my-3">
     <a href="/employees/create" class="btn btn-success ml-3" style="border-radius: 5px">Create new employee</a>
     <form class="form-inline my-2 my-lg-0 d-flex" >
@@ -95,7 +95,7 @@
         </div>
     </div>
 </div>
-<div>
+<div class="ml-3">
     <a class="btn btn-info" th:href="@{/employees(page=${employees.number - 1},keyWord=${keyWord})}" th:if="${employees.hasPrevious()}">Previous</a>
     <span th:text="${employees.number+1}"></span>/<span th:text="${employees.totalPages}"></span>
     <a class="btn btn-info" th:href="@{/employees(page=${employees.number + 1},keyWord=${keyWord})}" th:if="${employees.hasNext()}">Next</a>
