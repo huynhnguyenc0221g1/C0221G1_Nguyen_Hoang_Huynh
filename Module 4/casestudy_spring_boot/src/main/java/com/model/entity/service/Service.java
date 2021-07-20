@@ -11,6 +11,8 @@ public class Service {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long serviceId;
     @Column(nullable = false)
+    private String serviceCode;
+    @Column(nullable = false)
     private String serviceName;
     private String area;
     @Column(nullable = false)
@@ -59,6 +61,14 @@ public class Service {
 
     public void setServiceId(Long serviceId) {
         this.serviceId = serviceId;
+    }
+
+    public String getServiceCode() {
+        return serviceCode;
+    }
+
+    public void setServiceCode(String serviceCode) {
+        this.serviceCode = serviceCode;
     }
 
     public String getServiceName() {

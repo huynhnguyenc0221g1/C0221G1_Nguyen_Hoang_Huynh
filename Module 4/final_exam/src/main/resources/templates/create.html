@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="layout :: head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<style>
+    small{
+        color: red;
+    }
+</style>
+<div class="container-fluid d-flex justify-content-center">
+    <h1>Create New Question</h1>
+</div>
+<div class="container d-flex ">
+    <form action="/questions/create" style="width: 70%;margin-left: 155px" method="post" th:object="${questionDto}">
+        <div class="form-group row">
+            <label for="inputTitle" class="col-sm-3 col-form-label">Title</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="inputTitle" th:field="*{title}">
+                <small th:errors="*{title}"></small>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputQuestion" class="col-sm-3 col-form-label">Question</label>
+            <div class="col-sm-6">
+                <textarea th:field="*{question}" id="inputQuestion" class="form-control" rows="10" cols="70" placeholder="Question's content"/>
+                </textarea>
+<!--                <input type="text" class="form-control" id="inputQuestion" th:field="*{question}">-->
+                <small th:errors="*{question}"></small>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label hidden class="col-sm-3 col-form-label">Status</label>
+            <div class="col-sm-6">
+                <input  th:placeholder="Not-Answered" th:value="Not-Answered" hidden type="text" class="form-control" name="status" id="status">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputType" class="col-sm-3 col-form-label">Type</label>
+            <div class="col-sm-6">
+                <select  id="inputType" th:field="*{questionType}">
+                    <option th:each="questionType : ${questionTypes}" th:value="${questionType.id}"
+                    th:text="${questionType.typeName}"></option>
+                </select>
+            </div>
+        </div>
+        <div class="d-flex ">
+            <a href="/questions" class="btn btn-secondary" style="margin-left: 200px">Back to list</a>
+            <input type="submit" class="btn btn-success" style="margin-left: 174px;width: 100px" value="Create">
+        </div>
+
+    </form>
+</div>
+</body>
+</html>

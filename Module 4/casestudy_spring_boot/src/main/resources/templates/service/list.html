@@ -34,41 +34,34 @@
     <table id="tableCustomer" class="table table-striped table-bordered " style="width: 100%">
         <thead>
         <tr>
-            <th scope="col">ID</th>
+            <th scope="col">No</th>
+            <th scope="col">Code</th>
             <th scope="col">Name</th>
             <th scope="col">Area</th>
             <th scope="col">Cost</th>
             <th scope="col">Max People</th>
             <th scope="col">Rent type</th>
             <th scope="col">Service type</th>
-            <th scope="col">Show</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Delete</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="s : ${services}">
-            <th scope="row" th:text="${s.serviceId}">${service.id}</th>
+        <tr th:each="s,row : ${services}">
+<!--            <th scope="row" th:text="${s.serviceId}">${service.id}</th>-->
+            <td th:text="${row.count}"></td>
+            <td th:text="${s.serviceCode}"></td>
             <td th:text="${s.serviceName}"></td>
             <td th:text="${s.area}"></td>
             <td th:text="${s.cost}"></td>
             <td th:text="${s.maxPeople}"></td>
             <td th:text="${s.rentType.rentTypeName}"></td>
             <td th:text="${s.serviceType.serviceTypeName}"></td>
-            <td><a class="btn btn-info" href="/services?action=show&id=${service.id}">Show</a></td>
-            <td><a class="btn btn-warning" href="/services?action=edit&id=${service.id}">Edit</a></td>
-            <td>
-                <button type="button" class="btn btn-danger buttonDelete" data-toggle="modal"
-                        data-target="#exampleModal">
-                    Delete
-                </button>
-                <input type="hidden" id="idInput" value="${service.id}">
-            </td>
         </tr>
 
         </tbody>
     </table>
 </div>
+
+
 <div class="ml-3">
     <a th:href="@{/services(page=${services.number - 1},keyWord=${keyWord})}" th:if="${services.hasPrevious()}">Previous</a>
     <span th:text="${services.number+1}"></span>/<span th:text="${services.totalPages}"></span>

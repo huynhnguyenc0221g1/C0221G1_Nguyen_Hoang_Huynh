@@ -9,8 +9,6 @@ import javax.validation.constraints.NotBlank;
 
 
 public class CustomerDto implements Validator {
-
-
     private Long customerId;
     @NotBlank(message = "Must not be blank!")
     private String customerCode;

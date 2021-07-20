@@ -13,6 +13,8 @@ import javax.validation.constraints.NotNull;
 public class ServiceDto implements Validator {
     private Long serviceId;
     @NotBlank(message = "Must not be blank!")
+    private String serviceCode;
+    @NotBlank(message = "Must not be blank!")
     private String serviceName;
     @NotBlank(message = "Must not be blank!")
     private String area;
@@ -37,6 +39,14 @@ public class ServiceDto implements Validator {
 
     public void setServiceId(Long serviceId) {
         this.serviceId = serviceId;
+    }
+
+    public String getServiceCode() {
+        return serviceCode;
+    }
+
+    public void setServiceCode(String serviceCode) {
+        this.serviceCode = serviceCode;
     }
 
     public String getServiceName() {
@@ -137,6 +147,9 @@ public class ServiceDto implements Validator {
     @Override
     public void validate(Object target, Errors errors) {
         ServiceDto serviceDto = (ServiceDto) target;
+        if (!serviceDto.serviceCode.matches("^DV-[0-9]{4}$")) {
+            errors.rejectValue("serviceCode", "service.validCode", "Service's code must have the format: DV-XXXX");
+        }
         if(!serviceDto.numberFloor.equals("")){
             if (!serviceDto.numberFloor.matches("^[0-9]+$")) {
                 errors.rejectValue("numberFloor", "service.validFloor", "Must input number format");

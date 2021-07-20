@@ -60,3 +60,8 @@ insert into user_role (ID, USER_ID, ROLE_ID) values (3, 2, 2)
 SELECT * FROM spring_boot_furama.user_role LIMIT 0, 1000
 
 SELECT * FROM spring_boot_furama.app_user LIMIT 0, 1000
+
+use spring_boot_furama;
+INSERT INTO `spring_boot_furama`.`customer_type` (`customer_type_id`, `customer_type_name`) VALUES ('1', 'Standard');
+INSERT INTO `spring_boot_furama`.`customer_type` (`customer_type_id`, `customer_type_name`) VALUES ('2', 'Gold');
+INSERT INTO `spring_boot_furama`.`customer_type` (`customer_type_id`, `customer_type_name`) VALUES ('3', 'Diamond');

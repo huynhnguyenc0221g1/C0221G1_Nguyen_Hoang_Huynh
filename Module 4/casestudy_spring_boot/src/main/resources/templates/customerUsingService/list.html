@@ -36,7 +36,7 @@
     <table id="tableCustomer" class="table table-striped table-bordered" style="width: 100%" >
       <thead>
       <tr>
-        <th scope="col">Customer Id</th>
+        <th scope="col">No</th>
         <th scope="col">Customer Name</th>
         <th scope="col">Customer Phone</th>
         <th scope="col">Contract Id</th>
@@ -50,9 +50,9 @@
       </tr>
       </thead>
       <tbody>
-      <tr th:each="con : ${contracts}">
-
-        <th th:text="${con.customer.customerId}"></th>
+      <tr th:each="con,row : ${contracts}">
+        <td th:text="${row.count}"></td>
+<!--        <th th:text="${con.customer.customerId}"></th>-->
         <td th:text="${con.customer.customerName}"></td>
         <td th:text="${con.customer.customerPhone}"></td>
         <td th:text="${con.contractId}"></td>

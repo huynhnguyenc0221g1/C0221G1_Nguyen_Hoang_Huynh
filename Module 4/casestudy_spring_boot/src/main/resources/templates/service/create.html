@@ -17,7 +17,13 @@
 </div>
 <div class="container d-flex ">
     <form action="/services/create" style="width: 70%;margin-left: 155px" method="post" th:object="${serviceDto}">
-
+        <div class="form-group row">
+            <label for="inputCode" class="col-sm-3 col-form-label">Service Code</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="inputCode" th:field="*{serviceCode}">
+                <small th:errors="*{serviceCode}"></small>
+            </div>
+        </div>
         <div class="form-group row">
             <label  class="col-sm-3 col-form-label">Type Service </label>
             <div class="col-sm-6">
