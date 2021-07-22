@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7e42d93e-fc52-408a-bcdd-fef2850dd4ab" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../02_pet/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/.idea/02_pet.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/angular.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/browserslist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/e2e/protractor.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/e2e/src/app.e2e-spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/e2e/src/app.po.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/e2e/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/karma.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/src/app/app-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/src/app/app.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/src/app/app.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/src/app/app.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/src/app/app.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/src/app/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/src/app/pet.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/src/app/pet/pet.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/src/app/pet/pet.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/src/app/pet/pet.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/src/app/pet/pet.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/src/assets/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/src/environments/environment.prod.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/src/environments/environment.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/src/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/src/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/src/polyfills.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/src/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/src/test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/tsconfig.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/tsconfig.spec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../02_pet/angular-show-pet-info/tslint.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/03_bootstrap.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/angular.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/browserslist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/e2e/protractor.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/e2e/src/app.e2e-spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/e2e/src/app.po.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/e2e/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/karma.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/src/app/app-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/src/app/app.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/src/app/app.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/src/app/app.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/src/app/app.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/src/app/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/src/app/product/product.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/src/app/product/product.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/src/app/product/product.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/src/app/product/product.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/src/assets/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/src/environments/environment.prod.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/src/environments/environment.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/src/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/src/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/src/polyfills.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/src/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/src/test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/tsconfig.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/tsconfig.spec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-bootstrap/tslint.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 4/05_orm/practice/01_customer_management/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 4/05_orm/practice/01_customer_management/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 4/09_aop_exception_handling/practice/01_aspect_log/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 4/09_aop_exception_handling/practice/01_aspect_log/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 4/09_aop_exception_handling/practice/02_exception_handler/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 4/09_aop_exception_handling/practice/02_exception_handler/customer-management" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1vecZJJcMCiEuZWEpg8bdaxae5O" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7e42d93e-fc52-408a-bcdd-fef2850dd4ab" name="Default Changelist" comment="" />
+      <created>1626926048929</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1626926048929</updated>
+      <workItem from="1626926050048" duration="451000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

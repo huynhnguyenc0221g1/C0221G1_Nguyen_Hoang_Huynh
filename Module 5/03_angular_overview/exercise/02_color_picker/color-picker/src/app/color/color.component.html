@@ -1,0 +1,10 @@
+<div class="container-fluid ml-3">
+  <h1 class="text-{{color}}">Pick a color in the select-option below and see the magic!</h1>
+  <select style="width: 100px" class="form-select" (change)="onColorPick($event.target.value)">
+    <option selected value="dark">Black</option>
+    <option value="success">Green</option>
+    <option value="danger">Red</option>
+    <option value="primary">Blue</option>
+    <option value="warning">Yellow</option>
+  </select>
+</div>

@@ -1,0 +1,13 @@
+<div class="container-fluid justify-content-center align-content-center ">
+<p>First number:</p>
+<input type="number" [value]="first" (change)="onFirstChange($event.target['value'])">
+<p>Second number:</p>
+  <input type="number" [value]="second" (change)="onSecondChange($event.target['value'])">
+  <hr>
+<button (click)="plus()" class="btn btn-info" style="width: 50px">+</button>
+<button (click)="minus()" class="btn btn-danger" style="width: 50px">-</button>
+<button (click)="mutiply()" class="btn btn-dark" style="width: 50px">*</button>
+<button (click)="divide()" class="btn btn-success" style="width: 50px">/</button>
+<h3>Result</h3>
+  <h6 class="result"> {{result}}</h6>
+</div>
