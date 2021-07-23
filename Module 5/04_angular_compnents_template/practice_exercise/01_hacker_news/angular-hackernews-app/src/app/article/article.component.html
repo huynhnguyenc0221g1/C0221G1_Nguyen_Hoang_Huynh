@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+<div class="container-fluid col-12 mt-4">
+  <h2 class="ml-3">Today's article</h2>
+  <hr>
+  <div class="ml-3" *ngFor="let art of articles">
+    <a href="{{art.url}}" target="_blank">{{art.title}}</a>:
+    <app-like></app-like>
+  </div>
+  <hr>
+  <div class="ml-3">
+    <h2>Article Information</h2>
+    <table>
+      <tr>
+        <td>Title:</td>
+        <td><textarea [(ngModel)]="article.title" cols="70"></textarea></td>
+      </tr>
+      <tr>
+        <td>Url:</td>
+        <td>
+          <textarea [(ngModel)]="article.url" cols="70"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <button style="float: right" (click)="addNewArticle()">Add</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<hr>
+<app-footer></app-footer>
