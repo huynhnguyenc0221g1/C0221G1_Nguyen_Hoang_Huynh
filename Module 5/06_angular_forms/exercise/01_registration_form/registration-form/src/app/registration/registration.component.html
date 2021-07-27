@@ -1,0 +1,68 @@
+<div class="container container-fluid justify-content-center align-content-center">
+<h1 class="text-primary">Registration Form</h1>
+</div>
+
+<form class="container" (ngSubmit)="onSubmit(formSubmid)" #formSubmid="ngForm" novalidate >
+  <label>Email : </label>
+  <input class="form-control" type="text" required pattern="^[0-9a-zA-Z]{1,}@[0-9a-zA-Z.]{1,}$" [(ngModel)]="email"  name="email">
+  <div style="color: red" *ngIf="formSubmid.controls.email?.errors?.pattern">
+    Email is not in the right format (Ex: abc@cde.xyz)!
+  </div>
+  <div style="color: red" *ngIf="formSubmid.controls.email?.errors?.required && (formSubmid.controls.email?.dirty || formSubmid.controls.email?.touched)">
+    Email must not be blank!
+  </div>
+
+
+  <label>Password : </label>
+  <input class="form-control" type="password" required minlength="6" [(ngModel)]="password"  name="password" >
+  <div style="color: red" *ngIf="formSubmid.controls.password?.errors?.required && (formSubmid.controls.password?.dirty || formSubmid.controls.password?.touched)" >
+    Password must not be blank!
+  </div>
+  <div style="color: red" *ngIf="formSubmid.controls.password?.errors?.minlength">
+    Password must contain more than 6 characters!
+  </div>
+
+
+  <label>Confirm password : </label>
+  <input class="form-control" type="password" pattern="{{password}}" [(ngModel)]="confirmPassword"  name="confirmPassword">
+  <div style="color: red" *ngIf="formSubmid.controls.confirmPassword?.errors?.pattern">
+    Must be same as password!
+  </div>
+
+  <label>Age : </label>
+  <input class="form-control" type="number" required min="18" [(ngModel)]="age"  name="age">
+  <div style="color: red" *ngIf="formSubmid.controls.age?.errors?.min">
+    Age must be more than 18 years old!
+  </div>
+  <div style="color: red" *ngIf="formSubmid.controls.age?.errors?.required && (formSubmid.controls.age?.dirty || formSubmid.controls.age?.touched)">
+    Age must not be blank!
+  </div>
+
+  <label>Country : </label>
+  <select class="form-control" name="country" [(ngModel)]="country"  >
+    <option class="text-light" *ngFor="let countryName of countries" [value]="countryName">
+      {{countryName}}
+    </option>
+  </select>
+
+  <br>
+  <label>Gender : </label>
+  <br>
+  <input  type="radio" [(ngModel)]="gender" name="gender" value="male">Male
+  <br>
+  <input  type="radio" [(ngModel)]="gender" name="gender" value="female">Female
+  <br>
+  <input  type="radio" [(ngModel)]="gender" name="gender" value="order">Other
+
+  <br>
+  <br>
+  <label>Phone : </label>
+  <input class="form-control" type="text" [(ngModel)]="phone"  name="phone">
+  <br>
+  <input [disabled]="formSubmit.control.invalid" class="btn btn-danger" type="submit" value="register">
+</form>
+
+<div class="container container-fluid justify-content-center align-content-center">
+<h1 class="text-success" *ngFor="let user of users">{{user.email}}</h1>
+</div>
+

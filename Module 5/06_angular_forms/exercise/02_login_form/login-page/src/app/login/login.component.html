@@ -1,0 +1,29 @@
+<div class="container container-fluid justify-content-center align-content-center">
+  <h1 class="text-primary">Login Form</h1>
+</div>
+<form class="container" (ngSubmit)="onSubmit(formSubmid)" #formSubmid="ngForm" novalidate >
+  <label>Email : </label>
+  <input class="form-control" type="text" required pattern="^[0-9a-zA-Z]{1,}@[0-9a-zA-Z.]{1,}$" [(ngModel)]="email"  name="email">
+  <div style="color: red" *ngIf="formSubmid.controls.email?.errors?.pattern">
+    Email is not in the right format (Ex: abc@cde.xyz)!
+  </div>
+  <div style="color: red" *ngIf="formSubmid.controls.email?.errors?.required && (formSubmid.controls.email?.dirty || formSubmid.controls.email?.touched)">
+    Email must not be blank!
+  </div>
+
+  <label>Password : </label>
+  <input class="form-control" type="password" required minlength="6" [(ngModel)]="password"  name="password" >
+  <div style="color: red" *ngIf="formSubmid.controls.password?.errors?.required && (formSubmid.controls.password?.dirty || formSubmid.controls.password?.touched)" >
+    Password must not be blank!
+  </div>
+  <div style="color: red" *ngIf="formSubmid.controls.password?.errors?.minlength">
+    Password must contain more than 6 characters!
+  </div>
+  <br>
+  <input [disabled]="formSubmit.control.invalid" class="btn btn-danger" type="submit" value="Login">
+</form>
+
+<div class="container container-fluid justify-content-center align-content-center">
+  <h1 class="text-success" *ngFor="let user of users">{{user.email}}</h1>
+</div>
+
