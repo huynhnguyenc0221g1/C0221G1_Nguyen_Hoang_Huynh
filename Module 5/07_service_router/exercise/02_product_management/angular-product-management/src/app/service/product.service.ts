@@ -55,7 +55,6 @@ export class ProductService {
   }
   getProductById(id: number): Product {
     console.log(id);
-    // tslint:disable-next-line:prefer-for-of
     for (let i = 0 ; i < this.products.length ; i++) {
       if (this.products[i].id === id) {
         return this.products[i] ;

@@ -20,7 +20,6 @@ export class ProductDeleteComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.params.id;
-    // tslint:disable-next-line:radix
     this.product = this.productService.getProductById(parseInt(id));
   }
 
