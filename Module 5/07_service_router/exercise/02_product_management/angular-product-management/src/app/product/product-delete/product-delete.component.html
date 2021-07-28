@@ -1,0 +1,31 @@
+<div class="container">
+  <h2 class="text-danger">Do you really want to delete this product?</h2>
+  <table class="table table-primary text-dark font-weight-bold">
+    <thead>
+    <tr>
+      <th>
+        <label for="id">ID:</label>
+      </th>
+      <th>
+        <p id="id">{{product.id}}</p>
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <label for="name">Name:</label>
+      </th>
+      <th>
+        <p id="name">{{product.name}}</p>
+      </th>
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td>
+        <button class="btn btn-danger" (click)="deleteProduct()">Delete</button>
+        <button class="btn btn-warning" (click)="backToList()">Cancel</button>
+      </td>
+    </tr>
+    </thead>
+  </table>
+</div>

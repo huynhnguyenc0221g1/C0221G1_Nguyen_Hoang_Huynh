@@ -1,0 +1,37 @@
+<div class="container">
+  <h1 class="text-primary">Edit Product</h1>
+  <form [formGroup]="editForm" (ngSubmit)="submit(editForm)">
+    <table class="table table-primary table-striped text-dark font-weight-bold">
+      <tr>
+        <td>ID:</td>
+        <td>
+          <input readonly formControlName="id">
+        </td>
+      </tr>
+      <tr>
+        <td>Name:</td>
+        <td>
+          <input type="text" formControlName="name">
+        </td>
+      </tr>
+      <tr>
+        <td>Price:</td>
+        <td>
+          <input type="number" formControlName="price">
+        </td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td>
+          <input type="text" formControlName="description">
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <button class="btn btn-dark" type="submit">Edit</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>

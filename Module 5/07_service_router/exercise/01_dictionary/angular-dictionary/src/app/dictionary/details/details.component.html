@@ -1,0 +1,24 @@
+<div *ngIf="wordDetails" class="container">
+  <table class="table table-primary table-striped text-dark">
+    <tbody>
+    <tr>
+      <td hidden>ID:</td>
+      <td hidden>{{wordDetails.id}}</td>
+    </tr>
+    <tr>
+      <td>Word:</td>
+      <td>{{wordDetails.word}}</td>
+    </tr>
+    <tr>
+      <td>Meaning:</td>
+      <td>{{wordDetails.means}}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button class="btn btn-dark" (click)="backToWordsList()">Back To Words List</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
