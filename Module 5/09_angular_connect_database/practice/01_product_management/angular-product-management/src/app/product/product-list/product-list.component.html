@@ -1,0 +1,32 @@
+<h1 class="text-primary font-weight-bold">Products List</h1>
+<a routerLink="/product/create"><button class="btn-dark">Create A Product</button></a>
+<table class="table table-primary table-striped">
+  <tr>
+    <td>No</td>
+    <td>Name</td>
+    <td>Price</td>
+    <td>Description</td>
+    <td>Category</td>
+    <td>Options</td>
+  </tr>
+  <tr *ngFor="let product of products; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.description}}</td>
+
+    <ng-container *ngFor="let category of categories">
+      <td *ngIf="product.category == category.id">{{category.name}}</td>
+    </ng-container>
+    <td><a [routerLink]="['/product/edit', product.id]">
+      <button class="btn btn-dark">
+        Edit
+      </button>
+    </a>
+      <a [routerLink]="['/product/delete', product.id]">
+        <button class="btn btn-danger">
+          Delete
+        </button>
+      </a></td>
+  </tr>
+</table>

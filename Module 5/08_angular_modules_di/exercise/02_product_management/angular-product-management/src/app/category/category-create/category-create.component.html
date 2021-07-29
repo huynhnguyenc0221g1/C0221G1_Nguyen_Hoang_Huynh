@@ -1,0 +1,15 @@
+<h1 class="text-primary font-weight-bold">Create A Category</h1>
+<form [formGroup]="categoryForm" (ngSubmit)="submit()">
+  <table class="table table-primary table-striped text-dark">
+    <tr>
+      <td>Name:</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button class="btn btn-dark">Create</button>
+      </td>
+    </tr>
+  </table>
+</form>

@@ -1,0 +1,39 @@
+<h1 class="text-primary font-weight-bold">Update A Product</h1>
+<form [formGroup]="productForm" (ngSubmit)="submit(id)">
+  <table class="table table-primary table-striped text-dark">
+    <tr>
+      <td>Name:</td>
+      <td>
+        <input type="text" formControlName="name">
+      </td>
+    </tr>
+    <tr>
+      <td>Price:</td>
+      <td>
+        <input type="number" formControlName="price">
+      </td>
+    </tr>
+    <tr>
+      <td>Description:</td>
+      <td>
+        <input type="text" formControlName="description">
+      </td>
+    </tr>
+    <tr>
+      <td>Category:</td>
+      <td>
+        <select formControlName="category">
+          <ng-container *ngFor="let category of categories">
+            <option *ngIf="product.category == category.id" selected="selected" [ngValue]="category.id">{{category.name}}</option>
+            <option *ngIf="product.category != category.id" [ngValue]="category.id">{{category.name}}</option>
+          </ng-container>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button class="btn btn-dark" type="submit">Edit</button></td>
+    </tr>
+  </table>
+</form>
+
