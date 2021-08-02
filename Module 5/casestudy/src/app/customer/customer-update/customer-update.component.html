@@ -1,0 +1,27 @@
+<h1>Update The Customer</h1>
+
+<form [formGroup]="productForm" (ngSubmit)="submit()">
+
+  <input class="form-control" type="hidden"  formControlName="id" >
+
+  <label>Name:</label>
+  <input class="form-control" type="text"  name="name"  formControlName="name" >
+
+
+  <label>Birthdate:</label>
+  <input class="form-control" type="date"  formControlName="dateOfBirth" >
+
+  <label>Type:</label>
+  <select class="form-control" [compareWith]="compareFn"  formControlName="type">
+    <option *ngFor="let type of customerTypes" [ngValue]="type">
+      {{type.type}}
+    </option>
+  </select>
+
+  <div class="d-flex justify-content-between">
+    <button class="btn btn-success mt-3 " mat-dialog-close=""  type="submit">Update</button>
+    <button class="btn btn-danger mt-3 " mat-button mat-dialog-close="">Cancel</button>
+
+  </div>
+
+</form>

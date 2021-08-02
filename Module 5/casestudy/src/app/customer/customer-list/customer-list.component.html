@@ -1,0 +1,41 @@
+<div class="container my-4 d-flex justify-content-between mb-3">
+  <div>
+    <a routerLink="/customer/create" class="btn btn-success  " >Create new customer</a>
+    <h3 class="text-danger">{{data}}</h3>
+  </div>
+
+  <div>
+    <input class="search" placeholder="Search" type="text" [(ngModel)]="searchText" name="search"  >
+    <button class="btn btn-success ml-3 " (click)="search()">Search</button>
+  </div>
+
+
+</div>
+
+
+<table  class="table table-success table-striped text-dark font-weight-bold container">
+  <tr>
+    <th>No</th>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Date Of Birth</th>
+    <th>Type</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let customer of customers | filter: searchText | paginate : config , let i = index">
+    <td>{{i + 1 + config.itemsPerPage * (config.currentPage-1) }}</td>
+    <td>{{customer.id}}</td>
+    <td>{{customer.name}}</td>
+    <td>{{customer.dateOfBirth}}</td>
+    <td>{{customer.type.type}}</td>
+    <td><button class="btn btn-danger ml-1" (click)="openDialog(customer.id , customer.name)">delete</button>
+    <button class="btn btn-warning mx-1" (click)="openEditDialog(customer.id , customer.name , customer.dateOfBirth, customer.type)">edit</button>
+    <button class="btn btn-primary mx-1" (click)="openDialog1(customer.id , customer.name , customer.dateOfBirth, customer.type )">view</button></td>
+
+  </tr>
+</table>
+<div style="margin-left:100px">
+<pagination-controls (pageChange)="pageChanged($event)" ></pagination-controls>
+</div>
+
+

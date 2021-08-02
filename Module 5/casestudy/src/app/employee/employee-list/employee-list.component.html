@@ -1,0 +1,43 @@
+<div class="container mt-4 d-flex justify-content-between mb-3">
+  <div>
+    <a routerLink="/employee/create" class="btn btn-success  " >Create new Employee</a>
+    <h3 class="text-danger">{{data}}</h3>
+  </div>
+
+  <div>
+    <input class="search" placeholder="Search" type="text" [(ngModel)]="searchText" name="search"  >
+    <button class="btn btn-success ml-3 " (click)="search()">Search</button>
+  </div>
+
+
+</div>
+
+
+<table  class="table table-success table-striped text-dark font-weight-bold container">
+  <tr>
+    <th>No</th>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Date Of Birth</th>
+    <th>Education</th>
+    <th>Position</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let employee of employees | filter: searchText | paginate : config , let i = index">
+    <td>{{i + 1 + config.itemsPerPage * (config.currentPage-1) }}</td>
+    <td>{{employee.id}}</td>
+    <td>{{employee.name}}</td>
+    <td>{{employee.dateOfBirth}}</td>
+    <td>{{employee.education.educationName}}</td>
+    <td>{{employee.positions.positionName}}</td>
+    <td><button class="btn btn-danger mr-1" (click)="openDialog(employee.id , employee.name)">Delete</button>
+    <button class="btn btn-warning mx-1" (click)="openEditDialog(employee.id , employee.name , employee.dateOfBirth, employee.education, employee.positions)">Edit</button>
+    <button class="btn btn-primary mx-1" (click)="openDialog1(employee.id , employee.name , employee.dateOfBirth, employee.education, employee.positions)">View</button></td>
+
+  </tr>
+</table>
+<div style="margin-left: 100px">
+<pagination-controls (pageChange)="pageChanged($event)" ></pagination-controls>
+</div>
+
+

@@ -1,0 +1,7 @@
+<p mat-dialog-title>Do you really want to delete this employee?</p>
+<mat-dialog-content>Id : {{data.id}} </mat-dialog-content>
+<mat-dialog-content>Name : {{data.name}} </mat-dialog-content>
+<mat-dialog-actions class="d-flex justify-content-between mt-5">
+  <button class="btn btn-danger" mat-button mat-dialog-close="" (click)="delete(data.id)">Delete</button>
+  <button class="btn btn-info" mat-button mat-dialog-close="">Cancel</button>
+</mat-dialog-actions>

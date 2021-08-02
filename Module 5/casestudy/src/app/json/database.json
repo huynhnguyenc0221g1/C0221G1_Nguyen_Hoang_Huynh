@@ -1,0 +1,105 @@
+{
+  "customers": [
+    {
+      "name": "Mary",
+      "dateOfBirth": "1978-03-11",
+      "id": 6,
+      "type": {
+        "id": 2,
+        "type": "Silver"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Jane",
+      "dateOfBirth": "1996-04-04",
+      "type": {
+        "id": 3,
+        "type": "Diamond"
+      }
+    },
+    {
+      "name": "WOW1",
+      "type": {
+        "id": 2,
+        "type": "Silver"
+      },
+      "dateOfBirth": "2000-07-24",
+      "id": 11
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "type": "Gold"
+    },
+    {
+      "id": 2,
+      "type": "Silver"
+    },
+    {
+      "id": 3,
+      "type": "Diamond"
+    }
+  ],
+  "educations": [
+    {
+      "id": 1,
+      "educationName": "High School"
+    },
+    {
+      "id": 2,
+      "educationName": "University"
+    },
+    {
+      "id": 3,
+      "educationName": "Higher Education"
+    }
+  ],
+  "positions": [
+    {
+      "id": 1,
+      "positionName": "FO"
+    },
+    {
+      "id": 2,
+      "positionName": "Management"
+    },
+    {
+      "id": 3,
+      "positionName": "HK"
+    },
+    {
+      "id": 4,
+      "positionName": "Security"
+    }
+  ],
+  "employee": [
+    {
+      "id": 1,
+      "name": "Chandler",
+      "dateOfBirth": "1970-12-01",
+      "education": {
+        "id": 3,
+        "educationName": "Higher Education"
+      },
+      "positions": {
+        "id": 1,
+        "positionName": "FO"
+      }
+    },
+    {
+      "name": "Trung",
+      "dateOfBirth": "2021-06-10",
+      "education": {
+        "id": 2,
+        "educationName": "University"
+      },
+      "positions": {
+        "id": 4,
+        "positionName": "Security"
+      },
+      "id": 4
+    }
+  ]
+}

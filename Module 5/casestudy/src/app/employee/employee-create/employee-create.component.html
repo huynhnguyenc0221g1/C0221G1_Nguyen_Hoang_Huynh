@@ -1,0 +1,36 @@
+<div class="container justify-content-center align-content-center mt-4">
+  <h1 class="text-dark font-weight-bold">Create An Employee</h1>
+</div>
+<form class="container mt-5" [formGroup]="employee"  (ngSubmit)="create()" >
+  <table class="table table-success table-striped text-dark font-weight-bold">
+    <tr>
+      <th><label>Name:</label></th>
+      <td><input class="form-control" type="text" name="name" formControlName="name"></td>
+    </tr>
+    <tr>
+      <th><label>Date Of Birth:</label></th>
+      <td><input class="form-control" type="date" name="dateOfBirth" formControlName="dateOfBirth"></td>
+    </tr>
+    <tr>
+      <th>Education:</th>
+      <td>
+        <select class="form-control" formControlName="education">
+          <option *ngFor="let education of educations" [ngValue]="education">{{education.educationName}}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>Position:</th>
+      <td>
+        <select class="form-control" formControlName="positions">
+          <option *ngFor="let positions of positionList" [ngValue]="positions">{{positions.positionName}}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th></th>
+      <th><input class="btn btn-success" type="submit" value="create"></th>
+    </tr>
+  </table>
+
+</form>

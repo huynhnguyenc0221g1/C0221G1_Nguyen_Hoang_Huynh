@@ -1,0 +1,28 @@
+<div class="container justify-content-center align-content-center mt-4">
+  <h1 class="text-dark font-weight-bold">Create A Customer</h1>
+</div>
+<form class="container mt-5" [formGroup]="customer"  (ngSubmit)="create()" >
+  <table class="table table-success table-striped text-dark font-weight-bold">
+    <tr>
+      <th><label>Name:</label></th>
+      <td><input class="form-control" type="text" name="name" formControlName="name"></td>
+    </tr>
+    <tr>
+      <th><label>Date Of Birth:</label></th>
+      <td><input class="form-control" type="date" name="dateOfBirth" formControlName="dateOfBirth"></td>
+    </tr>
+    <tr>
+      <th>Type:</th>
+      <td>
+        <select class="form-control" formControlName="type">
+          <option *ngFor="let type of customerTypes" [ngValue]="type">{{type.type}}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th></th>
+      <th><input class="btn btn-success" type="submit" value="create"></th>
+    </tr>
+  </table>
+
+</form>
