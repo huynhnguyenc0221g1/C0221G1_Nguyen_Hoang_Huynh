@@ -6,10 +6,15 @@
 
   <label>Name:</label>
   <input class="form-control" required type="text"  name="name"  formControlName="name" >
-
+  <div class="text-danger" *ngIf="!employeeEditForm.controls.name?.valid && (employeeEditForm.controls.name?.dirty || employeeEditForm.controls.name?.touched)">
+    Name is required!
+  </div>
 
   <label>Birthdate:</label>
   <input class="form-control" required type="date"  formControlName="dateOfBirth" >
+  <div class="text-danger" *ngIf="!employeeEditForm.controls.dateOfBirth?.valid && (employeeEditForm.controls.dateOfBirth?.dirty ||employeeEditForm.controls.dateOfBirth?.touched)">
+    Date Of Birth is required!
+  </div>
 
   <label>Education:</label>
   <select class="form-control" required [compareWith]="compareFn"  formControlName="education">

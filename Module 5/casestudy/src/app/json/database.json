@@ -19,12 +19,12 @@
       }
     },
     {
-      "name": "WOW1",
+      "name": "Rachel",
       "type": {
-        "id": 2,
-        "type": "Silver"
+        "id": 3,
+        "type": "Diamond"
       },
-      "dateOfBirth": "2000-07-24",
+      "dateOfBirth": "2000-07-01",
       "id": 11
     },
     {
@@ -107,8 +107,8 @@
       }
     },
     {
-      "name": "Trung",
-      "dateOfBirth": "2021-06-10",
+      "name": "Ross",
+      "dateOfBirth": "2021-06-01",
       "education": {
         "id": 2,
         "educationName": "University"
