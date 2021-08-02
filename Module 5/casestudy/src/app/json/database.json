@@ -1,7 +1,7 @@
 {
   "customers": [
     {
-      "name": "Mary",
+      "name": "Monica",
       "dateOfBirth": "1978-03-11",
       "id": 6,
       "type": {
@@ -26,6 +26,24 @@
       },
       "dateOfBirth": "2000-07-24",
       "id": 11
+    },
+    {
+      "name": "OK",
+      "type": {
+        "id": 3,
+        "type": "Diamond"
+      },
+      "dateOfBirth": "2021-04-05",
+      "id": 12
+    },
+    {
+      "name": "Pheebs",
+      "type": {
+        "id": 3,
+        "type": "Diamond"
+      },
+      "dateOfBirth": "2021-08-01",
+      "id": 13
     }
   ],
   "customerType": [

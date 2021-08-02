@@ -1,6 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Educations} from '../../model/education';
 import {EmployeeService} from '../../service/employee.service';
 import {EducationService} from '../../service/education.service';
@@ -13,7 +13,7 @@ import {Positions} from '../../model/position';
   styleUrls: ['./employee-update.component.css']
 })
 export class EmployeeUpdateComponent implements OnInit {
-  productForm: any;
+  employeeEditForm: any;
   educations: Educations[] = [];
   positionList: Positions[] = [];
   compareFn(c1: any, c2: any): boolean {
@@ -22,10 +22,10 @@ export class EmployeeUpdateComponent implements OnInit {
 
   constructor(@Inject(MAT_DIALOG_DATA) public data, private employeeService: EmployeeService,
               private educationService: EducationService, private positionService: PositionService) {
-    this.productForm = new FormGroup ({
+    this.employeeEditForm = new FormGroup ({
       id: new FormControl(this.data.id),
-      name: new FormControl(this.data.name),
-      dateOfBirth: new FormControl(this.data.dateOfBirth),
+      name: new FormControl(this.data.name, [Validators.required]),
+      dateOfBirth: new FormControl(this.data.dateOfBirth, [Validators.required]),
       education: new FormControl(this.data.education),
       positions: new FormControl(this.data.positions)
     });
@@ -41,6 +41,6 @@ export class EmployeeUpdateComponent implements OnInit {
   }
 
   submit() {
-    this.employeeService.update(this.productForm.value).subscribe();
+    this.employeeService.update(this.employeeEditForm.value).subscribe();
   }
 }

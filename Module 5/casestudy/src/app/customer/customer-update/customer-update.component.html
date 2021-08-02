@@ -1,25 +1,30 @@
 <h1>Update The Customer</h1>
 
-<form [formGroup]="productForm" (ngSubmit)="submit()">
+<form [formGroup]="customerEditForm" novalidate (ngSubmit)="submit()">
 
   <input class="form-control" type="hidden"  formControlName="id" >
 
   <label>Name:</label>
-  <input class="form-control" type="text"  name="name"  formControlName="name" >
-
+  <input class="form-control" required type="text"  name="name"  formControlName="name" >
+  <div class="text-danger" *ngIf="!customerEditForm.controls.name?.valid && (customerEditForm.controls.name?.dirty ||customerEditForm.controls.name?.touched)">
+    Name is required!
+  </div>
 
   <label>Birthdate:</label>
-  <input class="form-control" type="date"  formControlName="dateOfBirth" >
+  <input class="form-control" required type="date"  formControlName="dateOfBirth" >
+  <div class="text-danger" *ngIf="!customerEditForm.controls.dateOfBirth?.valid && (customerEditForm.controls.dateOfBirth?.dirty ||customerEditForm.controls.dateOfBirth?.touched)">
+    Date Of Birth is required!
+  </div>
 
   <label>Type:</label>
-  <select class="form-control" [compareWith]="compareFn"  formControlName="type">
+  <select class="form-control" required [compareWith]="compareFn"  formControlName="type">
     <option *ngFor="let type of customerTypes" [ngValue]="type">
       {{type.type}}
     </option>
   </select>
 
   <div class="d-flex justify-content-between">
-    <button class="btn btn-success mt-3 " mat-dialog-close=""  type="submit">Update</button>
+    <button class="btn btn-success mt-3 " mat-dialog-close="" [disabled]="!customerEditForm.valid" type="submit">Update</button>
     <button class="btn btn-danger mt-3 " mat-button mat-dialog-close="">Cancel</button>
 
   </div>

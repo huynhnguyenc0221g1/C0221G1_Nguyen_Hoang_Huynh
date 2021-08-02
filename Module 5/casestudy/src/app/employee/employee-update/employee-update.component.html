@@ -1,32 +1,32 @@
 <h1>Update The Employee</h1>
 
-<form [formGroup]="productForm" (ngSubmit)="submit()">
+<form [formGroup]="employeeEditForm" novalidate (ngSubmit)="submit()">
 
   <input class="form-control" type="hidden"  formControlName="id" >
 
-  <label>name</label>
-  <input class="form-control" type="text"  name="name"  formControlName="name" >
+  <label>Name:</label>
+  <input class="form-control" required type="text"  name="name"  formControlName="name" >
 
 
-  <label>birthday </label>
-  <input class="form-control" type="date"  formControlName="dateOfBirth" >
+  <label>Birthdate:</label>
+  <input class="form-control" required type="date"  formControlName="dateOfBirth" >
 
-  <label>Education </label>
-  <select class="form-control" [compareWith]="compareFn"  formControlName="education">
+  <label>Education:</label>
+  <select class="form-control" required [compareWith]="compareFn"  formControlName="education">
     <option *ngFor="let education of educations" [ngValue]="education">
       {{education.educationName}}
     </option>
   </select>
 
-  <label>Position </label>
-  <select class="form-control" [compareWith]="compareFn"  formControlName="positions">
+  <label>Position:</label>
+  <select class="form-control" required [compareWith]="compareFn"  formControlName="positions">
     <option *ngFor="let positions of positionList" [ngValue]="positions">
       {{positions.positionName}}
     </option>
   </select>
 
   <div class="d-flex justify-content-between">
-    <button class="btn btn-success mt-3 " mat-dialog-close=""  type="submit">Update</button>
+    <button class="btn btn-success mt-3 " mat-dialog-close="" [disabled]="!employeeEditForm.valid" type="submit">Update</button>
     <button class="btn btn-danger mt-3 " mat-button mat-dialog-close="">Cancel</button>
 
   </div>

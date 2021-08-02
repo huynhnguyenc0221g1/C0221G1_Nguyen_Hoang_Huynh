@@ -2,39 +2,39 @@
 <h1 class="text-primary">Registration Form</h1>
 </div>
 
-<form class="container" (ngSubmit)="onSubmit(formSubmid)" #formSubmid="ngForm" novalidate >
+<form class="container" (ngSubmit)="onSubmit(formSubmit)" #formSubmit="ngForm" novalidate >
   <label>Email : </label>
   <input class="form-control" type="text" required pattern="^[0-9a-zA-Z]{1,}@[0-9a-zA-Z.]{1,}$" [(ngModel)]="email"  name="email">
-  <div style="color: red" *ngIf="formSubmid.controls.email?.errors?.pattern">
+  <div style="color: red" *ngIf="formSubmit.controls.email?.errors?.pattern">
     Email is not in the right format (Ex: abc@cde.xyz)!
   </div>
-  <div style="color: red" *ngIf="formSubmid.controls.email?.errors?.required && (formSubmid.controls.email?.dirty || formSubmid.controls.email?.touched)">
+  <div style="color: red" *ngIf="formSubmit.controls.email?.errors?.required && (formSubmit.controls.email?.dirty || formSubmit.controls.email?.touched)">
     Email must not be blank!
   </div>
 
 
   <label>Password : </label>
   <input class="form-control" type="password" required minlength="6" [(ngModel)]="password"  name="password" >
-  <div style="color: red" *ngIf="formSubmid.controls.password?.errors?.required && (formSubmid.controls.password?.dirty || formSubmid.controls.password?.touched)" >
+  <div style="color: red" *ngIf="formSubmit.controls.password?.errors?.required && (formSubmit.controls.password?.dirty || formSubmit.controls.password?.touched)" >
     Password must not be blank!
   </div>
-  <div style="color: red" *ngIf="formSubmid.controls.password?.errors?.minlength">
+  <div style="color: red" *ngIf="formSubmit.controls.password?.errors?.minlength">
     Password must contain more than 6 characters!
   </div>
 
 
   <label>Confirm password : </label>
   <input class="form-control" type="password" pattern="{{password}}" [(ngModel)]="confirmPassword"  name="confirmPassword">
-  <div style="color: red" *ngIf="formSubmid.controls.confirmPassword?.errors?.pattern">
+  <div style="color: red" *ngIf="formSubmit.controls.confirmPassword?.errors?.pattern">
     Must be same as password!
   </div>
 
   <label>Age : </label>
   <input class="form-control" type="number" required min="18" [(ngModel)]="age"  name="age">
-  <div style="color: red" *ngIf="formSubmid.controls.age?.errors?.min">
+  <div style="color: red" *ngIf="formSubmit.controls.age?.errors?.min">
     Age must be more than 18 years old!
   </div>
-  <div style="color: red" *ngIf="formSubmid.controls.age?.errors?.required && (formSubmid.controls.age?.dirty || formSubmid.controls.age?.touched)">
+  <div style="color: red" *ngIf="formSubmit.controls.age?.errors?.required && (formSubmit.controls.age?.dirty || formSubmit.controls.age?.touched)">
     Age must not be blank!
   </div>
 

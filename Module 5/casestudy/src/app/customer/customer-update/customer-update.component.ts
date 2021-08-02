@@ -2,7 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {CustomerType} from '../../model/customer-type';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {CustomerTypeService} from '../../service/customer-type.service';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {CustomerService} from '../../service/customer.service';
 
 @Component({
@@ -11,7 +11,7 @@ import {CustomerService} from '../../service/customer.service';
   styleUrls: ['./customer-update.component.css']
 })
 export class CustomerUpdateComponent implements OnInit {
-  productForm: any;
+  customerEditForm: any;
   customerTypes: CustomerType[] = [];
   compareFn(c1: any, c2: any): boolean {
     return c1 && c2 ? c1.id === c2.id : c1 === c2;
@@ -19,10 +19,10 @@ export class CustomerUpdateComponent implements OnInit {
 
   constructor(@Inject(MAT_DIALOG_DATA) public data, private customerService: CustomerService,
               private customerTypeService: CustomerTypeService) {
-    this.productForm = new FormGroup ({
+    this.customerEditForm = new FormGroup ({
       id: new FormControl(this.data.id),
-      name: new FormControl(this.data.name),
-      dateOfBirth: new FormControl(this.data.dateOfBirth),
+      name: new FormControl(this.data.name, [Validators.required]),
+      dateOfBirth: new FormControl(this.data.dateOfBirth, [Validators.required]),
       type: new FormControl(this.data.type),
     });
   }
@@ -34,6 +34,6 @@ export class CustomerUpdateComponent implements OnInit {
   }
 
   submit() {
-    this.customerService.update(this.productForm.value).subscribe();
+    this.customerService.update(this.customerEditForm.value).subscribe();
   }
 }

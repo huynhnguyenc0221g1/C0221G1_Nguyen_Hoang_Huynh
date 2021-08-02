@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {User} from "../user";
+import {User} from '../user';
 
 @Component({
   selector: 'app-registration',
@@ -24,7 +24,6 @@ export class RegistrationComponent implements OnInit {
 
   onSubmit(formSubmit) {
     this.formSubmit = formSubmit;
-    console.log(this.formSubmit);
     this.users.push(this.formSubmit.value);
   }
 }

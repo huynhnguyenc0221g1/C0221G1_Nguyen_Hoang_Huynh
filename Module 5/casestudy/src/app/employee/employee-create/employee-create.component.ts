@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NavigationExtras, Router} from '@angular/router';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Educations} from '../../model/education';
 import {EmployeeService} from '../../service/employee.service';
 import {EducationService} from '../../service/education.service';
@@ -23,8 +23,8 @@ export class EmployeeCreateComponent implements OnInit {
               private positionService: PositionService,
               private router: Router) {
     this.employee = new FormGroup( {
-      name: new FormControl('' , []),
-      dateOfBirth: new FormControl('', []),
+      name: new FormControl('' , [Validators.required]),
+      dateOfBirth: new FormControl('', [Validators.required]),
       education: new FormControl('' , []),
       positions: new FormControl('' , [])
     });
